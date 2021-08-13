@@ -1,0 +1,38 @@
+body {
+  font-family: 'Montserrat', sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	color: var(--primary-color);
+}
+
+.btn_ontarget {
+  background-color: var(--secondary-color);
+  color: var(--primary-color);
+}
+
+.btn_ontarget:focus {
+  box-shadow: none!important;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+a {
+  color: white;
+  text-decoration: none;
+}
+
+/* Variables */
+:root {
+  --primary-color: rgba(14,39,119,1);
+  --secondary-color: #40c9f7;
+}
+/* Variables end */
+
+.transition{
+  -webkit-transition: all ease-in-out .3s; /* Safari */
+  transition: all ease-in-out .3s;
+}

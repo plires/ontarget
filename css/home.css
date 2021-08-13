@@ -1,0 +1,575 @@
+.home .planificando, 
+.home .como_funciona,
+.home .mi_carrera,
+.home .diferencial,
+.home .generamos_cambios,
+.home .profesionalizamos,
+.home .equipo {
+  position: relative;
+}
+
+.home .linea_gradient_on_img,
+.home .puntos_left,
+.home .puntos_right,
+.home .puntos_right_equipo {
+  display: none;
+}
+
+.home .bg_gris {
+	background-color: #f4f4f6;
+}
+
+.home .btn_ontarget {
+	margin-top: 15px;
+	font-weight: 700;
+	font-size: 1.5rem;
+	border-radius: 10px;
+}
+
+.home .btn_ontarget:hover {
+	background-color: var(--primary-color);
+  color: white;
+}
+
+/* El Metodo */
+.home .el_metodo {
+	margin-bottom: 30px;
+}
+
+.home .el_metodo .col-md-12,
+.home .el_metodo .col-md-6 {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.home .el_metodo .col-md-6 img {
+	margin-bottom: 15px;
+}
+
+.home .el_metodo h1 {
+	margin-top: 60px;
+	margin-bottom: 15px;
+	font-size: 2rem;
+	text-align: center;
+	font-weight: 400;
+}
+
+.home h2 {
+	text-align: center;
+	font-size: 1.5rem;
+	font-weight: 700;
+}
+
+.home .el_metodo h1 span {
+	font-weight: 700;
+}
+/* El Metodo end */
+
+/* Planificando */
+.home .planificando {
+	margin-bottom: 30px;
+}
+
+.home .planificando .col-md-12,
+.home .planificando .col-md-6 {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.home .planificando .col-md-6 img {
+	margin-bottom: 15px;
+}
+/* Planificando end */
+
+/* Diferencial */
+.home .diferencial {
+	margin-bottom: 30px;
+}
+
+.home .diferencial .col-md-12,
+.home .diferencial .col-md-6 {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.home .diferencial .col-md-6 img {
+	margin-bottom: 15px;
+}
+/* Diferencial end */
+
+/* Mi carrera */
+.home .mi_carrera {
+	margin-bottom: 30px;
+}
+
+.home .mi_carrera .col-md-12,
+.home .mi_carrera .col-md-6 {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.home .mi_carrera .col-md-6 img {
+	margin-bottom: 15px;
+}
+/* Mi carrera end */
+
+/* Generamos Cambios */
+.home .generamos_cambios {
+	margin-bottom: 30px;
+}
+
+.home .generamos_cambios .col-md-12,
+.home .generamos_cambios .col-md-6 {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.home .generamos_cambios .col-md-6 img {
+	margin-bottom: 15px;
+}
+/* Generamos Cambios end */
+
+/* Como funciona */
+.home .como_funciona {
+	margin-bottom: 30px;
+}
+
+.home .como_funciona .col-md-12,
+.home .como_funciona .col-md-6 {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.home .como_funciona .col-md-6:last-child {
+	flex-direction: column;
+}
+
+.home .como_funciona .col-md-6 img {
+	margin-bottom: 15px;
+}
+/* Como funciona end */
+
+/* Profesionalizamos */
+.home .profesionalizamos {
+	margin-bottom: 30px;
+}
+
+.home .profesionalizamos .col-md-12,
+.home .profesionalizamos .col-md-6 {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.home .profesionalizamos .col-md-6:last-child {
+	flex-direction: column;
+}
+
+.home .profesionalizamos .col-md-6 img {
+	margin-bottom: 15px;
+}
+/* Profesionalizamos end */
+
+/* Testimonios */
+.home .testimonios {
+	background-color: #d8dae6;
+	padding-top: 30px;
+	padding-bottom: 30px;
+	margin-bottom: 30px;
+}
+
+.home .testimonios .card_testimonio {
+	padding-left: 15px;
+	padding-right: 15px;
+}
+
+.home .testimonios p {
+	color: var(--primary-color);
+}
+
+.home .testimonios .content_testimonio {
+	background-color: white;
+	padding: 15px;
+}
+
+.home .testimonios .content_testimonio p {
+	font-size: 0.85rem;
+}
+/* Testimonios end */
+
+/* Equipo */
+.home .equipo {
+	margin-bottom: 30px;
+}
+
+.home .equipo .integrante {
+	background-color: white;
+	margin-bottom: 30px;
+}
+
+.home .equipo .content_integrante {
+	padding: 15px;
+}
+
+.home .equipo .content_integrante h4 {
+	color: var(--primary-color);
+	margin-bottom: 5px;
+	font-size: 1.25rem;
+	font-weight: 700;
+}
+
+.home .equipo .content_integrante p {
+	color: black;
+	margin: 0;
+}
+/* Equipo end */
+
+/* Accede */
+.home .accede {
+	padding-top: 30px;
+	padding-bottom: 30px;
+	background: url('../img/home/fondo-pareja.jpg');
+	background-repeat: no-repeat;
+	background-position: 50% 50%;
+}
+
+.home .accede .col-md-12,
+.home .accede .col-md-8 {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+}
+
+.home .accede .col-md-8 {
+	flex-direction: column;
+}
+
+.home .accede .col-md-12{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+/* Accede end */
+
+/* Logos */
+.home .logos {
+	background-color: #6044ff;
+	padding: 30px 15px!important;
+	margin-bottom: 60px;
+	text-align: center;
+}
+
+.home .logos h2 {
+	color: white;
+	font-size: 1.25rem;
+	margin-bottom: 30px;
+}
+
+.home .logos img {
+	max-width: 50%;
+	margin-bottom: 15px;
+}
+/* Logos end */
+
+/* MEDIA QUERIES */
+
+@media (min-width: 480px) {
+
+	/* Equipo */
+	.home .equipo .content_integrante {
+		min-height: 100px;
+	}
+
+	.home .equipo .content_integrante h4 {
+		font-size: 1rem;
+	}
+	/* Equipo end */
+}
+
+@media (min-width: 576px) {
+
+}
+
+@media (min-width: 768px) {
+
+	.home h2 {
+		margin-bottom: 15px;
+	}
+
+	/* El Metodo */
+	.home .el_metodo {
+		margin-bottom: 60px;
+	}
+
+	.home .el_metodo .col-md-6 {
+		align-items: flex-start;
+	}
+
+	.home .el_metodo p {
+		font-size: 0.95rem;
+	}
+	/* El Metodo end */
+
+	/* Planificando */
+	.home .planificando p {
+		font-size: 0.95rem;
+	}
+
+	.home .planificando {
+		margin-bottom: 60px;
+	}
+	/* Planificando end */
+
+	/* Diferencial */
+	.home .diferencial {
+		margin-bottom: 60px;
+	}
+
+	.home .diferencial p {
+		font-size: 0.95rem;
+	}
+	/* Diferencial end */
+
+	/* Mi carrera */
+	.home .mi_carrera {
+		margin-bottom: 60px;
+	}
+
+	.home .mi_carrera p {
+		font-size: 0.95rem;
+	}
+	/* Mi carrera end */
+
+	/* Como funciona */
+	.home .como_funciona {
+		margin-bottom: 60px;
+	}
+
+	.home .como_funciona p {
+		font-size: 0.95rem;
+	}
+	/* Como funciona end */
+
+	/* Generamos Cambios */
+	.home .generamos_cambios {
+		margin-bottom: 60px;
+	}
+
+	.home .generamos_cambios p {
+		font-size: 0.95rem;
+	}
+	/* Generamos Cambios end */
+
+	/* Profesionalizamos */
+	.home .profesionalizamos {
+		margin-bottom: 60px;
+	}
+
+	.home .profesionalizamos p {
+		font-size: 0.85rem;
+	}
+	/* Profesionalizamos end */
+
+	/* Testimonios */
+	.home .testimonios {
+		margin-bottom: 60px;
+	}
+	.home .testimonios h2 {
+		text-align: left;
+	}
+	/* Testimonios end */
+
+	/* Accede */
+	.home .accede {
+		height: 500px;
+	}
+
+	.home .accede h2 {
+		font-size: 1.75rem;
+		margin-bottom: 30px;
+	}
+
+	.home .accede p {
+		margin-bottom: 60px;
+	}
+	/* Accede end */
+
+	/* Logos */
+	.home .logos img {
+		max-width: 85%;
+	}
+	/* Logos end */
+
+}
+
+@media (min-width: 992px) {
+
+	.home h2 {
+		font-size: 1.75rem;
+	}
+
+	/* El Metodo */
+	.home .el_metodo .col-md-6 {
+		align-items: center;
+	}
+
+	.home .el_metodo h1 {
+		font-size: 2.5rem;
+	}
+
+	.home .el_metodo p {
+		font-size: 1.15rem;
+	}
+	/* El Metodo end */
+
+	/* Planificando */
+	.home .planificando p {
+		font-size: 1.15rem;
+	}
+	/* Planificando end */
+
+	/* Diferencial */
+	.home .diferencial p {
+		font-size: 1.15rem;
+	}
+	/* Diferencial end */
+
+	/* Mi carrera */
+	.home .mi_carrera p {
+		font-size: 1.15rem;
+	}
+	/* Mi carrera end */
+
+	/* Como funciona */
+	.home .como_funciona p {
+		font-size: 1.15rem;
+	}
+	/* Como funciona end */
+
+	/* Generamos Cambios */
+	.home .generamos_cambios p {
+		font-size: 1.15rem;
+	}
+	/* Generamos Cambios end */
+
+	/* Profesionalizamos */
+	.home .profesionalizamos p {
+		font-size: 1.15rem;
+	}
+	/* Profesionalizamos end */
+
+	/* Logos */
+	.home .logos img {
+		max-width: 100%;
+	}
+	/* Logos end */
+
+}
+
+@media (min-width: 1200px) {
+
+	/* El Metodo */
+	.home .el_metodo h1 {
+		font-size: 3rem;
+	}
+
+	.home .el_metodo p {
+		font-size: 1.25rem;
+	}
+	/* El Metodo end */
+
+	/* Planificando */
+	.home .planificando p {
+		font-size: 1.25rem;
+	}
+	/* Planificando end */
+
+	/* Diferencial */
+	.home .diferencial p {
+		font-size: 1.25rem;
+	}
+	/* Diferencial end */
+
+	/* Mi carrera */
+	.home .mi_carrera p {
+		font-size: 1.25rem;
+	}
+	/* Mi carrera end */
+
+	/* Como funciona */
+	.home .como_funciona p {
+		font-size: 1.25rem;
+	}
+	/* Como funciona end */
+
+	/* Generamos Cambios */
+	.home .generamos_cambios p {
+		font-size: 1.25rem;
+	}
+	/* Generamos Cambios end */
+
+	/* Profesionalizamos */
+	.home .profesionalizamos p {
+		font-size: 1.25rem;
+	}
+	/* Profesionalizamos end */
+
+	/* Equipo */
+	.home .equipo .content_integrante h4 {
+		font-size: 1.25rem;
+	}
+
+	.home .equipo .content_integrante {
+		min-height: 110px;
+	}
+	/* Equipo end */
+
+	/* Accede */
+	.home .accede p {
+		font-size: 1.25rem
+	}
+	/* Accede end */
+
+}
+
+@media (min-width: 1400px) {
+
+	.home .puntos_left {
+		display: inline-block;
+	  position: absolute;
+	  top: 45px;
+	  left: 15px;
+	  max-width: 15%;
+	}
+
+	.home .puntos_right {
+		display: inline-block;
+	  position: absolute;
+	  top: 45px;
+	  right: 15px;
+	  max-width: 15%;
+	}
+
+	/* Equipo */
+	.home .puntos_right_equipo {
+		display: inline-block;
+	  position: absolute;
+	  right: 15px;
+	  max-width: 15%;
+	  bottom: 25px;
+	}
+	/* Equipo end */
+
+}
+
+
+
+

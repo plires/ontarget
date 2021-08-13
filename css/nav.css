@@ -1,0 +1,186 @@
+nav {
+  position: relative;
+  background: white;
+  height: 85px;
+}
+
+nav ul {
+  margin: 0;
+  padding: 10px;
+  position: absolute;
+  width: 100%;
+  top: -365px;
+  left: 0;
+  background-color: var(--primary-color);
+  z-index: 10;
+}
+
+nav ul.active {
+  top: 85px;
+  height: 365px;
+}
+
+nav ul li {
+  padding: 10px;
+}
+
+nav ul li a {
+  position: relative;
+  left: 0;
+  color: white;
+  width: 100%;
+  font-size: 1.25rem;
+}
+
+nav ul li a:hover {
+  left: 10px;
+  color: #40c9f7;
+}
+
+nav ul li:last-child {
+  padding-bottom: 0;
+  padding-top: 15px;
+  border-top: white 1px solid;
+  display: flex;
+  justify-content: flex-end;
+}
+
+nav ul li:last-child a {
+  width: auto;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+nav ul li:last-child a:hover {
+  left: 0;
+}
+
+nav ul li:last-child a:hover i {
+  color: #40c9f7;
+}
+
+nav ul li i {
+  color: white;
+  font-size: 1.5rem;
+}
+
+nav .logo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+}
+
+nav .logo img {
+  max-width: 250px;
+}
+
+nav .logo .menu_mobile {
+  z-index: 99;
+}
+
+nav .logo .menu_mobile i {
+  color: var(--primary-color);
+  font-size: 1.25rem;
+  cursor: pointer;
+}
+
+/* MEDIA QUERIES */
+@media (min-width: 576px) {
+
+}
+
+@media (min-width: 768px) {
+
+}
+
+@media (min-width: 992px) {
+
+  nav .logo .menu_mobile i {
+    display: none;
+  }
+
+  nav {
+    display: flex;
+    justify-content: space-around;
+  }
+
+  nav ul,
+  nav ul.active {
+    position: relative;
+    display: flex;
+    justify-content: flex-end;
+    top: 0;
+    height: 85px;
+    background-color: transparent;
+  }
+
+  nav ul li {
+    display: flex;
+    align-items: center;
+  }
+
+  nav ul li a {
+    color: var(--primary-color);
+    font-size: 0.95rem;
+  }
+
+  nav ul li a:hover {
+    left: 0;
+  }  
+
+  nav ul li:last-child {
+    padding: 10px;
+  }
+
+  nav ul li:last-child a {
+    border-left: var(--primary-color) 2px solid;
+    padding-left: 10px;
+  }
+
+  nav ul li:last-child i {
+    color: var(--primary-color);
+  }
+
+}
+
+@media (min-width: 1200px) {
+
+  nav ul li a {
+    font-size: 1.25rem;
+    font-weight: 700;
+  }
+
+}
+
+@media (min-width: 1400px) {
+
+  nav,
+  nav ul {
+    height: 150px;
+  }
+
+  nav .logo img {
+    max-width: 100%;
+  }
+
+  nav ul li {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  nav ul li a {
+    font-size: 1.35rem;
+  }
+
+  nav ul li:last-child i {
+    font-size: 2.5rem;
+    font-weight: 400;
+  }
+
+}
+
+
+
+
