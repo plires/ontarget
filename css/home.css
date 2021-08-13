@@ -8,20 +8,6 @@
   position: relative;
 }
 
-.home .puntos_left,
-.home .puntos_right,
-.home .puntos_right_equipo {
-  display: none;
-}
-
-.home p {
-  color: var(--primary-color);
-}
-
-.home .bg_gris {
-	background-color: #f4f4f6;
-}
-
 .home .btn_ontarget {
 	margin-top: 15px;
 	font-weight: 700;
@@ -57,11 +43,6 @@
 	margin-bottom: 15px;
 }
 
-.home h2 {
-	text-align: center;
-	font-size: 1.5rem;
-	font-weight: 700;
-}
 /* El Metodo end */
 
 /* Planificando */
@@ -298,10 +279,6 @@
 
 @media (min-width: 768px) {
 
-	.home h2 {
-		margin-bottom: 15px;
-	}
-
 	.home .el_metodo .col-md-6 img,
 	.home .planificando .col-md-6 img,
 	.home .diferencial .col-md-6 img,
@@ -446,10 +423,6 @@
 
 @media (min-width: 992px) {
 
-	.home h2 {
-		font-size: 1.75rem;
-	}
-
 	/* El Metodo */
 	.home .el_metodo .col-md-6 {
 		align-items: center;
@@ -570,36 +543,6 @@
 		font-size: 1.25rem
 	}
 	/* Accede end */
-
-}
-
-@media (min-width: 1400px) {
-
-	.home .puntos_left {
-		display: inline-block;
-	  position: absolute;
-	  top: 45px;
-	  left: 15px;
-	  max-width: 15%;
-	}
-
-	.home .puntos_right {
-		display: inline-block;
-	  position: absolute;
-	  top: 45px;
-	  right: 15px;
-	  max-width: 15%;
-	}
-
-	/* Equipo */
-	.home .puntos_right_equipo {
-		display: inline-block;
-	  position: absolute;
-	  right: 15px;
-	  max-width: 15%;
-	  bottom: 25px;
-	}
-	/* Equipo end */
 
 }
 

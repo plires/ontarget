@@ -1,22 +1,472 @@
+/* Que voy a aprender */
+.aprender h1 {
+  margin-top: 30px;
+}
+
+.aprender h2 {
+  font-size: 2rem;
+}
+
+.aprender .iconos
+{
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
+  margin-top: 20px;
+}
+
+.aprender .iconos div {
+  display: flex;
+  max-width: 33.33%;
+  width: 33.33%;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  text-align: center;
+}
+
+.aprender .iconos div img {
+  max-width: 35%;
+}
+
+.aprender .iconos div p {
+  margin: 0;
+  font-size: 1.15rem;
+  display: flex;
+  flex-direction: column;
+  color: var(--third-color);
+  font-weight: 700;
+}
+
+.aprender .iconos div p span {
+  display: inline-block;
+  margin-top: -5px;
+  font-size: 0.775rem;
+  color: black;
+  font-weight: 700;
+}
+
+.aprender .faja_separadora {
+  height: 5px;
+  width: 70%;
+  margin: 30px auto;
+}
+/* Que voy a aprender end */
+
+/* Lo que aprenderas */
+.aprender .lo_que_aprenderas .unidad {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+
+.aprender .lo_que_aprenderas .unidad div {
+  border: 1px solid var(--third-color);
+  border-top-right-radius: 10px;
+  margin-bottom: 10px;
+  padding-right: 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.aprender .lo_que_aprenderas .unidad div p {
+  font-size: 0.75rem;
+  background-color: var(--third-color);
+  color: white;
+  padding: 5px;
+  font-weight: 500;
+  line-height: 1.1;
+  margin-bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  flex-direction: column;
+}
+
+.aprender .lo_que_aprenderas .unidad div p span {
+  font-size: 2rem;
+  font-weight: 900;
+}
+
+.aprender .lo_que_aprenderas .unidad h3 {
+  font-size: 1rem;
+  color: var(--primary-color);
+  font-weight: 700;
+  margin-bottom: 0;
+  margin: auto;
+  text-align: center;
+}
+
+.aprender .lo_que_aprenderas .parrafo_unidad {
+  font-size: 0.875rem;
+}
+/* Lo que aprenderas end */
+
+/* Acerca de Adrian */
+.aprender .adrian {
+  text-align: center;
+  padding: 0;
+  background-color: #d8dae6;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  margin-bottom: 30px;
+}
+
+.aprender .adrian h2 {
+  margin-bottom: 20px;
+}
+
+.aprender .adrian p {
+  margin-bottom: 0;
+}
+
+.aprender .adrian img {
+  margin-bottom: 15px;
+}
+/* Acerca de Adrian end */
+
+/* Formulario */
+.aprender .formulario {
+  padding-bottom: 60px;
+}
+
+.aprender .formulario .content_form {
+  padding: 15px;
+  text-align: center;
+}
+
+.aprender .formulario h4 {
+  text-align: center;
+  font-weight: 900;
+  font-size: 1.15rem;
+  margin-bottom: 20px;
+}
+
+.aprender .formulario .col-md-5 {
+  text-align: center;
+}
+
+.aprender .formulario .col-md-5 img {
+  margin-bottom: 20px;
+  max-width: 50%;
+}
+
+.aprender .formulario .titulo_formulario {
+  background-color: var(--secondary-color);
+  padding: 15px;
+  margin-bottom: 10px;
+  margin-left: -15px;
+  margin-right: -15px;
+  margin-top: -15px;
+}
+.aprender .formulario .parrafo_formulario {
+  text-align: center;
+}
+
+.aprender .formulario .btn-primary {
+  background-color: var(--secondary-color);
+  color: var(--primary-color);
+  border: 1px solid var(--secondary-color);
+  font-weight: 700;
+}
+
+.aprender .formulario .btn-primary:hover {
+  background-color: var(--primary-color);
+  color: white;
+  border: 1px solid var(--primary-color);
+  font-weight: 700;
+}
+/* Formulario end */
+
 
 /* MEDIA QUERIES */
 @media (min-width: 576px) {
+
+  /* Que voy a aprender */
+  .aprender .iconos div p {
+    font-size: 1.5rem;
+  }
+
+  .aprender .iconos div p span {
+    font-size: 1rem;
+  }
+  /* Que voy a aprender end */
+
+  /* Lo que aprenderas */
+  .aprender .lo_que_aprenderas .unidad div {
+    border: transparent;
+    justify-content: flex-start;
+    padding-right: 0;
+  }
+
+  .aprender .lo_que_aprenderas .col-md-12 p {
+    margin-bottom: 30px;
+  }
+
+  .aprender .lo_que_aprenderas .unidad div p {
+    font-size: 0.75rem;
+    background-color: transparent;
+    color: var(--third-color);
+    padding: 0;
+  }
+
+  .aprender .lo_que_aprenderas .unidad h3 {
+    font-size: 1.15rem;
+    margin: 0;
+    text-align: left;
+  }
+
+  .aprender .lo_que_aprenderas .unidad_numero {
+    margin-right: 30px;
+  }
+
+  .aprender .lo_que_aprenderas .parrafo_unidad {
+    text-align: left;
+    font-size: 1rem;
+  }
+  /* Lo que aprenderas end */
 
 }
 
 @media (min-width: 768px) {
 
+  .aprender h2 {
+    font-size: 1.75rem;
+  }
+
+  /* Que voy a aprender */
+  .aprender .que_voy_aprender .intro_metodo {
+    font-weight: 700;
+  }
+
+  .aprender .iconos div p span {
+    font-size: 1.2rem;
+  }
+  /* Que voy a aprender end */
+
+  /* Lo que aprenderas */
+  .aprender .lo_que_aprenderas .col-md-12 p {
+    margin-bottom: 60px;
+  }
+
+  .aprender .lo_que_aprenderas .unidad div p {
+    font-size: 1rem;
+    line-height: 1;
+    width: 100px;
+  }
+
+  .aprender .lo_que_aprenderas .unidad div p span {
+    font-size: 4rem;
+  }
+
+  .aprender .lo_que_aprenderas .col-md-12 p {
+    margin-bottom: 40px;
+  }
+
+  .aprender .lo_que_aprenderas .col-md-12 .intro {
+    font-weight: 700;
+  }
+
+  .aprender .lo_que_aprenderas .unidad h3 {
+    font-size: 1.4rem;
+    margin-bottom: 5px;
+  }
+
+  .aprender .lo_que_aprenderas .unidad div {
+    align-items: flex-end;
+  }
+  /* Lo que aprenderas end */
+
+  /* Adrian */
+  .aprender .adrian .col-md-8,
+  .aprender .adrian .col-md-4 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .aprender .adrian p {
+    text-align: left;
+  }
+  /* Adrian end */
+
+  /* Formulario */
+  .aprender .formulario .col-md-5,
+  .aprender .formulario .col-md-7 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .aprender .formulario .col-md-5 img {
+    max-width: 100%;
+  }
+  /* Formulario end */
+
 }
 
 @media (min-width: 992px) {
+
+  /* Que voy a aprender */
+  .aprender .iconos {
+    margin-top: 40px;
+  }
+  /* Que voy a aprender end */
+
+  /* Que voy a aprender */
+  .aprender h1 {
+    font-size: 2.5rem;
+    margin-top: 60px;
+    margin-bottom: 30px;
+  }
+
+  .aprender h2 {
+    font-size: 2.5rem;
+  }
+
+  .aprender .intro_metodo {
+    font-size: 1.25rem;
+    margin-bottom: 30px;
+  }
+
+  .aprender .faja_separadora {
+    height: 10px;
+    margin: 60px auto;
+  }
+  /* Que voy a aprender end */
+
+  /* Lo que aprenderas */
+  .aprender .lo_que_aprenderas .col-md-12 .intro {
+    font-size: 1.25rem;
+  }
+
+  .aprender .lo_que_aprenderas .unidad h3 {
+    font-size: 1.65rem;
+  }
+
+  .aprender .lo_que_aprenderas .unidad div p {
+    margin-right: 60px;
+  }
+
+  .aprender .lo_que_aprenderas .unidad div p span {
+      font-size: 4.75rem;
+  }
+  /* Lo que aprenderas end */
+
+  /* Adrian */
+  .aprender .adrian .faja_sobre_titulo_izq {
+    display: inline-block !important;
+    position: absolute;
+    left: 15px;
+    top: 0;
+    width: 160px;
+    height: 10px;
+  }
+  /* Adrian end */
+
+  /* Formulario */
+  .aprender .formulario h4 {
+    font-size: 1.5rem;
+    margin-top: 60px;
+    margin-bottom: 40px;
+  }
+
+  .aprender .formulario .col-md-5 img {
+    margin: 0;
+  }
+
+  .aprender .formulario .content_form {
+    min-height: 475px;
+  }
+
+  .aprender .formulario .parrafo_formulario {
+    margin: 30px 0;
+    font-weight: 500;
+    font-size: 1.25rem;
+  }
+
+  .aprender .formulario .btn-primary {
+    margin-top: 20px;
+  }
+  /* Formulario end */
 
 }
 
 @media (min-width: 1200px) {
 
+  .aprender h1,
+  .aprender h2 {
+    font-size: 3rem;
+  }
+
+  .aprender h2 {
+    margin-bottom: 30px;
+  }
+
+  /* Que voy a aprender */
+  .aprender .iconos div {
+    flex-direction: row;
+    text-align: left;
+  }
+
+  .aprender .iconos div img {
+    margin-right: 20px;
+  }
+
+  .aprender .iconos div p {
+    font-size: 2rem;
+  }
+  /* Que voy a aprender end */
+
+  /* Lo que aprenderas */
+  .aprender .lo_que_aprenderas .unidad .parrafo_unidad {
+      font-size: 1.25rem;
+  }
+
+  .aprender .lo_que_aprenderas .unidad div p {
+    margin-right: 80px;
+  }
+  /* Lo que aprenderas end */
+
+  /* Adrian */
+  .aprender .adrian p {
+      font-size: 1.25rem;
+  }
+  /* Adrian end */
+
+  /* Formulario */
+  .aprender .formulario .content_form {
+      min-height: 575px;
+  }
+
+  .aprender .formulario .content_form .form-group {
+      margin-bottom: 35px;
+  }
+
+  .aprender .formulario .btn-primary {
+      font-size: 1.25rem;
+  }
+  /* Formulario end */
+
 }
 
 @media (min-width: 1400px) {
+
+  /* Formulario */
+  .aprender .formulario {
+    position: relative;
+  }
+
+  .puntos_left {
+    display: inline-block;
+    position: absolute;
+    top: calc(50% - 125px);
+    left: 15px;
+    max-width: 15%;
+  }
+  /* Formulario end */
+
 
 }
 

@@ -21,33 +21,36 @@
 	<!-- Nav -->
 	<?php include('includes/nav.php'); ?>
 
-	<section class="home">
+	<section class="aprender">
 
 		<div class="bg_gris">
 
 			<!-- Que voy a aprender -->
-			<section class="aprender container">
+			<section class="que_voy_aprender container text-center">
 				<div class="row">
 					<div class="col-md-12">
 
 						<h1><span>¿Qué voy a aprender?</span></h1>
-						<p>
+						<p class="intro_metodo">
 							Bienvenido al Método OnTarget, queremos alentarte a que te sumes a nuestro equipo. Porque somos como vos y estamos para ayudarte a proyectar aquello que querés ser. Se parte de nuestro estilo de vida, se parte del Método Ontarget.
 						</p>
-						<img class="img-fluid" src="img/aprender/video.jpg" alt="video ontarget">
+						
+						<div class="embed-responsive embed-responsive-16by9">
+						  <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/zpOULjyy-n8?rel=0" allowfullscreen></iframe>
+						</div>
 
 						<div class="iconos">
 							<div>
 								<img class="img-fluid" src="img/aprender/inscriptos.png" alt="icono inscriptos">
-								<p>300<span>Inscritos</span></p>								
+								<p>300+<span>Inscritos</span></p>					
 							</div>
 							<div>
 								<img class="img-fluid" src="img/aprender/tiempo.png" alt="icono tiempo">
-								<p>300<span>Inscritos</span></p>								
+								<p>120 min.<span>Masterclass</span></p>				
 							</div>
 							<div>
 								<img class="img-fluid" src="img/aprender/historias.png" alt="icono historias">
-								<p>300<span>Inscritos</span></p>								
+								<p>450<span>Historias de estudiantes</span></p>
 							</div>
 						</div>
 
@@ -60,11 +63,11 @@
 			<!-- Que voy a aprender end -->
 
 			<!-- Lo que aprenderas -->
-			<section class="lo_que_aprenderas container">
+			<section class="lo_que_aprenderas text-center container">
 				<div class="row">
 					<div class="col-md-12">
 						<h2>Lo Que Aprenderás</h2>	
-						<p>
+						<p class="intro">
 							¡Bienvenidos al Método Ontarget Online Un lugar para todo aquel que quiera superarse y ser un gran consultor de seguros.
 						</p>
 
@@ -75,7 +78,7 @@
 								</p>
 								<h3>Aprendiendo <br>sobre el <span>Método OnTarget</span></h3>
 							</div>
-							<p>
+							<p class="parrafo_unidad">
 								Esta unidad está dividida en 4 capítulos que nos llevarán por todos los caminos para aprender y lograr los objetivos planteados, tus objetivos. También aprenderemos sobre los clientes y cómo vincularnos con ellos.
 							</p>
 						</div>
@@ -87,7 +90,7 @@
 								</p>
 								<h3>Seamos <br>Asesores Profesionales</h3>
 							</div>
-							<p>
+							<p class="parrafo_unidad">
 								Esta Unidad está dividida en 6 capítulos y hablaremos sobre la ruptura de paradigmas en la profesión para lograr entender las necesidades de cada cliente.
 							</p>
 						</div>
@@ -99,7 +102,7 @@
 								</p>
 								<h3>El profesional <br>Comprometido</h3>
 							</div>
-							<p>
+							<p class="parrafo_unidad">
 								Esta Unidad está dividida en 3 capítulos y aquí vamos a estudiar una de las partes fundamentales del proceso, el compromiso del prospecto. También fortaleceremos la idea de la relación con ellos.
 							</p>
 						</div>
@@ -111,7 +114,7 @@
 								</p>
 								<h3>La Confianza</h3>
 							</div>
-							<p>
+							<p class="parrafo_unidad">
 								Esta Unidad está dividida en 4 capítulos; cada uno sabe de lo que es capaz, pero tenemos que afianzar una cosa: Tener plena confianza en nosotros mismos. Y esto es justo lo que vamos a abordar aquí.
 							</p>
 						</div>
@@ -123,7 +126,7 @@
 								</p>
 								<h3>La Imagen Profesional</h3>
 							</div>
-							<p>
+							<p class="parrafo_unidad">
 								Esta Unidad está dividida en 3 capítulos. Tenemos casi todo resuelto, pero siempre hay un paso más que dar. Esta unidad está relacionada directamente a la imagen profesional que cada uno de ustedes debe lograr formar y presentar delante de cada persona. 
 							</p>
 						</div>
@@ -135,7 +138,7 @@
 								</p>
 								<h3>La Productividad</h3>
 							</div>
-							<p>
+							<p class="parrafo_unidad">
 								Esta Unidad está dividida en 6 capítulos. aquí vamos a recorrer el final del camino para comenzar el principio del recorrido. Vamos a sumergirnos en lo más profundo de cada detalle para no dejar nada librado al azar, o al destino, que no siempre puede estar de nuestro lado. Aquí les daremos la bienvenida al comienzo de su carrera.
 							</p>
 						</div>
@@ -157,11 +160,11 @@
 					</div>
 
 					<div class="row">						
-						<div class="col-md-4">
+						<div class="col-md-4 col-lg-3">
 							<img class="img-fluid" src="img/aprender/adrian.jpg" alt="adrian anselmi">
 						</div>
 
-						<div class="col-md-8">
+						<div class="col-md-8 col-lg-9">
 							<div class="faja_sobre_titulo_izq"></div>
 							<p>
 								Se desarrolló de manera independiente, alcanzando siempre sus metas profesionales, adquirió habilidades y herramientas que lo convierten hoy en día en un referente para nuevos líderes en el mercado asegurador. En WG se destaca por su trabajo en el área de Recursos Humanos, realiza reclutamiento y capacitación de nuevos Productores Asesores, compartiendo sus conocimientos aprendidos en muchos años de oficio. 
@@ -190,57 +193,69 @@
 
 					<div class="row">						
 						<div class="col-md-5">
-							<img class="img-fluid" src="img/aprender/contacto.jpg" alt="imagen contacto">
+							<img class="img-fluid img_contact" src="img/aprender/contacto.jpg" alt="imagen contacto">
 						</div>
 						<div class="col-md-7">
-							<h4>Disponible por tiempo limitado</h4>
-							<p>
-								Todas las sesiones son en español y se reproducen en tu hora local
-							</p>
-							<form method="post" class="needs-validation" novalidate>
 
-								<!-- Nombre -->
-							  <div class="form-group">
-							    <input type="text" class="form-control" id="name" name="name" placeholder="Nombre *">
-							    <div class="invalid-feedback">
-						        Ingresá tu nombre
-						      </div>
-							  </div>
-								<!-- Nombre end -->
+							<div class="content_form bg_white">
+							
+								<h4 class="titulo_formulario">Disponible por tiempo limitado</h4>
+								<p class="parrafo_formulario">
+									Todas las sesiones son en español y se reproducen en tu hora local
+								</p>
+								<form method="post" class="needs-validation" novalidate>
 
-								<!-- Email -->
-							  <div class="form-group">
-							    <input type="email" class="form-control" id="email" name="email" placeholder="Email *">
-							    <div class="invalid-feedback">
-						        Ingresá tu email
-						      </div>
-							  </div>
-								<!-- Email end -->
+									<!-- Nombre -->
+								  <div class="form-group">
+								    <input type="text" class="form-control" id="name" name="name" placeholder="Nombre *">
+								    <div class="invalid-feedback">
+							        Ingresá tu nombre
+							      </div>
+								  </div>
+									<!-- Nombre end -->
 
-								<!-- Fecha -->
-								<div class="form-group">
-									<select id="date" name="date" class="custom-select">
-									  <option selected>Selecciona la Fecha</option>
-									  <option value="1">25 de Septiembre 2021</option>
-									  <option value="2">5 de Octubre 2021</option>
-									  <option value="3">12 de Noviembre 2021</option>
-									</select>
-								</div>
-								<!-- Fecha end -->
+									<!-- Email -->
+								  <div class="form-group">
+								    <input type="email" class="form-control" id="email" name="email" placeholder="Email *">
+								    <div class="invalid-feedback">
+							        Ingresá tu email
+							      </div>
+								  </div>
+									<!-- Email end -->
 
-								<!-- Hora -->
-								<div class="form-group">
-									<select id="time" name="time"  class="custom-select">
-									  <option selected>Selecciona la Hora</option>
-									  <option value="1">08:00</option>
-									  <option value="2">16:00</option>
-									  <option value="3">18:30</option>
-									</select>
-								</div>
-								<!-- Hora end -->
-							 
-							  <button type="submit" id="send_metodo" name="send_metodo" class="btn btn-primary">Hazte miembro Ahora</button>
-							</form>
+									<!-- Fecha -->
+									<div class="form-group">
+										<select id="date" name="date" class="custom-select">
+										  <option selected>Selecciona la Fecha</option>
+										  <option value="1">25 de Septiembre 2021</option>
+										  <option value="2">5 de Octubre 2021</option>
+										  <option value="3">12 de Noviembre 2021</option>
+										</select>
+									</div>
+									<!-- Fecha end -->
+
+									<!-- Hora -->
+									<div class="form-group">
+										<select id="time" name="time"  class="custom-select">
+										  <option selected>Selecciona la Hora</option>
+										  <option value="1">08:00</option>
+										  <option value="2">16:00</option>
+										  <option value="3">18:30</option>
+										</select>
+									</div>
+									<!-- Hora end -->
+								 
+								  <button 
+								  	type="submit" 
+							  		id="send_metodo" 
+							  		name="send_metodo" 
+							  		class="btn btn-primary transition">
+							  			Hazte miembro Ahora
+						  		</button>
+								</form>
+
+							</div>
+
 						</div>
 					</div>
 					
