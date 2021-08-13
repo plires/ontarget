@@ -7,8 +7,7 @@
   font-size: 2rem;
 }
 
-.aprender .iconos
-{
+.aprender .iconos {
   display: flex;
   justify-content: space-between;
   align-content: center;
@@ -408,6 +407,11 @@
   .aprender .iconos div {
     flex-direction: row;
     text-align: left;
+  }
+
+  .aprender .iconos {
+    background-color: #d8dae6;
+    padding: 30px;
   }
 
   .aprender .iconos div img {
