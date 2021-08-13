@@ -8,11 +8,14 @@
   position: relative;
 }
 
-.home .linea_gradient_on_img,
 .home .puntos_left,
 .home .puntos_right,
 .home .puntos_right_equipo {
   display: none;
+}
+
+.home p {
+  color: var(--primary-color);
 }
 
 .home .bg_gris {
@@ -38,30 +41,25 @@
 
 .home .el_metodo .col-md-12,
 .home .el_metodo .col-md-6 {
+	position: relative;
 	display: flex;
 	justify-content: center;
 	align-items: center;
+}
+
+.home .el_metodo .faja_mitad_foto,
+.home .faja_sobre_titulo_izq,
+.home .faja_sobre_titulo_der {
+	display: none;
 }
 
 .home .el_metodo .col-md-6 img {
 	margin-bottom: 15px;
 }
 
-.home .el_metodo h1 {
-	margin-top: 60px;
-	margin-bottom: 15px;
-	font-size: 2rem;
-	text-align: center;
-	font-weight: 400;
-}
-
 .home h2 {
 	text-align: center;
 	font-size: 1.5rem;
-	font-weight: 700;
-}
-
-.home .el_metodo h1 span {
 	font-weight: 700;
 }
 /* El Metodo end */
@@ -304,6 +302,26 @@
 		margin-bottom: 15px;
 	}
 
+	.home .el_metodo .col-md-6 img,
+	.home .planificando .col-md-6 img,
+	.home .diferencial .col-md-6 img,
+	.home .mi_carrera .col-md-6 img,
+	.home .generamos_cambios .col-md-6 img,
+	.home .como_funciona .col-md-6 img,
+	.home .profesionalizamos .col-md-6 img {
+		margin-bottom: 0;
+	}
+
+	.home .el_metodo .col-md-6 p,
+	.home .planificando .col-md-6 p,
+	.home .diferencial .col-md-6 p,
+	.home .mi_carrera .col-md-6 p,
+	.home .generamos_cambios .col-md-6 p,
+	.home .como_funciona .col-md-6 p,
+	.home .profesionalizamos .col-md-6 p {
+		padding-top: 30px;
+	}
+
 	/* El Metodo */
 	.home .el_metodo {
 		margin-bottom: 60px;
@@ -315,6 +333,22 @@
 
 	.home .el_metodo p {
 		font-size: 0.95rem;
+	}
+
+	.home .faja_sobre_titulo_izq,
+	.home .faja_sobre_titulo_der {
+		display: inline-block!important;
+		position: absolute;
+		top: 0;
+		
+		width: 160px;
+		height: 15px;
+	}
+	.home .faja_sobre_titulo_izq {
+		left: 15px;
+	}
+	.home .faja_sobre_titulo_der {
+		right: 15px;
 	}
 	/* El Metodo end */
 
@@ -421,10 +455,6 @@
 		align-items: center;
 	}
 
-	.home .el_metodo h1 {
-		font-size: 2.5rem;
-	}
-
 	.home .el_metodo p {
 		font-size: 1.15rem;
 	}
@@ -466,6 +496,14 @@
 	}
 	/* Profesionalizamos end */
 
+	/* Testimonios */
+	.home .faja_sobre_imagen {
+		display: inline-block;
+		width: 140px;
+		height: 10px;
+		margin-bottom: 30px;
+	}
+
 	/* Logos */
 	.home .logos img {
 		max-width: 100%;
@@ -475,11 +513,6 @@
 }
 
 @media (min-width: 1200px) {
-
-	/* El Metodo */
-	.home .el_metodo h1 {
-		font-size: 3rem;
-	}
 
 	.home .el_metodo p {
 		font-size: 1.25rem;

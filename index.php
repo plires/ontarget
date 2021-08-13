@@ -3,6 +3,7 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="Nuestro Método On Target es un camino sólido para la formación de nuevos profesionales en el mercado asegurador">
 	<title>Ontarget - El Método</title>
 
 	<!-- Favicons -->
@@ -40,6 +41,7 @@
 						<img class="img-fluid" src="img/home/hombre-telefono.jpg" alt="hombre telefono">
 					</div>
 					<div class="col-md-6">
+						<div class="faja_sobre_titulo_izq"></div>
 						<p>
 							El mundo está cambiando y nuevas tecnologías están transformando los trabajos y las carreras. La educación tradicional nunca nos preparó para esto, pero nosotros te enseñamos cómo prosperar en el nuevo mundo con educación relevante más allá del 2021. Y nos detendremos ahí, gracias a las nuevas tecnologías creamos una gran plataforma para conectarte con todo el contenido y con nuestro equipo. Creemosque podemos marcar tendencia planificando tu futuro.
 						</p>
@@ -64,7 +66,7 @@
 							<img class="img-fluid" src="img/home/hombre-risa.jpg" alt="hombre risa">
 						</div>
 						<div class="col-md-6">
-							<img class="img-fluid linea_gradient_on_img" src="img/home/linea-gradient-img.jpg" alt="linea gradient">
+							<div class="faja_sobre_titulo_izq"></div>
 							<p>
 								Nuestro "Método On Target"  es un camino sólido para la formación de nuevos profesionales en el mercado asegurador, que se enfoca en brindar conocimientos en un ámbito de aprendizaje y contención constante para que cada nuevo miembro de la empresa pueda desarrollar todo su potencial profesional y personal.
 							</p>
@@ -89,7 +91,7 @@
 						</div>
 
 						<div class="col-md-6 order-2 order-md-1">
-							<img class="img-fluid linea_gradient_on_img" src="img/home/linea-gradient-img.jpg" alt="linea gradient">
+							<div class="faja_sobre_titulo_der"></div>
 							<p>
 								Creemos en tu potencial. Nuestro método y experiencia. Asesorar profesional de compañía líder del mercado. 
 							</p>
@@ -120,7 +122,7 @@
 							<img class="img-fluid" src="img/home/hombre-tablet.jpg" alt="hombre tablet">
 						</div>
 						<div class="col-md-6">
-							<img class="img-fluid linea_gradient_on_img" src="img/home/linea-gradient-img.jpg" alt="linea gradient 2">
+							<div class="faja_sobre_titulo_izq"></div>
 							<p>
 								Crecimiento profesional e ingresos acordes. Tener una profesión. Soñar y creer en grande. Trabajar de forma independiente con tiempos de dedicación organizados.
 							</p>
@@ -231,7 +233,7 @@
 						<div class="row slick_class">
 
 							<div class="card_testimonio">
-								<img class="img-fluid linea_gradient_on_img" src="img/home/linea-gradient-img.jpg" alt="linea gradient">
+								<div class="faja_sobre_imagen"></div>
 								<img class="img-fluid" src="img/home/testimonio-hombre.jpg" alt="testimonio hombre">
 								<div class="content_testimonio">
 									<p>
@@ -241,7 +243,7 @@
 							</div>
 
 							<div class="card_testimonio">
-								<img class="img-fluid linea_gradient_on_img" src="img/home/linea-gradient-img.jpg" alt="linea gradient">
+								<div class="faja_sobre_imagen"></div>
 								<img class="img-fluid" src="img/home/testimonio-muchacho.jpg" alt="testimonio muchacho">
 								<div class="content_testimonio">
 									<p>
@@ -251,7 +253,7 @@
 							</div>
 
 							<div class="card_testimonio">
-								<img class="img-fluid linea_gradient_on_img" src="img/home/linea-gradient-img.jpg" alt="linea gradient">
+								<div class="faja_sobre_imagen"></div>
 								<img class="img-fluid" src="img/home/testimonio-mujer.jpg" alt="testimonio mujer">
 								<div class="content_testimonio">
 									<p>
@@ -261,7 +263,7 @@
 							</div>
 
 							<div class="card_testimonio">
-								<img class="img-fluid linea_gradient_on_img" src="img/home/linea-gradient-img.jpg" alt="linea gradient">
+								<div class="faja_sobre_imagen"></div>
 								<img class="img-fluid" src="img/home/testimonio-hombre.jpg" alt="testimonio hombre">
 								<div class="content_testimonio">
 									<p>
@@ -271,7 +273,7 @@
 							</div>
 
 							<div class="card_testimonio">
-								<img class="img-fluid linea_gradient_on_img" src="img/home/linea-gradient-img.jpg" alt="linea gradient">
+								<div class="faja_sobre_imagen"></div>
 								<img class="img-fluid" src="img/home/testimonio-muchacho.jpg" alt="testimonio muchacho">
 								<div class="content_testimonio">
 									<p>
@@ -281,7 +283,7 @@
 							</div>
 
 							<div class="card_testimonio">
-								<img class="img-fluid linea_gradient_on_img" src="img/home/linea-gradient-img.jpg" alt="linea gradient">
+								<div class="faja_sobre_imagen"></div>
 								<img class="img-fluid" src="img/home/testimonio-mujer.jpg" alt="testimonio mujer">
 								<div class="content_testimonio">
 									<p>
