@@ -3,8 +3,7 @@
 .home .mi_carrera,
 .home .diferencial,
 .home .generamos_cambios,
-.home .profesionalizamos,
-.home .equipo {
+.home .profesionalizamos {
   position: relative;
 }
 
@@ -182,33 +181,6 @@
 }
 /* Testimonios end */
 
-/* Equipo */
-.home .equipo {
-	margin-bottom: 30px;
-}
-
-.home .equipo .integrante {
-	background-color: white;
-	margin-bottom: 30px;
-}
-
-.home .equipo .content_integrante {
-	padding: 15px;
-}
-
-.home .equipo .content_integrante h4 {
-	color: var(--primary-color);
-	margin-bottom: 5px;
-	font-size: 1.25rem;
-	font-weight: 700;
-}
-
-.home .equipo .content_integrante p {
-	color: black;
-	margin: 0;
-}
-/* Equipo end */
-
 /* Accede */
 .home .accede {
 	padding-top: 30px;
@@ -259,19 +231,6 @@
 /* Logos end */
 
 /* MEDIA QUERIES */
-
-@media (min-width: 480px) {
-
-	/* Equipo */
-	.home .equipo .content_integrante {
-		min-height: 100px;
-	}
-
-	.home .equipo .content_integrante h4 {
-		font-size: 1rem;
-	}
-	/* Equipo end */
-}
 
 @media (min-width: 576px) {
 
@@ -527,16 +486,6 @@
 		font-size: 1.25rem;
 	}
 	/* Profesionalizamos end */
-
-	/* Equipo */
-	.home .equipo .content_integrante h4 {
-		font-size: 1.25rem;
-	}
-
-	.home .equipo .content_integrante {
-		min-height: 110px;
-	}
-	/* Equipo end */
 
 	/* Accede */
 	.home .accede p {

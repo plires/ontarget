@@ -35,6 +35,34 @@ h2 {
   background-color: white;
 }
 
+/* Equipo */
+.equipo {
+  position: relative;
+  margin-bottom: 30px;
+}
+
+.equipo .integrante {
+  background-color: white;
+  margin-bottom: 30px;
+}
+
+.equipo .content_integrante {
+  padding: 15px;
+}
+
+.equipo .content_integrante h4 {
+  color: var(--primary-color);
+  margin-bottom: 5px;
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
+.equipo .content_integrante p {
+  color: black;
+  margin: 0;
+}
+/* Equipo end */
+
 .puntos_left,
 .puntos_right,
 .puntos_right_equipo {
@@ -86,6 +114,18 @@ a {
   transition: all ease-in-out .3s;
 }
 
+@media (min-width: 480px) {
+  /* Equipo */
+  .equipo .content_integrante {
+    min-height: 100px;
+  }
+
+  .equipo .content_integrante h4 {
+    font-size: 1rem;
+  }
+  /* Equipo end */
+}
+
 @media (min-width: 768px) {
 
   .home h2 {
@@ -112,6 +152,16 @@ a {
   .home .el_metodo h1 {
     font-size: 3rem;
   }
+
+  /* Equipo */
+  .equipo .content_integrante h4 {
+    font-size: 1.25rem;
+  }
+
+  .equipo .content_integrante {
+    min-height: 110px;
+  }
+  /* Equipo end */
   
 }
 

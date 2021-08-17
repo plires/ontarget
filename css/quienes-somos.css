@@ -1,0 +1,47 @@
+.quienes_somos .header {
+  background: url('../img/quienes-somos/header.jpg');
+  padding: 0;
+  background-position: 75% 50%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  margin-bottom: 60px;
+}
+
+.quienes_somos .header h1 {
+  font-weight: 900;
+  max-width: 80%;
+  text-align: left;
+  font-size: 1.5rem;
+}
+
+.quienes_somos .header p {
+  max-width: 80%;
+  text-align: left;
+  font-size: 0.85rem;
+}
+
+
+/* MEDIA QUERIES */
+@media (min-width: 576px) {
+
+}
+
+@media (min-width: 768px) {
+
+}
+
+@media (min-width: 992px) {
+
+}
+
+@media (min-width: 1200px) {
+
+}
+
+@media (min-width: 1400px) {
+
+}
+
+
+
+
