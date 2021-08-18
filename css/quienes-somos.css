@@ -1,3 +1,4 @@
+/* Header */
 .quienes_somos .header {
   background: url('../img/quienes-somos/header.jpg');
   padding: 0;
@@ -5,40 +6,178 @@
   background-size: cover;
   background-repeat: no-repeat;
   margin-bottom: 60px;
+  padding-bottom: 60px;
+  padding-top: 60px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.quienes_somos .header .col-md-12 {
+  position: relative;
+  padding-left: 30px;
 }
 
 .quienes_somos .header h1 {
+  position: relative;
   font-weight: 900;
-  max-width: 80%;
+  max-width: 75%;
   text-align: left;
   font-size: 1.5rem;
+  margin: 0;
+  margin-bottom: 30px;
+}
+
+.quienes_somos .header h1 br {
+  display: none;
+}
+
+.quienes_somos .header h1::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: -20px;
+  height: 8px;
+  width: 80px;
+  background: #30feff; /* Old browsers */
+  background: -moz-linear-gradient(left,  #30feff 0%, #6044ff 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(left,  #30feff 0%,#6044ff 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to right,  #30feff 0%,#6044ff 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#30feff', endColorstr='#6044ff',GradientType=1 ); /* IE6-9 */
 }
 
 .quienes_somos .header p {
-  max-width: 80%;
+  position: relative;
+  max-width: 65%;
   text-align: left;
   font-size: 0.85rem;
+  margin: 0;
 }
+
+.quienes_somos .header p::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -20px;
+  height: 8px;
+  width: 80px;
+  background: #30feff; /* Old browsers */
+  background: -moz-linear-gradient(left,  #30feff 0%, #6044ff 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(left,  #30feff 0%,#6044ff 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to right,  #30feff 0%,#6044ff 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#30feff', endColorstr='#6044ff',GradientType=1 ); /* IE6-9 */
+}
+/* Header end */
 
 
 /* MEDIA QUERIES */
 @media (min-width: 576px) {
 
+  /* Header */
+  .quienes_somos .header {
+    height: 400px;
+  }
+  /* Header end */
+
 }
 
 @media (min-width: 768px) {
+
+  /* Header */
+  .quienes_somos .header {
+    padding: 30px 0 30px 30px;
+  }
+  /* Header end */
 
 }
 
 @media (min-width: 992px) {
 
+  /* Header */
+  .quienes_somos .header {
+    height: 450px;
+  }
+
+  .quienes_somos .header .col-md-12 {
+    height: 300px;
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .quienes_somos .header h1 {
+    font-size: 2rem;
+    text-align: center;
+    max-width: 68%;
+    margin: 0;
+  }
+
+  .quienes_somos .header h1::before {
+    top: -30px;
+  }
+
+  .quienes_somos .header p {
+    max-width: 60%;
+    font-size: 1rem;
+  }
+
+  .quienes_somos .header p::after {
+    bottom: -30px;
+  }
+  /* Header end */
+
 }
 
 @media (min-width: 1200px) {
 
+  /* Header */
+  .quienes_somos .header h1 {
+    font-size: 2.3rem;
+  }
+  /* Header end */
+
 }
 
 @media (min-width: 1400px) {
+
+  /* Header */
+  .quienes_somos .header {
+    height: 700px;
+    padding-left: 150px;
+  }
+  .quienes_somos .header .col-md-12 {
+    height: 500px;
+
+  }
+
+  .quienes_somos .header h1 {
+    font-size: 3rem;
+    max-width: 100%;
+  }
+
+  .quienes_somos .header h1 br {
+    display: inline-block;
+  }
+
+  .quienes_somos .header h1::before {
+    top: -30px;
+    height: 12px;
+    width: 150px;
+  }
+
+  .quienes_somos .header p {
+    max-width: 65%;
+    font-size: 1.25rem;
+  }
+
+  .quienes_somos .header p::after {
+    bottom: -30px;
+    height: 12px;
+    width: 150px;
+  }
+  /* Header end */
 
 }
 

@@ -1,16 +1,17 @@
-<nav>
+<nav class="transition" id="nav">
 
   <div class="logo">
     <a href="./">
-      <img class="img-fluid" src="./img/nav/logo-ontarget.png" alt="logo ontarget">
+      <img class="img-fluid" src="#" alt="logo ontarget">
     </a>
     <div class="menu_mobile">
-      <a href="#"><i class="fas fa-bars toggle"></i></a>
+      <button><i class="fas fa-bars toggle"></i></button>
     </div>
   </div>
 
   <ul class="navigation transition">
-    <li><a class="transition" href="#">¿Qué Aprenderemos?</a></li>
+    <li><a class="transition" href="quienes-somos.php">Quienes Somos</a></li>
+    <li><a class="transition" href="aprender.php">¿Qué Aprenderemos?</a></li>
     <li><a class="transition" href="#">¿Cómo Funciona?</a></li>
     <li><a class="transition" href="#">Blog</a></li>
     <li><a class="transition" href="#">Eventos</a></li>

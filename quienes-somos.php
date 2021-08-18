@@ -27,11 +27,10 @@
 
 			<!-- Header -->
 			<section class="header container-fluid text-center">
-				<div class="container">
 					<div class="row">
 						<div class="col-md-12">
 
-							<h1>Aprende de los mejores profesionales el Método OnTarget</h1>
+							<h1>Aprende de los mejores profesionales <br> el Método OnTarget</h1>
 							<p>
 								OnTarget es el método de aprendizaje por excelencia del Grupo WGSA, es una compañía que nace de la visión de profesionales con espíritu emprendedor y amplia trayectoria en el mercado asegurador. Aquí se fusionan la experiencia de trabajo en un marco tradicional con un nuevo enfoque, más cálido y actual, en el que la prestancia y la comunicación con el cliente marcan la diferencia.
 							</p>
@@ -39,7 +38,6 @@
 						</div>
 						
 					</div>
-				</div>
 			</section>
 			<!-- Header end -->
 
@@ -60,9 +58,15 @@
 
 			<!-- Equipo -->
 			<?php include('includes/equipo.php'); ?>
+
+			<!-- Acceder Plataforma -->
+			<?php include('includes/acceder-plataforma.php'); ?>
 			
 
 		</div>
+
+		<!-- Logos -->
+		<?php include('includes/logos.php'); ?>
 
 	</section>
 
@@ -74,44 +78,4 @@
 <script type="text/javascript" src="./node_modules/slick-carousel/slick/slick.js"></script>
 <script type="text/javascript" src="js/app.js"></script>
 
-<script>
-	$(document).ready(function(){
-
-		$('.slick_class').slick({
-	  dots: false,
-	  appendArrows: false,
-	  autoplay: true,
-	  infinite: true,
-	  speed: 300,
-	  slidesToShow: 3,
-	  slidesToScroll: 1,
-	  responsive: [
-	    {
-	      breakpoint: 1024,
-	      settings: {
-	        slidesToShow: 3,
-	        infinite: true,
-	        dots: false,
-
-	      }
-	    },
-	    {
-	      breakpoint: 600,
-	      settings: {
-	        slidesToShow: 2,
-	        dots: false,
-	      }
-	    },
-	    {
-	      breakpoint: 480,
-	      settings: {
-	        slidesToShow: 1,
-	        dots: false,
-	      }
-	    }
-	  ]
-	});
-
-	})
-</script>
 </html>

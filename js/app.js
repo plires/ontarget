@@ -1,3 +1,5 @@
+const nav = document.getElementById('nav');
+
 // Nav
 $(function() {
     $(".toggle").on("click", function() {
@@ -16,3 +18,19 @@ $(function() {
     })
 })
 // Nav end
+
+
+function headerScroll() {
+    if ($(document).scrollTop() > nav.offsetHeight) {
+      $("#nav").addClass("fixed");
+    } else {
+      $("#nav").removeClass("fixed");
+    }
+}
+
+/* Scroll header */
+$(window).scroll(function() {
+    headerScroll()
+});
+
+headerScroll()

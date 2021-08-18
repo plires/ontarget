@@ -303,45 +303,15 @@
 			<!-- Equipo -->
 			<?php include('includes/equipo.php'); ?>
 
-			<!-- Accede a nuestra plataforma -->
-			<section class="accede container-fluid">
-				<div class="container h-100">
-					<div class="row h-100">
-						<div class="col-md-8 m-auto h-100">
-							<h2>Accede a nuesta Plataforma de Aprendizaje de manera inmediata</h2>
-							<p class="frase">
-								Solo necesitas un usuario y contraseña y obtendrás acceso al Método OnTarget, Webinars, Eventos y mucho más para poder empezar tu momento de cambio y profesionalizarte.
-							</p>
-							<buton class="btn btn_ontarget">Hazte miembro Ahora</buton>
-						</div>
-					</div>
-				</div>
-			</section>
-			<!-- Accede a nuestra plataforma end -->
+			<!-- Acceder Plataforma -->
+			<?php include('includes/acceder-plataforma.php'); ?>
+			
 
 		</div>
 
 		<!-- Logos -->
-		<section class="logos container-fluid p-0">
-			<div class="container">
-				<div class="row">
-					<div class="col-md-12">
-						<h2>Contamos con la confianza de estas empresas</h2>
-					</div>
-					
-					<div class="col-md-4">
-						<img class="img-fluid" src="img/home/zurich.png" alt="zurich">
-					</div>
-					<div class="col-md-4">
-						<img class="img-fluid" src="img/home/elbinger.png" alt="elbinger">
-					</div>
-					<div class="col-md-4">
-						<img class="img-fluid" src="img/home/zurich.png" alt="zurich">
-					</div>
-				</div>
-			</div>
-		</section>
-		<!-- Logos end -->
+		<?php include('includes/logos.php'); ?>
+		
 
 	</section>
 

@@ -66,7 +66,7 @@
 			<section class="lo_que_aprenderas text-center container">
 				<div class="row">
 					<div class="col-md-12">
-						<h2>Lo Que Aprenderás</h2>	
+						<h2>Lo Que Aprenderás</h2>
 						<p class="intro">
 							¡Bienvenidos al Método Ontarget Online Un lugar para todo aquel que quiera superarse y ser un gran consultor de seguros.
 						</p>
