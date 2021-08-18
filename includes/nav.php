@@ -12,7 +12,7 @@
   <ul class="navigation transition">
     <li><a class="transition" href="quienes-somos.php">Quienes Somos</a></li>
     <li><a class="transition" href="aprender.php">¿Qué Aprenderemos?</a></li>
-    <li><a class="transition" href="#">¿Cómo Funciona?</a></li>
+    <li><a class="transition" href="como-funciona.php">¿Cómo Funciona?</a></li>
     <li><a class="transition" href="#">Blog</a></li>
     <li><a class="transition" href="#">Eventos</a></li>
     <li><a class="transition" href="#">FAQ</a></li>
