@@ -1,0 +1,213 @@
+/* Plan de Estudios */
+.funciona .plan_estudios {
+  margin-bottom: 30px;
+}
+
+.funciona .plan_estudios p span {
+  font-weight: 700;
+}
+
+.funciona .plan_estudios .faja_sobre_titulo_izq {
+  display: inline-block;
+  width: 150px;
+  height: 5px;
+  margin-bottom: 15px;
+}
+/* Plan de Estudios end */
+
+/* Como funciona */
+.funciona .como_funciona {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.funciona .como_funciona .enunciado {
+  font-weight: 700;
+}
+
+.funciona .como_funciona img {
+  margin-bottom: 15px;
+}
+/* Como funciona end */
+
+/* Pasos */
+.funciona .pasos {
+  padding-bottom: 30px;
+}
+
+.funciona .pasos .content_pasos {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-end;
+  margin-bottom: 10px;
+}
+
+.funciona .pasos .paso_numero {
+  margin: 0;
+  color: var(--third-color);
+  font-weight: 900;
+  font-size: 2.75rem;
+  margin-right: 10px;
+  line-height: 0.9;
+}
+
+.funciona .pasos h3 {
+  margin: 0;
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
+.funciona .pasos .row {
+  margin-bottom: 15px;
+}
+
+.funciona .pasos .pasos_textos {
+  order: 1;
+}
+
+.funciona img {
+  margin-bottom: 10px;
+}
+
+.funciona .content_button {
+  text-align: center;
+}
+
+.funciona .btn_ontarget {
+  margin-top: 15px;
+  font-weight: 700;
+  font-size: 1.5rem;
+  border-radius: 10px;
+}
+
+/* Pasos end */
+
+
+@media (min-width: 480px) {
+  
+}
+
+@media (min-width: 576px) {
+
+}
+
+@media (min-width: 768px) {
+
+  /* Plan de Estudios */
+  .funciona .plan_estudios .col-md-6 {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .funciona .plan_estudios .faja_sobre_titulo_izq {
+    height: 10px;
+  }
+  /* Plan de Estudios end */
+
+  /* Pasos */
+  .funciona .pasos .col-md-6 {
+    margin-bottom: 30px;
+  }
+
+  .funciona .pasos .content_pasos {
+    position: relative;
+  }
+
+  .funciona .pasos .paso_numero::before {
+    content: '';
+    position: absolute;
+    width: 40px;
+    height: 10px;
+    top: calc(50% - 5px);
+    left: -40px;
+    background: #30feff; /* Old browsers */
+    background: -moz-linear-gradient(left,  #30feff 0%, #6044ff 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(left,  #30feff 0%,#6044ff 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to right,  #30feff 0%,#6044ff 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#30feff', endColorstr='#6044ff',GradientType=1 ); /* IE6-9 */
+  }
+
+  .funciona .pasos .cambiar_order {
+    justify-content: flex-end;
+  }
+
+  .funciona .pasos .paso_cambiar_orden::before {
+    left: 100%;
+  }
+
+  .funciona .pasos .pasos_textos {
+    order: 0;
+  }
+  /* Pasos end */
+
+}
+
+
+@media (min-width: 992px) {
+
+  /* Plan de Estudios */
+  .funciona .plan_estudios h1 {
+    font-size: 2.5rem;
+  }
+
+  .funciona .plan_estudios p {
+    font-size: 1.125rem;
+  }
+  /* Plan de Estudios end */
+
+  /* Como funciona */
+  .funciona .como_funciona .enunciado {
+    font-size: 1.2rem;
+  }
+
+  .funciona .pasos .paso_numero {
+    font-size: 3.5rem;
+  }
+
+  .funciona .pasos h3 {
+    font-size: 1.75rem;
+  }
+
+  .funciona .pasos p {
+    font-size: 1.2rem;
+  }
+  /* Como funciona end */
+  
+
+}
+
+@media (min-width: 1200px) {
+
+  /* Plan de Estudios */
+  .funciona .plan_estudios h1 {
+    font-size: 3rem;
+  }
+
+  .funciona .plan_estudios p {
+    font-size: 1.25rem;
+  }
+  /* Plan de Estudios end */
+
+}
+
+@media (min-width: 1400px) {
+
+  /* Plan de Estudios */
+  .funciona .plan_estudios {
+    position: relative;
+  }
+  /* Plan de Estudios end */
+
+  /* Como funciona */
+  .funciona .como_funciona .puntos_left {
+    top: 715px;
+  }
+
+  .funciona .como_funciona .puntos_right {
+    top: 1150px;
+  }
+  /* Como funciona end */
+
+}

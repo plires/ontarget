@@ -215,9 +215,8 @@
 		display: inline-block!important;
 		position: absolute;
 		top: 0;
-		
 		width: 160px;
-		height: 15px;
+		height: 10px;
 	}
 	.home .faja_sobre_titulo_izq {
 		left: 15px;
