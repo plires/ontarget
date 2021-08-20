@@ -14,6 +14,7 @@
 	<link rel="stylesheet" type="text/css" href="./node_modules/bootstrap/dist/css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="./node_modules/slick-carousel/slick/slick.css"/>
 	<link rel="stylesheet" type="text/css" href="./node_modules/slick-carousel/slick/slick-theme.css"/>
+	<link rel="stylesheet" type="text/css" href="./node_modules/aos/dist/aos.css"/>
 	<link rel="stylesheet" href="css/app.css">
 </head>
 <body>
@@ -23,7 +24,7 @@
 
 	<!-- Header -->
 	<header>
-		<img class="img-fluid" src="img/home/header.jpg" alt="header ontarget">
+		<img class="img-fluid image_no_shadow_rounded" src="img/home/header.jpg" alt="header ontarget">
 	</header>
 	<!-- Header end -->
 
@@ -32,13 +33,13 @@
 		<div class="bg_gris">
 
 			<!-- El metodo -->
-			<section class="el_metodo container">
+			<section data-aos="fade-up" class="el_metodo container">
 				<div class="row">
 					<div class="col-md-12">
 						<h1>El Método Educativo <br>de <span>ONTARGET</span></h1>
 					</div>
 					<div class="col-md-6">
-						<img class="img-fluid" src="img/home/hombre-telefono.jpg" alt="hombre telefono">
+						<img data-aos="flip-left" class="img-fluid" src="img/home/hombre-telefono.jpg" alt="hombre telefono">
 					</div>
 					<div class="col-md-6">
 						<div class="faja_sobre_titulo_izq"></div>
@@ -51,9 +52,9 @@
 			<!-- El metodo end -->
 
 			<!-- Planificando -->
-			<section class="planificando">
+			<section data-aos="fade-up" class="planificando">
 
-				<img class="img-fluid puntos_left" src="img/home/puntos.png" alt="puntos">
+				<img class="img-fluid puntos_left image_no_shadow_rounded" src="img/home/puntos.png" alt="puntos planificando">
 
 				<div class="container">
 
@@ -63,7 +64,7 @@
 						</div>
 
 						<div class="col-md-6">
-							<img class="img-fluid" src="img/home/hombre-risa.jpg" alt="hombre risa">
+							<img data-aos="flip-left" class="img-fluid" src="img/home/hombre-risa.jpg" alt="hombre risa">
 						</div>
 						<div class="col-md-6">
 							<div class="faja_sobre_titulo_izq"></div>
@@ -79,9 +80,9 @@
 			<!-- Planificando end -->
 
 			<!-- Diferencial -->
-			<section class="diferencial">
+			<section data-aos="fade-up" class="diferencial">
 
-				<img class="img-fluid puntos_right" src="img/home/puntos.png" alt="puntos">
+				<img class="img-fluid puntos_right image_no_shadow_rounded" src="img/home/puntos.png" alt="puntos diferencial">
 
 				<div class="container">
 
@@ -97,7 +98,7 @@
 							</p>
 						</div>
 						<div class="col-md-6 order-1 order-md-2">
-							<img class="img-fluid" src="img/home/pareja-risa.jpg" alt="pareja risa">
+							<img data-aos="flip-left" class="img-fluid" src="img/home/pareja-risa.jpg" alt="pareja risa">
 						</div>
 					</div>
 					
@@ -107,9 +108,9 @@
 			<!-- Diferencial end -->
 
 			<!-- Mi Carrera -->
-			<section class="mi_carrera">
+			<section data-aos="fade-up" class="mi_carrera">
 
-				<img class="img-fluid puntos_left" src="img/home/puntos.png" alt="puntos">
+				<img class="img-fluid puntos_left image_no_shadow_rounded" src="img/home/puntos.png" alt="puntos mi carrera">
 
 				<div class="container">
 
@@ -119,7 +120,7 @@
 						</div>
 
 						<div class="col-md-6">
-							<img class="img-fluid" src="img/home/hombre-tablet.jpg" alt="hombre tablet">
+							<img data-aos="flip-left" class="img-fluid" src="img/home/hombre-tablet.jpg" alt="hombre tablet">
 						</div>
 						<div class="col-md-6">
 							<div class="faja_sobre_titulo_izq"></div>
@@ -135,9 +136,9 @@
 			<!-- Mi Carrera end -->
 
 			<!-- Como Funciona -->
-			<section class="como_funciona">
+			<section data-aos="fade-up" class="como_funciona">
 
-				<img class="img-fluid puntos_right" src="img/home/puntos.png" alt="puntos">
+				<img class="img-fluid puntos_right image_no_shadow_rounded" src="img/home/puntos.png" alt="puntos como funciona">
 
 				<div class="container">
 
@@ -163,9 +164,9 @@
 			<!-- Como Funciona end -->
 
 			<!-- Generamos Cambios -->
-			<section class="generamos_cambios">
+			<section data-aos="fade-up" class="generamos_cambios">
 
-				<img class="img-fluid puntos_left" src="img/home/puntos.png" alt="puntos generamos">
+				<img class="img-fluid puntos_left image_no_shadow_rounded" src="img/home/puntos.png" alt="puntos generamos">
 
 				<div class="container">
 
@@ -180,7 +181,7 @@
 							</p>
 						</div>
 						<div class="col-md-6 order-1 order-md-2">
-							<img class="img-fluid" src="img/home/informes.jpg" alt="infrmes">
+							<img class="img-fluid" src="img/home/informes.jpg" alt="informes">
 						</div>
 					</div>
 					
@@ -190,9 +191,9 @@
 			<!-- Generamos Cambios end -->
 
 			<!-- Como funciona -->
-			<section class="profesionalizamos">
+			<section data-aos="fade-up" class="profesionalizamos">
 
-				<img class="img-fluid puntos_right" src="img/home/puntos.png" alt="puntos profesionalizamos">
+				<img class="img-fluid puntos_right image_no_shadow_rounded" src="img/home/puntos.png" alt="puntos profesionalizamos">
 
 				<div class="container">
 
@@ -210,7 +211,7 @@
 
 					<div class="row">
 						<div class="col-md-12 text-center">
-							<button class="btn btn_ontarget transition">Hazte miembro Ahora</button>
+							<button class="btn btn--alpha"><span>Hazte miembro ahora</span>
 						</div>
 					</div>
 
@@ -220,7 +221,7 @@
 			<!-- Como funciona end -->
 			
 			<!-- Testimonios -->
-			<section class="testimonios container-fluid">
+			<section data-aos="fade-up" class="testimonios container-fluid">
 
 				<div class="row">
 					<div class="col-lg-3 offset-lg-1">
@@ -234,61 +235,49 @@
 
 							<div class="card_testimonio">
 								<div class="faja_sobre_imagen"></div>
-								<img class="img-fluid" src="img/home/testimonio-hombre.jpg" alt="testimonio hombre">
-								<div class="content_testimonio">
-									<p>
-										Fue genial la experiencia que tuvimos con ontaget. Sacaron a nuestra empresa de la miseria misma. Lo recomiendo!
-									</p>
+								<div class="content_card">
+									<img class="img-fluid" src="img/home/testimonio-hombre.jpg" alt="testimonio hombre">
+									<div class="content_testimonio">
+										<p>
+											"Ontarget puso a mi disposicion una estructura de trabajo donde además me otorgo un equipo en el cual me pude apoyar y seguir creciendo a nivel profesional de manera independiete"
+										</p>
+									</div>
 								</div>
 							</div>
 
 							<div class="card_testimonio">
 								<div class="faja_sobre_imagen"></div>
-								<img class="img-fluid" src="img/home/testimonio-muchacho.jpg" alt="testimonio muchacho">
-								<div class="content_testimonio">
-									<p>
-										Fue genial la experiencia que tuvimos con ontaget. Sacaron a nuestra empresa de la miseria misma. Lo recomiendo!
-									</p>
+								<div class="content_card">
+									<img class="img-fluid" src="img/home/testimonio-muchacho.jpg" alt="testimonio muchacho">
+									<div class="content_testimonio">
+										<p>
+											"Encontre la mejor alternativa para emprender como Broker de seguros en donde me sentí en total confianza gracias a la conteción que tuve en el proceso de aprendisaje de Ontarget"
+										</p>
+									</div>
 								</div>
 							</div>
 
 							<div class="card_testimonio">
 								<div class="faja_sobre_imagen"></div>
-								<img class="img-fluid" src="img/home/testimonio-mujer.jpg" alt="testimonio mujer">
-								<div class="content_testimonio">
-									<p>
-										Fue genial la experiencia que tuvimos con ontaget. Sacaron a nuestra empresa de la miseria misma. Lo recomiendo!
-									</p>
+								<div class="content_card">
+									<img class="img-fluid" src="img/home/testimonio-mujer.jpg" alt="testimonio mujer">
+									<div class="content_testimonio">
+										<p>
+											"Ontarget me ayudó en el día a día logrando cumplir mis desafíos en donde me facilitaron alianzas con diferentes compañias las cuales me permitieron acercarle a mis clientes las mejores propuestas"
+										</p>
+									</div>
 								</div>
 							</div>
 
 							<div class="card_testimonio">
 								<div class="faja_sobre_imagen"></div>
-								<img class="img-fluid" src="img/home/testimonio-hombre.jpg" alt="testimonio hombre">
-								<div class="content_testimonio">
-									<p>
-										Fue genial la experiencia que tuvimos con ontaget. Sacaron a nuestra empresa de la miseria misma. Lo recomiendo!
-									</p>
-								</div>
-							</div>
-
-							<div class="card_testimonio">
-								<div class="faja_sobre_imagen"></div>
-								<img class="img-fluid" src="img/home/testimonio-muchacho.jpg" alt="testimonio muchacho">
-								<div class="content_testimonio">
-									<p>
-										Fue genial la experiencia que tuvimos con ontaget. Sacaron a nuestra empresa de la miseria misma. Lo recomiendo!
-									</p>
-								</div>
-							</div>
-
-							<div class="card_testimonio">
-								<div class="faja_sobre_imagen"></div>
-								<img class="img-fluid" src="img/home/testimonio-mujer.jpg" alt="testimonio mujer">
-								<div class="content_testimonio">
-									<p>
-										Fue genial la experiencia que tuvimos con ontaget. Sacaron a nuestra empresa de la miseria misma. Lo recomiendo!
-									</p>
+								<div class="content_card">
+									<img class="img-fluid" src="img/home/testimonio-muchacho.jpg" alt="testimonio muchacho">
+									<div class="content_testimonio">
+										<p>
+											"Muy agradecido por todo el apoyo recibido en el método, hoy puedo decir que en equipo todo es más fácil. Estoy orgulloso de ser parte de Ontarget"
+										</p>
+									</div>
 								</div>
 							</div>
 
@@ -321,46 +310,7 @@
 </body>
 <script type="text/javascript" src="./node_modules/jquery/dist/jquery.min.js"></script>
 <script type="text/javascript" src="./node_modules/slick-carousel/slick/slick.js"></script>
+<script type="text/javascript" src="./node_modules/aos/dist/aos.js"></script>
 <script type="text/javascript" src="js/app.js"></script>
-
-<script>
-	$(document).ready(function(){
-
-		$('.slick_class').slick({
-	  dots: false,
-	  appendArrows: false,
-	  autoplay: true,
-	  infinite: true,
-	  speed: 300,
-	  slidesToShow: 3,
-	  slidesToScroll: 1,
-	  responsive: [
-	    {
-	      breakpoint: 1024,
-	      settings: {
-	        slidesToShow: 3,
-	        infinite: true,
-	        dots: false,
-
-	      }
-	    },
-	    {
-	      breakpoint: 600,
-	      settings: {
-	        slidesToShow: 2,
-	        dots: false,
-	      }
-	    },
-	    {
-	      breakpoint: 480,
-	      settings: {
-	        slidesToShow: 1,
-	        dots: false,
-	      }
-	    }
-	  ]
-	});
-
-	})
-</script>
+<script type="text/javascript" src="js/slick-home.js"></script>
 </html>

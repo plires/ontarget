@@ -12,8 +12,7 @@
 	<link rel="stylesheet" type="text/css" href="./node_modules/normalize.css/normalize.css">
 	<link rel="stylesheet" type="text/css" href="./node_modules/@fortawesome/fontawesome-free/css/all.css">
 	<link rel="stylesheet" type="text/css" href="./node_modules/bootstrap/dist/css/bootstrap.min.css">
-	<link rel="stylesheet" type="text/css" href="./node_modules/slick-carousel/slick/slick.css"/>
-	<link rel="stylesheet" type="text/css" href="./node_modules/slick-carousel/slick/slick-theme.css"/>
+	<link rel="stylesheet" type="text/css" href="./node_modules/aos/dist/aos.css"/>
 	<link rel="stylesheet" href="css/app.css">
 </head>
 <body>
@@ -30,8 +29,8 @@
 					<div class="row">
 						<div class="col-md-12">
 
-							<h1>Aprende de los mejores profesionales <br> el Método OnTarget</h1>
-							<p>
+							<h1 data-aos="fade-up">Aprende de los mejores profesionales <br> el Método OnTarget</h1>
+							<p data-aos="fade-up">
 								OnTarget es el método de aprendizaje por excelencia del Grupo WGSA, es una compañía que nace de la visión de profesionales con espíritu emprendedor y amplia trayectoria en el mercado asegurador. Aquí se fusionan la experiencia de trabajo en un marco tradicional con un nuevo enfoque, más cálido y actual, en el que la prestancia y la comunicación con el cliente marcan la diferencia.
 							</p>
 
@@ -62,7 +61,6 @@
 			<!-- Acceder Plataforma -->
 			<?php include('includes/acceder-plataforma.php'); ?>
 			
-
 		</div>
 
 		<!-- Logos -->
@@ -75,7 +73,7 @@
 
 </body>
 <script type="text/javascript" src="./node_modules/jquery/dist/jquery.min.js"></script>
-<script type="text/javascript" src="./node_modules/slick-carousel/slick/slick.js"></script>
+<script type="text/javascript" src="./node_modules/aos/dist/aos.js"></script>
 <script type="text/javascript" src="js/app.js"></script>
 
 </html>

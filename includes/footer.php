@@ -3,7 +3,7 @@
     <div class="row">
 
       <div class="col-md-6 logo_footer">
-        <img class="img-fluid" src="img/footer/logo-ontarget.png" alt="logo ontarget footer">
+        <img class="img-fluid image_no_shadow_rounded" src="img/footer/logo-ontarget.png" alt="logo ontarget footer">
       </div>
 
       <div class="col-md-6 datos">

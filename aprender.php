@@ -9,11 +9,13 @@
 	<!-- Favicons -->
 	<?php include('includes/favicon.php'); ?>
 
+	<script src="https://fast.wistia.com/embed/medias/k5j78aydv3.jsonp" async></script>
+	<script src="https://fast.wistia.com/assets/external/E-v1.js" async></script>
+
 	<link rel="stylesheet" type="text/css" href="./node_modules/normalize.css/normalize.css">
 	<link rel="stylesheet" type="text/css" href="./node_modules/@fortawesome/fontawesome-free/css/all.css">
 	<link rel="stylesheet" type="text/css" href="./node_modules/bootstrap/dist/css/bootstrap.min.css">
-	<link rel="stylesheet" type="text/css" href="./node_modules/slick-carousel/slick/slick.css"/>
-	<link rel="stylesheet" type="text/css" href="./node_modules/slick-carousel/slick/slick-theme.css"/>
+	<link rel="stylesheet" type="text/css" href="./node_modules/aos/dist/aos.css"/>
 	<link rel="stylesheet" href="css/app.css">
 </head>
 <body>
@@ -26,7 +28,7 @@
 		<div class="bg_gris">
 
 			<!-- Que voy a aprender -->
-			<section class="que_voy_aprender container text-center">
+			<section data-aos="fade-up" class="que_voy_aprender container text-center">
 				<div class="row">
 					<div class="col-md-12">
 
@@ -34,22 +36,25 @@
 						<p class="intro_metodo">
 							Bienvenido al Método OnTarget, queremos alentarte a que te sumes a nuestro equipo. Porque somos como vos y estamos para ayudarte a proyectar aquello que querés ser. Se parte de nuestro estilo de vida, se parte del Método Ontarget.
 						</p>
-						
-						<div class="embed-responsive embed-responsive-16by9">
-						  <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/zpOULjyy-n8?rel=0" allowfullscreen></iframe>
+
+						<div class="wistia_responsive_padding" style="padding:56.25% 0 0 0;position:relative;">
+							<div class="wistia_responsive_wrapper" style="height:100%;left:0;position:absolute;top:0;width:100%;">
+								<div class="wistia_embed wistia_async_k5j78aydv3 videoFoam=true" style="height:100%;position:relative;width:100%">&nbsp;
+								</div>
+							</div>
 						</div>
 
 						<div class="iconos">
 							<div>
-								<img class="img-fluid" src="img/aprender/inscriptos.png" alt="icono inscriptos">
+								<img data-aos="flip-left" class="img-fluid image_no_shadow_rounded" src="img/aprender/inscriptos.png" alt="icono inscriptos">
 								<p>300+<span>Inscritos</span></p>					
 							</div>
 							<div>
-								<img class="img-fluid" src="img/aprender/tiempo.png" alt="icono tiempo">
+								<img data-aos="flip-left" class="img-fluid image_no_shadow_rounded" src="img/aprender/tiempo.png" alt="icono tiempo">
 								<p>120 min.<span>Masterclass</span></p>				
 							</div>
 							<div>
-								<img class="img-fluid" src="img/aprender/historias.png" alt="icono historias">
+								<img data-aos="flip-left" class="img-fluid image_no_shadow_rounded" src="img/aprender/historias.png" alt="icono historias">
 								<p>450<span>Historias de estudiantes</span></p>
 							</div>
 						</div>
@@ -63,7 +68,7 @@
 			<!-- Que voy a aprender end -->
 
 			<!-- Lo que aprenderas -->
-			<section class="lo_que_aprenderas text-center container">
+			<section data-aos="fade-up" class="lo_que_aprenderas text-center container">
 				<div class="row">
 					<div class="col-md-12">
 						<h2>Lo Que Aprenderás</h2>
@@ -150,7 +155,7 @@
 			<!-- Lo que aprenderas end -->
 
 			<!-- Acerca de Adrian -->
-			<section class="adrian container-fluid">
+			<section data-aos="fade-up" class="adrian container-fluid">
 				<div class="container">
 					
 					<div class="row">
@@ -161,7 +166,7 @@
 
 					<div class="row">						
 						<div class="col-md-4 col-lg-3">
-							<img class="img-fluid" src="img/aprender/adrian.jpg" alt="adrian anselmi">
+							<img data-aos="flip-left" class="img-fluid" src="img/aprender/adrian.jpg" alt="adrian anselmi">
 						</div>
 
 						<div class="col-md-8 col-lg-9">
@@ -177,9 +182,9 @@
 			<!-- Acerca de Adrian end -->
 
 			<!-- Formulario -->
-			<section class="formulario">
+			<section data-aos="fade-up" class="formulario">
 
-				<img class="img-fluid puntos_left" src="img/home/puntos.png" alt="puntos">
+				<img class="img-fluid image_no_shadow_rounded puntos_left" src="img/home/puntos.png" alt="puntos">
 
 				<div class="container">
 					
@@ -193,7 +198,7 @@
 
 					<div class="row">						
 						<div class="col-md-5">
-							<img class="img-fluid img_contact" src="img/aprender/contacto.jpg" alt="imagen contacto">
+							<img data-aos="flip-left" class="img-fluid img_contact" src="img/aprender/contacto.jpg" alt="imagen contacto">
 						</div>
 						<div class="col-md-7">
 
@@ -244,14 +249,13 @@
 										</select>
 									</div>
 									<!-- Hora end -->
-								 
-								  <button 
-								  	type="submit" 
-							  		id="send_metodo" 
-							  		name="send_metodo" 
-							  		class="btn btn-primary transition">
-							  			Hazte miembro Ahora
-						  		</button>
+								 	
+								 	<button
+								 		type="submit" 
+								 		class="btn btn--alpha" 
+								 		id="send_metodo" 
+							  		name="send_metodo">
+								 			<span>Hazte miembro ahora</span>
 								</form>
 
 							</div>
@@ -272,47 +276,7 @@
 
 </body>
 <script type="text/javascript" src="./node_modules/jquery/dist/jquery.min.js"></script>
-<script type="text/javascript" src="./node_modules/slick-carousel/slick/slick.js"></script>
+<script type="text/javascript" src="./node_modules/aos/dist/aos.js"></script>
 <script type="text/javascript" src="js/app.js"></script>
 
-<script>
-	$(document).ready(function(){
-
-		$('.slick_class').slick({
-	  dots: false,
-	  appendArrows: false,
-	  autoplay: true,
-	  infinite: true,
-	  speed: 300,
-	  slidesToShow: 3,
-	  slidesToScroll: 1,
-	  responsive: [
-	    {
-	      breakpoint: 1024,
-	      settings: {
-	        slidesToShow: 3,
-	        infinite: true,
-	        dots: false,
-
-	      }
-	    },
-	    {
-	      breakpoint: 600,
-	      settings: {
-	        slidesToShow: 2,
-	        dots: false,
-	      }
-	    },
-	    {
-	      breakpoint: 480,
-	      settings: {
-	        slidesToShow: 1,
-	        dots: false,
-	      }
-	    }
-	  ]
-	});
-
-	})
-</script>
 </html>

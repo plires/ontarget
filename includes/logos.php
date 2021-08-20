@@ -6,14 +6,14 @@
 				<h2>Contamos con la confianza de estas empresas</h2>
 			</div>
 			
-			<div class="col-md-4">
-				<img class="img-fluid" src="img/home/zurich.png" alt="zurich">
+			<div class="col-4">
+				<img class="img-fluid image_no_shadow_rounded" src="img/home/zurich.png" alt="zurich">
 			</div>
-			<div class="col-md-4">
-				<img class="img-fluid" src="img/home/elbinger.png" alt="elbinger">
+			<div class="col-4">
+				<img class="img-fluid image_no_shadow_rounded" src="img/home/elbinger.png" alt="elbinger">
 			</div>
-			<div class="col-md-4">
-				<img class="img-fluid" src="img/home/zurich.png" alt="zurich">
+			<div class="col-4">
+				<img class="img-fluid image_no_shadow_rounded" src="img/home/zurich.png" alt="zurich">
 			</div>
 		</div>
 	</div>

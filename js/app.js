@@ -19,7 +19,6 @@ $(function() {
 })
 // Nav end
 
-
 function headerScroll() {
     if ($(document).scrollTop() > nav.offsetHeight) {
       $("#nav").addClass("fixed");
@@ -34,3 +33,5 @@ $(window).scroll(function() {
 });
 
 headerScroll()
+
+AOS.init();

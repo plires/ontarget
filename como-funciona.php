@@ -12,8 +12,7 @@
 	<link rel="stylesheet" type="text/css" href="./node_modules/normalize.css/normalize.css">
 	<link rel="stylesheet" type="text/css" href="./node_modules/@fortawesome/fontawesome-free/css/all.css">
 	<link rel="stylesheet" type="text/css" href="./node_modules/bootstrap/dist/css/bootstrap.min.css">
-	<link rel="stylesheet" type="text/css" href="./node_modules/slick-carousel/slick/slick.css"/>
-	<link rel="stylesheet" type="text/css" href="./node_modules/slick-carousel/slick/slick-theme.css"/>
+	<link rel="stylesheet" type="text/css" href="./node_modules/aos/dist/aos.css"/>
 	<link rel="stylesheet" href="css/app.css">
 </head>
 <body>
@@ -26,7 +25,7 @@
 		<div class="bg_gris">
 
 			<!-- Plan de estudios -->
-			<section class="plan_estudios header container">
+			<section data-aos="fade-up" class="plan_estudios header container">
 				<div class="row">
 					
 					<div class="col-md-12">
@@ -34,7 +33,7 @@
 					</div>
 
 					<div class="col-md-6">
-						<img class="img-fluid" src="img/como-funciona/telefono.png" alt="telefono">
+						<img class="img-fluid image_no_shadow_rounded" src="img/como-funciona/telefono.png" alt="telefono">
 					</div>
 
 					<div class="col-md-6">
@@ -49,10 +48,10 @@
 			<!-- Plan de estudios end -->
 
 			<!-- Como Funciona -->
-			<section class="como_funciona container">
+			<section data-aos="fade-up" class="como_funciona container">
 
-				<img class="img-fluid puntos_left" src="img/home/puntos.png" alt="puntos izquierda">
-				<img class="img-fluid puntos_right" src="img/home/puntos.png" alt="puntos derecha">
+				<img class="img-fluid puntos_left image_no_shadow_rounded" src="img/home/puntos.png" alt="puntos izquierda">
+				<img class="img-fluid puntos_right image_no_shadow_rounded" src="img/home/puntos.png" alt="puntos derecha">
 
 				<div class="row">
 					<div class="col-md-12">
@@ -61,7 +60,7 @@
 							Con solo 15 min. al día, vivirás un crecimiento personal y profesional que cambiará tu vida y tu futuro. Gozando del apoyo, la motivación y amistad de nuestro equipo. <br><br>
 							¿Lo mejor? Estamos juntos para planificar tu futuro.
 						</p>
-						<img class="img-fluid" src="img/como-funciona/compu.png" alt="compu">
+						<img class="img-fluid image_no_shadow_rounded" src="img/como-funciona/compu.png" alt="compu">
 						<p>
 							La plataforma de aprendizaje en línea de OnTarget combina el poder del microaprendizaje diario, la tecnología, actualidad y el apoyo del equipo de WG SA para lograr una transformación personal y profesional que no podrás igualar con la formación tradicional.
 						</p>
@@ -71,7 +70,7 @@
 			<!-- Como Funciona end -->
 
 			<!-- Pasos -->
-			<section class="pasos container">
+			<section data-aos="fade-up" class="pasos container">
 
 				<div class="row">
 
@@ -81,7 +80,7 @@
 					</div>
 
 					<div class="col-md-6">
-						<img class="img-fluid" src="img/como-funciona/inscripcion.jpg" alt="inscripcion">
+						<img data-aos="flip-left" class="img-fluid" src="img/como-funciona/inscripcion.jpg" alt="inscripcion">
 					</div>
 
 					<div class="col-md-6">
@@ -106,7 +105,7 @@
 					</div>
 
 					<div class="col-md-6">
-						<img class="img-fluid" src="img/como-funciona/sesion.jpg" alt="sesion">
+						<img data-aos="flip-left" class="img-fluid" src="img/como-funciona/sesion.jpg" alt="sesion">
 					</div>
 
 				</div>
@@ -119,7 +118,7 @@
 					</div>
 
 					<div class="col-md-6">
-						<img class="img-fluid" src="img/como-funciona/unite.jpg" alt="unite">
+						<img data-aos="flip-left" class="img-fluid" src="img/como-funciona/unite.jpg" alt="unite">
 					</div>
 
 					<div class="col-md-6">
@@ -133,7 +132,7 @@
 				<div class="row">
 
 					<div class="col-md-12 content_button">
-						<button class="btn btn_ontarget">Hazte miembro Ahora</button>
+						<button class="btn btn--alpha"><span>Hazte miembro ahora</span>
 					</div>
 
 				</div>
@@ -150,7 +149,7 @@
 
 </body>
 <script type="text/javascript" src="./node_modules/jquery/dist/jquery.min.js"></script>
-<script type="text/javascript" src="./node_modules/slick-carousel/slick/slick.js"></script>
+<script type="text/javascript" src="./node_modules/aos/dist/aos.js"></script>
 <script type="text/javascript" src="js/app.js"></script>
 
 </html>

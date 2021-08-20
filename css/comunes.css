@@ -1,5 +1,29 @@
+/* Variables */
+:root {
+  --primary-color: rgba(14,39,119,1);
+  --secondary-color: #40c9f7;
+  --third-color: #6044ff;
+  --quarter-color: #30feff;
+}
+/* Variables end */
+
 body {
   font-family: 'Montserrat', sans-serif;
+}
+
+body img {
+  box-shadow: 0 5px 12px 0 rgba(89,94,103,.07),0 10px 30px 0 rgba(89,94,103,.085);
+  border-radius: 0.5rem;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+a {
+  color: white;
+  text-decoration: none;
 }
 
 p {
@@ -28,6 +52,18 @@ h2 {
   font-weight: 700;
 }
 
+.transition{
+  -webkit-transition: all ease-in-out .3s; /* Safari */
+  transition: all ease-in-out .3s;
+}
+
+.image_no_shadow_rounded {
+  box-shadow: none!important;
+  -webkit-box-shadow: none!important;
+  -moz-box-shadow: none!important;
+  border-radius: 0!important;
+}
+
 .bg_gris {
   background-color: #f4f4f6;
 }
@@ -42,13 +78,39 @@ h2 {
   margin-bottom: 30px;
 }
 
-.equipo .integrante {
+.equipo h2 {
+  margin-bottom: 30px;
+}
+
+.equipo img,
+.testimonios img {
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+  box-shadow: none;
+}
+
+.equipo .integrante,
+.testimonios .content_card {
+  border-radius: 5px;
+  box-shadow: 1px 1px 10px -3px rgba(0,0,0,0.66);
+  -webkit-box-shadow: 1px 1px 10px -3px rgba(0,0,0,0.66);
+  -moz-box-shadow: 1px 1px 10px -3px rgba(0,0,0,0.66);
   background-color: white;
   margin-bottom: 30px;
 }
 
+.testimonios .content_card {
+  background-color: transparent;
+}
+
 .equipo .content_integrante {
   padding: 15px;
+}
+
+.equipo .integrante {
+  max-width: 350px;
+  margin: auto;
+  margin-bottom: 30px;
 }
 
 .equipo .content_integrante h4 {
@@ -91,21 +153,59 @@ h2 {
   justify-content: center;
   align-items: center;
 }
-
-.btn_ontarget {
-  margin-top: 15px;
-  font-weight: 700;
-  font-size: 1.5rem;
-  border-radius: 10px;
-}
-
-.btn_ontarget:hover {
-  background-color: var(--primary-color);
-  color: white;
-}
-
 /* Accede end */
 
+/* Boton */
+.btn {
+  font-size: 1.25rem;
+  font-weight: 700;
+  padding: 1.25rem 2rem;
+  font-size: 1rem;
+  border-radius: 3.5rem/100%;
+  position: relative;
+  min-width: 15rem;
+  max-width: 90vw;
+  overflow: hidden;
+  border: 0;
+  cursor: pointer;
+  letter-spacing: 0.05em;
+  transition: all 330ms;
+}
+.btn + .btn {
+  margin-top: 1rem;
+}
+.btn span {
+  position: relative;
+  z-index: 1;
+}
+.btn:before {
+  content: "";
+  background-color: var(--secondary-color);
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  transform: scale(4) translateX(-100%);
+  transition: all 495ms ease-out;
+}
+.btn:hover:before, .btn:focus:before, .btn:active:before {
+  transform: scale(4) translate(37%);
+}
+
+.btn--alpha {
+  background-color: var(--secondary-color);
+  color: var(--third-color);
+}
+.btn--alpha:before {
+  background-color: var(--third-color);
+  background-image: linear-gradient(to right, var(--third-color) 30%, var(--secondary-color) 100%);
+  position: absolute;
+}
+.btn--alpha:hover, .btn--alpha:focus, .btn--alpha:active {
+  color: var(--secondary-color);
+}
+/* Boton end */
 /* Logos */
 .logos {
   background-color: #6044ff;
@@ -118,11 +218,6 @@ h2 {
   color: white;
   font-size: 1.25rem;
   margin-bottom: 30px;
-}
-
-.logos img {
-  max-width: 50%;
-  margin-bottom: 15px;
 }
 /* Logos end */
 
@@ -153,30 +248,6 @@ h2 {
   box-shadow: none!important;
 }
 
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-
-a {
-  color: white;
-  text-decoration: none;
-}
-
-/* Variables */
-:root {
-  --primary-color: rgba(14,39,119,1);
-  --secondary-color: #40c9f7;
-  --third-color: #6044ff;
-  --quarter-color: #30feff;
-}
-/* Variables end */
-
-.transition{
-  -webkit-transition: all ease-in-out .3s; /* Safari */
-  transition: all ease-in-out .3s;
-}
-
 @media (min-width: 480px) {
   /* Equipo */
   .equipo .content_integrante {
@@ -187,6 +258,11 @@ a {
     font-size: 1rem;
   }
   /* Equipo end */
+
+}
+
+@media (min-width: 576px) {
+  
 }
 
 @media (min-width: 768px) {
@@ -231,7 +307,7 @@ a {
 
   /* Logos */
   .logos img {
-    max-width: 100%;
+    max-width: 50%;
   }
   /* Logos end */
 

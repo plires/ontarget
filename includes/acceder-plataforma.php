@@ -7,7 +7,7 @@
         <p class="frase">
           Solo necesitas un usuario y contraseña y obtendrás acceso al Método OnTarget, Webinars, Eventos y mucho más para poder empezar tu momento de cambio y profesionalizarte.
         </p>
-        <buton class="btn btn_ontarget">Hazte miembro Ahora</buton>
+        <button class="btn btn--alpha"><span>Hazte miembro ahora</span>
       </div>
     </div>
   </div>
