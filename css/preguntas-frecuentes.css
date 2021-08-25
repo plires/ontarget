@@ -1,0 +1,173 @@
+/* Header Preguntas Frecuentes */
+.faqs .header_frecuentes {
+  padding: 0;
+  background-color: #dde0e9;
+  overflow: hidden;
+  margin-bottom: 30px;
+}
+
+.faqs .header_frecuentes h1 {
+  font-weight: 900;
+  font-size: 2rem;
+}
+
+.faqs .header_frecuentes img {
+  margin-left: 30px;
+  margin-bottom: 50px;
+}
+/* Header Preguntas Frecuentes end */
+
+/* Preguntas y Respuestas */
+.faqs .preguntas_respuestas .faq {
+  margin-bottom: 30px;
+}
+
+.faqs .preguntas_respuestas .pregunta {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.faqs .preguntas_respuestas .pregunta span {
+  color: var(--third-color);
+  margin-right: 10px;
+  font-weight: 900;
+  font-size: 3rem;
+  min-width: 80px;
+}
+
+.faqs .preguntas_respuestas .pregunta p {
+  margin: 0;
+  text-align: left;
+  font-weight: 600;
+}
+
+.faqs .preguntas_respuestas .card {
+  background-color: var(--third-color);
+  color: white;
+  text-align: left;
+  font-size: 0.875rem;
+}
+/* Preguntas y Respuestas end */
+
+/* MEDIA QUERIES */
+@media (min-width: 576px) {
+
+  /* Preguntas y Respuestas */
+  .faqs .preguntas_respuestas .pregunta span {
+    color: var(--third-color);
+    font-size: 3.5rem;
+    margin-right: 15px;
+  }
+
+  .faqs .preguntas_respuestas .pregunta p {
+    font-size: 1.125rem;
+  }
+
+  .faqs .preguntas_respuestas .card {
+    background-color: var(--third-color);
+    color: white;
+    text-align: left;
+    font-size: 0.875rem;
+  }
+  /* Preguntas y Respuestas end */
+
+}
+
+@media (min-width: 768px) {
+
+  /* Header Preguntas Frecuentes */
+  .faqs .header_frecuentes {
+    height: 250px;
+    overflow: visible;
+    margin-bottom: 100px;
+  }
+
+  .faqs .header_frecuentes .col-md-5 {
+    height: 250px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .faqs .header_frecuentes .col-md-7 {
+    position: relative;
+  }
+
+  .faqs .header_frecuentes h1 {
+    margin: 0;
+  }
+
+  .faqs .header_frecuentes img {
+    position: relative;
+    right: -75px;
+    margin-bottom: 0;
+  }
+  /* Header Preguntas Frecuentes end */
+
+}
+
+@media (min-width: 992px) {
+
+  /* Header Preguntas Frecuentes */
+  .faqs .header_frecuentes {
+    height: 300px;
+  }
+
+  .faqs .header_frecuentes .col-md-5 {
+    height: 300px;
+  }
+
+  .faqs .header_frecuentes h1 {
+    font-size: 2.5rem;
+    text-align: left;
+  }
+  /* Header Preguntas Frecuentes end */
+
+
+  /* Preguntas y Respuestas */
+  .faqs .preguntas_respuestas .pregunta span {
+    font-size: 4rem;
+    margin-right: 20px;
+  }
+
+  .faqs .preguntas_respuestas .pregunta p {
+    font-size: 1.25rem;
+  }
+
+  .faqs .preguntas_respuestas .card {
+    font-size: 1rem;
+  }
+  /* Preguntas y Respuestas end */
+
+  /* Header Preguntas Frecuentes */
+  .faqs .header_frecuentes img {
+    margin: 0;
+  }
+  /* Header Preguntas Frecuentes end */
+
+}
+
+@media (min-width: 1200px) {
+
+  /* Header Preguntas Frecuentes */
+  .faqs .header_frecuentes h1 {
+    font-size: 3rem;
+  }
+  /* Header Preguntas Frecuentes end */
+
+  /* Preguntas y Respuestas */
+  .faqs .preguntas_respuestas .faq {
+    margin-bottom: 60px;
+  }
+  /* Preguntas y Respuestas end */
+
+}
+
+@media (min-width: 1400px) {
+
+}
+
+
+
+

@@ -13,7 +13,7 @@
 				<img class="img-fluid image_no_shadow_rounded" src="img/home/elbinger.png" alt="elbinger">
 			</div>
 			<div class="col-4">
-				<img class="img-fluid image_no_shadow_rounded" src="img/home/zurich.png" alt="zurich">
+				<img class="img-fluid image_no_shadow_rounded" src="img/home/wg.png" alt="wg">
 			</div>
 		</div>
 	</div>

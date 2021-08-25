@@ -248,7 +248,7 @@
 							<div class="card_testimonio">
 								<div class="faja_sobre_imagen"></div>
 								<div class="content_card">
-									<img class="img-fluid" src="img/home/testimonio-muchacho.jpg" alt="testimonio muchacho">
+									<img class="img-fluid" src="img/home/testimonio-hombre2.jpg" alt="testimonio hombre 2">
 									<div class="content_testimonio">
 										<p>
 											"Encontre la mejor alternativa para emprender como Broker de seguros en donde me sentí en total confianza gracias a la conteción que tuve en el proceso de aprendisaje de Ontarget"

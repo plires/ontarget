@@ -47,7 +47,7 @@
 						<div class="iconos">
 							<div>
 								<img data-aos="flip-left" class="img-fluid image_no_shadow_rounded" src="img/aprender/inscriptos.png" alt="icono inscriptos">
-								<p>300+<span>Inscritos</span></p>					
+								<p>300+<span>Inscriptos</span></p>					
 							</div>
 							<div>
 								<img data-aos="flip-left" class="img-fluid image_no_shadow_rounded" src="img/aprender/tiempo.png" alt="icono tiempo">
