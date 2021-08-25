@@ -1,0 +1,229 @@
+/* Header Contacto */
+.contacto .header_contacto {
+	padding: 0;
+	background-color: #dde0e9;
+	overflow: hidden;
+	margin-bottom: 30px;
+	text-align: center;
+}
+
+.contacto h1 {
+    font-weight: 900;
+    font-size: 1.5rem;
+    margin-bottom: 30px;
+}
+
+.contacto img {
+	margin-bottom: 50px;
+}
+/* Header Contacto end */
+
+/* Formulario */
+.contacto .formulario {
+	margin-bottom: 30px;
+}
+
+.contacto .formulario h2 {
+	margin-bottom: 30px;
+}
+
+.contacto label {
+	font-size: 0.75rem;
+	color: var(--third-color);
+	font-weight: 300;
+}
+
+.contacto .btn--alpha {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin: 30px auto;
+	height: 40px;
+	border-radius: 15px;
+}
+
+.contacto .form-check label {
+	color: grey;
+}
+
+.contacto textarea {
+	resize: none;
+	min-height: 150px;
+}
+/* Formulario end */
+
+/* Nuestros Canales */
+.nuestros_canales {
+	background-color: #dde0e9;
+	padding: 30px 0;
+}
+
+.nuestros_canales h2 {
+	text-align: center;
+	margin-bottom: 15px;
+}
+
+.nuestros_canales a {
+	color: var(--primary-color);
+	text-decoration: none;
+	font-size: 0.875rem;
+}
+
+.nuestros_canales a:hover {
+	color: var(--secondary-color);
+}
+
+.nuestros_canales img {
+	margin: 0;
+	max-width: 17%;
+	margin-right: 15px;
+}
+
+.nuestros_canales .content_mail,
+.nuestros_canales .content_telefono {
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+}
+
+.nuestros_canales .content_mail {
+	margin-bottom: 15px;
+}
+
+.nuestros_canales .mail {
+	display: flex;
+	flex-direction: column;
+}
+/* Nuestros Canales end */
+
+
+/* MEDIA QUERIES */
+@media (min-width: 576px) {
+
+}
+
+@media (min-width: 768px) {
+	
+	/* Header Contacto */
+	.contacto .header_contacto {
+		position: relative;
+		height: 250px;
+		overflow: visible;
+		margin-bottom: 100px;
+	}
+
+	.contacto .header_contacto h1 {
+		margin: 0;
+	}
+
+	.contacto .header_contacto .col-md-6 {
+		position: relative;
+		height: 250px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+
+	.contacto .header_contacto img {
+		position: relative;
+		margin: 0;
+		top: 20px;
+		right: -75px;
+	}
+	/* Header Contacto end */
+
+	/* Nuestros Canales */
+	.nuestros_canales .datos {
+		display: flex;
+		justify-content: space-around;
+	}
+
+	.nuestros_canales .content_mail, 
+	.nuestros_canales .content_telefono {
+		margin: 0;
+	}
+
+	.nuestros_canales .content_mail img, 
+	.nuestros_canales .content_telefono img {
+		max-width: 60px;
+	}
+	/* Nuestros Canales end */
+
+}
+
+@media (min-width: 992px) {
+
+	/* Header Contacto */
+	.contacto .header_contacto {
+		height: 300px;
+	}
+
+	.contacto .header_contacto h1 {
+		margin: 0;
+		text-align: left;
+	}
+
+	.contacto .header_contacto .col-md-6 {
+		height: 300px;
+	}
+
+	.contacto .header_contacto img {
+		position: relative;
+		right: -25px;
+	}
+	/* Header Contacto end */
+
+	/* Formulario */
+	.contacto .btn--alpha {
+		margin: 50px auto;
+		height: 50px;
+		font-size: 1.125rem;
+	}
+	/* Formulario end */
+
+	/* Nuestros Canales */
+	.nuestros_canales {
+		padding: 50px 0;
+	}
+
+	.nuestros_canales h2 {
+		margin-bottom: 30px;
+	}
+
+	.nuestros_canales a {
+		font-size: 1rem;
+	}
+	/* Nuestros Canales end */
+
+}
+
+@media (min-width: 1200px) {
+
+	/* Header Contacto */
+	.contacto .header_contacto h1 {
+		font-size: 1.75rem;
+	}
+	/* Header Contacto end */
+
+}
+
+@media (min-width: 1400px) {
+
+	/* Header Contacto */
+	.contacto .header_contacto h1 {
+		font-size: 2rem;
+		line-height: 1.5;
+	}
+	/* Header Contacto end */
+
+	/* Formulario */
+	.contacto textarea {
+		min-height: 200px;
+	}
+	/* Formulario end */
+
+}
+
+
+
+

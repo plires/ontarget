@@ -16,7 +16,7 @@
     <li><a class="transition" href="#">Blog</a></li>
     <!-- <li><a class="transition" href="#">Eventos</a></li> -->
     <li><a class="transition" href="faq.php">FAQ</a></li>
-    <li><a class="transition" href="#">Contacto</a></li>
+    <li><a class="transition" href="contactos.php">Contacto</a></li>
     <li><a class="transition" href="#"><i class="far fa-user-circle transition"></i></a></li>
   </ul>
   
