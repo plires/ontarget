@@ -1,7 +1,7 @@
 nav {
   position: relative;
   background: white;
-  height: 70px;
+  height: 60px;
   z-index: 10;
 }
 
@@ -36,29 +36,27 @@ nav ul li a:hover {
 }
 
 nav ul li:last-child {
-  padding-bottom: 0;
-  padding-top: 15px;
-  display: flex;
-  justify-content: flex-end;
+  display: none;
 }
 
-nav ul li:last-child a {
+nav ul li:last-child button {
   width: auto;
   display: flex;
   justify-content: flex-end;
   align-items: center;
+  color: var(--primary-color);
 }
 
-nav ul li:last-child a:hover {
+nav ul li:last-child button:hover {
   left: 0;
 }
 
-nav ul li:last-child a:hover i {
+nav ul li:last-child button:hover i {
   color: #40c9f7;
 }
 
 nav ul li i {
-  color: white;
+  /*color: white;*/
   font-size: 1.5rem;
 }
 
@@ -70,12 +68,12 @@ nav .logo {
 }
 
 nav .logo img {
-  max-width: 200px;
+  max-width: 150px;
   content:url("../img/nav/logo-ontarget.png");
 }
 
 nav.fixed .logo img {
-  max-width: 200px;
+  max-width: 150px;
   content:url("../img/nav/logo-ontarget-white.png");
 }
 
@@ -84,8 +82,8 @@ nav.fixed ul.active {
 }
 
 nav ul.active {
-  top: 70px;
-  height: 425px;
+  top: 60px;
+  /*height: 425px;*/
 }
 
 nav.fixed {
@@ -164,34 +162,41 @@ nav .logo .menu_mobile i {
     align-items: center;
   }
 
-  nav ul li a {
+  nav ul li a,
+  nav ul li button {
     color: var(--primary-color);
     font-size: 0.83rem;
   }
 
   nav ul li a:hover {
     left: 0;
+    color: var(--secondary-color)!important;
   }  
 
   nav ul li:last-child {
+    display: inline-block;
     padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 
-  nav ul li:last-child a {
+  nav ul li:last-child button {
+    border: none;
     border-left: var(--primary-color) 2px solid;
     padding-left: 10px;
-  }
-
-  nav ul li:last-child i {
+    background:transparent;
+    background: none;
     color: var(--primary-color);
   }
 
   nav.fixed ul li a,
+  nav.fixed ul li button,
   nav.fixed ul li a i {
     color: white;
   }
 
-  nav.fixed ul li:last-child a {
+  nav.fixed ul li:last-child button {
     border-left: white 2px solid;
   }
 
@@ -215,7 +220,7 @@ nav .logo .menu_mobile i {
 
   nav.fixed,
   nav.fixed ul {
-    height: 70px;
+    height: 60px;
   }
 
   nav .logo img {

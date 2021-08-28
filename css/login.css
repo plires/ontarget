@@ -1,0 +1,150 @@
+#login {
+  display: none;
+}
+
+#login.hidden {
+  display: none!important;
+}
+
+#login.show {
+  display: flex;
+  width: 100%;
+  height: 100%;
+}
+
+#login.show .overlay_login {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  opacity: 0.6;
+  top: 0;
+  left: 0;
+  z-index: 5;
+}
+
+#login.show .alert-dismissible {
+  font-size: 0.75rem;
+  padding: 1rem;
+}
+
+#login.show .close {
+  width: 30px!important;
+  font-size: 1rem!important;
+}
+
+#login .content_login {
+  position: fixed;
+  width:100%;
+  bottom: -200px;
+  left: 0;
+  background-color: white;
+  opacity: 1!important;
+  z-index: 20;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  padding: 20px;
+  color: #828282;
+  font-size: 0.875rem;
+}
+
+#login.show .content_login {
+  animation: showModal 1s forwards;
+  bottom: 0;
+  left: 0;
+}
+
+@keyframes showModal {
+  0% {
+    transform: translateY(0px);
+  }
+  25% {
+    transform: translateY(-40px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+#login.show .content_login .form-control {
+  font-size: 0.85rem;
+}
+
+#login.show .content_login button {
+  border-radius: 5px;
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  padding: .5rem 1rem;
+  font-size: 0.85rem;
+  font-weight: 400;
+}
+
+#login.show .content_login button:hover {
+  color: white;
+}
+
+#login.show .otras_operaciones {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#login.show .otras_operaciones p {
+  font-size: 0.75rem;
+  margin-bottom: 8px;
+}
+
+#login.show .otras_operaciones span {
+  color: var(--secondary-color);
+  font-size: 0.75rem;
+}
+
+#login.show .otras_operaciones span:hover {
+  color: var(--primary-color);
+  cursor: pointer;
+}
+
+/* MEDIA QUERIES */
+@media (min-width: 576px) {
+
+}
+
+@media (min-width: 768px) {
+
+}
+
+@media (min-width: 992px) {
+
+  #login .content_login {
+    width:400px;
+    height: auto;
+    bottom: -200px;
+    top: 100px;
+    left: calc(100% - 420px)!important;
+    border-radius: 5px;
+  }
+
+  #login.show .content_login {
+    bottom: auto;
+  }
+
+}
+
+@media (min-width: 1200px) {
+
+}
+
+@media (min-width: 1400px) {
+
+}
+
+@media (min-width: 1500px) {
+
+}
+
+
+
+
