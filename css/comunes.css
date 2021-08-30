@@ -207,13 +207,14 @@ h2 {
   background-color: var(--secondary-color);
   color: var(--third-color);
 }
+
 .btn--alpha:before {
   background-color: var(--third-color);
   background-image: linear-gradient(to right, var(--third-color) 30%, var(--secondary-color) 100%);
   position: absolute;
 }
 .btn--alpha:hover, .btn--alpha:focus, .btn--alpha:active {
-  color: var(--secondary-color);
+  color: var(--secondary-color)!important;
 }
 /* Boton end */
 

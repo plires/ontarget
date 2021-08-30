@@ -26,13 +26,13 @@
 		  </div>
 			<!-- Pass end -->
 
-		  <button id="btnLogin" @click.prevent="login" class="btn btn-primary transition">Iniciar sesión</button>
+		  <button id="btnLogin" @click.prevent="login" class="btn btn--alpha"><span>Iniciar sesión</span></button>
 
 		</form>
 
 		<div class="otras_operaciones text-center">
 			<p>¿No tienes una cuenta? <span @click="openPopUpRegister" class="transition">Regístrate gratis</span></p>
-			<span class="transition">¿Olvidaste tu contraseña?</span>
+			<span class="transition" @click="openPopUpNewPass">¿Olvidaste tu contraseña?</span>
 		</div>
 
 	</div>
@@ -84,7 +84,7 @@
 		  </div>
 			<!-- CPass end -->
 
-		  <button id="btnRegister" @click.prevent="register" class="btn btn-primary transition">Registrarse</button>
+		  <button id="btnRegister" @click.prevent="register" class="btn btn--alpha"><span>Registrarse</span></button>
 
 		</form>
 
@@ -94,6 +94,36 @@
 
 	</div>
 	<!-- Formulario Register end -->
+
+	<!-- Formulario Nuevo Pass -->
+	<div v-if="newPasswordContent" class="content_login">
+
+		<!-- Msgs -->
+		<?php include('msg.php'); ?>
+
+		<!-- Errors -->
+		<?php include('errors.php'); ?>
+
+		<form id="formRegister" method="post">
+
+			<!-- Email -->
+		  <div class="form-group">
+		    <label for="email">Correo electrónico</label>
+		    <input type="email" class="form-control" id="email" name="email" v-model="email">
+		  </div>
+			<!-- Email -->
+
+		  <button id="btnNewPass" @click.prevent="forgotPassword" class="btn btn--alpha"><span>Recuperar Contraseña</span></button>
+
+		</form>
+
+		<div class="otras_operaciones text-center">
+			<p>¿No tienes una cuenta? <span @click="openPopUpRegister" class="transition">Regístrate gratis</span></p>
+			<span class="transition"  @click="openPopUpLogin">También puedes iniciar sesión</span>
+		</div>
+
+	</div>
+	<!-- Formulario Nuevo Pass end -->
 
 </section>
 

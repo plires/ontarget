@@ -7,10 +7,13 @@ let app = new Vue({
       email: '',
       phone: '',
       password: '',
+      password_reset: '',
       cpassword: '',
+      cpassword_reset: '',
       loginContent: false,
       registerContent: false,
       newPasswordContent: false,
+      user_id: '',
       msg: '',
       errors: []
     }
@@ -41,6 +44,16 @@ let app = new Vue({
       this.loginContent = false
       this.registerContent = true
       this.newPasswordContent = false
+      $('#login').addClass('show')
+      $('#login').removeClass('hidden')
+    },
+
+    openPopUpNewPass() {
+      this.cleanErrors()
+      this.cleanMsgs()
+      this.loginContent = false
+      this.registerContent = false
+      this.newPasswordContent = true
       $('#login').addClass('show')
       $('#login').removeClass('hidden')
     },
@@ -126,7 +139,7 @@ let app = new Vue({
 
       this.cleanErrors()
 
-      if ( this.name && this.validateEmail(this.email) && this.phone && this.password && this.cpassword && this.password == this.cpassword ) {
+      if ( this.name && this.validateEmail(this.email) && this.phone && this.password.length >= 6 && this.cpassword && this.password == this.cpassword ) {
         return true
       }
 
@@ -142,8 +155,8 @@ let app = new Vue({
         this.errors.push('Ingresá tu teléfono.')
       }
 
-      if ( !this.password || !this.cpassword ) {
-        this.errors.push('Ingresá la nueva contraseña y validala.')
+      if ( this.password.length < 6 ) {
+        this.errors.push('La contraseña debe tener al menos 6 caracteres.')
       }
 
       if ( this.password != this.cpassword ) {
@@ -182,6 +195,125 @@ let app = new Vue({
             $('#btnRegister').prop('disabled', false)
           } else {
             this.errors.push('Verificar los datos ingresados')
+            $('#btnRegister').prop('disabled', false)
+          }
+
+        })
+        .catch(error => {
+          this.cleanErrors()
+          this.errors.push('Existe un problema en el servidor. Intente mas tarde por favor')
+          $('#btnRegister').prop('disabled', false)
+          
+        })
+
+      }
+      $('#btnRegister').prop('disabled', false)
+
+    },
+
+    chekFormForgotPassword() {
+
+      this.cleanErrors()
+
+      if ( this.validateEmail( this.email) ) {
+        return true
+      }
+
+      if (!this.validateEmail(this.email)) {
+        this.errors.push('El email no es válido.')
+      }
+
+    },
+
+    forgotPassword() {
+
+      let checked = this.chekFormForgotPassword()
+      
+      if (checked) {
+
+        $('#btnNewPass').prop('disabled', false)
+        this.cleanErrors()
+        this.cleanMsgs()
+
+        const form = document.querySelector('#formRegister')
+        var formData = new FormData(form);
+
+        formData.append('email', this.email)
+
+        axios.post('/../../php/forgot-password.php', formData)
+        .then(response => {
+
+          if (response.data == true) {
+            this.msg = 'Te enviamos los datos a tu casilla de email. No olvides revisar tu bandeja de SPAM ;)'
+            this.cleanInputs()
+          } else if( response.data.email_inexistente ) {
+            this.errors.push(response.data.email_inexistente_msg)
+            $('#btnNewPass').prop('disabled', false)
+          } else {
+            this.errors.push('Verificar los datos ingresados')
+            $('#btnNewPass').prop('disabled', false)
+          }
+
+        })
+        .catch(error => {
+          console.log(error)
+
+          this.cleanErrors()
+          this.errors.push('Existe un problema en el servidor. Intente mas tarde por favor')
+          $('#btnNewPass').prop('disabled', false)
+          
+        })
+
+      }
+      $('#btnNewPass').prop('disabled', false)
+
+    },
+
+    chekFormResetPass() {
+
+      this.cleanErrors()
+
+      if ( this.password_reset && this.password_reset.length >= 6 && this.password_reset == this.cpassword_reset ) {
+        return true
+      }
+
+      if ( this.password_reset.length < 6 ) {
+        this.errors.push('La contraseña debe tener al menos 6 caracteres.')
+      }
+
+      if ( this.password_reset != this.cpassword_reset ) {
+        this.errors.push('Las contraseñas son diferentes.')
+      }
+
+    },
+
+    resetPass() {
+
+      let checked = this.chekFormResetPass()
+      
+      if (checked) {
+
+        $('#btnNewPAss').prop('disabled', false)
+        this.cleanErrors()
+        this.cleanMsgs()
+
+        const form = document.querySelector('#newPass')
+        var formData = new FormData(form);
+
+        formData.append('password_reset', this.password_reset)
+        formData.append('cpassword_reset', this.cpassword_reset)
+
+        axios.post('/../../php/new-pass.php', formData)
+        .then(response => {
+
+          if (response.data == true) {
+            this.msg = 'Reseteo de contraseña exitosa, Esta página se redireccionara al Home del sitio 5 segundos'
+            this.cleanInputs()
+            setTimeout(function(){
+              window.location.replace('./')
+            }, 5000)
+          } else {
+            this.errors.push('Verificar los datos ingresados. La contraseña debe tener al menos 6 caracteres.')
             $('#btnRegister').prop('disabled', false)
           }
 

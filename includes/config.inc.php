@@ -19,7 +19,7 @@ define('DB_PASS', 'secret');
 define('SMTP', 'smtp.librecomunicacion.net'); 
 define('EMAIL_SENDER', 'pruebas@librecomunicacion.net');
 define('EMAIL_PASS', 'Perezzs$7478'); 
-define('EMAIL_SENDER_SHOW', 'info@librecomunicacion.net');
+define('EMAIL_SENDER_SHOW', 'pruebas@librecomunicacion.net');
 define('NAME_SENDER_SHOW', 'On Target');
 define('EMAIL_RECIPIENT', 'carlos.castro.1975.2@gmail.com');
 define('EMAIL_BCC', '');

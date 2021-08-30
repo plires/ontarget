@@ -47,12 +47,12 @@ use PHPMailer\PHPMailer\Exception;
 
       switch ($template) {
         case 'Contacto Cliente':
-          include("../includes/emails/contacts/template-envio-cliente.inc.php"); // Cargo el contenido del email a enviar al cliente.
+          include("../includes/emails/contacts/test.php"); // Cargo el contenido del email a enviar al cliente.
           $subject = 'Nueva consulta desde el formulario web.';
           break;
         
         case 'Contacto Usuario':
-          include("../includes/emails/contacts/template-envio-usuario.inc.php"); // Cargo el contenido del email a enviar al usuario.
+          include("../includes/emails/contacts/test.php"); // Cargo el contenido del email a enviar al usuario.
           $subject = 'Gracias por su contacto.';
           break;
 

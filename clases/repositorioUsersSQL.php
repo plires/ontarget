@@ -132,6 +132,111 @@ class RepositorioUsersSQL extends repositorioUsers
 
   }
 
+  public function generateTokenAndSaveInDatabase($user) {
+
+    $selector = bin2hex(random_bytes(8));
+    $token = random_bytes(32);
+
+    $urlToEmail = BASE .'reset.php?' .http_build_query([
+        'selector' => $selector,
+        'id' => $user['id'],
+        'validator' => bin2hex($token)
+    ]);
+
+    $expires = new DateTime('NOW');
+    $expires->add(new DateInterval('PT01H')); // 1 hour
+
+    // Insertar en base de datos
+    $sql = "
+      INSERT INTO account_recovery (user_id, selector, token, expires) 
+      VALUES (:user_id, :selector, :token, :expires);
+    ";
+
+    $stmt = $this->conexion->prepare($sql);
+    
+    $stmt->bindValue(":user_id", $user['id'], PDO::PARAM_STR);
+    $stmt->bindValue(":selector", $selector, PDO::PARAM_STR);
+    $stmt->bindValue(":token", hash('sha256', bin2hex($token)), PDO::PARAM_STR);
+    $stmt->bindValue(":expires", $expires->format('Y-m-d\TH:i:s'), PDO::PARAM_STR);
+
+    $generatedToken['executed'] = $stmt->execute();
+    $generatedToken['urlToEmail'] = $urlToEmail;
+
+    return $generatedToken;
+
+  }
+
+  public function newPass($post) {
+
+    $password_hash = password_hash($post['password_reset'], PASSWORD_DEFAULT);
+
+    $id = (int)$post['user_id'];
+
+    $sql = "UPDATE users SET password = :password WHERE id = '$id' ";
+    $stmt = $this->conexion->prepare($sql);
+    $stmt->bindValue(":password", $password_hash, PDO::PARAM_STR);
+
+    $set_new_pass = $stmt->execute();
+
+    if ($set_new_pass) {
+      //borrar de la tabla account_recovery al usuario
+      $sql = "DELETE FROM account_recovery WHERE user_id='$id'";
+      $stmt = $this->conexion->prepare($sql);
+      return $stmt->execute();
+    }
+
+  }
+
+  public function resetPassword($selector, $validator, $user_id) {
+
+    $sql = "SELECT * FROM account_recovery WHERE selector = ? AND expires >= NOW()";
+
+    $stmt = $this->conexion->prepare($sql);
+    $stmt->execute([$selector]);
+    $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+    if (!empty($results) && hash_equals($validator, $results[0]['token']) && $results[0]['user_id'] == $user_id ) {
+      session_start();
+      $_SESSION['logged'] = true;
+    } else {
+      header('Location: ./');
+    }
+
+    return $results[0]['user_id'];
+
+  }
+
+  public function forgotPassword($post)
+  {
+
+    try {
+
+      // Verificar que el email exista
+      $user = $this->getUserByEmail($post['email']);
+
+      // Devolver mensaje de error si es asi
+      if (!$user) {
+        $result['email_inexistente'] = true;
+        $result['email_inexistente_msg'] = 'Este correo no esta registrado. Ingrese el correo con el cual se registró';
+        return $result;
+      }
+
+      // Generar un token, guardarlo en la base de datos
+      $generatedToken = $this->generateTokenAndSaveInDatabase($user);
+
+      // Emviar email con el link al usuario
+      $app = new App;
+      // $sendUser = $app->sendEmail('Usuario', 'Contacto Usuario', $post);
+      return true;
+     
+    } catch (Exception $e) {
+      // lanzar error
+      header("HTTP/1.1 500 Internal Server Error");
+
+    }
+
+  }
+
   public function getUserById($id)
   {
     $sql = "SELECT * FROM users WHERE id = '$id' ";
@@ -174,53 +279,6 @@ class RepositorioUsersSQL extends repositorioUsers
     $user = $stmt->fetch(PDO::FETCH_ASSOC);
 
     return $user;
-
-  }
-
-  public function sendNewPassword($user)
-  {
-
-    $new_pass = substr( md5(microtime()), 1, 8);
-
-    $id = (int)$user['id'];
-
-    $sql = "UPDATE users SET pass = :pass WHERE id = '$id' ";
-
-    $stmt = $this->conexion->prepare($sql);
-
-    $stmt->bindValue(":pass", md5($new_pass), PDO::PARAM_STR);
-
-    $set_new_pass = $stmt->execute();
-
-    if ($set_new_pass) {
-
-      $to = $user['email'];
-      $subject = "Reset de contraseña";
-      $message = "Tu nueva contraseña es: " . $new_pass;
-      $headers = 'From: info@jokerhotel.com.ar' . "\r\n" .
-      'Reply-To: info@jokerhotel.com.ar' . "\r\n" .
-      'X-Mailer: PHP/' . phpversion();
-       
-      $send_email = mail($to, $subject, $message, $headers);
-
-    }
-
-    return $send_email;
-
-  }
-
-  public function setPasswordUser($data)
-  {
-
-    $id = (int)$data['id_user'];
-
-    $sql = "UPDATE users SET pass = :pass WHERE id = '$id' ";
-
-    $stmt = $this->conexion->prepare($sql);
-
-    $stmt->bindValue(":pass", md5($data['pass']), PDO::PARAM_STR);
-
-    return $stmt->execute();
 
   }
 
