@@ -117,9 +117,16 @@ let app = new Vue({
         .then(response => {
 
           if (response.data) {
+
             // loguear usuario. Redireccionar al dashboard
+            console.log(response.data)
+            localStorage.setItem('authUser', JSON.stringify(response.data))
+            window.location.href = './dashboard.php';
+
           } else {
+
             this.errors.push('Email o contraseña incorrectas')
+
           }
 
           $('#btnLogin').prop('disabled', false)

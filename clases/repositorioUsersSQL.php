@@ -27,8 +27,13 @@ class RepositorioUsersSQL extends repositorioUsers
         return false;
       }
 
-      if (password_verify( $password, $user['password']) ) {
-        return $user;
+      if (password_verify( $password, $user['password']) && $user['token'] == NULL ) {
+        session_start();
+        $_SESSION = $user;
+        unset($_SESSION['password']);
+        unset($_SESSION['token']);
+        unset($_SESSION['created_at']);
+        return $_SESSION;
       }
 
       return false;
@@ -61,6 +66,30 @@ class RepositorioUsersSQL extends repositorioUsers
 
   }
 
+  public function verifyTokenNewEmail($email, $token) {
+
+    $sql = "SELECT * FROM users WHERE email = '$email' ";
+
+    $stmt = $this->conexion->prepare($sql);
+    $stmt->execute();
+    $user = $stmt->fetch(PDO::FETCH_ASSOC);
+
+    if ($email == $user['email'] && $token == $user['token']) {
+
+      // Eliminamos el token del usuario y ya queda habilitado para el ingreso
+      $sql = "UPDATE users SET token = :token WHERE email = '$email' ";
+      $stmt = $this->conexion->prepare($sql);
+      $stmt->bindValue(":token", NULL, PDO::PARAM_STR);
+      $stmt->execute();
+
+      return $user;
+      
+    }
+
+    return false;
+    
+  }
+
   public function register($post)
   {
     $email = $post['email'];
@@ -77,7 +106,12 @@ class RepositorioUsersSQL extends repositorioUsers
       }
 
       $password_hash = password_hash($post['password'], PASSWORD_DEFAULT);
-      $token = md5($post['password']);
+      $token = bin2hex(random_bytes(32));
+
+      $urlToEmail = BASE .'verify.php?' .http_build_query([
+        'token' => $token,
+        'email' => $email
+      ]);
 
       // Traer el proximo teamleader
       // $sql = "SELECT * FROM team_leaders ORDER BY id ASC";

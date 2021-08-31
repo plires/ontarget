@@ -1,0 +1,93 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700&display=swap');
+
+body {
+  font-family: 'Montserrat', sans-serif;
+}
+
+/* Variables */
+:root {
+  --primary-color: rgba(14,39,119,1);
+  --secondary-color: #40c9f7;
+  --third-color: #6044ff;
+  --quarter-color: #30feff;
+}
+/* Variables end */
+
+/* Aside Left */
+[class*="sidebar-dark-"] {
+	background-color: white;
+}
+
+[class*="sidebar-dark"] .brand-link,
+[class*="sidebar-dark"] .user-panel {
+    border-bottom: 1px solid var(--primary-color);
+}
+
+aside .brand-link {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+aside .brand-link .brand-image {
+	margin: 0;
+}
+
+.sidebar-collapse .brand-image {
+	margin-left: 15px!important;
+}
+
+aside .brand-text {
+	margin-left: 10px;
+}
+
+.sidebar .user-panel {
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+}
+
+.sidebar .user-panel .image {
+	padding: 0;
+}
+
+.sidebar-collapse .user-panel .image {
+	padding-left: .8rem;
+}
+
+.sidebar-collapse .sidebar .user-panel i {
+	padding-left: 10px;
+	padding-right: 10px;
+}
+
+.sidebar .user-panel i {
+	color: var(--third-color);
+	font-size: 1.25rem;
+}
+
+.sidebar .user-panel button {
+	background: transparent;
+	background: none;
+	border: none;
+	color: var(--third-color);
+	font-size: 0.85rem;
+	font-weight: 100;
+}
+
+.sidebar-dark-primary .nav-sidebar > .nav-item > .nav-link.active, .sidebar-light-primary .nav-sidebar > .nav-item > .nav-link.active {
+	background-color: var(--third-color);
+}
+
+[class*="sidebar-dark-"] .nav-treeview > .nav-item > .nav-link:focus, [class*="sidebar-dark-"] .nav-treeview > .nav-item > .nav-link:hover {
+	color: var(--primary-color);
+}
+
+[class*="sidebar-dark-"] .nav-treeview > .nav-item > .nav-link {
+	color: var(--secondary-color);
+	font-size: 0.85rem;
+}
+
+aside .nav-item .active {
+	color: white!important;
+}
+/* Aside Left end */

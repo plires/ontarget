@@ -14,7 +14,7 @@
     <li><a class="transition" href="quienes-somos.php">Quienes Somos</a></li>
     <li><a class="transition" href="aprender.php">¿Qué Aprenderemos?</a></li>
     <li><a class="transition" href="como-funciona.php">¿Cómo Funciona?</a></li>
-    <li><a class="transition" href="#">Blog</a></li>
+    <!-- <li><a class="transition" href="#">Blog</a></li> -->
     <li><a class="transition" href="faq.php">FAQ</a></li>
     <li><a class="transition" href="contactos.php">Contacto</a></li>
     <li><button @click="openPopUpLogin" class="transition" href="#"><i class="far fa-user-circle transition"></i></button></li>
