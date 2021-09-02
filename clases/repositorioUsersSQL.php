@@ -90,6 +90,29 @@ class RepositorioUsersSQL extends repositorioUsers
     
   }
 
+  public function assignNewTeamLeader() {
+
+    $sql = "SELECT team_leader_id FROM users ORDER BY id DESC LIMIT 1";
+    $stmt = $this->conexion->prepare($sql);
+    $stmt->execute();
+    $user = $stmt->fetch(PDO::FETCH_ASSOC);
+    $next_team_leader = (int)$user['team_leader_id'] + 1;
+
+    $sql = "SELECT * FROM team_leaders WHERE id = '$next_team_leader' ";
+    $stmt = $this->conexion->prepare($sql);
+    $stmt->execute();
+    $next_team_leader = $stmt->fetch(PDO::FETCH_ASSOC);
+
+    if (!$next_team_leader) {
+      $team_leader = 1;
+    } else {
+      $team_leader = (int)$next_team_leader['id'];
+    }
+
+    return $team_leader;    
+
+  }
+
   public function register($post)
   {
     $email = $post['email'];
@@ -113,21 +136,9 @@ class RepositorioUsersSQL extends repositorioUsers
         'email' => $email
       ]);
 
-      // Traer el proximo teamleader
-      // $sql = "SELECT * FROM team_leaders ORDER BY id ASC";
-      // $stmt = $this->conexion->prepare($sql);
-      // $stmt->execute();
-      // $team_leaders = $stmt->fetchAll(PDO::FETCH_ASSOC);
-
-      // $sql = "SELECT * FROM users";
-      // $stmt = $this->conexion->prepare($sql);
-      // $stmt->execute();
-      // $users = $stmt->fetchAll(PDO::FETCH_ASSOC);
-
-      // $id = $this->conexion->lastInsertId();
-
-      $team_leader = 1;
-
+      // Asignar al teamLeader
+      $team_leader = $this->assignNewTeamLeader();
+      
       $date = date("Y-m-d H:i:s");
 
       // Insertar en base de datos
@@ -143,7 +154,7 @@ class RepositorioUsersSQL extends repositorioUsers
       $stmt->bindValue(":phone", $post['phone'], PDO::PARAM_STR);
       $stmt->bindValue(":password", $password_hash, PDO::PARAM_STR);
       $stmt->bindValue(":token", $token, PDO::PARAM_STR);
-      $stmt->bindValue(":team_leader_id", $team_leader, PDO::PARAM_STR);
+      $stmt->bindValue(":team_leader_id", $team_leader, PDO::PARAM_INT);
       $stmt->bindValue(":authorized_units", 1, PDO::PARAM_STR);
       $stmt->bindValue(":created_at", $date, PDO::PARAM_STR);
 
