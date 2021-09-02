@@ -1,8 +1,11 @@
 <?php
 session_start();
-if (!$_SESSION['email']) {
+
+if ( !isset($_SESSION['user']) ) {
+  session_destroy();
   header('Location: ./');
 }
+
 ?>
 
 <!DOCTYPE html>

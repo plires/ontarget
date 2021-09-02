@@ -36,13 +36,6 @@ use PHPMailer\PHPMailer\Exception;
           $emailBCC = '';
           break;
 
-        case 'Cliente CV':
-          $emailDestino = EMAIL_RECIPIENT;
-          $nameShow = 'Sitio Web Laboratorio IBC';
-          $emailAddReplyTo = EMAIL_SENDER;
-          $emailBCC = EMAIL_BCC;
-          $emailShow = EMAIL_SENDER;  
-          break;
       }
 
       switch ($template) {
@@ -54,13 +47,6 @@ use PHPMailer\PHPMailer\Exception;
         case 'Contacto Usuario':
           include("../includes/emails/contacts/test.php"); // Cargo el contenido del email a enviar al usuario.
           $subject = 'Gracias por su contacto.';
-          break;
-
-        case 'Send CV Cliente':
-          $this->uploadCV($post);
-
-          include("../includes/emails/cv/template-envio-cliente.inc.php"); // Cargo el contenido del email a enviar al cliente.
-          $subject = 'Envio de CV desde Formulario web.';
           break;
       }
 
@@ -81,14 +67,8 @@ use PHPMailer\PHPMailer\Exception;
         //Recipients
         $mail->setFrom(EMAIL_SENDER_SHOW, NAME_SENDER_SHOW);
         $mail->addAddress('plires@depisos.com', 'Pablo Depisos');     //Add a recipient
-        // $mail->addAddress('ellen@example.com');               //Name is optional
         $mail->addReplyTo(EMAIL_SENDER_SHOW, NAME_SENDER_SHOW);
         // $mail->addCC('cc@example.com');
-        // $mail->addBCC('bcc@example.com');
-
-        //Attachments
-        // $mail->addAttachment('/var/tmp/file.tar.gz');         //Add attachments
-        // $mail->addAttachment('/tmp/image.jpg', 'new.jpg');    //Optional name
 
         //Content
         $mail->isHTML(true);                                  //Set email format to HTML
@@ -96,13 +76,13 @@ use PHPMailer\PHPMailer\Exception;
         $mail->Body    = $body;
         // $mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
         
-        // $mail->SMTPOptions = array(
-        //   'ssl' => array(
-        //     'verify_peer' => false,
-        //     'verify_peer_name' => false,
-        //     'allow_self_signed' => true
-        //   )
-        // );
+        $mail->SMTPOptions = array(
+          'ssl' => array(
+            'verify_peer' => false,
+            'verify_peer_name' => false,
+            'allow_self_signed' => true
+          )
+        );
 
         $mail->send();
         echo 'Message has been sent';

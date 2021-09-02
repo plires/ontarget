@@ -15,17 +15,29 @@ let app = new Vue({
       newPasswordContent: false,
       user_id: '',
       msg: '',
+      authUser: {},
       errors: []
     }
   },
 
   mounted() {
+    this.getAuthUser()
   },
 
   methods: {
 
     closePopUpLogin() {
       $('#login').addClass('hidden')
+    },
+
+    async getAuthUser() {
+
+      let user = localStorage.getItem('authUser')
+
+      if (user) {
+        this.authUser = JSON.parse(user)
+      }
+
     },
 
     openPopUpLogin() {
@@ -119,8 +131,9 @@ let app = new Vue({
           if (response.data) {
 
             // loguear usuario. Redireccionar al dashboard
-            console.log(response.data)
+            this.authUser = response.data
             localStorage.setItem('authUser', JSON.stringify(response.data))
+            this.authUser = response.data
             window.location.href = './dashboard.php';
 
           } else {

@@ -23,7 +23,7 @@ define('EMAIL_SENDER_SHOW', 'pruebas@librecomunicacion.net');
 define('NAME_SENDER_SHOW', 'On Target');
 define('EMAIL_RECIPIENT', 'carlos.castro.1975.2@gmail.com');
 define('EMAIL_BCC', '');
-define('EMAIL_PORT', 465);
+define('EMAIL_PORT', 587);
 define('EMAIL_NAME', 'On Target');
 define('EMAIL_SUBJECT', 'Gracias por tu contacto');
 define('EMAIL_CHARSET', 'utf-8');

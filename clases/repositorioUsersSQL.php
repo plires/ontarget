@@ -29,11 +29,11 @@ class RepositorioUsersSQL extends repositorioUsers
 
       if (password_verify( $password, $user['password']) && $user['token'] == NULL ) {
         session_start();
-        $_SESSION = $user;
-        unset($_SESSION['password']);
-        unset($_SESSION['token']);
-        unset($_SESSION['created_at']);
-        return $_SESSION;
+        $_SESSION['user'] = $user;
+        unset($_SESSION['user']['password']);
+        unset($_SESSION['user']['token']);
+        unset($_SESSION['user']['created_at']);
+        return $_SESSION['user'];
       }
 
       return false;
