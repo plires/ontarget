@@ -10,6 +10,7 @@ let app = new Vue({
       password_reset: '',
       cpassword: '',
       cpassword_reset: '',
+      accountContent: false,
       loginContent: false,
       registerContent: false,
       newPasswordContent: false,
@@ -33,6 +34,7 @@ let app = new Vue({
     async getAuthUser() {
 
       let user = localStorage.getItem('authUser')
+      console.log(user)
 
       if (user) {
         this.authUser = JSON.parse(user)
@@ -40,34 +42,35 @@ let app = new Vue({
 
     },
 
-    openPopUpLogin() {
+    resetAllPopUp() {
       this.cleanErrors()
       this.cleanMsgs()
-      this.loginContent = true
+      this.accountContent = false
+      this.loginContent = false
       this.registerContent = false
       this.newPasswordContent = false
       $('#login').addClass('show')
       $('#login').removeClass('hidden')
+    },
+
+    openPopUpAcount() {
+      this.resetAllPopUp()
+      this.accountContent = true
+    },
+
+    openPopUpLogin() {
+      this.resetAllPopUp()
+      this.loginContent = true
     },
 
     openPopUpRegister() {
-      this.cleanErrors()
-      this.cleanMsgs()
-      this.loginContent = false
+      this.resetAllPopUp()
       this.registerContent = true
-      this.newPasswordContent = false
-      $('#login').addClass('show')
-      $('#login').removeClass('hidden')
     },
 
     openPopUpNewPass() {
-      this.cleanErrors()
-      this.cleanMsgs()
-      this.loginContent = false
-      this.registerContent = false
+      this.resetAllPopUp()
       this.newPasswordContent = true
-      $('#login').addClass('show')
-      $('#login').removeClass('hidden')
     },
 
     validateEmail(email) {

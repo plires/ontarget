@@ -25,6 +25,7 @@ if ( !isset($_SESSION['user']) ) {
   <link rel="stylesheet" type="text/css" href="./node_modules/slick-carousel/slick/slick-theme.css"/>
   <link rel="stylesheet" type="text/css" href="./node_modules/aos/dist/aos.css"/>
   <link rel="stylesheet" href="./node_modules/admin-lte/dist/css/adminlte.min.css">
+
   <link rel="stylesheet" href="css/app-dashboard.css">
 
 </head>
@@ -39,92 +40,102 @@ if ( !isset($_SESSION['user']) ) {
 
 <body class="hold-transition sidebar-mini">
 
-<div id="app" class="wrapper">
-  
-  <!-- Nav Dashboard -->
-  <?php include('includes/dashboard/nav.php'); ?>
+<div id="app">
 
-  <!-- Aside Dashboard Left -->
-  <?php include('includes/dashboard/aside-left.php'); ?>
+  <div class="wrapper">
 
-  <!-- Content Wrapper. Contains page content -->
-  <div class="content-wrapper">
+    <!-- Login -->
+    <?php include('includes/login.php'); ?>
     
-    <div class="content-header">
-      <div class="container-fluid">
-        <div class="row mb-2">
-          <div class="col-sm-6">
-            <h1 class="m-0">¡Te damos la Bienvenida xxx!</h1>
+    <!-- Nav -->
+    <?php include('includes/nav.php'); ?>
+    
+    <!-- Nav Dashboard -->
+    <?php include('includes/dashboard/nav.php'); ?>
+
+    <!-- Aside Dashboard Left -->
+    <?php include('includes/dashboard/aside-left.php'); ?>
+
+    <!-- Content Wrapper. Contains page content -->
+    <div class="content-wrapper">
+      
+      <div class="content-header">
+        <div class="container-fluid">
+          <div class="row mb-2">
+            <div class="col-sm-6">
+              <h1 class="m-0">¡Te damos la Bienvenida xxx!</h1>
+            </div>
+           
           </div>
-         
         </div>
       </div>
-    </div>
-   
+     
 
-    <!-- Main content -->
-    <div class="content">
-      <div class="container-fluid">
-        <div class="row">
+      <!-- Main content -->
+      <div class="content">
+        <div class="container-fluid">
+          <div class="row">
 
-          <div class="col-lg-6">
-            <div class="card">
-              <div class="card-header border-0">
-                <div class="d-flex justify-content-between">
-                  <h3 class="card-title">Capitulo 1</h3>
+            <div class="col-lg-6">
+              <div class="card">
+                <div class="card-header border-0">
+                  <div class="d-flex justify-content-between">
+                    <h3 class="card-title">Capitulo 1</h3>
+                  </div>
                 </div>
-              </div>
-              <div class="card-body">
-                <div class="embed-responsive embed-responsive-16by9">
-                  <iframe class="embed-responsive-item" title="vimeo-player" src="https://player.vimeo.com/video/595545366?h=bf44df8e2d" width="640" height="360" frameborder="0" allowfullscreen></iframe>
+                <div class="card-body">
+                  <div class="embed-responsive embed-responsive-16by9">
+                    <iframe class="embed-responsive-item" title="vimeo-player" src="https://player.vimeo.com/video/595545366?h=bf44df8e2d" width="640" height="360" frameborder="0" allowfullscreen></iframe>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
 
-          <div class="col-lg-6">
-            <div class="card">
-              <div class="card-header border-0">
-                <div class="d-flex justify-content-between">
-                  <h3 class="card-title">Capitulo 2</h3>
+            <div class="col-lg-6">
+              <div class="card">
+                <div class="card-header border-0">
+                  <div class="d-flex justify-content-between">
+                    <h3 class="card-title">Capitulo 2</h3>
+                  </div>
                 </div>
-              </div>
-              <div class="card-body">
-                <div class="embed-responsive embed-responsive-16by9">
-                  <iframe class="embed-responsive-item" title="vimeo-player" src="https://player.vimeo.com/video/595545366?h=bf44df8e2d" width="640" height="360" frameborder="0" allowfullscreen></iframe>
+                <div class="card-body">
+                  <div class="embed-responsive embed-responsive-16by9">
+                    <iframe class="embed-responsive-item" title="vimeo-player" src="https://player.vimeo.com/video/595545366?h=bf44df8e2d" width="640" height="360" frameborder="0" allowfullscreen></iframe>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
 
-          <div class="col-lg-6">
-            <div class="card">
-              <div class="card-header border-0">
-                <div class="d-flex justify-content-between">
-                  <h3 class="card-title">Capitulo 1</h3>
+            <div class="col-lg-6">
+              <div class="card">
+                <div class="card-header border-0">
+                  <div class="d-flex justify-content-between">
+                    <h3 class="card-title">Capitulo 1</h3>
+                  </div>
                 </div>
-              </div>
-              <div class="card-body">
-                <div class="embed-responsive embed-responsive-16by9">
-                  <iframe class="embed-responsive-item" title="vimeo-player" src="https://player.vimeo.com/video/595545366?h=bf44df8e2d" width="640" height="360" frameborder="0" allowfullscreen></iframe>
+                <div class="card-body">
+                  <div class="embed-responsive embed-responsive-16by9">
+                    <iframe class="embed-responsive-item" title="vimeo-player" src="https://player.vimeo.com/video/595545366?h=bf44df8e2d" width="640" height="360" frameborder="0" allowfullscreen></iframe>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
 
-          <div class="col-lg-6">
-            <div class="card">
-              <div class="card-header border-0">
-                <div class="d-flex justify-content-between">
-                  <h3 class="card-title">Capitulo 2</h3>
+            <div class="col-lg-6">
+              <div class="card">
+                <div class="card-header border-0">
+                  <div class="d-flex justify-content-between">
+                    <h3 class="card-title">Capitulo 2</h3>
+                  </div>
                 </div>
-              </div>
-              <div class="card-body">
-                <div class="embed-responsive embed-responsive-16by9">
-                  <iframe class="embed-responsive-item" title="vimeo-player" src="https://player.vimeo.com/video/595545366?h=bf44df8e2d" width="640" height="360" frameborder="0" allowfullscreen></iframe>
+                <div class="card-body">
+                  <div class="embed-responsive embed-responsive-16by9">
+                    <iframe class="embed-responsive-item" title="vimeo-player" src="https://player.vimeo.com/video/595545366?h=bf44df8e2d" width="640" height="360" frameborder="0" allowfullscreen></iframe>
+                  </div>
                 </div>
               </div>
             </div>
+
           </div>
 
         </div>
@@ -132,14 +143,14 @@ if ( !isset($_SESSION['user']) ) {
       </div>
 
     </div>
+
+    <!-- Aside Right -->
+    <?php include('includes/dashboard/aside-right.php'); ?>
+
+    <!-- Footer Admin -->
+    <?php include('includes/dashboard/footer-dashboard.php'); ?>
 
   </div>
-
-  <!-- Aside Right -->
-  <?php include('includes/dashboard/aside-right.php'); ?>
-
-  <!-- Footer Admin -->
-  <?php include('includes/dashboard/footer-dashboard.php'); ?>
 
 </div>
 
@@ -152,6 +163,8 @@ if ( !isset($_SESSION['user']) ) {
 <script type="text/javascript" src="./node_modules/vue/dist/vue.js"></script>
 <script type="text/javascript" src="./node_modules/slick-carousel/slick/slick.js"></script>
 <script type="text/javascript" src="./node_modules/aos/dist/aos.js"></script>
+<script type="text/javascript" src="js/app.js"></script>
+
 <script type="text/javascript" src="js/slick-home.js"></script>
 <script type="text/javascript" src="js/nav/vue-nav.js"></script>
 

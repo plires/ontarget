@@ -1,11 +1,11 @@
-nav {
+#nav {
   position: relative;
   background: white;
   height: 60px;
-  z-index: 10;
+  z-index: 9999;
 }
 
-nav ul {
+#nav ul {
   margin: 0;
   padding: 10px;
   position: absolute;
@@ -16,11 +16,11 @@ nav ul {
   z-index: 10;
 }
 
-nav ul li {
+#nav ul li {
   padding: 10px;
 }
 
-nav ul li a {
+#nav ul li a {
   position: relative;
   left: 0;
   color: white;
@@ -29,17 +29,17 @@ nav ul li a {
   text-decoration: none;
 }
 
-nav ul li a:hover {
+#nav ul li a:hover {
   left: 10px;
   color: #40c9f7;
   text-decoration: none;
 }
 
-nav ul li:last-child {
+#nav ul li:last-child {
   display: none;
 }
 
-nav ul li:last-child button {
+#nav ul li:last-child button {
   width: auto;
   display: flex;
   justify-content: flex-end;
@@ -47,46 +47,46 @@ nav ul li:last-child button {
   color: var(--primary-color);
 }
 
-nav ul li:last-child button:hover {
+#nav ul li:last-child button:hover {
   left: 0;
 }
 
-nav ul li:last-child button:hover i {
+#nav ul li:last-child button:hover i {
   color: #40c9f7;
 }
 
-nav ul li i {
+#nav ul li i {
   /*color: white;*/
   font-size: 1.5rem;
 }
 
-nav .logo {
+#nav .logo {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 15px;
 }
 
-nav .logo img {
+#nav .logo img {
   max-width: 150px;
   content:url("../img/nav/logo-ontarget.png");
 }
 
-nav.fixed .logo img {
+#nav.fixed .logo img {
   max-width: 150px;
   content:url("../img/nav/logo-ontarget-white.png");
 }
 
-nav.fixed ul.active {
+#nav.fixed ul.active {
   top: 60px;
 }
 
-nav ul.active {
+#nav ul.active {
   top: 60px;
   /*height: 425px;*/
 }
 
-nav.fixed {
+#nav.fixed {
   position: fixed;
   top: 0;
   width: 100%;
@@ -96,11 +96,11 @@ nav.fixed {
   border-bottom: solid 1px white;
 }
 
-nav.fixed .logo .menu_mobile i {
+#nav.fixed .logo .menu_mobile i {
   color: white;
 }
 
-nav.fixed .logo img {
+#nav.fixed .logo img {
   max-width: 150px;
 }
 
@@ -113,20 +113,54 @@ nav.fixed .logo img {
   }
 }
 
-nav .logo .menu_mobile {
+#nav .logo .menu_mobile {
   z-index: 99;
 }
 
-nav .logo .menu_mobile button {
+#nav .logo .menu_mobile button {
   background: transparent;
   border: none;
 }
 
-nav .logo .menu_mobile i {
+#nav .logo .menu_mobile button:first-child {
+  margin-right: 20px;
+}
+
+#nav .logo .menu_mobile i {
   color: var(--primary-color);
   font-size: 1.25rem;
   cursor: pointer;
 }
+
+.content_account .name {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5rem;
+  margin-bottom: 5px;
+}
+
+.content_account .icon {
+  display: flex!important;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  width: 25px;
+  height: 25px;
+  display: inline-block;
+  background: var(--third-color);
+  border-radius: 50%;
+  margin-right: 10px;
+  font-size: 1rem;
+  text-transform: uppercase;
+}
+
+.content_account .user {
+  border-bottom: 1px solid #e6e6e6;
+  margin-bottom: 20px;
+}
+
 
 /* MEDIA QUERIES */
 @media (min-width: 576px) {
@@ -139,17 +173,17 @@ nav .logo .menu_mobile i {
 
 @media (min-width: 992px) {
 
-  nav .logo .menu_mobile i {
+  #nav .logo .menu_mobile i {
     display: none;
   }
 
-  nav {
+  #nav {
     display: flex;
     justify-content: space-around;
   }
 
-  nav ul,
-  nav ul.active {
+  #nav ul,
+  #nav ul.active {
     position: relative;
     display: flex;
     justify-content: flex-end;
@@ -157,23 +191,23 @@ nav .logo .menu_mobile i {
     background-color: transparent;
   }
 
-  nav ul li {
+  #nav ul li {
     display: flex;
     align-items: center;
   }
 
-  nav ul li a,
-  nav ul li button {
+  #nav ul li a,
+  #nav ul li button {
     color: var(--primary-color);
     font-size: 0.83rem;
   }
 
-  nav ul li a:hover {
+  #nav ul li a:hover {
     left: 0;
     color: var(--secondary-color)!important;
   }  
 
-  nav ul li:last-child {
+  #nav ul li:last-child {
     display: inline-block;
     padding: 10px;
     display: flex;
@@ -181,7 +215,7 @@ nav .logo .menu_mobile i {
     align-items: center;
   }
 
-  nav ul li:last-child button {
+  #nav ul li:last-child button {
     border: none;
     border-left: var(--primary-color) 2px solid;
     padding-left: 10px;
@@ -190,13 +224,13 @@ nav .logo .menu_mobile i {
     color: var(--primary-color);
   }
 
-  nav.fixed ul li a,
-  nav.fixed ul li button,
-  nav.fixed ul li a i {
+  #nav.fixed ul li a,
+  #nav.fixed ul li button,
+  #nav.fixed ul li a i {
     color: white;
   }
 
-  nav.fixed ul li:last-child button {
+  #nav.fixed ul li:last-child button {
     border-left: white 2px solid;
   }
 
@@ -205,49 +239,43 @@ nav .logo .menu_mobile i {
 
 @media (min-width: 1200px) {
 
-  nav ul li a {
-    font-size: 1rem;
-  }
-
 }
 
 @media (min-width: 1400px) {
 
-  nav,
-  nav ul {
+  #nav,
+  #nav ul {
     height: 110px;
   }
 
-  nav.fixed,
-  nav.fixed ul {
+  #nav.fixed,
+  #nav.fixed ul {
     height: 60px;
   }
 
-  nav .logo img {
+  #nav .logo img {
     max-width: 100%;
   }
 
-  nav ul li {
+  #nav ul li {
     padding-left: 20px;
     padding-right: 20px;
   }
 
-  nav ul li a {
+  #nav ul li a {
     font-size: 1rem;
   }
 
-  nav.fixed ul li a {
+  #nav.fixed ul li a {
     font-size: 0.85rem;
   }
 
-  nav ul li:last-child i {
-    font-size: 2.5rem;
-    font-weight: 400;
+  #nav ul li:last-child i {
+    font-size: 2rem;
   }
 
-  nav.fixed ul li:last-child i {
+  #nav.fixed ul li:last-child i {
     font-size: 1.75rem;
-    font-weight: 200;
   }
 
 }
@@ -255,7 +283,7 @@ nav .logo .menu_mobile i {
 @media (min-width: 1500px) {
 
 
-  nav ul li a {
+  #nav ul li a {
     font-size: 1.15rem;
   }
 

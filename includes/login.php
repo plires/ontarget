@@ -125,6 +125,35 @@
 	</div>
 	<!-- Formulario Nuevo Pass end -->
 
+	<!-- Cuenta de usuario -->
+	<div v-if="accountContent" class="content_login content_account">
+
+		<!-- Msgs -->
+		<?php include('msg.php'); ?>
+
+		<!-- Errors -->
+		<?php include('errors.php'); ?>
+
+		<ul>
+			<li>
+				<div class="user">
+					<p class="name" v-cloak><span class="icon">{{ authUser.name.charAt(0) }}</span>{{ authUser.name }}</p>
+				</div>
+			</li>
+			<li>
+				<p><i class="fas fa-columns"></i>Dashboard</p>
+			</li>
+			<li>
+				<p><i class="fas fa-user-cog"></i>Perfil</p>
+			</li>
+			<li>
+				<p><i class="fas fa-sign-out-alt"></i>Salir</p>
+			</li>
+		</ul>
+
+	</div>
+	<!-- Cuenta de usuario end -->
+
 </section>
 
 <!-- Login end -->
