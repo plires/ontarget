@@ -152,11 +152,19 @@ aside .nav-item .active {
 	}
 	/* Aside Left end */
 
-	/* Nav Dashboard */
+	/* Nav Nav Header */
+	.navbar {
+		width: calc(100% - 250px);
+	}
+
+	.sidebar-collapse .navbar {
+		width: calc(100% - 4.6rem);
+	}
+
 	.nav_variable_location {
 	  margin-top: 19px;
 	}
-	/* Nav Dashboard end */
+	/* Nav Nav Header end */
 
 }
 
