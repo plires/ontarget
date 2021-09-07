@@ -3,6 +3,7 @@
 require __DIR__ . '/../includes/config.inc.php';
 require __DIR__ . '/repositorio.php';
 require __DIR__ . '/repositorioUsersSQL.php';
+require __DIR__ . '/repositorioEpisodesSQL.php';
 
 class RepositorioSQL extends Repositorio {
 
@@ -20,6 +21,7 @@ class RepositorioSQL extends Repositorio {
     }
 
     $this->repositorioUsers = new RepositorioUsersSQL($this->conexion);
+    $this->repositorioEpisodes = new repositorioEpisodesSQL($this->conexion);
 
   }
 }

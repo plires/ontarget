@@ -12,6 +12,18 @@ class RepositorioUsersSQL extends repositorioUsers
     $this->conexion = $conexion;
   }
 
+  public function checkAuthUser() {
+    session_start();
+
+    if ( !isset($_SESSION['user']) ) {
+      session_destroy();
+      return false;
+    }
+
+    return true;
+    
+  }
+
   public function login($email, $password)
   {
 

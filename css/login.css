@@ -52,6 +52,13 @@
   animation: showModal 1s forwards;
   bottom: 0;
   left: 0;
+  z-index: 999999;
+  border: 1px solid #f0f0f0;
+}
+
+#login.show .content_login ul {
+  padding: 0;
+  list-style: none;
 }
 
 #login .btn--alpha, #login .btn--alpha, #login .btn--alpha {

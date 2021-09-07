@@ -1,10 +1,10 @@
 <?php
-session_start();
+  session_start();
 
-if ( !isset($_SESSION['user']) ) {
-  session_destroy();
-  header('Location: ./');
-}
+  if ( !isset($_SESSION['user']) ) {
+    session_destroy();
+    header('Location: ./');
+  }
 
 ?>
 
@@ -47,8 +47,15 @@ if ( !isset($_SESSION['user']) ) {
     <!-- Login -->
     <?php include('includes/login.php'); ?>
     
+    <!-- Errores -->
+    <?php include('includes/errors.php'); ?>
+
+    <!-- Msg -->
+    <?php include('includes/msg.php'); ?>
+
     <!-- Nav -->
     <?php include('includes/nav.php'); ?>
+
     
     <!-- Nav Dashboard -->
     <?php include('includes/dashboard/nav.php'); ?>

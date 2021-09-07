@@ -32,6 +32,11 @@ body {
     border-top: 1px solid #f0f0f0;
 }
 
+.alert-danger,
+.alert-success {
+  z-index: 1100;
+}
+
 body:not(.layout-fixed) .main-sidebar {
 	top: 0;
   bottom:0;
@@ -116,6 +121,14 @@ aside .brand-text {
 
 aside .nav-item .active {
 	color: white!important;
+}
+
+aside .inhabilitado {
+	color: grey!important;
+}
+
+aside .unidad_deshabilitada {
+	background-color: grey!important;
 }
 /* Aside Left end */
 

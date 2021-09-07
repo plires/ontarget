@@ -10,6 +10,7 @@ abstract class repositorioUsers {
 	public abstract function resetPassword($selector, $validator, $user_id);
 	public abstract function newPass($post);
 	public abstract function verifyTokenNewEmail($email, $token);
+	public abstract function checkAuthUser();
 }
 
 ?>

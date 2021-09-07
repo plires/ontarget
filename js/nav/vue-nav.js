@@ -17,12 +17,15 @@ let app = new Vue({
       user_id: '',
       msg: '',
       authUser: {},
+      units: [],
+      episodes: [],
       errors: []
     }
   },
 
   mounted() {
     this.getAuthUser()
+    this.getEpisodes()
   },
 
   methods: {
@@ -33,12 +36,51 @@ let app = new Vue({
 
     async getAuthUser() {
 
-      let user = localStorage.getItem('authUser')
-      console.log(user)
+      axios.get('/../../php/check-auth-user.php')
+      .then(response => {
 
-      if (user) {
-        this.authUser = JSON.parse(user)
-      }
+        if (response.data) {
+
+          let user = localStorage.getItem('authUser')
+
+          if (user) {
+            this.authUser = JSON.parse(user)
+          }
+
+        } else {
+
+          localStorage.clear();
+
+        }
+
+      })
+
+    },
+
+    async getEpisodes() {
+
+      axios.get('/../../php/get-episodes.php')
+      .then(response => {
+
+        this.episodes = response.data
+
+        this.units = this.groupByUnits(this.episodes, 'unit_id');
+
+      })
+      .catch(error => {
+        this.errors.push('Existe un problema en el servidor. Intente mas tarde por favor')
+      })
+
+    },
+
+    groupByUnits(array, key) {
+
+      let group = array.reduce((r, a) => {
+       r[a.unit_id] = [...r[a.unit_id] || [], a];
+       return r;
+      }, {});
+      
+      return group
 
     },
 
@@ -135,8 +177,8 @@ let app = new Vue({
 
             // loguear usuario. Redireccionar al dashboard
             this.authUser = response.data
+            localStorage.clear()
             localStorage.setItem('authUser', JSON.stringify(response.data))
-            this.authUser = response.data
             window.location.href = './dashboard.php';
 
           } else {
