@@ -141,13 +141,13 @@
 					</div>
 				</li>
 				<li>
-					<a href="dashboard.php"><i class="fas fa-columns transition"></i>Dashboard</a>
+					<a class="transition" href="dashboard.php"><i class="fas fa-columns"></i>Dashboard</a>
 				</li>
 				<li>
-					<a href="#"><i class="fas fa-user-cog transition"></i>Perfil</a>
+					<a class="transition" href="#"><i class="fas fa-user-cog"></i>Perfil</a>
 				</li>
 				<li>
-					<a href="#"><i class="fas fa-sign-out-alt transition"></i>Salir</a>
+					<a class="transition salir" href="./../php/logout.php"><i class="fas fa-sign-out-alt"></i>Salir</a>
 				</li>
 			</ul>
 

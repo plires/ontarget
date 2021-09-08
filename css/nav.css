@@ -132,36 +132,6 @@
   cursor: pointer;
 }
 
-.content_account .name {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 1.5rem;
-  margin-bottom: 5px;
-}
-
-.content_account .icon {
-  display: flex!important;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  color: white;
-  width: 25px;
-  height: 25px;
-  display: inline-block;
-  background: var(--third-color);
-  border-radius: 50%;
-  margin-right: 10px;
-  font-size: 1rem;
-  text-transform: uppercase;
-}
-
-.content_account .user {
-  border-bottom: 1px solid #e6e6e6;
-  margin-bottom: 20px;
-}
-
-
 /* MEDIA QUERIES */
 @media (min-width: 576px) {
 

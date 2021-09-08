@@ -34,7 +34,10 @@ body {
 
 .alert-danger,
 .alert-success {
-  z-index: 1100;
+	position: fixed;
+	top: 0;
+	width: 100%;
+  z-index: 10000;
 }
 
 body:not(.layout-fixed) .main-sidebar {

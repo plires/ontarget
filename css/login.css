@@ -118,6 +118,78 @@
   cursor: pointer;
 }
 
+/* Content Account */
+#login .content_account {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+#login .content_account .icon {
+  display: flex!important;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  width: 25px;
+  height: 25px;
+  display: inline-block;
+  background: var(--third-color);
+  border-radius: 50%;
+  margin-right: 10px;
+  font-size: 1rem;
+  text-transform: uppercase;
+}
+
+#login .content_account .user {
+  border-bottom: 1px solid #e6e6e6;
+  margin-bottom: 20px;
+}
+
+#login .content_account .name {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.25rem;
+  margin: 0;
+  padding: 20px 10px;
+  color: var(--third-color);
+}
+
+#login .content_account li a {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin-bottom: 15px;
+  color: grey;
+  text-decoration: none;
+  font-size: 1rem;
+}
+
+#login .content_account li a:hover {
+  opacity: 0.6;
+}
+
+#login .content_account li a i {
+  margin-right: 10px;
+}
+
+#login .content_account .salir {
+  margin: 0;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border-top: 1px solid #e6e6e6;
+  color: red;
+}
+
+#login .content_account ul {
+  margin: 0;
+}
+/* Content Account end */
+
 /* MEDIA QUERIES */
 @media (min-width: 576px) {
 

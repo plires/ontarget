@@ -13,15 +13,41 @@ class RepositorioUsersSQL extends repositorioUsers
   }
 
   public function checkAuthUser() {
+
     session_start();
 
-    if ( !isset($_SESSION['user']) ) {
+    if ( !isset($_SESSION['user']['id']) ) {
       session_destroy();
       return false;
     }
 
-    return true;
+    $id = $_SESSION['user']['id'];
+
+    try {
+
+      $sql = "SELECT * FROM users WHERE id = '$id' ";
+      $stmt = $this->conexion->prepare($sql);
+      $stmt->execute();
+      $user = $stmt->fetch(PDO::FETCH_ASSOC);
+
+      if ($user) {
+        unset($user['password']);
+        unset($user['token']);
+        unset($user['created_at']);
+        return $user;
+      } else {
+        session_destroy();
+        return false;
+      }
+      
+    } catch (Exception $e) {
+
+      header("HTTP/1.1 500 Internal Server Error");
+      
+    }
+
     
+
   }
 
   public function login($email, $password)
@@ -34,10 +60,6 @@ class RepositorioUsersSQL extends repositorioUsers
       $stmt = $this->conexion->prepare($sql);
       $stmt->execute();
       $user = $stmt->fetch(PDO::FETCH_ASSOC);
-
-      if (!$user) {
-        return false;
-      }
 
       if (password_verify( $password, $user['password']) && $user['token'] == NULL ) {
         session_start();
@@ -52,7 +74,6 @@ class RepositorioUsersSQL extends repositorioUsers
       
     } catch (Exception $e) {
 
-      // lanzar error
       header("HTTP/1.1 500 Internal Server Error");
 
     }
@@ -182,7 +203,7 @@ class RepositorioUsersSQL extends repositorioUsers
       return $register;
       
     } catch (Exception $e) {
-      // lanzar error
+      
       header("HTTP/1.1 500 Internal Server Error");
 
     }
@@ -287,7 +308,7 @@ class RepositorioUsersSQL extends repositorioUsers
       return true;
      
     } catch (Exception $e) {
-      // lanzar error
+      
       header("HTTP/1.1 500 Internal Server Error");
 
     }

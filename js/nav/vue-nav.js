@@ -34,25 +34,20 @@ let app = new Vue({
       $('#login').addClass('hidden')
     },
 
-    async getAuthUser() {
+    getAuthUser(id = false) {
 
       axios.get('/../../php/check-auth-user.php')
       .then(response => {
 
         if (response.data) {
-
-          let user = localStorage.getItem('authUser')
-
-          if (user) {
-            this.authUser = JSON.parse(user)
-          }
-
+          this.authUser = response.data
         } else {
-
-          localStorage.clear();
-
+          this.authUser = {}
         }
 
+      })
+      .catch(error => {
+        this.errors.push('Existe un problema en el servidor. Intente mas tarde por favor')
       })
 
     },
@@ -177,9 +172,7 @@ let app = new Vue({
 
             // loguear usuario. Redireccionar al dashboard
             this.authUser = response.data
-            localStorage.clear()
-            localStorage.setItem('authUser', JSON.stringify(response.data))
-            window.location.href = './dashboard.php';
+            window.location.replace('./dashboard.php')
 
           } else {
 
@@ -321,7 +314,6 @@ let app = new Vue({
 
         })
         .catch(error => {
-          console.log(error)
 
           this.cleanErrors()
           this.errors.push('Existe un problema en el servidor. Intente mas tarde por favor')
