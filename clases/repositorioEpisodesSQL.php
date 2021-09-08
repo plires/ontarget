@@ -16,7 +16,6 @@ class RepositorioEpisodesSQL extends repositorioEpisodes
 
     try {
 
-      // $sql = "SELECT * FROM episodes";
       $sql = "
         SELECT t1.*, t2.name AS name_unit, t2.description  AS desc_unit
         FROM episodes AS t1
@@ -30,7 +29,26 @@ class RepositorioEpisodesSQL extends repositorioEpisodes
       
     } catch (Exception $e) {
 
-      // lanzar error
+      header("HTTP/1.1 500 Internal Server Error"); 
+           
+    }
+
+  }
+
+  public function getChallenges()
+  {
+
+    try {
+
+      $sql = "SELECT * FROM challenges";
+      $stmt = $this->conexion->prepare($sql);
+      $stmt->execute();
+      $challenges = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+      return $challenges;
+      
+    } catch (Exception $e) {
+
       header("HTTP/1.1 500 Internal Server Error"); 
            
     }

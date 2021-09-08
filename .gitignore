@@ -10,6 +10,7 @@ backend/node_modules/
 uploads
 /uploads
 /img
+/challenges
 npm-debug.log
 yarn-error.log
 .swp

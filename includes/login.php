@@ -147,7 +147,11 @@
 					<a class="transition" href="#"><i class="fas fa-user-cog"></i>Perfil</a>
 				</li>
 				<li>
-					<a class="transition salir" href="./../php/logout.php"><i class="fas fa-sign-out-alt"></i>Salir</a>
+					<a 
+						@click="clearLocalStorage" 
+						class="transition salir" 
+						href="./../php/logout.php"
+					><i class="fas fa-sign-out-alt"></i>Salir</a>
 				</li>
 			</ul>
 

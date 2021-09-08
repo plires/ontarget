@@ -29,7 +29,7 @@
           v-if="authUser" 
           v-for="(unit, index) in units" 
           :key="index" 
-          :class="['nav-item', index == authUser.authorized_units ? 'menu-open' : '']">
+          :class="['nav-item', unit[0].unit_id == currentUnit ? 'menu-open current' : '']">
           <a 
             href="#" 
             :class="['nav-link active', index <= authUser.authorized_units ? '' : 'unidad_deshabilitada']">
@@ -42,8 +42,12 @@
 
           <ul class="nav nav-treeview">
             <li v-for="(episode, index_unit) in unit" :key="index_unit" class="nav-item">
-
-              <a v-if="authUser.authorized_units >= episode.unit_id" href="#" class="nav-link transition">
+              <a 
+                v-if="authUser.authorized_units >= episode.unit_id" 
+                @click="setCurrentUnit(unit[0].unit_id)" 
+                href="./ver-unidad.php" 
+                class="nav-link transition"
+              >
                 <i class="far fa-circle nav-icon transition"></i>
                 <p>{{ episode.name }}</p>
               </a>

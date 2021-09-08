@@ -17,8 +17,11 @@ let app = new Vue({
       user_id: '',
       msg: '',
       authUser: {},
-      units: [],
+      units: {},
       episodes: [],
+      challenges: [],
+      currentChallenge: '',
+      currentUnit: '',
       errors: []
     }
   },
@@ -26,6 +29,8 @@ let app = new Vue({
   mounted() {
     this.getAuthUser()
     this.getEpisodes()
+    this.getChallenges()
+    this.getCurrentUnit()
   },
 
   methods: {
@@ -34,9 +39,9 @@ let app = new Vue({
       $('#login').addClass('hidden')
     },
 
-    getAuthUser(id = false) {
+    async getAuthUser(id = false) {
 
-      axios.get('/../../php/check-auth-user.php')
+      await axios.get('/../../php/check-auth-user.php')
       .then(response => {
 
         if (response.data) {
@@ -54,13 +59,25 @@ let app = new Vue({
 
     async getEpisodes() {
 
-      axios.get('/../../php/get-episodes.php')
+      await axios.get('/../../php/get-episodes.php')
       .then(response => {
 
         this.episodes = response.data
 
         this.units = this.groupByUnits(this.episodes, 'unit_id');
 
+      })
+      .catch(error => {
+        this.errors.push('Existe un problema en el servidor. Intente mas tarde por favor')
+      })
+
+    },
+
+    async getChallenges() {
+
+      await axios.get('/../../php/get-challenges.php')
+      .then(response => {
+        this.challenges = response.data
       })
       .catch(error => {
         this.errors.push('Existe un problema en el servidor. Intente mas tarde por favor')
@@ -387,10 +404,45 @@ let app = new Vue({
 
     },
 
+    getCurrentUnit() {
+      let unit = localStorage.getItem('unit')
+      
+      if (unit) {
+        this.currentUnit = unit
+      } else {
+        this.currentUnit = 1
+      }
+
+    },
+
+    setCurrentUnit(unit) {
+      var unitStorage = localStorage.setItem('unit', unit)
+    },
+
+    clearLocalStorage() {
+      localStorage.clear()
+    },
+
+    openModalChallenge(unit, episode) {
+
+      $('#modalChallenge').modal('show')
+
+      let challenge = this.challenges.filter((challenge) => challenge.unit_id == unit && challenge.episode_id == episode)
+      this.currentChallenge = challenge[0]
+
+    }
+
   },
   computed: {
-    
-    //
+
+    filterEpisodesByUnit: function() {
+      return this.episodes.filter((episode) => episode.unit_id == this.currentUnit)
+    },
+
+    percentComplete() {
+      // return await parseInt( this.authUser.authorized_units / Object.keys(this.units).length )
+      return 60
+    }
 
   }
 });
