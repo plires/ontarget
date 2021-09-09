@@ -19,6 +19,7 @@ let app = new Vue({
       authUser: {},
       units: {},
       episodes: [],
+      unitData: '',
       challenges: [],
       currentChallenge: '',
       currentUnit: '',
@@ -50,6 +51,21 @@ let app = new Vue({
           this.authUser = {}
         }
 
+      })
+      .catch(error => {
+        this.errors.push('Existe un problema en el servidor. Intente mas tarde por favor')
+      })
+
+    },
+
+    async getUnitById(id) {
+
+      var formData = new FormData();
+      formData.append('id', id)
+
+      await axios.post('/../../php/get-unit.php', formData)
+      .then(response => {
+        this.unitData = response.data
       })
       .catch(error => {
         this.errors.push('Existe un problema en el servidor. Intente mas tarde por favor')
@@ -409,6 +425,7 @@ let app = new Vue({
       
       if (unit) {
         this.currentUnit = unit
+        this.unitData = this.getUnitById(unit)
       } else {
         this.currentUnit = 1
       }

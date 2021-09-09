@@ -95,12 +95,18 @@
           <div class="row header_unidad_actual">
 
             <div class="col-sm-12 col-md-6">
-              <h2>Unidad 1</h2>
-              <p class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae blanditiis vel totam placeat laudantium rem maxime. Quidem eveniet officia autem soluta voluptatem ducimus non, sapiente blanditiis dolorem eos quo officiis.</p>
+              <h2>{{ unitData.name }}</h2>
+              <p class="description">{{ unitData.description }}</p>
             </div>
 
             <div class="col-sm-12 col-md-6">
-              <img class="img-fluid" src="img/dashboard/unidades/unit-1.jpg" alt="unidad 1">
+              <img
+                v-if="unitData.image" 
+                class="img-fluid" 
+                :src="'img/dashboard/unidades/' + unitData.image" 
+                :alt="unitData.name + '-' + unitData.id"
+              >
+              <img v-else class="img-fluid" src="img/no-image.gif" :alt="unitData.name + '-' + unitData.id">
             </div>
 
           </div>

@@ -10,6 +10,26 @@ class RepositorioEpisodesSQL extends repositorioEpisodes
   {
     $this->conexion = $conexion;
   }
+
+  public function getUnitById($id)
+  {
+
+    try {
+
+      $sql = "SELECT * FROM units WHERE number = '$id' ";
+      $stmt = $this->conexion->prepare($sql);
+      $stmt->execute();
+      $unit = $stmt->fetch(PDO::FETCH_ASSOC);
+
+      return $unit;
+      
+    } catch (Exception $e) {
+
+      header("HTTP/1.1 500 Internal Server Error"); 
+           
+    }
+
+  }
  
   public function getEpisodes()
   {
