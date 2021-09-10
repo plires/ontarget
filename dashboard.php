@@ -79,70 +79,13 @@
         </div>
       </div>
      
-
       <!-- Main content -->
       <div class="content">
         <div class="container-fluid">
           <div class="row">
 
-            <div class="col-lg-6">
-              <div class="card">
-                <div class="card-header border-0">
-                  <div class="d-flex justify-content-between">
-                    <h3 class="card-title">Capitulo 1</h3>
-                  </div>
-                </div>
-                <div class="card-body">
-                  <div class="embed-responsive embed-responsive-16by9">
-                    <iframe class="embed-responsive-item" title="vimeo-player" src="https://player.vimeo.com/video/595545366?h=bf44df8e2d" width="640" height="360" frameborder="0" allowfullscreen></iframe>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-lg-6">
-              <div class="card">
-                <div class="card-header border-0">
-                  <div class="d-flex justify-content-between">
-                    <h3 class="card-title">Capitulo 2</h3>
-                  </div>
-                </div>
-                <div class="card-body">
-                  <div class="embed-responsive embed-responsive-16by9">
-                    <iframe class="embed-responsive-item" title="vimeo-player" src="https://player.vimeo.com/video/595545366?h=bf44df8e2d" width="640" height="360" frameborder="0" allowfullscreen></iframe>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-lg-6">
-              <div class="card">
-                <div class="card-header border-0">
-                  <div class="d-flex justify-content-between">
-                    <h3 class="card-title">Capitulo 1</h3>
-                  </div>
-                </div>
-                <div class="card-body">
-                  <div class="embed-responsive embed-responsive-16by9">
-                    <iframe class="embed-responsive-item" title="vimeo-player" src="https://player.vimeo.com/video/595545366?h=bf44df8e2d" width="640" height="360" frameborder="0" allowfullscreen></iframe>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-lg-6">
-              <div class="card">
-                <div class="card-header border-0">
-                  <div class="d-flex justify-content-between">
-                    <h3 class="card-title">Capitulo 2</h3>
-                  </div>
-                </div>
-                <div class="card-body">
-                  <div class="embed-responsive embed-responsive-16by9">
-                    <iframe class="embed-responsive-item" title="vimeo-player" src="https://player.vimeo.com/video/595545366?h=bf44df8e2d" width="640" height="360" frameborder="0" allowfullscreen></iframe>
-                  </div>
-                </div>
-              </div>
+            <div class="col-lg-12">
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Debitis minus velit, fuga, corrupti porro dolore et dolor recusandae, quaerat expedita sunt eius aspernatur, ad perspiciatis nulla maxime ratione minima vitae.
             </div>
 
           </div>

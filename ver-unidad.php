@@ -51,6 +51,9 @@
 
     <!-- Modal Challenge -->
     <?php include('includes/modal-challenges.php'); ?>
+
+    <!-- Modal Upload Challenge -->
+    <?php include('includes/modal-upload.php'); ?>
     
     <!-- Errores -->
     <?php include('includes/errors.php'); ?>

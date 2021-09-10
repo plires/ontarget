@@ -180,6 +180,8 @@ let app = new Vue({
         this.errors.push('Ingresá la nueva contraseña.')
       }
 
+      return false
+
     },
 
     login() {
@@ -362,6 +364,7 @@ let app = new Vue({
     chekFormResetPass() {
 
       this.cleanErrors()
+      this.cleanMsgs()
 
       if ( this.password_reset && this.password_reset.length >= 6 && this.password_reset == this.cpassword_reset ) {
         return true
@@ -442,12 +445,129 @@ let app = new Vue({
 
     openModalChallenge(unit, episode) {
 
-      $('#modalChallenge').modal('show')
+      $('#modalChallenge').modal('toggle')
 
       let challenge = this.challenges.filter((challenge) => challenge.unit_id == unit && challenge.episode_id == episode)
       this.currentChallenge = challenge[0]
 
-    }
+    },
+
+    openModalUploadChallenge() {
+
+      $('#modalChallenge').modal('toggle')
+      $('#modalUpload').modal('toggle')
+
+    },
+
+    chekFormUploadChallenger() {
+
+      this.cleanErrors()
+      this.cleanMsgs()
+
+      var files = document.getElementById("challengerFile").files;
+      var invalidFiles = []
+      var invalidFilesSize = []
+
+      for (var i = 0; i < files.length; i++) {
+
+        if (
+          files[i].type == 'application/msword' || 
+          files[i].type == 'application/vnd.openxmlformats-officedocument.wordprocessingml.document' || 
+          files[i].type == 'application/vnd.ms-excel' || 
+          files[i].type == 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet' || 
+          files[i].type == 'application/pdf'
+          ) {
+
+          invalidFiles.push(true)
+
+        } else {
+
+          invalidFiles.push(false)
+
+        }
+
+        if ( files[i].size < 2097152 ) {
+          invalidFilesSize.push(true)
+        } else {
+          invalidFilesSize.push(false)
+        }
+        
+      }
+
+      if ( !invalidFiles.includes(false) && !invalidFilesSize.includes(false) && invalidFiles.length !== 0 ) {
+        return true
+      } else {
+        this.errors.push('Los formatos válidos para subir los desafios son: PDF, XLS, XLSX, DOC y DOCX. Peso Máx: 2mb')
+        return false
+      }
+
+    },
+
+    uploadChallenger() {
+
+      let checked = this.chekFormUploadChallenger()
+
+      if (checked) {
+
+        const form = document.querySelector('#formUpload')
+        var formData = new FormData(form);
+
+        var files = document.getElementById("challengerFile").files;
+        var comments = document.getElementById("comments");
+
+        for( var i = 0; i < files.length; i++ ){
+          let file = files[i];
+          formData.append('files[' + i + ']', file);
+        }
+
+        if (comments.value != '') {
+          formData.append('comments', comments.value)
+        }
+
+        formData.append('unit', this.currentChallenge.unit_id)
+        formData.append('episode', this.currentChallenge.episode_id)
+        formData.append('user', this.authUser.id)
+        formData.append('team_leader', this.authUser.team_leader_id)
+
+        // Limpiar el input file para que este disponible y reseteado en la proxima
+        document.getElementById("challengerFile").value=[]
+      
+        axios.post('/../../php/upload-challenger.php', formData, {
+          headers: {
+            'Content-Type': 'multipart/form-data'
+          }
+        }).then(response => {
+
+          console.log(response.data)
+
+          if (response.data) {
+            this.msg = 'El desafio se entregó correctamente. Tendras novedades de tu team leader en breve.'
+            $('#modalUpload').modal('toggle')
+          } else {
+            this.errors.push('Los formatos válidos para subir los desafios son: PDF, XLS, XLSX, DOC y DOCX. Peso Max: 2mb.')
+          }
+
+        })
+        .catch(errors => {
+
+          this.errors.push('Existe un problema en el servidor. Intente mas tarde por favor')
+          
+        })
+
+      }
+
+
+      // for (var i = 0; i < files.length; i++)
+      // {
+
+      //   for ( let key in form ) {
+      //     formData.append(key, form[key])
+      //   }
+
+      // }
+
+    },
+
 
   },
   computed: {

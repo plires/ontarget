@@ -21,7 +21,7 @@
 
         <p class="pasos"><span>2 -</span>Completa el desafío <i class="transition fas fa-check-circle"></i></p>
 
-        <a class="pasos transition" href="#">
+        <a @click="openModalUploadChallenge" class="pasos transition" href="#">
           <span>3 -</span>Subí los archivos
           <i class="fas fa-cloud-upload-alt"></i>
         </a>
