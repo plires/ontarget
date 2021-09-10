@@ -538,10 +538,14 @@ let app = new Vue({
           }
         }).then(response => {
 
-          console.log(response.data)
+          if (response.data === 'Challenger Cargado') {
+            this.errors.push('Este desafio ya fue entregado y calificado. No se puede enviar nuevamente. Si tenes alguna duda o consulta por favor comunicate con tu team leader.')
+            $('#modalUpload').modal('toggle')
+            return false
+          }
 
           if (response.data) {
-            this.msg = 'El desafio se entregó correctamente. Tendras novedades de tu team leader en breve.'
+            this.msg = 'El desafio se entregó / actualizó correctamente. Tendras novedades de tu team leader en breve.'
             $('#modalUpload').modal('toggle')
           } else {
             this.errors.push('Los formatos válidos para subir los desafios son: PDF, XLS, XLSX, DOC y DOCX. Peso Max: 2mb.')
@@ -550,21 +554,11 @@ let app = new Vue({
         })
         .catch(errors => {
 
-          this.errors.push('Existe un problema en el servidor. Intente mas tarde por favor')
+          this.errors.push('Exsiste un problema en el servidor. Intente mas tarde por favor')
           
         })
 
       }
-
-
-      // for (var i = 0; i < files.length; i++)
-      // {
-
-      //   for ( let key in form ) {
-      //     formData.append(key, form[key])
-      //   }
-
-      // }
 
     },
 

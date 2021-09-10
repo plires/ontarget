@@ -13,7 +13,6 @@
 	// Si no hay archivos o datos en el post
 	if ( 
 		!isset($_FILES['files']) || 
-		emptyInput($_POST['comments']) ||
 		emptyInput($_POST['unit']) ||
 		emptyInput($_POST['episode']) ||
 		emptyInput($_POST['user']) ||
