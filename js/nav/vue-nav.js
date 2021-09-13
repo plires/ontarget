@@ -23,6 +23,7 @@ let app = new Vue({
       challenges: [],
       currentChallenge: '',
       currentUnit: '',
+      teamLeader: {},
       errors: []
     }
   },
@@ -66,6 +67,21 @@ let app = new Vue({
       await axios.post('/../../php/get-unit.php', formData)
       .then(response => {
         this.unitData = response.data
+      })
+      .catch(error => {
+        this.errors.push('Existe un problema en el servidor. Intente mas tarde por favor')
+      })
+
+    },
+
+    async getTeamLeaderById(id) {
+
+      var formData = new FormData();
+      formData.append('id', id)
+
+      await axios.post('/../../php/get-team-leader.php', formData)
+      .then(response => {
+        this.teamLeader = response.data
       })
       .catch(error => {
         this.errors.push('Existe un problema en el servidor. Intente mas tarde por favor')
@@ -378,6 +394,8 @@ let app = new Vue({
         this.errors.push('Las contraseñas son diferentes.')
       }
 
+      return false
+
     },
 
     resetPass() {
@@ -562,6 +580,74 @@ let app = new Vue({
 
     },
 
+    openModalContatcYourTeamLeader() {
+
+      this.getTeamLeaderById(this.authUser.team_leader_id)
+      $('#modalContactYourTeamLeader').modal('toggle')
+      this.resetAllPopUp()
+      this.closePopUpLogin()
+
+    }, 
+
+    chekFormCommentToTeamLeader() {
+      this.cleanErrors()
+      this.cleanMsgs()
+
+      var comment = document.getElementById("commentsToTeamLeader")
+
+      if ( comment.value ) {
+        return true
+      }
+
+      if ( comment.value == '' ) {
+        this.errors.push('Completa el campo de consulta.')
+      }
+
+      return false
+    },
+
+    sendCommentsToTeamLeader() {
+
+      let checked = this.chekFormCommentToTeamLeader()
+
+      if (checked) {
+        var comment = document.getElementById("commentsToTeamLeader")
+
+        var formData = new FormData();
+        formData.append('team_leader_id', this.teamLeader.id)
+        formData.append('user_id', this.authUser.id)
+        formData.append('comment', comment.value)
+
+        axios.post('/../../php/set-comment-to-team-leader.php', formData)
+        .then(response => {
+
+          if (response.data) {
+
+            comment.value = ''
+            this.resetAllPopUp()
+            this.closePopUpLogin()
+            $('#modalContactYourTeamLeader').modal('toggle')
+            this.msg = 'El comentario se envió correctamente. '+ this.teamLeader.name + ' se comunicará con vos a la brevedad.'
+
+          } else {
+
+            this.resetAllPopUp()
+            this.closePopUpLogin()
+            this.errors.push('Hubo un error. Verifique los datos e intente nuevamente.')
+
+          }
+
+
+        })
+        .catch(error => {
+
+          this.errors.push('Existe un problema en el servidor. Intente mas tarde por favor')
+
+        })
+      }
+
+
+    }
 
   },
   computed: {

@@ -49,7 +49,7 @@
 						<div class="col-md-6">
 							<div class="faja_sobre_titulo_izq"></div>
 							<p>
-								El mundo está cambiando y nuevas tecnologías están transformando los trabajos y las carreras. La educación tradicional nunca nos preparó para esto, pero nosotros te enseñamos cómo prosperar en el nuevo mundo con educación relevante más allá del 2021. Y nos detendremos ahí, gracias a las nuevas tecnologías creamos una gran plataforma para conectarte con todo el contenido y con nuestro equipo. Creemosque podemos marcar tendencia planificando tu futuro.
+								El mundo está cambiando y nuevas tecnologías están transformando los trabajos y las carreras. La educación tradicional nunca nos preparó para esto, pero nosotros te enseñamos cómo prosperar en el nuevo mundo con educación relevante más allá del 2021. Y no nos detendremos ahí, gracias a las nuevas tecnologías creamos una gran plataforma para conectarte con todo el contenido y con nuestro equipo. Creemosque podemos marcar tendencia planificando tu futuro.
 							</p>
 						</div>
 					</div>

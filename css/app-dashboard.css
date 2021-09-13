@@ -7,6 +7,8 @@ body {
   font-family: 'Montserrat', sans-serif;
 }
 
+textarea { resize: none; }
+
 .transition{
   -webkit-transition: all ease-in-out .3s; /* Safari */
   transition: all ease-in-out .3s;
@@ -139,14 +141,23 @@ aside .unidad_deshabilitada {
 }
 /* Aside Left end */
 
-/* Main Nav Header */
+/* Nav Nav Header */
 .navbar {
 	position: fixed;
 	width: 100%;
 	background-color: #fafafa;
 	top: 60px;
 }
-/* Main Nav Header end */
+
+.navbar	#btnOpenModalContatcYourTeamLeader {
+	background: transparent;
+	border: none;
+	padding-right: 0;
+	padding-left: 0;
+	margin-right: 1rem;
+	margin-left: 1rem;
+}
+/* Nav Nav Header end */
 
 /* Content Wrapper */
 .content-wrapper {
@@ -233,9 +244,60 @@ aside .unidad_deshabilitada {
 }
 /* Unidades end */
 
+/* Modal contacto Team Leader */
+#modalContactYourTeamLeader {
+	z-index: 10000;
+}
+
+#modalContactYourTeamLeader .modal-header {
+	background-color: var(--third-color);
+	color: white;
+}
+
+#modalContactYourTeamLeader button {
+	color: white;
+}
+
+#modalContactYourTeamLeader .btn {
+	float: right;
+	background-color: var(--third-color);
+	color: white;
+}
+/* Modal contacto Team Leader end */
+
+/* Modal Subida de archivos*/
+#modalUpload {
+	z-index: 10000;
+}
+
+#modalUpload .modal-header {
+	background-color: var(--third-color);
+	color: white;
+}
+
+#modalUpload button {
+	color: white;
+}
+
+#modalUpload .btn {
+	float: right;
+	background-color: var(--third-color);
+	color: white;
+}
+/* Modal Subida de archivosend */
+
+
 /* Modal Challenge */
+#modalChallenge {
+	z-index: 10000;
+}
+
 #modalChallenge .modal-header {
 	background-color: var(--third-color);
+	color: white;
+}
+
+#modalChallenge .modal-header button {
 	color: white;
 }
 

@@ -169,6 +169,28 @@
   font-size: 1rem;
 }
 
+#login .content_account li button {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin-bottom: 15px;
+  color: grey;
+  text-decoration: none;
+  font-size: 1rem!important;
+  padding: 0!important;
+  background: none;
+  border: none;
+}
+
+#login .content_account li button:hover {
+  opacity: 0.6!important;
+  color: grey!important;
+}
+
+#login .content_account li button i {
+    margin-right: 10px;
+}
+
 #login .content_account li a:hover {
   opacity: 0.6;
 }

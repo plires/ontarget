@@ -34,6 +34,13 @@
       </div>
     </li> -->
 
+    <!-- Contacto Team Leader -->
+    <li class="nav-item">
+      <button id="btnOpenModalContatcYourTeamLeader" @click="openModalContatcYourTeamLeader" class="nav-link">
+        <i class="far fa-question-circle"></i>
+      </button>
+    </li>
+
     
     <li class="nav-item">
       <a class="nav-link" data-widget="fullscreen" href="#" role="button">

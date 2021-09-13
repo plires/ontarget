@@ -327,6 +327,18 @@ class RepositorioUsersSQL extends repositorioUsers
 
   }
 
+  public function getTeamLeaderById($id)
+  {
+    $sql = "SELECT * FROM team_leaders WHERE id = '$id' ";
+
+    $stmt = $this->conexion->prepare($sql);
+    $stmt->execute();
+    $team_leader = $stmt->fetch(PDO::FETCH_ASSOC);
+
+    return $team_leader;
+
+  }
+
   public function setValuesUser($data)
   {
 
@@ -357,6 +369,34 @@ class RepositorioUsersSQL extends repositorioUsers
     $user = $stmt->fetch(PDO::FETCH_ASSOC);
 
     return $user;
+
+  }
+
+  public function saveCommentsToTeamLeader($user, $team_leader, $comment) {
+    
+    $date = date("Y-m-d H:i:s");
+
+    try {
+      
+      $sql = "
+        INSERT INTO comments 
+        values(default, :user_id, :comment, :team_leader_id, :created_at)
+      ";
+
+      $stmt = $this->conexion->prepare($sql);
+      
+      $stmt->bindValue(":user_id", $user, PDO::PARAM_STR);
+      $stmt->bindValue(":comment", $comment, PDO::PARAM_STR);
+      $stmt->bindValue(":team_leader_id", $team_leader, PDO::PARAM_STR);
+      $stmt->bindValue(":created_at", $date, PDO::PARAM_STR);
+
+      $register = $stmt->execute();
+
+      return $register;
+
+    } catch (Exception $e) {
+      header("HTTP/1.1 500 Internal Server Error");
+    }
 
   }
 

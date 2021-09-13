@@ -21,15 +21,15 @@ $(function() {
 // Nav end
 
 function headerScroll() {
-    if ($(document).scrollTop() > nav.offsetHeight) {
-      $("#nav").addClass("fixed");
-      $("#mainSidebar").addClass("variable_location");
-      $("#mainHeader").addClass("nav_variable_location");
-    } else {
-      $("#nav").removeClass("fixed");
-      $("#mainSidebar").removeClass("variable_location");
-      $("#mainHeader").removeClass("nav_variable_location");
-    }
+  if ($(document).scrollTop() > nav.offsetHeight) {
+    $("#nav").addClass("fixed");
+    $("#mainSidebar").addClass("variable_location");
+    $("#mainHeader").addClass("nav_variable_location");
+  } else {
+    $("#nav").removeClass("fixed");
+    $("#mainSidebar").removeClass("variable_location");
+    $("#mainHeader").removeClass("nav_variable_location");
+  }
 }
 
 /* Scroll header */

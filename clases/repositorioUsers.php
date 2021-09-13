@@ -2,6 +2,7 @@
 
 abstract class repositorioUsers {
 	public abstract function getUserById($id);
+	public abstract function getTeamLeaderById($id);
 	public abstract function setValuesUser($data);
 	public abstract function getUserByEmail($email);
 	public abstract function login($email, $password);
@@ -11,6 +12,7 @@ abstract class repositorioUsers {
 	public abstract function newPass($post);
 	public abstract function verifyTokenNewEmail($email, $token);
 	public abstract function checkAuthUser();
+	public abstract function saveCommentsToTeamLeader($user, $team_leader, $comment);
 }
 
 ?>

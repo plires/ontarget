@@ -52,6 +52,9 @@
     <!-- Modal Challenge -->
     <?php include('includes/modal-challenges.php'); ?>
 
+    <!-- Modeal Contactar a tu Team Leader -->
+    <?php include('includes/modal-contact-team-leader.php'); ?>
+
     <!-- Modal Upload Challenge -->
     <?php include('includes/modal-upload.php'); ?>
     
