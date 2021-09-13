@@ -339,21 +339,21 @@ class RepositorioUsersSQL extends repositorioUsers
 
   }
 
-  public function setValuesUser($data)
-  {
+  // public function setValuesUser($data)
+  // {
 
-    $id = (int)$data['id_user'];
+  //   $id = (int)$data['id_user'];
 
-    $sql = "UPDATE users SET user = :user, email = :email WHERE id = '$id' ";
+  //   $sql = "UPDATE users SET user = :user, email = :email WHERE id = '$id' ";
 
-    $stmt = $this->conexion->prepare($sql);
+  //   $stmt = $this->conexion->prepare($sql);
 
-    $stmt->bindValue(":user", $data['user'], PDO::PARAM_STR);
-    $stmt->bindValue(":email", $data['email'], PDO::PARAM_STR);
+  //   $stmt->bindValue(":user", $data['user'], PDO::PARAM_STR);
+  //   $stmt->bindValue(":email", $data['email'], PDO::PARAM_STR);
 
-    return $stmt->execute();
+  //   return $stmt->execute();
 
-  }
+  // }
 
   public function getUserByEmail($email)
   {
@@ -398,6 +398,49 @@ class RepositorioUsersSQL extends repositorioUsers
       header("HTTP/1.1 500 Internal Server Error");
     }
 
+  }
+
+  public function userEdit($post) {
+
+    $id = $post['user_id'];
+
+    try {
+
+      if ($post['mode_user_edit'] == 'true') {
+      
+        $password_hash = password_hash($post['password'], PASSWORD_DEFAULT);
+
+        $sql = "UPDATE users SET name = :name, email = :email, phone = :phone, password = :password WHERE id = '$id' ";
+        $stmt = $this->conexion->prepare($sql);
+        $stmt->bindValue(":name", $post['name'], PDO::PARAM_STR);
+        $stmt->bindValue(":email", $post['email'], PDO::PARAM_STR);
+        $stmt->bindValue(":phone", $post['phone'], PDO::PARAM_STR);
+        $stmt->bindValue(":password", $password_hash, PDO::PARAM_STR);
+
+        $user_edit = $stmt->execute();
+
+        return $user_edit;
+        
+      } else {
+
+        $sql = "UPDATE users SET name = :name, email = :email, phone = :phone WHERE id = '$id' ";
+        $stmt = $this->conexion->prepare($sql);
+        $stmt->bindValue(":name", $post['name'], PDO::PARAM_STR);
+        $stmt->bindValue(":email", $post['email'], PDO::PARAM_STR);
+        $stmt->bindValue(":phone", $post['phone'], PDO::PARAM_STR);
+
+        $user_edit = $stmt->execute();
+
+        return $user_edit;
+
+      }
+      
+    } catch (Exception $e) {
+
+      header("HTTP/1.1 500 Internal Server Error");
+      
+    }
+    
   }
 
 }

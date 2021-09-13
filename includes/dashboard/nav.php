@@ -35,22 +35,30 @@
     </li> -->
 
     <!-- Contacto Team Leader -->
+
     <li class="nav-item">
-      <button id="btnOpenModalContatcYourTeamLeader" @click="openModalContatcYourTeamLeader" class="nav-link">
+      <button @click="openModalPerfilUsuario" class="nav-link btn_nav">
+        <i class="fas fa-user-cog"></i>
+      </button>
+    </li>
+
+    <li class="nav-item">
+      <button @click="openModalContatcYourTeamLeader" class="nav-link btn_nav">
         <i class="far fa-question-circle"></i>
       </button>
     </li>
 
-    
     <li class="nav-item">
       <a class="nav-link" data-widget="fullscreen" href="#" role="button">
         <i class="fas fa-expand-arrows-alt"></i>
       </a>
     </li>
-    <li class="nav-item">
+
+    <!-- <li class="nav-item">
       <a class="nav-link" data-widget="control-sidebar" data-slide="true" href="#" role="button">
         <i class="fas fa-th-large"></i>
       </a>
-    </li>
+    </li> -->
+    
   </ul>
 </nav>

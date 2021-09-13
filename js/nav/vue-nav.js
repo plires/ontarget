@@ -17,6 +17,13 @@ let app = new Vue({
       user_id: '',
       msg: '',
       authUser: {},
+      id_user: '',
+      name_user: '',
+      email_user: '',
+      phone_user: '',
+      modeUserEdit: false,
+      password_user: '',
+      cPassword_user: '',
       units: {},
       episodes: [],
       unitData: '',
@@ -48,8 +55,16 @@ let app = new Vue({
 
         if (response.data) {
           this.authUser = response.data
+          this.name_user = this.authUser.name
+          this.email_user = this.authUser.email
+          this.phone_user = this.authUser.phone
+          this.id_user = this.authUser.id
         } else {
           this.authUser = {}
+          this.name_user = ''
+          this.email_user = ''
+          this.phone_user = ''
+          this.id_user = ''
         }
 
       })
@@ -223,6 +238,10 @@ let app = new Vue({
 
             // loguear usuario. Redireccionar al dashboard
             this.authUser = response.data
+            this.name_user = this.authUser.name
+            this.email_user = this.authUser.email
+            this.phone_user = this.authUser.phone
+            this.id_user = this.authUser.id
             window.location.replace('./dashboard.php')
 
           } else {
@@ -572,7 +591,106 @@ let app = new Vue({
         })
         .catch(errors => {
 
-          this.errors.push('Exsiste un problema en el servidor. Intente mas tarde por favor')
+          this.errors.push('Existe un problema en el servidor. Intente mas tarde por favor')
+          
+        })
+
+      }
+
+    },
+
+    openModalPerfilUsuario() {
+
+      $('#modalPerfilUsuario').modal('toggle')
+      this.resetAllPopUp()
+      this.closePopUpLogin()
+
+    },
+
+    chekFormUserEdit() {
+
+      if (!this.modeUserEdit) {
+
+        if ( this.name_user && this.phone_user && this.validateEmail(this.email_user) ) {
+          this.password_user = ''
+          this.cPassword_user = ''
+          return true
+        }
+
+      } else {
+        if ( 
+          this.name_user && 
+          this.phone_user && 
+          this.validateEmail(this.email_user) && 
+          this.password_user && 
+          this.cPassword_user && 
+          this.password_user.length >= 6 && 
+          this.cPassword_user.length >= 6 && 
+          this.password_user == this.cPassword_user 
+          ) {
+          return true
+        }
+      }
+
+      if ( !this.name_user ) {
+        this.errors.push('Ingresá tu nombre.')
+      }
+
+      if ( !this.validateEmail(this.email_user) ) {
+        this.errors.push('Ingresá un email válido.')
+      }
+
+      if ( !this.phone_user ) {
+        this.errors.push('Ingresá tu teléfono.')
+      }
+
+      if ( this.password_user.length < 6 && this.modeUserEdit ) {
+        this.errors.push('La contraseña debe tener al menos 6 caracteres.')
+      }
+
+      if ( this.password_user != this.cPassword_user && this.modeUserEdit ) {
+        this.errors.push('Las contraseñas son diferentes.')
+      }
+
+      return false
+
+    },
+
+    sendUserEdit(user_id) {
+
+      this.cleanErrors()
+      this.cleanMsgs()
+
+      let checked = this.chekFormUserEdit()
+
+      if (checked) {
+
+        var formData = new FormData();
+
+        formData.append('mode_user_edit', this.modeUserEdit)
+        formData.append('name', this.name_user)
+        formData.append('email', this.email_user)
+        formData.append('phone', this.phone_user)
+        formData.append('password', this.password_user)
+        formData.append('cPassword', this.cPassword_user)
+        formData.append('user_id', this.id_user)
+
+        axios.post('/../../php/set-user.php', formData)
+        .then(response => {
+
+          console.log(response.data)
+
+          if (response.data) {
+            this.msg = 'El usuario actualizó correctamente.'
+            $('#modalPerfilUsuario').modal('toggle')
+          } else {
+            this.errors.push('Todos los campos son obligatorios. Si elegiste resetear la contraseña esta debe ser mayor o igual a 6 caracteres y coincidir con el campo de repetir contraseña')
+          }
+
+        })
+        .catch(errors => {
+
+          this.errors.push('Existe un problema en el servidor. Intente mas tarde por favor')
           
         })
 

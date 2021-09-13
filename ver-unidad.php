@@ -52,7 +52,10 @@
     <!-- Modal Challenge -->
     <?php include('includes/modal-challenges.php'); ?>
 
-    <!-- Modeal Contactar a tu Team Leader -->
+    <!-- Modal Perfil Usuario -->
+    <?php include('includes/modal-perfil.php'); ?>
+
+    <!-- Modal Contactar a tu Team Leader -->
     <?php include('includes/modal-contact-team-leader.php'); ?>
 
     <!-- Modal Upload Challenge -->
@@ -72,6 +75,9 @@
 
     <!-- Aside Dashboard Left -->
     <?php include('includes/dashboard/aside-left.php'); ?>
+
+    <!-- Aside Right -->
+    <?php // include('includes/dashboard/aside-right.php'); ?>
 
     <!-- Content Wrapper. Contains page content -->
     <div class="content-wrapper">
@@ -151,9 +157,6 @@
       </div>
 
     </div>
-
-    <!-- Aside Right -->
-    <?php include('includes/dashboard/aside-right.php'); ?>
 
     <!-- Footer Admin -->
     <?php include('includes/dashboard/footer-dashboard.php'); ?>

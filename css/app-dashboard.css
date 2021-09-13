@@ -149,11 +149,11 @@ aside .unidad_deshabilitada {
 	top: 60px;
 }
 
-.navbar	#btnOpenModalContatcYourTeamLeader {
+.navbar	.btn_nav {
 	background: transparent;
 	border: none;
-	padding-right: 0;
-	padding-left: 0;
+	padding-right: 0!important;
+	padding-left: 0!important;
 	margin-right: 1rem;
 	margin-left: 1rem;
 }
@@ -243,6 +243,27 @@ aside .unidad_deshabilitada {
 	background-color: var(--primary-color);
 }
 /* Unidades end */
+
+/* Modal Edicion de Usuario */
+#modalPerfilUsuario {
+	z-index: 10000;
+}
+
+#modalPerfilUsuario .modal-header {
+	background-color: var(--third-color);
+	color: white;
+}
+
+#modalPerfilUsuario button {
+	color: white;
+}
+
+#modalPerfilUsuario .btn {
+	float: right;
+	background-color: var(--third-color);
+	color: white;
+}
+/* Modal Edicion de Usuario end */
 
 /* Modal contacto Team Leader */
 #modalContactYourTeamLeader {

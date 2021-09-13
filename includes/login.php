@@ -144,10 +144,20 @@
 					<a class="transition" href="dashboard.php"><i class="fas fa-columns"></i>Dashboard</a>
 				</li>
 				<li>
-					<button @click="openModalContatcYourTeamLeader" class="transition"><i class="far fa-question-circle"></i>Contactá a tu Team Leader</button>
+					<button 
+						@click="openModalContatcYourTeamLeader" 
+						class="transition">
+							<i class="far fa-question-circle"></i>
+							Contactá a tu Team Leader
+					</button>
 				</li>
 				<li>
-					<a class="transition" href="#"><i class="fas fa-user-cog"></i>Perfil</a>
+					<button 
+						@click="openModalPerfilUsuario" 
+						class="transition">
+							<i class="fas fa-user-cog"></i>
+							Perfil
+					</button>
 				</li>
 				<li>
 					<a 
