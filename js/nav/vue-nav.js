@@ -193,6 +193,7 @@ let app = new Vue({
       this.phone = ''
       this.password = ''
       this.cpassword = ''
+      document.getElementById("commentsToTeamLeader").value=''
     },
 
     chekFormLogin() {
@@ -495,9 +496,6 @@ let app = new Vue({
 
     chekFormUploadChallenger() {
 
-      this.cleanErrors()
-      this.cleanMsgs()
-
       var files = document.getElementById("challengerFile").files;
       var invalidFiles = []
       var invalidFilesSize = []
@@ -539,6 +537,9 @@ let app = new Vue({
 
     uploadChallenger() {
 
+      this.cleanErrors()
+      this.cleanMsgs()
+      
       let checked = this.chekFormUploadChallenger()
 
       if (checked) {
@@ -696,6 +697,8 @@ let app = new Vue({
     },
 
     openModalContatcYourTeamLeader() {
+
+      this.cleanInputs()
 
       this.getTeamLeaderById(this.authUser.team_leader_id)
       $('#modalContactYourTeamLeader').modal('toggle')
