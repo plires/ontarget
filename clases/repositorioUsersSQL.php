@@ -12,6 +12,49 @@ class RepositorioUsersSQL extends repositorioUsers
     $this->conexion = $conexion;
   }
 
+  public function sendContact($post) {
+
+    $newsletter = 0;
+
+    if ($post['newsletter'] === 'true') {
+      $newsletter = 1;
+    }
+
+    $date = date("Y-m-d H:i:s");
+
+    try {
+      
+      $sql = "
+        INSERT INTO contacts_form 
+        values(default, :name, :lastname, :email, :phone, :comments, :newsletter, :created_at)
+      ";
+
+      $stmt = $this->conexion->prepare($sql);
+      
+      $stmt->bindValue(":name", $post['name'], PDO::PARAM_STR);
+      $stmt->bindValue(":lastname", $post['lastname'], PDO::PARAM_STR);
+      $stmt->bindValue(":email", $post['email'], PDO::PARAM_STR);
+      $stmt->bindValue(":phone", $post['phone'], PDO::PARAM_STR);
+      $stmt->bindValue(":comments", $post['comments'], PDO::PARAM_STR);
+      $stmt->bindValue(":newsletter", $newsletter, PDO::PARAM_STR);
+      $stmt->bindValue(":created_at", $date, PDO::PARAM_STR);
+
+      $register = $stmt->execute();
+
+      // Enviar mail al usuario
+      // Enviar mail al cliente
+
+      return true;
+
+    } catch (Exception $e) {
+
+      header("HTTP/1.1 500 Internal Server Error");
+      
+    }
+
+    
+  }
+
   public function checkAuthUser() {
 
     session_start();

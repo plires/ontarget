@@ -14,6 +14,7 @@ abstract class repositorioUsers {
 	public abstract function checkAuthUser();
 	public abstract function saveCommentsToTeamLeader($user, $team_leader, $comment);
 	public abstract function userEdit($post);
+	public abstract function sendContact($post);
 }
 
 ?>

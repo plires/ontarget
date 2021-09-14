@@ -79,80 +79,102 @@ $origin = 'Formulario de Contacto Web';
 
 							<h2>Contactanos</h2>
 
-							<form method="post" class="needs-validation" novalidate>
-
-								<input type="hidden" value="<?= $origin ?>">
+							<form method="post">
 
 							  <div class="form-row">
-									<!-- Nombre -->
+								<!-- Nombre -->
 							    <div class="form-group col-md-6">
 							      <label for="name">Nombre</label>
-							      <input required type="email" class="form-control" id="name" name="name" placeholder="Nombre" value="<?= $name ?>">
-							      <div class="invalid-feedback">
-						          Ingresá tu nombre
-						        </div>
+							      <input 
+							      	required 
+							      	type="text" 
+							      	class="form-control" 
+							      	id="name" 
+							      	name="name" 
+							      	placeholder="Nombre" 
+							      	v-model="name_contact">
 							    </div>
-									<!-- Nombre end -->
+								<!-- Nombre end -->
 
-									<!-- Apellido -->
+								<!-- Apellido -->
 							    <div class="form-group col-md-6">
 							      <label for="lastname">Apellido</label>
-							      <input required type="text" class="form-control" id="lastname" name="lastname" placeholder="Apellido" value="<?= $lastname ?>">
-							      <div class="invalid-feedback">
-						          Ingresá tu apellido
-						        </div>
+							      <input 
+							      	type="text" 
+							      	class="form-control" 
+							      	id="lastname" 
+							      	name="lastname" 
+							      	placeholder="Apellido" 
+							      	v-model="lastname_contact">
 							    </div>
-									<!-- Apellido end -->
+								<!-- Apellido end -->
 							  </div>
 
 							  <div class="form-row">
 							  	<!-- Email -->
 							    <div class="form-group col-md-6">
 							      <label for="email">Email</label>
-							      <input required type="text" class="form-control" id="email" name="email" placeholder="Email" value="<?= $email ?>">
-							      <div class="invalid-feedback">
-						          Ingresá tu email
-						        </div>
+							      <input 
+								      required 
+								      type="text" 
+								      class="form-control" 
+								      id="email" 
+								      name="email" 
+								      placeholder="Email" 
+								      v-model="email_contact">
 							    </div>
-									<!-- Email end -->
+								<!-- Email end -->
 
-									<!-- Telefono -->
+								<!-- Telefono -->
 							    <div class="form-group col-md-6">
 							      <label for="phone">Telefono</label>
-							      <input required type="text" class="form-control" id="phone" name="phone" placeholder="Telefono" value="<?= $phone ?>">
-							      <div class="invalid-feedback">
-						          Ingresá tu teléfono
-						        </div>
-							    </div>
-									<!-- Telefono end -->
+							      <input 
+							      	required 
+							      	type="text" 
+							      	class="form-control" 
+							      	id="phone" 
+							      	name="phone" 
+							      	placeholder="Telefono" 
+							      	v-model="phone_contact">
+						    	</div>
+								<!-- Telefono end -->
+							</div>
+
+							<div class="form-row">
+							<!-- Comentarios -->
+							<div class="form-group col-md-12">
+								<label for="comments">Comentarios</label>
+								<textarea 
+									required 
+									class="form-control" 
+									name="comments" 
+									id="comments" 
+									v-model="comments_contact">
+								</textarea>
+							</div>
+							<!-- Comentarios end -->
+							</div>
+
+							<div class="form-group">
+								<div class="form-check">
+									<input 
+										checked 
+										class="form-check-input" 
+										type="checkbox" 
+										name="newsletter" 
+										v-model="suscribe_contact" 
+										id="newsletter">
+									<label class="form-check-label" for="newsletter">
+									suscribe newsletter
+									</label>
 								</div>
+							</div>
 
-								<div class="form-row">
-									<!-- Comentarios -->
-							    <div class="form-group col-md-12">
-							      <label for="comments">Comentarios</label>
-							      <textarea required class="form-control" name="comments" id="comments" placeholder="Escribí tu consulta"></textarea>
-								    <div class="invalid-feedback">
-								      Tus comentarios son importantes
-								    </div>
-							    </div>
-									<!-- Comentarios end -->
-							  </div>
+							<div class="text-center">
+								<button @click.prevent="sendContact" class="btn btn--alpha"><span>Enviar</span></button>
+							</div>
 
-							  <div class="form-group">
-							    <div class="form-check">
-							      <input checked class="form-check-input" type="checkbox" name="newsletter" id="newsletter">
-							      <label class="form-check-label" for="newsletter">
-							        suscribe newsletter
-							      </label>
-							    </div>
-							  </div>
-
-							  <div class="text-center">
-							  	<button type="submit" class="btn btn--alpha"><span>Enviar</span></button>
-							  </div>
-
-							</form>
+						</form>
 
 						</div>
 

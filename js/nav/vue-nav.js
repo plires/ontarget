@@ -31,6 +31,12 @@ let app = new Vue({
       currentChallenge: '',
       currentUnit: '',
       teamLeader: {},
+      name_contact: '',
+      lastname_contact: '',
+      email_contact: '',
+      phone_contact: '',
+      comments_contact: '',
+      suscribe_contact: true,
       errors: []
     }
   },
@@ -194,6 +200,80 @@ let app = new Vue({
       this.password = ''
       this.cpassword = ''
       document.getElementById("commentsToTeamLeader").value=''
+    },
+
+    chekFormContact() {
+
+      if ( 
+          this.name_contact && 
+          this.validateEmail(this.email_contact) && 
+          this.phone_contact && 
+          this.comments_contact
+          ) {
+        return true
+      }
+
+      if ( !this.name_contact ) {
+        this.errors.push('Ingresá tu nombre.')
+      }
+
+      if (!this.validateEmail(this.email_contact)) {
+        this.errors.push('El email no es válido.')
+      }
+
+      if ( !this.phone_contact ) {
+        this.errors.push('Ingresá tu teléfono.')
+      }
+
+      if ( !this.comments_contact ) {
+        this.errors.push('Ingresá tus comentarios.')
+      }
+
+      return false
+
+    },
+
+    sendContact() {
+
+      this.cleanErrors()
+      this.cleanMsgs()
+
+      let checked = this.chekFormContact()
+
+      if (checked) {
+
+        var formData = new FormData();
+
+        formData.append('name', this.name_contact)
+        formData.append('lastname', this.lastname_contact)
+        formData.append('email', this.email_contact)
+        formData.append('phone', this.phone_contact)
+        formData.append('newsletter', this.suscribe_contact)
+        formData.append('comments', this.comments_contact)
+
+        axios.post('/../../php/send-contact.php', formData)
+        .then(response => {
+
+          if (response.data) {
+
+            this.msg = 'Consulta enviada con éxito. Nos comunicaremos con vos a la brevedad'
+
+          } else {
+
+            this.errors.push('Nombre, email, teléfono y comentarios son obligatorios')
+
+          }
+
+
+        })
+        .catch(error => {
+
+          this.errors.push('Existe un problema en el servidor. Intente mas tarde por favor')
+          
+        })
+
+      }
+
     },
 
     chekFormLogin() {

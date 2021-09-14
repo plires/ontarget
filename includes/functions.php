@@ -28,9 +28,9 @@ function emailValid($email){
 }
 
 function emptyInput($dato){
-	if ($dato==''){
+	if ($dato == ''){
 		return true;
-	}else{
+	} else {
 		return false;
 	}
 }
