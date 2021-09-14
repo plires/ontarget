@@ -97,13 +97,13 @@
 	
 	</div>
 
+	<script type="text/javascript" src="./node_modules/jquery/dist/jquery.min.js"></script>
+	<script type="text/javascript" src="./node_modules/axios/dist/axios.min.js"></script>
+	<script type="text/javascript" src="./node_modules/vue/dist/vue.js"></script>
+	<script type="text/javascript" src="./node_modules/aos/dist/aos.js"></script>
+	<script type="text/javascript" src="js/app.js"></script>
+	<script type="text/javascript" src="js/nav/vue-nav.js"></script>
 </body>
-<script type="text/javascript" src="./node_modules/jquery/dist/jquery.min.js"></script>
-<script type="text/javascript" src="./node_modules/axios/dist/axios.min.js"></script>
-<script type="text/javascript" src="./node_modules/vue/dist/vue.js"></script>
-<script type="text/javascript" src="./node_modules/aos/dist/aos.js"></script>
-<script type="text/javascript" src="js/app.js"></script>
-<script type="text/javascript" src="js/nav/vue-nav.js"></script>
 
 <?php 
 echo "

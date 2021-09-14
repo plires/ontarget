@@ -34,14 +34,6 @@ textarea { resize: none; }
     border-top: 1px solid #f0f0f0;
 }
 
-.alert-danger,
-.alert-success {
-	position: fixed;
-	top: 0;
-	width: 100%;
-  z-index: 10000;
-}
-
 body:not(.layout-fixed) .main-sidebar {
 	top: 0;
   bottom:0;
@@ -244,48 +236,6 @@ aside .unidad_deshabilitada {
 }
 /* Unidades end */
 
-/* Modal Edicion de Usuario */
-#modalPerfilUsuario {
-	z-index: 10000;
-}
-
-#modalPerfilUsuario .modal-header {
-	background-color: var(--third-color);
-	color: white;
-}
-
-#modalPerfilUsuario button {
-	color: white;
-}
-
-#modalPerfilUsuario .btn {
-	float: right;
-	background-color: var(--third-color);
-	color: white;
-}
-/* Modal Edicion de Usuario end */
-
-/* Modal contacto Team Leader */
-#modalContactYourTeamLeader {
-	z-index: 10000;
-}
-
-#modalContactYourTeamLeader .modal-header {
-	background-color: var(--third-color);
-	color: white;
-}
-
-#modalContactYourTeamLeader button {
-	color: white;
-}
-
-#modalContactYourTeamLeader .btn {
-	float: right;
-	background-color: var(--third-color);
-	color: white;
-}
-/* Modal contacto Team Leader end */
-
 /* Modal Subida de archivos*/
 #modalUpload {
 	z-index: 10000;
@@ -305,7 +255,7 @@ aside .unidad_deshabilitada {
 	background-color: var(--third-color);
 	color: white;
 }
-/* Modal Subida de archivosend */
+/* Modal Subida de archivos end */
 
 
 /* Modal Challenge */

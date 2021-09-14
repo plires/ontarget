@@ -22,11 +22,18 @@ $origin = 'Formulario de Contacto Web';
 	<link rel="stylesheet" type="text/css" href="./node_modules/@fortawesome/fontawesome-free/css/all.css">
 	<link rel="stylesheet" type="text/css" href="./node_modules/bootstrap/dist/css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="./node_modules/aos/dist/aos.css"/>
+	<link rel="stylesheet" href="./css/modales-compartidos-front-back.css">
 	<link rel="stylesheet" href="css/app.css">
 </head>
 <body>
 
 	<div id="app">
+
+		<!-- Msgs -->
+		<?php include('includes/msg.php'); ?>
+
+		<!-- Errors -->
+		<?php include('includes/errors.php'); ?>
 
 		<!-- Login -->
 		<?php include('includes/login.php'); ?>
@@ -190,12 +197,12 @@ $origin = 'Formulario de Contacto Web';
 	<!-- Footer -->
 	<?php include('includes/footer.php'); ?>
 
+	<script type="text/javascript" src="./node_modules/jquery/dist/jquery.min.js"></script>
+	<script type="text/javascript" src="./node_modules/axios/dist/axios.min.js"></script>
+	<script type="text/javascript" src="./node_modules/vue/dist/vue.js"></script>
+	<script type="text/javascript" src="./node_modules/aos/dist/aos.js"></script>
+	<script type="text/javascript" src="js/app.js"></script>
+	<script type="text/javascript" src="js/nav/vue-nav.js"></script>
 </body>
-<script type="text/javascript" src="./node_modules/jquery/dist/jquery.min.js"></script>
-<script type="text/javascript" src="./node_modules/axios/dist/axios.min.js"></script>
-<script type="text/javascript" src="./node_modules/vue/dist/vue.js"></script>
-<script type="text/javascript" src="./node_modules/aos/dist/aos.js"></script>
-<script type="text/javascript" src="js/app.js"></script>
-<script type="text/javascript" src="js/nav/vue-nav.js"></script>
 
 </html>

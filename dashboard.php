@@ -27,6 +27,7 @@
   <link rel="stylesheet" type="text/css" href="./node_modules/slick-carousel/slick/slick-theme.css"/>
   <link rel="stylesheet" type="text/css" href="./node_modules/aos/dist/aos.css"/>
   <link rel="stylesheet" href="./node_modules/admin-lte/dist/css/adminlte.min.css">
+  <link rel="stylesheet" href="./css/modales-compartidos-front-back.css">
 
   <link rel="stylesheet" href="css/app-dashboard.css">
 

@@ -56,11 +56,6 @@ h2 {
   font-weight: 700;
 }
 
-.msgs p {
-  color: #155724;
-  margin-bottom: 0;
-}
-
 .transition{
   -webkit-transition: all ease-in-out .3s; /* Safari */
   transition: all ease-in-out .3s;

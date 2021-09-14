@@ -7,9 +7,6 @@
 		<!-- Formulario Login -->
 		<div v-if="loginContent" class="content_login">
 
-			<!-- Errores -->
-			<?php include('errors.php'); ?>
-
 			<form id="formLogin" method="post">
 
 				<!-- Email -->
@@ -40,12 +37,6 @@
 
 		<!-- Formulario Register -->
 		<div v-if="registerContent" class="content_login">
-
-			<!-- Msgs -->
-			<?php include('msg.php'); ?>
-
-			<!-- Errors -->
-			<?php include('errors.php'); ?>
 
 			<form id="formRegister" method="post">
 
@@ -98,12 +89,6 @@
 		<!-- Formulario Nuevo Pass -->
 		<div v-if="newPasswordContent" class="content_login">
 
-			<!-- Msgs -->
-			<?php include('msg.php'); ?>
-
-			<!-- Errors -->
-			<?php include('errors.php'); ?>
-
 			<form id="formRegister" method="post">
 
 				<!-- Email -->
@@ -127,12 +112,6 @@
 
 		<!-- Cuenta de usuario -->
 		<div v-if="accountContent" class="content_login content_account">
-
-			<!-- Msgs -->
-			<?php include('msg.php'); ?>
-
-			<!-- Errors -->
-			<?php include('errors.php'); ?>
 
 			<ul>
 				<li>

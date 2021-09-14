@@ -15,17 +15,30 @@
 	<link rel="stylesheet" type="text/css" href="./node_modules/slick-carousel/slick/slick.css"/>
 	<link rel="stylesheet" type="text/css" href="./node_modules/slick-carousel/slick/slick-theme.css"/>
 	<link rel="stylesheet" type="text/css" href="./node_modules/aos/dist/aos.css"/>
+	<link rel="stylesheet" href="./css/modales-compartidos-front-back.css">
 	<link rel="stylesheet" href="css/app.css">
 </head>
 <body>
 
 	<div id="app">
 
+		<!-- Msgs -->
+		<?php include('includes/msg.php'); ?>
+
+		<!-- Errors -->
+		<?php include('includes/errors.php'); ?>
+
 		<!-- Login -->
 		<?php include('includes/login.php'); ?>
 		
 		<!-- Nav -->
 		<?php include('includes/nav.php'); ?>
+
+		<!-- Modal Perfil Usuario -->
+	    <?php include('includes/modal-perfil.php'); ?>
+
+	    <!-- Modal Contactar a tu Team Leader -->
+	    <?php include('includes/modal-contact-team-leader.php'); ?>
 
 		<!-- Header -->
 		<header>
@@ -312,13 +325,15 @@
 	
 	</div>
 
+	<script type="text/javascript" src="./node_modules/jquery/dist/jquery.min.js"></script>
+	<script type="text/javascript" src="./node_modules/admin-lte/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+	<script type="text/javascript" src="./node_modules/axios/dist/axios.min.js"></script>
+	<script type="text/javascript" src="./node_modules/vue/dist/vue.js"></script>
+	<script type="text/javascript" src="./node_modules/slick-carousel/slick/slick.js"></script>
+	<script type="text/javascript" src="./node_modules/aos/dist/aos.js"></script>
+	<script type="text/javascript" src="js/app.js"></script>
+	<script type="text/javascript" src="js/slick-home.js"></script>
+	<script type="text/javascript" src="js/nav/vue-nav.js"></script>
 </body>
-<script type="text/javascript" src="./node_modules/jquery/dist/jquery.min.js"></script>
-<script type="text/javascript" src="./node_modules/axios/dist/axios.min.js"></script>
-<script type="text/javascript" src="./node_modules/vue/dist/vue.js"></script>
-<script type="text/javascript" src="./node_modules/slick-carousel/slick/slick.js"></script>
-<script type="text/javascript" src="./node_modules/aos/dist/aos.js"></script>
-<script type="text/javascript" src="js/app.js"></script>
-<script type="text/javascript" src="js/slick-home.js"></script>
-<script type="text/javascript" src="js/nav/vue-nav.js"></script>
+
 </html>

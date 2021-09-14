@@ -1,0 +1,107 @@
+/* Alertas y Mensajes */
+.alert-danger, .alert-success {
+    position: fixed!important;
+    top: 0!important;
+    width: 100%!important;
+    z-index: 10000!important;
+}
+
+.alert-danger {
+  color: #721c24!important;
+  background-color: #f8d7da!important;
+  border-color: #f5c6cb!important;
+}
+
+.alert-success {
+    color: #155724;
+    background-color: #d4edda;
+    border-color: #c3e6cb;
+}
+/* Alertas y Mensajes end */
+
+/* Modal Edicion de Usuario y Modal contacto Team Leader */
+#modalPerfilUsuario, 
+#modalContactYourTeamLeader
+ {
+	z-index: 11000!important;
+}
+
+#modalPerfilUsuario h5, 
+#modalContactYourTeamLeader h5 {
+	color: white;
+}
+
+#modalPerfilUsuario .modal-header,
+#modalContactYourTeamLeader .modal-header {
+	background-color: var(--third-color);
+	color: white;
+}
+
+#modalPerfilUsuario button, 
+#modalContactYourTeamLeader button {
+	color: white;
+}
+
+#modalPerfilUsuario .btn,
+#modalContactYourTeamLeader .btn {
+	float: right;
+	background-color: var(--third-color);
+	color: white;
+	font-size: 1rem;
+	border-radius: 0.25rem;
+	padding: .375rem .75rem;
+	min-width: auto;
+	width:  auto;
+	max-width:  auto;
+	font-weight: 400;
+	border: var(--secondary-color);
+}
+
+#modalPerfilUsuario .btn:before,
+#modalContactYourTeamLeader .btn:before {
+	background-color: var(--secondary-color)!important;
+	color: var(--primary-color)!important;
+	transform: scale(0) translate(0%)!important;
+}
+
+#modalPerfilUsuario .btn:hover,
+#modalContactYourTeamLeader .btn:hover {
+	background-color: var(--secondary-color);
+	color: var(--primary-color)!important;
+}
+/* Modal Edicion de Usuario y Modal contacto Team Leader end */
+
+
+/* MEDIA QUERIES */
+@media (min-width: 576px) {
+
+}
+
+@media (min-width: 768px) {
+
+
+}
+
+@media (min-width: 992px) {
+
+}
+
+@media (min-width: 1200px) {
+	
+}
+
+@media (min-width: 1400px) {
+
+}
+
+@media (min-width: 1800px) {
+
+}
+
+
+
+
+
+
+
+

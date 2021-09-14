@@ -1,6 +1,7 @@
 <div class="modal fade" id="modalContactYourTeamLeader" tabindex="-1" aria-labelledby="modalContactYourTeamLeaderLabel" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered modal-lg">
     <div class="modal-content">
+
       <div class="modal-header">
         <h5 class="modal-title" id="modalContactYourTeamLeaderLabel">Consultá a tu Team Leader</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
