@@ -38,6 +38,7 @@
 	<link rel="stylesheet" type="text/css" href="./node_modules/@fortawesome/fontawesome-free/css/all.css">
 	<link rel="stylesheet" type="text/css" href="./node_modules/bootstrap/dist/css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="./node_modules/aos/dist/aos.css"/>
+	<link rel="stylesheet" href="./css/modales-compartidos-front-back.css">
 	<link rel="stylesheet" href="css/app.css">
 </head>
 <body>
@@ -49,6 +50,12 @@
 		
 		<!-- Nav -->
 		<?php include('includes/nav.php'); ?>
+
+		<!-- Modal Perfil Usuario -->
+	    <?php include('includes/modal-perfil.php'); ?>
+
+	    <!-- Modal Contactar a tu Team Leader -->
+	    <?php include('includes/modal-contact-team-leader.php'); ?>
 
 		<!-- Header -->
 		<header>

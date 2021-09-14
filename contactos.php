@@ -41,6 +41,12 @@ $origin = 'Formulario de Contacto Web';
 		<!-- Nav -->
 		<?php include('includes/nav.php'); ?>
 
+		<!-- Modal Perfil Usuario -->
+	    <?php include('includes/modal-perfil.php'); ?>
+
+	    <!-- Modal Contactar a tu Team Leader -->
+	    <?php include('includes/modal-contact-team-leader.php'); ?>
+
 		<section class="contacto">
 
 			<div class="bg_gris">
