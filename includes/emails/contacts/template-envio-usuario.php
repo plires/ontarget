@@ -1,7 +1,7 @@
 <?php 
 
 //preparamos el mensaje de confirmacion que le enviaremos al remitente.
-$body = '
+$body_usuario = '
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html lang="en">
 <head>

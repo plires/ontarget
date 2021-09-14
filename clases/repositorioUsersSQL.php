@@ -1,7 +1,15 @@
 <?php
 
+//Import PHPMailer classes into the global namespace
+//These must be at the top of your script, not inside a function
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\SMTP;
+use PHPMailer\PHPMailer\Exception;
+
+//Load Composer's autoloader
+require './../vendor/autoload.php';
+
 require_once("repositorioUsers.php");
-require_once("app.php");
 
 class RepositorioUsersSQL extends repositorioUsers
 {
@@ -41,8 +49,28 @@ class RepositorioUsersSQL extends repositorioUsers
 
       $register = $stmt->execute();
 
+      include('./../includes/emails/contacts/template-envio-usuario.php');
+      include('./../includes/emails/contacts/template-envio-cliente.php');
+
       // Enviar mail al usuario
+      // $send = $this->sendEmail(
+      //   $post['email'], 
+      //   'Gracias por tu contacto', 
+      //   $body_usuario, 
+      //   'info@ontarget.com.ar', 
+      //   'OnTarget', 
+      //   'info@ontarget.com.ar'
+      // );
+
       // Enviar mail al cliente
+      // $send_to_client = $this->sendEmail(
+      //   'carlos.castro.1975.2@gmail.com', 
+      //   'Nuevo Contacto desde el formulario web', 
+      //   $body_cliente, 
+      //   $post['email'], 
+      //   $post['name'], 
+      //   $post['email']
+      // );
 
       return true;
 
@@ -52,7 +80,40 @@ class RepositorioUsersSQL extends repositorioUsers
       
     }
 
-    
+  }
+
+  public function sendEmail($recipient, $subject, $template, $addReplyTo, $nameFrom, $emailFrom ) {
+
+    //Create an instance; passing `true` enables exceptions
+    $mail = new PHPMailer(true);
+
+    try {
+        //Server settings
+        $mail->SMTPDebug = SMTP::DEBUG_SERVER;                     
+        // $mail->isSMTP();          // Esta linea se saco para probar en local, en produccion probablemente haya que agregarla                                 
+        $mail->Host       = SMTP;                     
+        $mail->SMTPAuth   = true;       
+        $mail->Username   = USERNAME;   
+        $mail->Password   = PASSWORD;   
+        $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;            //Enable implicit TLS encryption
+        $mail->Port       = EMAIL_PORT;                             //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
+
+        //Recipients
+        $mail->setFrom($emailFrom, $nameFrom);
+        $mail->addAddress($recipient);               
+        $mail->addReplyTo($addReplyTo);
+
+        //Content
+        $mail->isHTML(true);                                  //Set email format to HTML
+        $mail->Subject = $subject;
+        $mail->Body    = $template;
+
+        $mail->send();
+        // echo 'Message has been sent';
+    } catch (Exception $e) {
+        echo "No se pudo enviar el mensaje. Error de envío: {$mail->ErrorInfo}";
+    }
+
   }
 
   public function checkAuthUser() {
@@ -240,12 +301,28 @@ class RepositorioUsersSQL extends repositorioUsers
 
       $register = $stmt->execute();
 
-      $app = new App;
+      // include('./../includes/emails/contacts/template-envio-usuario.php');
+      // include('./../includes/emails/contacts/template-envio-cliente.php');
 
       // Enviar email al usuario con el token para que confirme su email
-      // $sendUser = $app->sendEmail('Usuario', 'Contacto Usuario', $post);
+      // $send_to_user = $this->sendEmail(
+      //   $post['email'], 
+      //   'Gracias por tu contacto', 
+      //   '<p>template para usuario</p>', 
+      //   'info@ontarget.com.ar', 
+      //   'OnTarget', 
+      //   'info@ontarget.com.ar'
+      // );
       
       // Enviar un email para avisar al team leader asignado que tiene un nuevo lacayo 
+      // $send_to_client = $this->sendEmail(
+      //   'carlos.castro.1975.2@gmail.com', 
+      //   'Nuevo Contacto desde el formulario web', 
+      //   '<p>template para team leader</p>', 
+      //   $post['email'], 
+      //   $post['name'], 
+      //   $post['email']
+      // );
 
       return $register;
       
@@ -349,9 +426,19 @@ class RepositorioUsersSQL extends repositorioUsers
       // Generar un token, guardarlo en la base de datos
       $generatedToken = $this->generateTokenAndSaveInDatabase($user);
 
-      // Emviar email con el link al usuario
-      $app = new App;
-      // $sendUser = $app->sendEmail('Usuario', 'Contacto Usuario', $post);
+      // include('./../includes/emails/contacts/template-envio-usuario.php');
+      // include('./../includes/emails/contacts/template-envio-cliente.php');
+
+      // Enviar mail al usuario
+      // $this->sendEmail(
+      //   $post['email'], 
+      //   'Gracias por tu contacto', 
+      //   '<p>template de olvido de pass para el usuario</p>', 
+      //   'info@ontarget.com.ar', 
+      //   'OnTarget', 
+      //   'info@ontarget.com.ar'
+      // );
+
       return true;
      
     } catch (Exception $e) {

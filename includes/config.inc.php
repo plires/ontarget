@@ -17,11 +17,10 @@ define('DB_PASS', 'secret');
 ///Valores de Envio de emails
 //////////////////////////////
 define('SMTP', 'smtp.librecomunicacion.net'); 
-define('EMAIL_SENDER', 'pruebas@librecomunicacion.net');
-define('EMAIL_PASS', 'Perezzs$7478'); 
+define('USERNAME', 'pruebas@librecomunicacion.net');
+define('PASSWORD', 'Perezzs$7478'); 
 define('EMAIL_SENDER_SHOW', 'pruebas@librecomunicacion.net');
 define('NAME_SENDER_SHOW', 'On Target');
-define('EMAIL_RECIPIENT', 'carlos.castro.1975.2@gmail.com');
 define('EMAIL_BCC', '');
 define('EMAIL_PORT', 587);
 define('EMAIL_NAME', 'On Target');

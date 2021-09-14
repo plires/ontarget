@@ -18,6 +18,7 @@
 	}
 	
 	$sendContact = $db->getRepositorioUsers()->sendContact($_POST);
+	// $sendContact = $db->getRepositorioUsers()->sendEmail('pablo@librecomunicacion.net', 'asunto', '<p>parrafo listo</p>', 'pablolires@gmail.com', 'Pablo Lires', 'pablolires@gmail.com' );
 
 	header('Content-type: application/json');
 	echo json_encode($sendContact);
