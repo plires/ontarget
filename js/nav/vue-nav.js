@@ -491,6 +491,7 @@ let app = new Vue({
 
       $('#modalChallenge').modal('toggle')
       $('#modalUpload').modal('toggle')
+      document.getElementById("comments").value=''
 
     },
 
@@ -698,7 +699,7 @@ let app = new Vue({
 
     openModalContatcYourTeamLeader() {
 
-      this.cleanInputs()
+      document.getElementById("commentsToTeamLeader").value=''
 
       this.getTeamLeaderById(this.authUser.team_leader_id)
       $('#modalContactYourTeamLeader').modal('toggle')
