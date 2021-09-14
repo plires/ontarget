@@ -3,7 +3,7 @@
     position: fixed!important;
     top: 0!important;
     width: 100%!important;
-    z-index: 10000!important;
+    z-index: 12000!important;
 }
 
 .alert-danger {

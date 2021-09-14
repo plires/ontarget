@@ -197,8 +197,6 @@ let app = new Vue({
 
     chekFormLogin() {
 
-      this.cleanErrors()
-
       if ( this.validateEmail(this.email) && this.password ) {
         return true
       }
@@ -217,12 +215,11 @@ let app = new Vue({
 
     login() {
 
-      $('#btnLogin').prop('disabled', true)
       this.cleanErrors()
       this.cleanMsgs()
 
       let checked = this.chekFormLogin()
-      
+
       if (checked) {
 
         const form = document.querySelector('#formLogin')

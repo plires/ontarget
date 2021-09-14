@@ -297,6 +297,7 @@
 	<?php include('includes/footer.php'); ?>
 
 	<script type="text/javascript" src="./node_modules/jquery/dist/jquery.min.js"></script>
+	<script type="text/javascript" src="./node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
 	<script type="text/javascript" src="./node_modules/axios/dist/axios.min.js"></script>
 	<script type="text/javascript" src="./node_modules/vue/dist/vue.js"></script>
 	<script type="text/javascript" src="./node_modules/aos/dist/aos.js"></script>

@@ -61,15 +61,19 @@ class RepositorioUsersSQL extends repositorioUsers
       $stmt->execute();
       $user = $stmt->fetch(PDO::FETCH_ASSOC);
 
-      if (password_verify( $password, $user['password']) && $user['token'] == NULL ) {
-        session_start();
-        $_SESSION['user'] = $user;
-        unset($_SESSION['user']['password']);
-        unset($_SESSION['user']['token']);
-        unset($_SESSION['user']['created_at']);
-        return $_SESSION['user'];
-      }
+      if (is_array($user)) { // Si existe el email en la base de datos
 
+        if (password_verify( $password, $user['password']) && $user['token'] == NULL ) {
+          session_start();
+          $_SESSION['user'] = $user;
+          unset($_SESSION['user']['password']);
+          unset($_SESSION['user']['token']);
+          unset($_SESSION['user']['created_at']);
+          return $_SESSION['user'];
+        }
+
+      }
+      
       return false;
       
     } catch (Exception $e) {
