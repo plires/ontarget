@@ -9,6 +9,7 @@ backend/node_modules/
 /backend/node_modules/
 uploads
 /uploads
+/placa
 /img
 /challenges
 npm-debug.log
