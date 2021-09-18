@@ -88,10 +88,18 @@ class RepositorioUsersSQL extends repositorioUsers
 
     try {
 
-      $sql = "SELECT * FROM users ORDER BY id ASC";
+      $sql = "
+        SELECT t1.*, t2.name AS name_team_leader
+        FROM users AS t1
+        INNER JOIN team_leaders AS t2 ON t1.team_leader_id=t2.id;
+      ";
+
       $stmt = $this->conexion->prepare($sql);
       $stmt->execute();
       $users = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+      unset($users['token']);
+      unset($users['password']);
 
       return $users;
       

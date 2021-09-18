@@ -91,9 +91,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
                               <th>Nombre</th>
                               <th>Email</th>
                               <th>Progreso</th>
-                              <th>Unidades Autorizadas</th>
-                              <th>Notificaciones</th>
-                              <th>Acciones</th>
+                              <th class=" text-center">Unidades Autorizadas</th>
+                              <th class=" text-center">Notificaciones</th>
+                              <th class=" text-center">Acciones</th>
                             </tr>
                           </thead>
 
@@ -104,7 +104,13 @@ scratch. This page gets rid of all links and provides the needed markup only.
                               <td v-cloak>{{ user.email }}</td>
                               <td class="project_progress">
                                   <div class="progress progress-sm">
-                                      <div class="progress-bar bg-green" role="progressbar" aria-valuenow="57" aria-valuemin="0" aria-valuemax="100" :style="'width: ' + Math.round((user.authorized_units * 100) / totalUnits) + '%'">
+                                      <div 
+                                        class="progress-bar bg-green" 
+                                        role="progressbar" 
+                                        :aria-valuenow="Math.round((user.authorized_units * 100) / totalUnits)" 
+                                        aria-valuemin="0" 
+                                        aria-valuemax="100" 
+                                        :style="'width: ' + Math.round((user.authorized_units * 100) / totalUnits) + '%'">
                                       </div>
                                   </div>
                                   <small>
@@ -112,15 +118,22 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                   </small>
                               </td>
                               <td v-cloak>{{ user.authorized_units }}</td>
-                              <td v-cloak>
-                                <a v-if="user.pending_comments == 1" href="#"><i class="fas fa-envelope"></i></a>
-                                <a v-if="user.pending_challengers == 1" href="#"><i class="fas fa-tasks"></i></a>
+                              <td class="cta" v-cloak>
+                                <button 
+                                  v-if="user.pending_comments == 1">
+                                    <i class="fas fa-envelope transition"></i>
+                                </button>
+                                <button 
+                                  v-if="user.pending_challengers == 1"
+                                  @click="getChallengerByUser(user.id)">
+                                  <i class="fas fa-tasks transition"></i>
+                                </button>
                               </td>
-                              <td v-cloak>
+                              <td v-cloak class="text-center">
 
-                                <div class="btn-group">
-                                  <button type="button" class="btn btn-success">Acciones</button>
-                                  <button type="button" class="btn btn-success dropdown-toggle dropdown-icon" data-toggle="dropdown" aria-expanded="false">
+                                <div class="btn-group text-center">
+                                  <button type="button" class="acciones btn">Acciones</button>
+                                  <button type="button" class="acciones btn dropdown-toggle dropdown-icon" data-toggle="dropdown" aria-expanded="false">
                                     <span class="sr-only">Toggle Dropdown</span>
                                   </button>
                                   <div class="dropdown-menu" role="menu" style="">
@@ -142,9 +155,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
                               <th>Nombre</th>
                               <th>Email</th>
                               <th>Progreso</th>
-                              <th>Unidades Autorizadas</th>
-                              <th>Notificaciones</th>
-                              <th>Acciones</th>
+                              <th class=" text-center">Unidades Autorizadas</th>
+                              <th class=" text-center">Notificaciones</th>
+                              <th class=" text-center">Acciones</th>
                             </tr>
                           </tfoot>
 

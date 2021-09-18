@@ -10,6 +10,7 @@ let app = new Vue({
       password_reset: '',
       cpassword: '',
       cpassword_reset: '',
+      totalUnits: 6,
       accountContent: false,
       loginContent: false,
       registerContent: false,
@@ -855,9 +856,10 @@ let app = new Vue({
       return this.episodes.filter((episode) => episode.unit_id == this.currentUnit)
     },
 
+
+
     percentComplete() {
-      // return await parseInt( this.authUser.authorized_units / Object.keys(this.units).length )
-      return 60
+      return Math.round((this.authUser.authorized_units * 100) / this.totalUnits)
     }
 
   }

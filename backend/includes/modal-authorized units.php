@@ -1,5 +1,5 @@
 <div class="modal fade" id="modalAuthorizedUnits" tabindex="-1" aria-labelledby="modalAuthorizedUnitsLabel" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered modal-lg">
+  <div class="modal-dialog modal-dialog-centered">
     <div class="modal-content">
 
       <div class="modal-header">
@@ -10,40 +10,37 @@
       </div>
 
       <div class="modal-body">
-        <form>
-          <div class="card-body">
 
-            <!-- Nombre -->
-            <div class="form-group">
-              <label>Nombre</label>
-              <input disabled v-model="showingUser.name" type="text" class="form-control">
+        <div class="card card-widget widget-user-2">
+          <!-- Add the bg color to the header using any of the bg-* classes -->
+          <div class="widget-user-header">
+            <div>
+              <i class="fas fa-user-graduate"></i>
             </div>
-            <!-- Nombre end -->
 
-            <!-- Email -->
-            <div class="form-group">
-              <label>Email</label>
-              <input disabled v-model="showingUser.email" type="text" class="form-control">
+            <div>
+              <h3 class="widget-user-username">{{ showingUser.name }}</h3>
+              <h5 class="widget-user-desc">Estudiante</h5>
             </div>
-            <!-- Email end -->
-
-            <!-- Teléfono -->
-            <div class="form-group">
-              <label>Teléfono</label>
-              <input disabled v-model="showingUser.phone" type="text" class="form-control">
-            </div>
-            <!-- Teléfono end -->
-
-            <!-- Unidades Autorizadas -->
-            <div class="form-group">
-              <label>Autorizado hasta la Unidad:</label>
-              <input disabled v-model="showingUser.authorized_units" type="text" class="form-control">
-            </div>
-            <!-- Unidades Autorizadas end -->
-          
           </div>
+          <div class="card-footer p-0">
+            <ul class="nav flex-column">
+              <li class="nav-item">
+                Nombre: <span class="float-right">{{ showingUser.name }}</span>
+              </li>
+              <li class="nav-item">
+                Email: <span class="float-right">{{ showingUser.email }}</span>
+              </li>
+              <li class="nav-item">
+                Teléfono: <span class="float-right">{{ showingUser.phone }}</span>
+              </li>
+              <li class="nav-item">
+                Team Leader: <span class="float-right">{{ showingUser.name_team_leader }}</span>
+              </li>
+            </ul>
+          </div>
+        </div>
 
-        </form>
       </div>
 
     </div>

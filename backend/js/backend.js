@@ -17,7 +17,6 @@ let app = new Vue({
   mounted() {
     this.getUsers()
     this.getChallengers()
-    // this.getChallengerByUser(71)
   },
 
   methods: {
@@ -62,7 +61,7 @@ let app = new Vue({
           $('#modalChallengersUser').modal('toggle')
 
         } else {
-          console.log('false')
+          this.errors.push('Ops.. Intente nuevamente por favor')
         }
 
       })
