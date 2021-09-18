@@ -31,10 +31,12 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <link rel="stylesheet" href="./../node_modules/admin-lte/plugins/datatables-buttons/css/buttons.bootstrap4.min.css">
   <!-- Theme style -->
   <link rel="stylesheet" href="./../node_modules/admin-lte/dist/css/adminlte.min.css">
+
+  <link rel="stylesheet" href="./css/app-backend.css">
 </head>
 <body class="hold-transition sidebar-mini">
 
-<div id="app" class="wrapper">
+<div id="app" class="dashboard wrapper">
 
   <!-- Modal de datos de Usuario -->
   <?php include('./includes/modal-authorized units.php'); ?>

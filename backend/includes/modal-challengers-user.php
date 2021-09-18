@@ -3,53 +3,85 @@
     <div class="modal-content">
 
       <div class="modal-header">
-        <h5 class="modal-title" id="modalChallengersUserLabel">Desafios Pendientes de Aprobación: </h5>
+        <h5 class="modal-title" id="modalChallengersUserLabel">Desafios Pendientes de Aprobación: 
+          <strong>{{ showingUser.name }}</strong>
+        </h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
 
       <div class="modal-body">
-        <form>
 
-          <div v-if="challengesOfTheCurrentUser.length != 0" class="card-body">
+        <div v-if="challengesOfTheCurrentUser.length != 0" class="card-body">
 
-            <div v-for="(challenge, index) in challengesOfTheCurrentUser" :key="index" class="contentChallengers">
-              <h5>Unidad {{ challenge.unit_number }} - Capitulo {{challenge.episode_number }}</h5>
-              <h5>Fecha de Entrega: {{ moment(challenge.created_at).format('DD-MM-YYYY') }} - 
-                <span>{{ moment(challenge.created_at).fromNow() }}</span>
-              </h5>
-              <h6>Comentarios del usuario para esta entrega:</h6>
-              <p>{{ challenge.comments }}</p>
+          <div id="accordion">
 
-              <div v-if="challenge.files.length != 0">
-                <a 
-                  v-for="(file, index_file) in challenge.files" 
-                  :key="index_file" 
-                  class="contentFiles"
-                  :href="file" 
-                  download 
-                >
-                  <i class="far fa-file"></i>
-                </a>
+            <div v-for="(challenge, index) in challengesOfTheCurrentUser" :key="index" class="card card-primary">
+              <div class="card-header">
+                <h4 class="card-title w-100">
+                  <a 
+                    class="d-block w-100 collapsed" 
+                    data-toggle="collapse" 
+                    :href="'#desafio-' + challenge.id" 
+                    aria-expanded="false">
+                    Unidad {{ challenge.unit_number }} - Capitulo {{ challenge.episode_number }}
+                  </a>
+                </h4>
               </div>
+              <div 
+                :id="'desafio-' + challenge.id" 
+                :class="{'collapse' : index == 1, 'show' : ''}"
+                data-parent="#accordion"
+              >
+                <div class="card-body">
 
-              <div v-else>
-                <p>
-                  Los archivos para descargar deberían estar aquí ya que es obligatorio para el usuario. Por algún motivo no se pudieron cargar. Por favor ponete en contacto con <strong>{{ showingUser.name }}</strong> al 
-                  <a :href="'mailto:' + showingUser.email">{{ showingUser.email }}</a> y cosultale por estos archivos.
-                </p>
+                  <dl class="row">
+
+                    <dt class="col-sm-4">Fecha de Subida:</dt>
+                    <dd class="col-sm-8">
+                      {{ moment(challenge.created_at).format('DD/MM/YYYY') }}&nbsp;  
+                      <span class="date float-right badge bg-success">{{ moment(challenge.created_at).fromNow() }}</span>
+                    </dd>
+
+                    <dt v-if="challenge.comments" class="col-sm-4">Comentarios del usuario para esta entrega:</dt>
+                    <dd v-if="challenge.comments" class="col-sm-8">{{ challenge.comments }}</dd>
+
+                    <dt class="col-sm-4">Archivos a Descargar</dt>
+                    <dd v-if="challenge.files.length != 0"  class="col-sm-8">
+                      <a 
+                        v-for="(file, index_file) in challenge.files" 
+                        :key="index_file" 
+                        class="contentFiles transition"
+                        :href="file" 
+                        title="Descargar Desafío"
+                        download 
+                      >
+                        <i class="far fa-file"></i>
+                      </a>
+                    </dd>
+
+                    <dd v-else class="col-sm-8">
+                      <p>
+                        Los archivos para descargar deberían estar aquí ya que es obligatorio para el usuario. Por algún motivo no se pudieron cargar. Por favor ponete en contacto con <strong>{{ showingUser.name }}</strong> al 
+                        <a :href="'mailto:' + showingUser.email">{{ showingUser.email }}</a> y cosultale por estos archivos.
+                      </p>
+                    </dd>
+
+                  </dl>
+
+                </div>
               </div>
-
             </div>
 
           </div>
 
-          <div v-else class="card-body">
-              <p>No hay desafios pendientes de corrección para este usuario.</p>
-          </div>
+        </div>
 
-        </form>
+        <div v-else class="card-body">
+            <p>No hay desafios pendientes de corrección para este usuario.</p>
+        </div>
+
       </div>
 
     </div>
