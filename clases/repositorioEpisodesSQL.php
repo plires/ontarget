@@ -142,7 +142,6 @@ class RepositorioEpisodesSQL extends repositorioEpisodes
       $user = $stmt->fetch(PDO::FETCH_OBJ);
 
       if ($user->approved == 1) {
-        // var_dump($uploadFiles);exit;
         foreach ($uploadFiles as $file) {
           unlink($file['path_to_delete']);
         }

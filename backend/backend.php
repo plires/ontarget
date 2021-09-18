@@ -36,6 +36,12 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
 <div id="app" class="wrapper">
 
+  <!-- Modal de datos de Usuario -->
+  <?php include('./includes/modal-authorized units.php'); ?>
+
+  <!-- Modal de datos de Usuario -->
+  <?php include('./includes/modal-challengers-user.php'); ?>
+
   <!-- Nav -->
   <?php include('./includes/nav.php'); ?>
 
@@ -75,37 +81,67 @@ scratch. This page gets rid of all links and provides the needed markup only.
                       </div>
                       <!-- /.card-header -->
                       <div class="card-body">
-                        <table id="example1" class="table table-bordered table-striped">
+                        <table id="tableUsers" class="table table-bordered table-striped">
 
                           <thead>
                             <tr>
+                              <th>#</th>
                               <th>Nombre</th>
                               <th>Email</th>
-                              <th>Teléfono</th>
+                              <th>Progreso</th>
                               <th>Unidades Autorizadas</th>
-                              <th>Fecha de Registro</th>
+                              <th>Notificaciones</th>
                               <th>Acciones</th>
                             </tr>
                           </thead>
 
                           <tbody>
                             <tr v-for="(user, index) in users" :key="index">
+                              <td v-cloak>{{ user.id }}</td>
                               <td v-cloak>{{ user.name }}</td>
                               <td v-cloak>{{ user.email }}</td>
-                              <td v-cloak>{{ user.phone }}</td>
+                              <td class="project_progress">
+                                  <div class="progress progress-sm">
+                                      <div class="progress-bar bg-green" role="progressbar" aria-valuenow="57" aria-valuemin="0" aria-valuemax="100" :style="'width: ' + Math.round((user.authorized_units * 100) / totalUnits) + '%'">
+                                      </div>
+                                  </div>
+                                  <small>
+                                      {{ Math.round((user.authorized_units * 100) / totalUnits) }}% Completo
+                                  </small>
+                              </td>
                               <td v-cloak>{{ user.authorized_units }}</td>
-                              <td v-cloak>{{ user.created_at }}</td>
-                              <td v-cloak>Acciones</td>
+                              <td v-cloak>
+                                <a v-if="user.pending_comments == 1" href="#"><i class="fas fa-envelope"></i></a>
+                                <a v-if="user.pending_challengers == 1" href="#"><i class="fas fa-tasks"></i></a>
+                              </td>
+                              <td v-cloak>
+
+                                <div class="btn-group">
+                                  <button type="button" class="btn btn-success">Acciones</button>
+                                  <button type="button" class="btn btn-success dropdown-toggle dropdown-icon" data-toggle="dropdown" aria-expanded="false">
+                                    <span class="sr-only">Toggle Dropdown</span>
+                                  </button>
+                                  <div class="dropdown-menu" role="menu" style="">
+                                    <button @click="getChallengerByUser(user.id)" class="dropdown-item">Ver Entregas Realizadas</button>
+                                    <button class="dropdown-item">Ver Comentarios Enviados</button>
+                                    <button @click="viewUserData(user.id)" class="dropdown-item">Ver Datos del Usuario</button>
+                                    <div class="dropdown-divider"></div>
+                                    <button class="dropdown-item">Cambiar Unidades Autorizadas</button>
+                                  </div>
+                                </div>
+                                
+                              </td>
                             </tr>
                           </tbody>
 
                           <tfoot>
                             <tr>
+                              <th>#</th>
                               <th>Nombre</th>
                               <th>Email</th>
-                              <th>Teléfono</th>
+                              <th>Progreso</th>
                               <th>Unidades Autorizadas</th>
-                              <th>Fecha de Registro</th>
+                              <th>Notificaciones</th>
                               <th>Acciones</th>
                             </tr>
                           </tfoot>
@@ -158,6 +194,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <script src="./../node_modules/admin-lte/plugins/datatables-buttons/js/buttons.html5.min.js"></script>
 <script src="./../node_modules/admin-lte/plugins/datatables-buttons/js/buttons.print.min.js"></script>
 <script src="./../node_modules/admin-lte/plugins/datatables-buttons/js/buttons.colVis.min.js"></script>
+<!-- Moment -->
+<script src="./../node_modules/moment/moment.js"></script>
+<script src="./../node_modules/moment/locale/es.js"></script>
 <!-- AdminLTE App -->
 <script src="./../node_modules/admin-lte/dist/js/adminlte.min.js"></script>
 <script type="text/javascript" src="./../node_modules/axios/dist/axios.min.js"></script>
@@ -166,14 +205,24 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
 <script>
   $(function () {
-    $("#example1").DataTable({
-      "responsive": true, "lengthChange": false, "autoWidth": false,
-      "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"]
-    }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
+    $("#tableUsers").DataTable(
+    {
+      "responsive": true, 
+      "lengthChange": false, 
+      "autoWidth": false,
+      "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"],
+      "stateSave": true,
+      "ordering": true,
+      "order": [[0, 'desc']],
+      // "language": 
+      //   {
+      //       "url": "js/data-table-es_es.json"
+      //   }
+    }).buttons().container().appendTo('#tableUsers_wrapper .col-md-6:eq(0)');
     $('#example2').DataTable({
       "paging": true,
       "lengthChange": false,
-      "searching": false,
+      "searching": true,
       "ordering": true,
       "info": true,
       "autoWidth": false,

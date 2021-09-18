@@ -102,7 +102,10 @@ class RepositorioEpisodesSQL extends repositorioEpisodes
       try {
 
         // Grabar en base de datos
-        $result = $this->saveChallengerInBdd( $resultado, $user_id, $unit_number, $episode_number, $paths_files_json, $comments, $date, $team_leader_id, $uploadFiles );
+        $this->saveChallengerInBdd( $resultado, $user_id, $unit_number, $episode_number, $paths_files_json, $comments, $date, $team_leader_id, $uploadFiles );
+
+        // Editar el usuario para tener "notificaciones pendientes"
+        $this->editNotificationsInUser( $user_id);
 
       } catch (Exception $e) {
         // Si no se pudo grabar en base de datos
@@ -122,6 +125,15 @@ class RepositorioEpisodesSQL extends repositorioEpisodes
     // 4- Enviar mail al Usuario
     
     
+  }
+
+  public function editNotificationsInUser($user_id)
+  {
+
+    $sql = "UPDATE users SET pending_notifications = :pending_notifications WHERE id = '$user_id' ";
+      $stmt = $this->conexion->prepare($sql);
+      $stmt->bindValue(":pending_notifications", 1, PDO::PARAM_INT);
+      return $stmt->execute();
   }
 
   public function saveChallengerInBdd( $resultado, $user_id, $unit_number, $episode_number, $paths_files_json, $comments, $date, $team_leader_id, $uploadFiles ) {

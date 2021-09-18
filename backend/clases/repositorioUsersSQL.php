@@ -26,6 +26,12 @@ class RepositorioUsersSQL extends repositorioUsers
     try {
 
       $sql = "SELECT * FROM administrators WHERE email = '$email' ";
+      // $sql = "
+      //   SELECT t1.*, t2.*
+      //   FROM users AS t1
+      //   INNER JOIN challenges_loaded AS t2 ON t1.id=t2.user_id
+      //   WHERE t2.approved = 0;
+      // ";
 
       $stmt = $this->conexion->prepare($sql);
       $stmt->execute();
@@ -53,17 +59,61 @@ class RepositorioUsersSQL extends repositorioUsers
 
   }
 
+  public function getChallengerByUser($id) 
+  {
+
+    try {
+
+      $sql = "SELECT * FROM challenges_loaded WHERE user_id = '$id' AND approved = 0";
+      $stmt = $this->conexion->prepare($sql);
+      $stmt->execute();
+      $challenges_loaded = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+      foreach ($challenges_loaded as $key => $challenge) {
+        $challenges_loaded[$key]['files'] = json_decode($challenge['files']);
+      }
+
+      return $challenges_loaded;
+      
+    } catch (Exception $e) {
+
+      header("HTTP/1.1 500 Internal Server Error"); 
+           
+    }
+
+  }
+
   public function getUsers()
   {
 
     try {
 
-      $sql = "SELECT * FROM users";
+      $sql = "SELECT * FROM users ORDER BY id ASC";
       $stmt = $this->conexion->prepare($sql);
       $stmt->execute();
       $users = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
       return $users;
+      
+    } catch (Exception $e) {
+
+      header("HTTP/1.1 500 Internal Server Error"); 
+           
+    }
+
+  }
+
+  public function getChallengers()
+  {
+
+    try {
+
+      $sql = "SELECT * FROM challenges_loaded";
+      $stmt = $this->conexion->prepare($sql);
+      $stmt->execute();
+      $challenges_loaded = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+      return $challenges_loaded;
       
     } catch (Exception $e) {
 

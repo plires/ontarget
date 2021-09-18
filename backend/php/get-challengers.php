@@ -2,9 +2,9 @@
 
 	include_once __DIR__ . '/../includes/soporte.php';
 	
-	$users = $db->getRepositorioUsers()->getUsers();
+	$challengers_loaded = $db->getRepositorioUsers()->getChallengers();
 
 	header('Content-type: application/json');
-	echo json_encode($users);
+	echo json_encode($challengers_loaded);
 
 ?>
