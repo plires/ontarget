@@ -39,7 +39,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <div id="app" class="dashboard wrapper">
 
   <!-- Modal de datos de Usuario -->
-  <?php include('./includes/modal-authorized units.php'); ?>
+  <?php include('./includes/modal-data-user.php'); ?>
 
   <!-- Modal de datos de Usuario -->
   <?php include('./includes/modal-challengers-user.php'); ?>

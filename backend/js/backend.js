@@ -73,7 +73,7 @@ let app = new Vue({
 
     viewUserData(user_id) {
       this.showingUser = {}
-      $('#modalAuthorizedUnits').modal('toggle')
+      $('#modalDataUser').modal('toggle')
       let showingUser = this.users.filter((user) => user.id == user_id)
       this.showingUser = showingUser[0]
     },

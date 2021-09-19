@@ -1,9 +1,9 @@
-<div class="modal fade" id="modalAuthorizedUnits" tabindex="-1" aria-labelledby="modalAuthorizedUnitsLabel" aria-hidden="true">
+<div class="modal fade" id="modalDataUser" tabindex="-1" aria-labelledby="modalDataUserLabel" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered">
     <div class="modal-content">
 
       <div class="modal-header">
-        <h5 class="modal-title" id="modalAuthorizedUnitsLabel">Datos del Usuario: </h5>
+        <h5 class="modal-title" id="modalDataUserLabel">Datos del Usuario: </h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
