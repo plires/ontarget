@@ -10,7 +10,7 @@
 
 	}
 	
-	$challenger = $db->getRepositorioUsers()->getChallengerByUser($_POST['id']);
+	$challenger = $db->getRepositorioChallenger()->getChallengerByUser($_POST['id']);
 
 	header('Content-type: application/json');
 	echo json_encode($challenger);
