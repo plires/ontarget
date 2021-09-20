@@ -20,6 +20,16 @@ class RepositorioUsersSQL extends repositorioUsers
     $this->conexion = $conexion;
   }
 
+  public function updateCommentsPending($userId)
+  {
+
+    $sql = "UPDATE users SET pending_comments = :pending_comments WHERE id = '$userId' ";
+    $stmt = $this->conexion->prepare($sql);
+    $stmt->bindValue(":pending_comments", 0, PDO::PARAM_INT);
+    $stmt->execute();
+    
+  }
+
   public function login($email, $password)
   {
 

@@ -9,6 +9,7 @@ use PHPMailer\PHPMailer\Exception;
 //Load Composer's autoloader
 require './../../vendor/autoload.php';
 
+require_once("repositorioUsers.php");
 require_once("repositorioComments.php");
 
 class RepositorioCommentsSQL extends repositorioComments
@@ -49,6 +50,10 @@ class RepositorioCommentsSQL extends repositorioComments
       $stmt = $this->conexion->prepare($sql);
       $stmt->bindValue(":unread", 0, PDO::PARAM_INT);
       $stmt->execute();
+
+      // Editar el campo de comentarios pendientes en la tabla users
+      $user = new RepositorioUsersSQL($this->conexion);
+      $user->updateCommentsPending($userId);
 
       return true;
       

@@ -134,8 +134,9 @@ let app = new Vue({
         if (response.data) {
 
           this.msg = 'Se marcaron como leídos todos los comentarios de este usuario.'
+
+          $('#btn_pending_comments_user_' + id).remove()
           $('#modalLastComments').modal('toggle')
-          
 
         } else {
           this.errors.push('Ops.. Intente nuevamente por favor')

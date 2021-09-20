@@ -128,11 +128,14 @@ scratch. This page gets rid of all links and provides the needed markup only.
                               </td>
                               <td v-cloak>{{ user.authorized_units }}</td>
                               <td class="cta" v-cloak>
-                                <button 
-                                  v-if="user.pending_comments == 1">
+                                <button
+                                  :id="'btn_pending_comments_user_' + user.id"  
+                                  v-if="user.pending_comments == 1"
+                                  @click="getCommentsByUser(user.id)">
                                     <i class="fas fa-envelope transition"></i>
                                 </button>
                                 <button 
+                                  :id="'btn_pending_challengers_user_' + user.id"  
                                   v-if="user.pending_challengers == 1"
                                   @click="getChallengerByUser(user.id)">
                                   <i class="fas fa-tasks transition"></i>
