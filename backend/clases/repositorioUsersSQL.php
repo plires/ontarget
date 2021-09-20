@@ -79,6 +79,45 @@ class RepositorioUsersSQL extends repositorioUsers
 
   }
 
+  public function checkAuthUser() {
+
+    session_start();
+
+    if ( !isset($_SESSION['user_backend']['id']) ) {
+      session_destroy();
+      return false;
+    }
+
+    $id = $_SESSION['user_backend']['id'];
+
+    try {
+
+      $sql = "SELECT * FROM administrators WHERE id = '$id' ";
+      $stmt = $this->conexion->prepare($sql);
+      $stmt->execute();
+      $admin = $stmt->fetch(PDO::FETCH_ASSOC);
+
+      if ($admin) {
+
+        unset($admin['password']);
+        unset($admin['created_at']);
+        return $admin;
+
+      } else {
+
+        session_destroy();
+        return false;
+
+      }
+      
+    } catch (Exception $e) {
+
+      header("HTTP/1.1 500 Internal Server Error");
+      
+    }
+
+  }
+
   public function getUsers()
   {
 

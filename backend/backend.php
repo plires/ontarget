@@ -129,7 +129,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                       {{ Math.round((user.authorized_units * 100) / totalUnits) }}% Completo
                                   </small>
                               </td>
-                              <td v-cloak>{{ user.authorized_units }}</td>
+                              <td v-cloak class="text-center">{{ user.authorized_units }}</td>
                               <td class="cta" v-cloak>
                                 <button
                                   :id="'btn_pending_comments_user_' + user.id"  

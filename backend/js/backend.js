@@ -3,6 +3,7 @@ let app = new Vue({
   el: '#app',
   data: function() {
     return {
+      authUser: {},
       moment: moment,
       msg: '',
       users: [],
@@ -19,9 +20,29 @@ let app = new Vue({
   mounted() {
     this.getUsers()
     this.getChallengers()
+    this.getAuthUser()
   },
 
   methods: {
+
+    async getAuthUser(id = false) {
+
+      await axios.get('php/get-auth-user.php')
+      .then(response => {
+
+        if (response.data) {
+          this.authUser = response.data
+        } else {
+          this.errors.push('Hubo un problema al loeguear al usuario. Refrescá la página o logueate nuevamente.')
+          this.authUser = {}
+        }
+
+      })
+      .catch(error => {
+        this.errors.push('Existe un problema en el servidor. Intente mas tarde por favor')
+      })
+
+    },
 
     async getUsers() {
 

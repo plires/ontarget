@@ -150,8 +150,6 @@ class RepositorioUsersSQL extends repositorioUsers
       
     }
 
-    
-
   }
 
   public function login($email, $password)

@@ -7,6 +7,11 @@
 	z-index: 99999999;
 }
 
+.dashboard .exit_user {
+	border-bottom: solid 1px #4f5962;
+	margin-bottom: 20px;
+}
+
 .dashboard .modal-header {
 	background-color: var(--third-color);
 	color: white;
