@@ -2,14 +2,14 @@
 
 abstract class Repositorio {
   protected $repositorioUsers;
-  protected $repositorioEpisodes;
+  protected $repositorioComments;
 
   public function getRepositorioUsers() {
     return $this->repositorioUsers;
   }
 
-  public function getRepositorioEpisodes() {
-    return $this->repositorioEpisodes;
+  public function getRepositorioComments() {
+    return $this->repositorioComments;
   }
 
 }

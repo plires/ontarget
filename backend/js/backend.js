@@ -10,6 +10,8 @@ let app = new Vue({
       showingUser: {},
       totalUnits: 6,
       challengesOfTheCurrentUser: [],
+      commentsOfTheCurrentUser: [],
+      commentsUnreadOfTheCurrentUser: [],
       errors: []
     }
   },
@@ -59,6 +61,81 @@ let app = new Vue({
           let user = this.users.filter((user) => user.id == id)
           this.showingUser = user[0]
           $('#modalChallengersUser').modal('toggle')
+
+        } else {
+          this.errors.push('Ops.. Intente nuevamente por favor')
+        }
+
+      })
+      .catch(error => {
+        this.errors.push('Existe un problema en el servidor. Intente mas tarde por favor')
+      })
+
+    },
+
+    async getCommentsByUser(id) {
+
+      var formData = new FormData();
+      formData.append('id', id)
+
+      await axios.post('php/get-comments-by-user.php', formData)
+      .then(response => {
+
+        if (response.data) {
+
+          this.commentsOfTheCurrentUser = response.data
+          this.commentsUnreadOfTheCurrentUser = this.commentsOfTheCurrentUser.filter((comment) => comment.unread == 1)
+          $('#modalLastComments').modal('toggle')
+
+        } else {
+          this.errors.push('Ops.. Intente nuevamente por favor')
+        }
+
+      })
+      .catch(error => {
+        this.errors.push('Existe un problema en el servidor. Intente mas tarde por favor')
+      })
+
+    },
+
+    async MarkAsReadOneComment(id, index) {
+
+      var formData = new FormData();
+      formData.append('id', id)
+
+      await axios.post('php/mark-read-comment.php', formData)
+      .then(response => {
+
+        if (response.data) {
+
+          this.msg = 'El mensaje se marco como leído.'
+          this.commentsUnreadOfTheCurrentUser.splice( index, 1 )
+          // $('#modalLastComments').modal('toggle')
+
+        } else {
+          this.errors.push('Ops.. Intente nuevamente por favor')
+        }
+
+      })
+      .catch(error => {
+        this.errors.push('Existe un problema en el servidor. Intente mas tarde por favor')
+      })
+
+    },
+
+    async markAsReadAllMessagesFromThisUser(id) {
+
+      var formData = new FormData();
+      formData.append('id', id)
+
+      await axios.post('php/mark-read-all-comments.php', formData)
+      .then(response => {
+
+        if (response.data) {
+
+          this.msg = 'Se marcaron como leídos todos los comentarios de este usuario.'
+          $('#modalLastComments').modal('toggle')
+          
 
         } else {
           this.errors.push('Ops.. Intente nuevamente por favor')

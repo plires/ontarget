@@ -38,11 +38,20 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
 <div id="app" class="dashboard wrapper">
 
+  <!-- Msgs -->
+  <?php include('./../includes/msg.php'); ?>
+
+  <!-- Errors -->
+  <?php include('./../includes/errors.php'); ?>
+
   <!-- Modal de datos de Usuario -->
   <?php include('./includes/modal-data-user.php'); ?>
 
   <!-- Modal de datos de Usuario -->
   <?php include('./includes/modal-challengers-user.php'); ?>
+
+  <!-- Modal de comentarios sin leer del Usuario -->
+  <?php include('./includes/modal-last-comments.php'); ?>
 
   <!-- Nav -->
   <?php include('./includes/nav.php'); ?>
@@ -138,7 +147,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                   </button>
                                   <div class="dropdown-menu" role="menu" style="">
                                     <button @click="getChallengerByUser(user.id)" class="dropdown-item">Ver Entregas Realizadas</button>
-                                    <button class="dropdown-item">Ver Comentarios Enviados</button>
+                                    <button @click="getCommentsByUser(user.id)" class="dropdown-item">Ver Comentarios Enviados</button>
                                     <button @click="viewUserData(user.id)" class="dropdown-item">Ver Datos del Usuario</button>
                                     <div class="dropdown-divider"></div>
                                     <button class="dropdown-item">Cambiar Unidades Autorizadas</button>

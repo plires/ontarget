@@ -64,7 +64,12 @@ class RepositorioUsersSQL extends repositorioUsers
 
     try {
 
-      $sql = "SELECT * FROM challenges_loaded WHERE user_id = '$id' AND approved = 0";
+      $sql = "
+        SELECT * FROM challenges_loaded 
+        WHERE user_id = '$id' 
+        AND approved = 0 
+        ORDER BY created_at DESC
+      ";
       $stmt = $this->conexion->prepare($sql);
       $stmt->execute();
       $challenges_loaded = $stmt->fetchAll(PDO::FETCH_ASSOC);

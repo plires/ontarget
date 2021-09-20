@@ -19,19 +19,20 @@
 
             <div v-for="(challenge, index) in challengesOfTheCurrentUser" :key="index" class="card card-primary">
               <div class="card-header">
-                <h4 class="card-title w-100">
+                <h4 class="d-flex card-title w-100">
                   <a 
-                    class="d-block w-100 collapsed" 
+                    v-bind:class="[index == 0 ? '' : 'collapsed', 'd-block w-100']"
                     data-toggle="collapse" 
                     :href="'#desafio-' + challenge.id" 
                     aria-expanded="false">
                     Unidad {{ challenge.unit_number }} - Capitulo {{ challenge.episode_number }}
+                    <span class="date_comment float-right badge bg-success">{{ moment(challenge.created_at).fromNow() }}</span>
                   </a>
                 </h4>
               </div>
               <div 
                 :id="'desafio-' + challenge.id" 
-                :class="{'collapse' : index == 1, 'show' : ''}"
+                v-bind:class="[index == 0 ? 'show' : '', 'collapse']"
                 data-parent="#accordion"
               >
                 <div class="card-body">
@@ -41,7 +42,6 @@
                     <dt class="col-sm-4">Fecha de Subida:</dt>
                     <dd class="col-sm-8">
                       {{ moment(challenge.created_at).format('DD/MM/YYYY') }}&nbsp;  
-                      <span class="date float-right badge bg-success">{{ moment(challenge.created_at).fromNow() }}</span>
                     </dd>
 
                     <dt v-if="challenge.comments" class="col-sm-4">Comentarios del usuario para esta entrega:</dt>

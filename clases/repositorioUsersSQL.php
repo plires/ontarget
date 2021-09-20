@@ -285,7 +285,7 @@ class RepositorioUsersSQL extends repositorioUsers
       // Insertar en base de datos
       $sql = "
         INSERT INTO users 
-        values(default, :name, :email, :phone, :password, :token, :team_leader_id, :authorized_units, :created_at)
+        values(default, :name, :email, :phone, :password, :token, :team_leader_id, :authorized_units, :pending_challengers, :pending_comments, :created_at)
       ";
 
       $stmt = $this->conexion->prepare($sql);
@@ -297,6 +297,8 @@ class RepositorioUsersSQL extends repositorioUsers
       $stmt->bindValue(":token", $token, PDO::PARAM_STR);
       $stmt->bindValue(":team_leader_id", $team_leader, PDO::PARAM_INT);
       $stmt->bindValue(":authorized_units", 1, PDO::PARAM_STR);
+      $stmt->bindValue(":pending_challengers", 0, PDO::PARAM_INT);
+      $stmt->bindValue(":pending_comments", 0, PDO::PARAM_INT);
       $stmt->bindValue(":created_at", $date, PDO::PARAM_STR);
 
       $register = $stmt->execute();
@@ -472,22 +474,6 @@ class RepositorioUsersSQL extends repositorioUsers
     return $team_leader;
 
   }
-
-  // public function setValuesUser($data)
-  // {
-
-  //   $id = (int)$data['id_user'];
-
-  //   $sql = "UPDATE users SET user = :user, email = :email WHERE id = '$id' ";
-
-  //   $stmt = $this->conexion->prepare($sql);
-
-  //   $stmt->bindValue(":user", $data['user'], PDO::PARAM_STR);
-  //   $stmt->bindValue(":email", $data['email'], PDO::PARAM_STR);
-
-  //   return $stmt->execute();
-
-  // }
 
   public function getUserByEmail($email)
   {

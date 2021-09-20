@@ -51,6 +51,11 @@
 	background-color: var(--secondary-color)!important;
 }
 
+.dashboard .date_comment {
+	font-size: 0.875rem;
+	background-color: var(--third-color)!important;
+}
+
 .dashboard .widget-user-image i {
 	font-size: 3rem;
 }
@@ -115,7 +120,8 @@
 
 .dashboard .buttons-html5,
 .dashboard .buttons-print,
-.dashboard .buttons-colvis {
+.dashboard .buttons-colvis,
+.todos_comentarios_leido {
 	background-color: var(--third-color);
 	border: var(--third-color);
 	color: white;
@@ -123,9 +129,21 @@
 
 .dashboard .buttons-html5:hover,
 .dashboard .buttons-print:hover,
-.dashboard .buttons-colvis:hover {
+.dashboard .buttons-colvis:hover,
+.todos_comentarios_leido:hover {
 	background-color: var(--secondary-color)!important;
 	border: var(--secondary-color)!important;
+}
+
+.dashboard .comentario_leido {
+	background-color: var(--secondary-color);
+	border: var(--secondary-color);
+	color: white;
+}
+
+.dashboard .comentario_leido:hover {
+	background-color: var(--third-color);
+	border: var(--third-color);
 }
 
 .dashboard .page-item.active .page-link {
