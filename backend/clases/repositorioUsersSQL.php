@@ -20,6 +20,16 @@ class RepositorioUsersSQL extends repositorioUsers
     $this->conexion = $conexion;
   }
 
+  public function changeUnitsAuthorized($id, $newUnit)
+  {
+
+    $sql = "UPDATE users SET authorized_units = :authorized_units WHERE id = '$id' ";
+    $stmt = $this->conexion->prepare($sql);
+    $stmt->bindValue(":authorized_units", $newUnit, PDO::PARAM_INT);
+    return $stmt->execute();
+
+  }
+
   public function updateCommentsPending($userId)
   {
 

@@ -52,8 +52,6 @@ let app = new Vue({
 
           if (response.data) {
 
-            console.log(response.data)
-
             // loguear usuario. Redireccionar al dashboard
             window.location.replace('./backend.php')
 

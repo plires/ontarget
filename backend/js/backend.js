@@ -73,6 +73,34 @@ let app = new Vue({
 
     },
 
+    async changeUnitsAuthorized(id) {
+
+      var formData = new FormData();
+      formData.append('id', id)
+      formData.append('unit', $('#selectAuthorizedUnits').val())
+
+      await axios.post('php/change-units-authorized-user.php', formData)
+      .then(response => {
+
+        if (response.data) {
+
+          this.msg = 'Se actualizaron las unidades autorizadas para ' + this.showingUser.name
+          $('#modalUnitsAuthorized').modal('toggle')
+          this.getUsers()
+
+        } else {
+
+          this.errors.push('Ops.. Intente nuevamente por favor')
+
+        }
+
+      })
+      .catch(error => {
+        this.errors.push('Existe un problema en el servidor. Intente mas tarde por favor')
+      })
+
+    },
+
     async getCommentsByUser(id) {
 
       var formData = new FormData();
@@ -110,7 +138,6 @@ let app = new Vue({
 
           this.msg = 'El mensaje se marco como leído.'
           this.commentsUnreadOfTheCurrentUser.splice( index, 1 )
-          // $('#modalLastComments').modal('toggle')
 
         } else {
           this.errors.push('Ops.. Intente nuevamente por favor')
@@ -154,6 +181,19 @@ let app = new Vue({
       $('#modalDataUser').modal('toggle')
       let showingUser = this.users.filter((user) => user.id == user_id)
       this.showingUser = showingUser[0]
+    },
+
+    openModalUnitsAuthorized(user_id) {
+      $("#selectAuthorizedUnits").val() // reset select
+      
+      this.showingUser = {}
+      let showingUser = this.users.filter((user) => user.id == user_id)
+      this.showingUser = showingUser[0]
+
+      $("#selectAuthorizedUnits option[value="+ this.showingUser.authorized_units +"]").attr("selected",true) // add att select
+      $('#selectAuthorizedUnits').val(this.showingUser.authorized_units).trigger('change') // Provocar refresh
+      $('#modalUnitsAuthorized').modal('toggle')
+      
     },
 
     validateEmail(email) {

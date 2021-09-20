@@ -44,6 +44,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <!-- Errors -->
   <?php include('./../includes/errors.php'); ?>
 
+  <!-- Modal para Autorizar Unidades al Usuario -->
+  <?php include('./includes/modal-authorized-units-user.php'); ?>
+
   <!-- Modal de datos de Usuario -->
   <?php include('./includes/modal-data-user.php'); ?>
 
@@ -153,7 +156,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                     <button @click="getCommentsByUser(user.id)" class="dropdown-item">Ver Comentarios Enviados</button>
                                     <button @click="viewUserData(user.id)" class="dropdown-item">Ver Datos del Usuario</button>
                                     <div class="dropdown-divider"></div>
-                                    <button class="dropdown-item">Cambiar Unidades Autorizadas</button>
+                                    <button @click="openModalUnitsAuthorized(user.id)" class="dropdown-item">Cambiar Unidades Autorizadas</button>
                                   </div>
                                 </div>
                                 
