@@ -7,12 +7,14 @@ let app = new Vue({
       moment: moment,
       msg: '',
       users: [],
+      usersFiltered: [],
       challengers: [],
       showingUser: {},
       totalUnits: 6,
       challengesOfTheCurrentUser: [],
       commentsOfTheCurrentUser: [],
       commentsUnreadOfTheCurrentUser: [],
+      initializedTable: false,
       errors: []
     }
   },
@@ -20,18 +22,27 @@ let app = new Vue({
   mounted() {
     this.getUsers()
     this.getChallengers()
-    this.getAuthUser()
   },
 
   methods: {
 
     async getAuthUser(id = false) {
-
       await axios.get('php/get-auth-user.php')
       .then(response => {
-
         if (response.data) {
           this.authUser = response.data
+
+          if (this.authUser.role !== 'Admin') {
+            this.usersFiltered = this.users.filter((user) => user.team_leader_id == this.authUser.id ).sort().sort((a, b) => a.id - b.id)
+          } else {
+            this.usersFiltered = this.users
+          }
+
+          if (!this.initializedTable) {
+            this.initTable()
+            this.initializedTable = true
+          }
+
         } else {
           this.errors.push('Hubo un problema al loeguear al usuario. Refrescá la página o logueate nuevamente.')
           this.authUser = {}
@@ -48,12 +59,42 @@ let app = new Vue({
 
       await axios.get('php/get-users.php')
       .then(response => {
-        this.users = response.data.filter((user) => user.team_leader_id == 2 ).sort().sort((a, b) => a.id - b.id)// && user.episode_id == episode)
+        this.users = response.data
+        this.getAuthUser()
       })
       .catch(error => {
         this.errors.push('Existe un problema en el servidor. Intente mas tarde por favor')
       })
 
+    },
+
+    initTable() {
+      $(document).ready(function () { 
+        $("#tableUsers").DataTable(
+        {
+          "responsive": true, 
+          "lengthChange": false, 
+          "autoWidth": false,
+          "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"],
+          "stateSave": true,
+          "ordering": true,
+          "order": [[0, 'desc']],
+          // "language": 
+          //   {
+          //       "url": "js/data-table-es_es.json"
+          //   }
+        }).buttons().container().appendTo('#tableUsers_wrapper .col-md-6:eq(0)');
+        $('#example2').DataTable({
+          "paging": true,
+          "lengthChange": false,
+          "searching": true,
+          "ordering": true,
+          "info": true,
+          "autoWidth": false,
+          "responsive": true,
+        });
+      });
+      
     },
 
     async getChallengers() {

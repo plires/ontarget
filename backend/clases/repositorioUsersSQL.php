@@ -45,7 +45,7 @@ class RepositorioUsersSQL extends repositorioUsers
 
     try {
 
-      $sql = "SELECT * FROM administrators WHERE email = '$email' ";
+      $sql = "SELECT * FROM team_leaders WHERE email = '$email' ";
       // $sql = "
       //   SELECT t1.*, t2.*
       //   FROM users AS t1
@@ -92,7 +92,7 @@ class RepositorioUsersSQL extends repositorioUsers
 
     try {
 
-      $sql = "SELECT * FROM administrators WHERE id = '$id' ";
+      $sql = "SELECT * FROM team_leaders WHERE id = '$id' ";
       $stmt = $this->conexion->prepare($sql);
       $stmt->execute();
       $admin = $stmt->fetch(PDO::FETCH_ASSOC);

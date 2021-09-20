@@ -110,7 +110,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                           </thead>
 
                           <tbody>
-                            <tr v-for="(user, index) in users" :key="index">
+                            <tr v-for="(user, index) in usersFiltered" :key="index">
                               <td v-cloak>{{ user.id }}</td>
                               <td v-cloak>{{ user.name }}</td>
                               <td v-cloak>{{ user.email }}</td>
@@ -232,34 +232,6 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <script type="text/javascript" src="./../node_modules/axios/dist/axios.min.js"></script>
 <script type="text/javascript" src="./../node_modules/vue/dist/vue.js"></script>
 <script type="text/javascript" src="./js/backend.js"></script>
-
-<script>
-  $(function () {
-    $("#tableUsers").DataTable(
-    {
-      "responsive": true, 
-      "lengthChange": false, 
-      "autoWidth": false,
-      "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"],
-      "stateSave": true,
-      "ordering": true,
-      "order": [[0, 'desc']],
-      // "language": 
-      //   {
-      //       "url": "js/data-table-es_es.json"
-      //   }
-    }).buttons().container().appendTo('#tableUsers_wrapper .col-md-6:eq(0)');
-    $('#example2').DataTable({
-      "paging": true,
-      "lengthChange": false,
-      "searching": true,
-      "ordering": true,
-      "info": true,
-      "autoWidth": false,
-      "responsive": true,
-    });
-  });
-</script>
 
 </body>
 </html>
