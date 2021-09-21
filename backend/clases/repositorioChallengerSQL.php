@@ -30,7 +30,7 @@ class RepositorioChallengerSQL extends repositorioChallenger
       $stmt->bindValue(":approved", 1, PDO::PARAM_INT);
       $stmt->execute();
 
-      // Editar el campo de comentarios pendientes en la tabla users
+      // Editar el campo de desafios pendientes en la tabla users
       $user = new RepositorioUsersSQL($this->conexion);
       $user->updateChallengersPending($userId);
 

@@ -20,6 +20,26 @@ class RepositorioUsersSQL extends repositorioUsers
     $this->conexion = $conexion;
   }
 
+  public function updateCommentsPending($userId)
+  {
+
+    $sql = "UPDATE users SET pending_comments = :pending_comments WHERE id = '$userId' ";
+    $stmt = $this->conexion->prepare($sql);
+    $stmt->bindValue(":pending_comments", 1, PDO::PARAM_INT);
+    return $stmt->execute();
+    
+  }
+
+  public function updateChallengersPending($userId)
+  {
+
+    $sql = "UPDATE users SET pending_challengers = :pending_challengers WHERE id = '$userId' ";
+    $stmt = $this->conexion->prepare($sql);
+    $stmt->bindValue(":pending_challengers", 1, PDO::PARAM_INT);
+    return $stmt->execute();
+    
+  }
+
   public function sendContact($post) {
 
     $newsletter = 0;
@@ -498,7 +518,7 @@ class RepositorioUsersSQL extends repositorioUsers
       
       $sql = "
         INSERT INTO comments 
-        values(default, :user_id, :comment, :team_leader_id, :created_at)
+        values(default, :user_id, :comment, :team_leader_id, :unread, :created_at)
       ";
 
       $stmt = $this->conexion->prepare($sql);
@@ -506,9 +526,14 @@ class RepositorioUsersSQL extends repositorioUsers
       $stmt->bindValue(":user_id", $user, PDO::PARAM_STR);
       $stmt->bindValue(":comment", $comment, PDO::PARAM_STR);
       $stmt->bindValue(":team_leader_id", $team_leader, PDO::PARAM_STR);
+      $stmt->bindValue(":unread", 1, PDO::PARAM_INT);
       $stmt->bindValue(":created_at", $date, PDO::PARAM_STR);
 
       $register = $stmt->execute();
+
+
+      // Editar el campo de comentarios pendientes en la tabla users
+      $this->updateCommentsPending($user);
 
       return $register;
 

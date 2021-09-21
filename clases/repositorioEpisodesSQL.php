@@ -1,6 +1,7 @@
 <?php
 
 require_once("repositorioEpisodes.php");
+require_once("repositorioUsers.php");
 
 class RepositorioEpisodesSQL extends repositorioEpisodes
 {
@@ -103,6 +104,10 @@ class RepositorioEpisodesSQL extends repositorioEpisodes
 
         // Grabar en base de datos
         $result = $this->saveChallengerInBdd( $resultado, $user_id, $unit_number, $episode_number, $paths_files_json, $comments, $date, $team_leader_id, $uploadFiles );
+
+        // Editar el campo de desafios pendientes en la tabla users
+        $user = new RepositorioUsersSQL($this->conexion);
+        $user->updateChallengersPending($user_id);
 
       } catch (Exception $e) {
         // Si no se pudo grabar en base de datos
