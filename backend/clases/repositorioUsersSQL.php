@@ -36,7 +36,17 @@ class RepositorioUsersSQL extends repositorioUsers
     $sql = "UPDATE users SET pending_comments = :pending_comments WHERE id = '$userId' ";
     $stmt = $this->conexion->prepare($sql);
     $stmt->bindValue(":pending_comments", 0, PDO::PARAM_INT);
-    $stmt->execute();
+    return $stmt->execute();
+    
+  }
+
+  public function updateChallengersPending($userId)
+  {
+
+    $sql = "UPDATE users SET pending_challengers = :pending_challengers WHERE id = '$userId' ";
+    $stmt = $this->conexion->prepare($sql);
+    $stmt->bindValue(":pending_challengers", 0, PDO::PARAM_INT);
+    return $stmt->execute();
     
   }
 
@@ -79,7 +89,8 @@ class RepositorioUsersSQL extends repositorioUsers
 
   }
 
-  public function checkAuthUser() {
+  public function checkAuthUser() 
+  {
 
     session_start();
 

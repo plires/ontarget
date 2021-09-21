@@ -12,6 +12,7 @@ let app = new Vue({
       showingUser: {},
       totalUnits: 6,
       challengesOfTheCurrentUser: [],
+      challengesUnapprovedTheCurrentUser: [],
       commentsOfTheCurrentUser: [],
       commentsUnreadOfTheCurrentUser: [],
       initializedTable: false,
@@ -122,6 +123,7 @@ let app = new Vue({
           this.challengesOfTheCurrentUser = response.data
           let user = this.users.filter((user) => user.id == id)
           this.showingUser = user[0]
+          this.challengesUnapprovedTheCurrentUser = this.challengesOfTheCurrentUser.filter((challenger) => challenger.approved == 0)
           $('#modalChallengersUser').modal('toggle')
 
         } else {
@@ -188,7 +190,7 @@ let app = new Vue({
 
     },
 
-    async MarkAsReadOneComment(id, index) {
+    async MarkAsReadOneComment(id, index, userId) {
 
       var formData = new FormData();
       formData.append('id', id)
@@ -200,6 +202,25 @@ let app = new Vue({
 
           this.msg = 'El mensaje se marco como leído.'
           this.commentsUnreadOfTheCurrentUser.splice( index, 1 )
+
+          if (this.commentsUnreadOfTheCurrentUser.length == 0) {
+
+            // si no quedan mas comentarios que leer, setear en tabla user 
+            // que este usuario no tiene comentarios pendientes de lectura
+            formData.append('id', userId)   
+
+            axios.post('php/update-comments-pending-user.php', formData)
+            .then(response => {
+
+              app.msg = 'Ese fue el último mensaje de este usuario.'
+              $('#btn_pending_comments_user_' + userId).remove()
+
+            })
+            .catch(error => {
+              app.errors.push('Existe un problema en el servidor. Intente mas tarde por favor')
+            })
+
+          }
 
         } else {
           this.errors.push('Ops.. Intente nuevamente por favor')
@@ -237,6 +258,75 @@ let app = new Vue({
       })
 
     },
+
+    async markAsApprovedAllChallengerFromThisUser(id) {
+
+      var formData = new FormData();
+      formData.append('id', id)
+
+      await axios.post('php/mark-approved-all-challenger.php', formData)
+      .then(response => {
+
+        if (response.data) {
+
+          this.msg = 'Se marcaron como aprobados todos los desafíos presentaados por este usuario.'
+
+          $('#btn_pending_challengers_user_' + id).remove()
+          $('#modalChallengersUser').modal('toggle')
+
+        } else {
+          this.errors.push('Ops.. Intente nuevamente por favor')
+        }
+
+      })
+      .catch(error => {
+        this.errors.push('Existe un problema en el servidor. Intente mas tarde por favor')
+      })
+
+    },
+
+    async markAsApprovedOneChallenge(id, index, userId) {
+
+      var formData = new FormData();
+      formData.append('id', id)
+
+      await axios.post('php/mark-approved-challenge.php', formData)
+      .then(response => {
+
+        if (response.data) {
+
+          this.msg = 'El desafío se marcó como aprobado.'
+          this.challengesUnapprovedTheCurrentUser.splice( index, 1 )
+
+          if (this.challengesUnapprovedTheCurrentUser.length == 0) {
+
+            // si no quedan mas desafios que aprobar, setear en tabla user 
+            // que este usuario no tiene desafios pendientes de aprobacion
+            formData.append('id', userId)   
+
+            axios.post('php/update-challengers-pending-user.php', formData)
+            .then(response => {
+
+              app.msg = 'Ese fue el último desafío pendiente para este usuario.'
+              $('#btn_pending_challengers_user_' + userId).remove()
+
+            })
+            .catch(error => {
+              app.errors.push('Existe un problema en el servidor. Intente mas tarde por favor')
+            })
+
+          }
+
+        } else {
+          this.errors.push('Ops.. Intente nuevamente por favor')
+        }
+
+      })
+      .catch(error => {
+        this.errors.push('Existe un problema en el servidor. Intente mas tarde por favor')
+      })
+
+    },    
 
     viewUserData(user_id) {
       this.showingUser = {}

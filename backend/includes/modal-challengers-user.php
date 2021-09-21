@@ -13,11 +13,12 @@
 
       <div class="modal-body">
 
-        <div v-if="challengesOfTheCurrentUser.length != 0" class="card-body">
+        <div v-if="challengesUnapprovedTheCurrentUser.length != 0" class="card-body">
 
           <div id="accordion">
 
-            <div v-for="(challenge, index) in challengesOfTheCurrentUser" :key="index" class="card card-primary">
+            <div v-for="(challenge, index) in challengesUnapprovedTheCurrentUser" :key="index" class="card card-primary">
+              
               <div class="card-header">
                 <h4 class="d-flex card-title w-100">
                   <a 
@@ -30,6 +31,7 @@
                   </a>
                 </h4>
               </div>
+
               <div 
                 :id="'desafio-' + challenge.id" 
                 v-bind:class="[index == 0 ? 'show' : '', 'collapse']"
@@ -70,11 +72,25 @@
 
                   </dl>
 
+                  <button 
+                    @click="markAsApprovedOneChallenge(challenge.id, index, challenge.user_id)" 
+                    type="button" 
+                    class="comentario_leido btn btn-outline-primary btn-block mt-5">
+                      <i class="far fa-check-square"></i> Marcar como desafío aprobado
+                  </button>
+
                 </div>
               </div>
             </div>
 
           </div>
+
+          <button 
+            @click="markAsApprovedAllChallengerFromThisUser(challengesOfTheCurrentUser[0].user_id)" 
+            type="button" 
+            class="todos_comentarios_leido btn btn-outline-primary btn-block mt-5">
+              <i class="fas fa-check-double"></i> Marcar todos los desafíos como aprobados
+          </button>
 
         </div>
 

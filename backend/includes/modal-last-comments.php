@@ -37,14 +37,12 @@
               >
                 <div class="card-body">
                   <p>{{ comment.comment }}</p>
-                  <div class="text-right">
-                    <button 
-                      @click="MarkAsReadOneComment(comment.id, index)" 
-                      type="button" 
-                      class="comentario_leido btn btn-outline-primary btn-block">
-                        <i class="far fa-check-square"></i> Marcar como leído
-                    </button>
-                  </div>
+                  <button 
+                    @click="MarkAsReadOneComment(comment.id, index, comment.user_id)" 
+                    type="button" 
+                    class="comentario_leido btn btn-outline-primary btn-block">
+                      <i class="far fa-check-square"></i> Marcar como leído
+                  </button>
                 </div>
               </div>
             </div>

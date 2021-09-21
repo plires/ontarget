@@ -20,6 +20,48 @@ class RepositorioChallengerSQL extends repositorioChallenger
     $this->conexion = $conexion;
   }
 
+  public function markAsApprovedAllChallengerFromThisUser($userId) 
+  {
+
+    try {
+
+      $sql = "UPDATE challenges_loaded SET approved = :approved WHERE user_id = '$userId' ";
+      $stmt = $this->conexion->prepare($sql);
+      $stmt->bindValue(":approved", 1, PDO::PARAM_INT);
+      $stmt->execute();
+
+      // Editar el campo de comentarios pendientes en la tabla users
+      $user = new RepositorioUsersSQL($this->conexion);
+      $user->updateChallengersPending($userId);
+
+      return true;
+      
+    } catch (Exception $e) {
+
+      header("HTTP/1.1 500 Internal Server Error"); 
+           
+    }
+
+  }
+
+  public function markAsApprovedOneChallenge($id) 
+  {
+
+    try {
+
+      $sql = "UPDATE challenges_loaded SET approved = :approved WHERE id = '$id' ";
+      $stmt = $this->conexion->prepare($sql);
+      $stmt->bindValue(":approved", 1, PDO::PARAM_INT);
+      return $stmt->execute();
+      
+    } catch (Exception $e) {
+
+      header("HTTP/1.1 500 Internal Server Error"); 
+           
+    }
+
+  }
+
   public function getChallengers()
   {
 
