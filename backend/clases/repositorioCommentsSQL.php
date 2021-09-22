@@ -65,6 +65,30 @@ class RepositorioCommentsSQL extends repositorioComments
 
   }
 
+  public function getComments() 
+  {
+
+    try {
+
+      $sql = "
+        SELECT t1.*, t2.name AS name_user, t2.email  AS email_user
+        FROM comments AS t1
+        INNER JOIN users AS t2 ON t1.user_id = t2.id;
+      ";
+      $stmt = $this->conexion->prepare($sql);
+      $stmt->execute();
+      $comments = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+      return $comments;
+      
+    } catch (Exception $e) {
+
+      header("HTTP/1.1 500 Internal Server Error"); 
+           
+    }
+
+  }
+
   public function getCommentsByUser($id) 
   {
 

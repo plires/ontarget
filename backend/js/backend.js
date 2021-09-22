@@ -69,6 +69,18 @@ let app = new Vue({
 
     },
 
+    async getChallengers() {
+
+      await axios.get('php/get-challengers.php')
+      .then(response => {
+        this.challengers = response.data
+      })
+      .catch(error => {
+        this.errors.push('Existe un problema en el servidor. Intente mas tarde por favor')
+      })
+
+    },
+
     initTable() {
       $(document).ready(function () { 
         $("#tableUsers").DataTable(
@@ -96,18 +108,6 @@ let app = new Vue({
         });
       });
       
-    },
-
-    async getChallengers() {
-
-      await axios.get('php/get-challengers.php')
-      .then(response => {
-        this.challengers = response.data
-      })
-      .catch(error => {
-        this.errors.push('Existe un problema en el servidor. Intente mas tarde por favor')
-      })
-
     },
 
     async getChallengerByUser(id) {

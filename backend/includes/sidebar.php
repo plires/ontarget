@@ -29,7 +29,7 @@
         </li>
 
         <li class="nav-item">
-          <a href="backend.php" class="nav-link">
+          <a href="comments.php" class="nav-link">
             <i class="nav-icon fas fa-comments"></i>
             <p>Comentarios Historial</p>
           </a>
