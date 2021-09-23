@@ -148,9 +148,6 @@ scratch. This page gets rid of all links and provides the needed markup only.
     
   </div>
 
-  <!-- Sidebar -->
-  <?php include('./includes/sidebar-right.php'); ?>
-
   <!-- Footer -->
   <?php include('./includes/footer.php'); ?>
   
