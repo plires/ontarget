@@ -11,11 +11,11 @@
 
     <!-- Sidebar user panel (optional) -->
     <div class="user-panel mt-3 mb-3 d-flex">
-      <!-- <div class="image">
+      <div @click="openModalPerfilUsuario" class="image">
         <i class="fas fa-user"></i>
-      </div> -->
+      </div>
       <div class="info">
-        <button class="d-block" v-cloak>{{ authUser.name }}</button>
+        <button @click="openModalPerfilUsuario" class="d-block" v-cloak>{{ authUser.name }}</button>
       </div>
     </div>
 

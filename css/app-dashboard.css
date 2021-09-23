@@ -81,6 +81,7 @@ aside .brand-text {
 
 .sidebar-collapse .user-panel .image {
 	padding-left: .8rem;
+	cursor: pointer;
 }
 
 .sidebar-collapse .sidebar .user-panel i {
