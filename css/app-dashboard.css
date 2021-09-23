@@ -192,6 +192,7 @@ aside .unidad_deshabilitada {
 	color: white;
 	font-weight: 700;
 	font-size: 1.5rem;
+	line-height: 1.5;
 }
 
 .unidades .header_unidad_actual p {

@@ -108,7 +108,7 @@
           <div class="row header_unidad_actual">
 
             <div class="col-sm-12 col-md-6">
-              <h2>{{ unitData.name }}</h2>
+              <h2>Unidad {{ unitData.number }}<br>{{ unitData.name }}</h2>
               <p class="description">{{ unitData.description }}</p>
             </div>
 
