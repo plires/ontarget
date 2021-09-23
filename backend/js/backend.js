@@ -92,20 +92,22 @@ let app = new Vue({
           "stateSave": true,
           "ordering": true,
           "order": [[0, 'desc']],
-          // "language": 
-          //   {
-          //       "url": "js/data-table-es_es.json"
-          //   }
+          "language": {
+              "lengthMenu": "Mostrando _MENU_ registros por página",
+              "zeroRecords": "No se encontró nada, lo siento",
+              "info": "Mostrando página _PAGE_ de _PAGES_",
+              "infoEmpty": "No hay registros disponibles",
+              "infoFiltered": "(Filtrando de un total de _MAX_ registros)",
+              "search":         "Buscar:",
+              "paginate": {
+                  "first":      "Primero",
+                  "last":       "Último",
+                  "next":       "Siguiente",
+                  "previous":   "Anterior"
+              }
+          }
         }).buttons().container().appendTo('#tableUsers_wrapper .col-md-6:eq(0)');
-        $('#example2').DataTable({
-          "paging": true,
-          "lengthChange": false,
-          "searching": true,
-          "ordering": true,
-          "info": true,
-          "autoWidth": false,
-          "responsive": true,
-        });
+      
       });
       
     },
