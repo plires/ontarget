@@ -16,23 +16,27 @@
 	margin-bottom: 20px;
 }
 
-.dashboard #modalOneComment .card-footer {
+.dashboard #modalOneComment .card-footer,
+.dashboard #modalOneChallenge .card-footer {
 	background-color: var(--secondary-color);
 	display: flex;
 	justify-content: center;
 	align-items: center;
 }
 
-.dashboard #modalOneComment .card-footer p {
+.dashboard #modalOneComment .card-footer p,
+.dashboard #modalOneChallenge .card-footer p {
 	margin: 0;
 	color: white;
 }
 
-.dashboard #modalOneComment .card-footer a {
+.dashboard #modalOneComment .card-footer a,
+.dashboard #modalOneChallenge .card-footer a {
 	color: var(--third-color);
 }
 
-.dashboard #modalOneComment .card-footer a:hover {
+.dashboard #modalOneComment .card-footer a:hover,
+.dashboard #modalOneChallenge .card-footer a:hover {
 	color: var(--primary-color);
 }
 

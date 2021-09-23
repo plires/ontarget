@@ -8,13 +8,11 @@ let app = new Vue({
       msg: '',
       users: [],
       usersFiltered: [],
-      comments: [],
-      comments_backup: [],
+      challenges: [],
+      challenges_backup: [],
+      challenge: {},
       showingUser: {},
       totalUnits: 6,
-      commentsOfTheCurrentUser: [],
-      commentsUnreadOfTheCurrentUser: [],
-      comment: '',
       initializedTable: false,
       errors: []
     }
@@ -22,7 +20,7 @@ let app = new Vue({
 
   mounted() {
     this.getUsers()
-    this.getComments()
+    this.getChallengers()
   },
 
   methods: {
@@ -64,12 +62,12 @@ let app = new Vue({
 
     },
 
-    async getComments() {
+     async getChallengers() {
 
-      await axios.get('php/get-comments.php')
+      await axios.get('php/get-challengers.php')
       .then(response => {
-        this.comments = response.data.sort((a, b) => a.created_at - b.created_at)
-        this.comments_backup = this.comments
+        this.challenges = response.data.sort((a, b) => a.created_at - b.created_at)
+        this.challenges_backup = this.challenges
         this.initTable()
       })
       .catch(error => {
@@ -78,29 +76,29 @@ let app = new Vue({
 
     },
 
-    async viewCommentHistoryByUser (userId) {
+    async viewChallengerHistoryByUser (userId) {
 
-      var table = $('#tableComments').DataTable();
+      var table = $('#tableChallengers').DataTable();
 
       if (userId == '0') {
-        this.comments = this.comments_backup
+        this.challenges = this.challenges_backup
  
         // re-draw
-        table.clear().rows.add( this.comments ).draw()
+        table.clear().rows.add( this.challenges ).draw()
 
       } else {
-        this.comments = this.comments_backup.filter((comment) => comment.user_id == userId)
+        this.challenges = this.challenges_backup.filter((comment) => comment.user_id == userId)
         // re-draw
-        table.clear().rows.add( this.comments ).draw()
+        table.clear().rows.add( this.challenges ).draw()
 
       }
 
     },
 
     initTable() {
-        $("#tableComments").DataTable(
+        $("#tableChallengers").DataTable(
         {
-          data: this.comments,
+          data: this.challenges,
           "responsive": true, 
           "lengthChange": false, 
           "autoWidth": false,
@@ -111,76 +109,41 @@ let app = new Vue({
           "columns": [
               { data: 'id',
                 render: function ( data, type, row ) {
-                    return '<a onClick="app.showComment('+ row.id +')" class="transition" href="#" v-cloak>' + data + '</a>'
+                    return '<a onClick="app.showChallenge('+ row.id +')" class="transition" href="#" v-cloak>' + data + '</a>'
                 }
               },
               { data: 'name_user',
                 render: function ( data, type, row ) {
-                    return '<a onClick="app.showComment('+ row.id +')" class="transition" href="#" v-cloak>' + row.name_user + '</a>'
+                    return '<a onClick="app.showChallenge('+ row.id +')" class="transition" href="#" v-cloak>' + row.name_user + '</a>'
                 }
               },
               { data: 'created_at',
                 render: function ( data, type, row ) {
-                    return '<a onClick="app.showComment('+ row.id +')" class="transition" href="#" v-cloak>' + moment(data).format('DD/MM/YYYY') + '</a>'
+                    return '<a onClick="app.showChallenge('+ row.id +')" class="transition" href="#" v-cloak>' + moment(data).format('DD/MM/YYYY') + '</a>'
                 }
               },
               { data: 'created_at',
                 render: function ( data, type, row ) {
-                    return '<a onClick="app.showComment('+ row.id +')" class="transition" href="#" v-cloak>' + moment(data).format('hh:mm') + '</a>'
+                    return '<a onClick="app.showChallenge('+ row.id +')" class="transition" href="#" v-cloak>' + moment(data).format('hh:mm') + '</a>'
                 }
               },
+              
           ],
           "language": 
             {
                 "url": "js/data-table-es_es.json"
             }
-        }).buttons().container().appendTo('#tableComments_wrapper .col-md-6:eq(0)');
+        }).buttons().container().appendTo('#tableChallengers_wrapper .col-md-6:eq(0)');
 
-        // $('#example2').DataTable({
-        //   "paging": true,
-        //   "lengthChange": false,
-        //   "searching": true,
-        //   "ordering": true,
-        //   "info": true,
-        //   "autoWidth": false,
-        //   "responsive": true,
-        // });
-      
-      
     },
 
-    showComment(id) {
-      let comment = this.comments.filter((comment) => comment.id == id)
-      this.comment = comment[0]
+    showChallenge(id) {
+      let challenge = this.challenges.filter((challenge) => challenge.id == id)
+      this.challenge = challenge[0]
 
-      let user = this.users.filter((user) => user.id == comment[0].user_id)
+      let user = this.users.filter((user) => user.id == challenge[0].user_id)
       this.showingUser = user[0]
-      $('#modalOneComment').modal('toggle')
-    },
-
-    async getCommentsByUser(id) {
-
-      var formData = new FormData();
-      formData.append('id', id)
-
-      await axios.post('php/get-comments-by-user.php', formData)
-      .then(response => {
-
-        if (response.data) {
-
-          this.commentsOfTheCurrentUser = response.data
-          this.commentsUnreadOfTheCurrentUser = this.commentsOfTheCurrentUser.filter((comment) => comment.unread == 1)
-          $('#modalLastComments').modal('toggle')
-
-        } else {
-          this.errors.push('Ops.. Intente nuevamente por favor')
-        }
-
-      })
-      .catch(error => {
-        this.errors.push('Existe un problema en el servidor. Intente mas tarde por favor')
-      })
-
+      $('#modalOneChallenge').modal('toggle')
     },
 
     cleanErrors() {

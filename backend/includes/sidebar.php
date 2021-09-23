@@ -36,7 +36,7 @@
         </li>
 
         <li class="nav-item">
-          <a href="backend.php" class="nav-link">
+          <a href="challengers.php" class="nav-link">
             <i class="nav-icon fas fa-briefcase"></i>
             <p>Desafíos Historial</p>
           </a>

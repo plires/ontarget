@@ -67,10 +67,18 @@ class RepositorioChallengerSQL extends repositorioChallenger
 
     try {
 
-      $sql = "SELECT * FROM challenges_loaded";
+      $sql = "
+        SELECT t1.*, t2.name AS name_user, t2.email  AS email_user
+        FROM challenges_loaded AS t1
+        INNER JOIN users AS t2 ON t1.user_id = t2.id;
+      ";
       $stmt = $this->conexion->prepare($sql);
       $stmt->execute();
       $challenges_loaded = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+      foreach ($challenges_loaded as $key => $challenge) {
+        $challenges_loaded[$key]['files'] = json_decode($challenge['files']);
+      }
 
       return $challenges_loaded;
       

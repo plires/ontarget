@@ -16,7 +16,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>On Target | Comentarios</title>
+  <title>On Target | Historial Desafíos</title>
 
   <!-- Favicons -->
   <?php include('./../includes/favicon.php'); ?>
@@ -49,8 +49,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <!-- Errors -->
   <?php include('./../includes/errors.php'); ?>
 
-  <!-- Comment User -->
-  <?php include('./includes/modal-one-comment.php'); ?>
+  <!-- Challlenge User -->
+  <?php include('./includes/modal-one-challenge.php'); ?>
 
   <!-- Nav -->
   <?php include('./includes/nav.php'); ?>
@@ -73,7 +73,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
               <div class="container-fluid">
                 <div class="row mb-2">
                   <div class="col-sm-6">
-                    <h1>Historial de Comentarios por Usuario</h1>
+                    <h1>Historial de Desafíos Entregados por Usuario</h1>
                   </div>
                 </div>
               </div><!-- /.container-fluid -->
@@ -89,7 +89,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                       <div class="form-group">
                         <label>Seleccioná el Usuario</label>
 
-                        <select onchange="app.viewCommentHistoryByUser(event.target.value)" class="form-control select2">
+                        <select onchange="app.viewChallengerHistoryByUser(event.target.value)" class="form-control select2">
                           <option value="0">Todos los usuarios</option>
                           <option v-for="user in usersFiltered" :value="user.id" :key="user.id">{{ user.name }}</option>
                         </select>
@@ -99,12 +99,12 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
                     <div class="card">
                       <div class="card-header">
-                        <h3 class="card-title">Comentarios enviados</h3>
+                        <h3 class="card-title">Desafíos Entregados</h3>
                       </div>
                       <!-- /.card-header -->
                       <div class="card-body">
 
-                        <table id="tableComments" class="table table-bordered table-striped">
+                        <table id="tableChallengers" class="table table-bordered table-striped">
 
                           <thead>
                             <tr>
@@ -169,12 +169,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <script src="./../node_modules/admin-lte/plugins/datatables-responsive/js/responsive.bootstrap4.min.js"></script>
 <script src="./../node_modules/admin-lte/plugins/datatables-buttons/js/dataTables.buttons.min.js"></script>
 <script src="./../node_modules/admin-lte/plugins/datatables-buttons/js/buttons.bootstrap4.min.js"></script>
-<script src="./../node_modules/admin-lte/plugins/jszip/jszip.min.js"></script>
-<script src="./../node_modules/admin-lte/plugins/pdfmake/pdfmake.min.js"></script>
-<script src="./../node_modules/admin-lte/plugins/pdfmake/vfs_fonts.js"></script>
 <script src="./../node_modules/admin-lte/plugins/datatables-buttons/js/buttons.html5.min.js"></script>
-<script src="./../node_modules/admin-lte/plugins/datatables-buttons/js/buttons.print.min.js"></script>
-<script src="./../node_modules/admin-lte/plugins/datatables-buttons/js/buttons.colVis.min.js"></script>
 <!-- Moment -->
 <script src="./../node_modules/moment/moment.js"></script>
 <script src="./../node_modules/moment/locale/es.js"></script>
@@ -182,7 +177,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <script src="./../node_modules/admin-lte/dist/js/adminlte.min.js"></script>
 <script type="text/javascript" src="./../node_modules/axios/dist/axios.min.js"></script>
 <script type="text/javascript" src="./../node_modules/vue/dist/vue.js"></script>
-<script type="text/javascript" src="./js/comments.js"></script>
+<script type="text/javascript" src="./js/challengers.js"></script>
 
 <script>
   $(function () {
