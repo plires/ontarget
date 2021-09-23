@@ -169,12 +169,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <script src="./../node_modules/admin-lte/plugins/datatables-responsive/js/responsive.bootstrap4.min.js"></script>
 <script src="./../node_modules/admin-lte/plugins/datatables-buttons/js/dataTables.buttons.min.js"></script>
 <script src="./../node_modules/admin-lte/plugins/datatables-buttons/js/buttons.bootstrap4.min.js"></script>
-<script src="./../node_modules/admin-lte/plugins/jszip/jszip.min.js"></script>
-<script src="./../node_modules/admin-lte/plugins/pdfmake/pdfmake.min.js"></script>
-<script src="./../node_modules/admin-lte/plugins/pdfmake/vfs_fonts.js"></script>
 <script src="./../node_modules/admin-lte/plugins/datatables-buttons/js/buttons.html5.min.js"></script>
-<script src="./../node_modules/admin-lte/plugins/datatables-buttons/js/buttons.print.min.js"></script>
-<script src="./../node_modules/admin-lte/plugins/datatables-buttons/js/buttons.colVis.min.js"></script>
 <!-- Moment -->
 <script src="./../node_modules/moment/moment.js"></script>
 <script src="./../node_modules/moment/locale/es.js"></script>
