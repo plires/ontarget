@@ -73,24 +73,24 @@ class RepositorioUsersSQL extends repositorioUsers
       include('./../includes/emails/contacts/template-envio-cliente.php');
 
       // Enviar mail al usuario
-      // $send = $this->sendEmail(
-      //   $post['email'], 
-      //   'Gracias por tu contacto', 
-      //   $body_usuario, 
-      //   'info@ontarget.com.ar', 
-      //   'OnTarget', 
-      //   'info@ontarget.com.ar'
-      // );
+      $send = $this->sendEmail(
+        $post['email'], 
+        'Gracias por tu contacto', 
+        $body_usuario, 
+        'info@ontarget.com.ar', 
+        'OnTarget', 
+        'info@ontarget.com.ar'
+      );
 
       // Enviar mail al cliente
-      // $send_to_client = $this->sendEmail(
-      //   'carlos.castro.1975.2@gmail.com', 
-      //   'Nuevo Contacto desde el formulario web', 
-      //   $body_cliente, 
-      //   $post['email'], 
-      //   $post['name'], 
-      //   $post['email']
-      // );
+      $send_to_client = $this->sendEmail(
+        'carlos.castro.1975.2@gmail.com', 
+        'Nuevo Contacto desde el formulario web', 
+        $body_cliente, 
+        $post['email'], 
+        $post['name'], 
+        $post['email']
+      );
 
       return true;
 
@@ -109,7 +109,7 @@ class RepositorioUsersSQL extends repositorioUsers
 
     try {
         //Server settings
-        $mail->SMTPDebug = SMTP::DEBUG_SERVER;                     
+        $mail->SMTPDebug = 2;                     
         // $mail->isSMTP();          // Esta linea se saco para probar en local, en produccion probablemente haya que agregarla                                 
         $mail->Host       = SMTP;                     
         $mail->SMTPAuth   = true;       

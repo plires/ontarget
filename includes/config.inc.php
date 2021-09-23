@@ -16,16 +16,16 @@ define('DB_PASS', 'secret');
 //////////////////////////////
 ///Valores de Envio de emails
 //////////////////////////////
-define('SMTP', 'smtp.librecomunicacion.net'); 
-define('USERNAME', 'pruebas@librecomunicacion.net');
-define('PASSWORD', 'Perezzs$7478'); 
-define('EMAIL_SENDER_SHOW', 'pruebas@librecomunicacion.net');
+define('SMTP', '0.0.0.0'); 
+define('USERNAME', 'testuser');
+define('PASSWORD', 'testpwd'); 
+define('EMAIL_SENDER_SHOW', 'info@ontargetonline.com.ar');
 define('NAME_SENDER_SHOW', 'On Target');
 define('EMAIL_BCC', '');
-define('EMAIL_PORT', 587);
+define('EMAIL_PORT', 1025);
 define('EMAIL_NAME', 'On Target');
 define('EMAIL_SUBJECT', 'Gracias por tu contacto');
 define('EMAIL_CHARSET', 'utf-8');
-define('EMAIL_ENCODING', 'quoted­printable');
+define('EMAIL_ENCODING', 'quoted printable');
 
 ?>
