@@ -7,7 +7,7 @@
 	include_once __DIR__ . '/includes/soporte.php';
 	include_once __DIR__ . '/includes/functions.php';
 
-	$user_id = $reset = $db->getRepositorioUsers()->resetPassword($_GET['selector'], $_GET['validator'] , $_GET['id'] );
+	$user_id = $db->getRepositorioUsers()->resetPassword($_GET['selector'], $_GET['validator'] , $_GET['id'] );
 ?>
 
 <!DOCTYPE html>
@@ -46,7 +46,7 @@
 
 		<!-- Header -->
 		<header>
-			<img class="img-fluid image_no_shadow_rounded" src="img/home/header.jpg" alt="header ontarget">
+			<img class="img-fluid image_no_shadow_rounded" src="img/reset-pass/header-reset.jpg" alt="header reset password">
 		</header>
 		<!-- Header end -->
 
@@ -89,7 +89,7 @@
 							<!-- Repetir Password end -->
 						  	
 						  <div class="text-center">
-						  	<button id="btnNewPAss" @click.prevent="resetPass" class="btn btn--alpha"><span>Resetear Contraseña</span></button>
+						  	<button id="btnNewPass" @click.prevent="resetPass" class="btn btn-primary"><span>Resetear Contraseña</span></button>
 						  </div>
 						</form>
 

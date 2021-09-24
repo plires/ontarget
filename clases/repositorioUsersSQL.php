@@ -381,9 +381,9 @@ class RepositorioUsersSQL extends repositorioUsers
 
     $stmt = $this->conexion->prepare($sql);
     
-    $stmt->bindValue(":user_id", $user['id'], PDO::PARAM_STR);
+    $stmt->bindValue(":user_id", $user['id'], PDO::PARAM_INT);
     $stmt->bindValue(":selector", $selector, PDO::PARAM_STR);
-    $stmt->bindValue(":token", hash('sha256', bin2hex($token)), PDO::PARAM_STR);
+    $stmt->bindValue(":token", bin2hex($token), PDO::PARAM_STR);
     $stmt->bindValue(":expires", $expires->format('Y-m-d\TH:i:s'), PDO::PARAM_STR);
 
     $generatedToken['executed'] = $stmt->execute();
@@ -423,13 +423,12 @@ class RepositorioUsersSQL extends repositorioUsers
     $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
     if (!empty($results) && hash_equals($validator, $results[0]['token']) && $results[0]['user_id'] == $user_id ) {
-      session_start();
-      $_SESSION['logged'] = true;
+      return $results[0]['user_id'];
+      // session_start();
+      // $_SESSION['logged'] = true;
     } else {
       header('Location: ./');
     }
-
-    return $results[0]['user_id'];
 
   }
 
@@ -450,6 +449,33 @@ class RepositorioUsersSQL extends repositorioUsers
 
       // Generar un token, guardarlo en la base de datos
       $generatedToken = $this->generateTokenAndSaveInDatabase($user);
+
+      if ($generatedToken['executed']) {
+
+        $template_user = file_get_contents('./../includes/emails/reset-password/reset-password-to-user.php');
+
+        //configuro las variables a remplazar en el template
+        $vars = array('{email}' , '{url}');
+        $values = array( $post['email'], $generatedToken['urlToEmail'] );
+
+        //Remplazamos las variables por las marcas en los templates
+        $template_user = str_replace($vars, $values, $template_user);
+
+        // Enviar mail al usuario
+        $this->sendmail(
+          EMAIL_ONTARGET, // Remitente 
+          NAME_ONTARGET, // Nombre Remitente 
+          EMAIL_ONTARGET, // Responder a:
+          NAME_ONTARGET, // Remitente al nombre: 
+          $post['email'], // Destinatario 
+          $post['email'], // Nombre del destinatario
+          'Reseteo de password', // Asunto 
+          $template_user // Template usuario
+        );
+
+      }
+
+      
 
       // include('./../includes/emails/contacts/template-envio-usuario.php');
       // include('./../includes/emails/contacts/template-envio-cliente.php');
