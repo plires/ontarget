@@ -6,8 +6,6 @@
     header('Location: ./');
   }
 
-  $current = 'primera';
-
 ?>
 
 <!DOCTYPE html>
@@ -15,7 +13,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Dashboard - Primera Unidad | OnTarget</title>
+  <title>Dashboard - Unidades | OnTarget</title>
 
   <!-- Favicons -->
   <?php include('includes/favicon.php'); ?>

@@ -350,7 +350,7 @@ aside .unidad_deshabilitada {
 @media (min-width: 1200px) {
 	/* Unidades */
 	.unidades .card {
-		min-height: 525px;
+		min-height: 480px;
 	}
 	/* Unidades end */
 }

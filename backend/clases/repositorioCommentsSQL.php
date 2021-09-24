@@ -7,10 +7,10 @@ use PHPMailer\PHPMailer\SMTP;
 use PHPMailer\PHPMailer\Exception;
 
 //Load Composer's autoloader
-require './../../vendor/autoload.php';
+require __DIR__ . "./../../vendor/autoload.php";
 
-require_once("repositorioUsers.php");
-require_once("repositorioComments.php");
+require_once( __DIR__ . "/repositorioUsers.php" );
+require_once( __DIR__ . "/repositorioComments.php" );
 
 class RepositorioCommentsSQL extends repositorioComments
 {

@@ -114,7 +114,7 @@
 									<h3>Seamos <br>Asesores Profesionales</h3>
 								</div>
 								<p class="parrafo_unidad">
-									Esta Unidad está dividida en 6 capítulos y hablaremos sobre la ruptura de paradigmas en la profesión para lograr entender las necesidades de cada cliente.
+									Esta Unidad está dividida en 5 capítulos y hablaremos sobre la ruptura de paradigmas en la profesión para lograr entender las necesidades de cada cliente.
 								</p>
 							</div>
 

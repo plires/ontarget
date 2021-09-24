@@ -14,6 +14,7 @@ abstract class repositorioUsers {
 	public abstract function saveCommentsToTeamLeader($user, $team_leader, $comment);
 	public abstract function userEdit($post);
 	public abstract function sendContact($post);
+	public abstract function sendmail($setFromEmail, $setFromName, $addReplyToEmail, $addReplyToName, $addAddressEmail, $addAddressName, $subject, $template);
 }
 
 ?>

@@ -1,7 +1,7 @@
 <?php
 
-require_once("repositorioEpisodes.php");
-require_once("repositorioUsers.php");
+require_once( __DIR__ . "/repositorioEpisodes.php" );
+require_once( __DIR__ . "/repositorioUsers.php" );
 
 class RepositorioEpisodesSQL extends repositorioEpisodes
 {

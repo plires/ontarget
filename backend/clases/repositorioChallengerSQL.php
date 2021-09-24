@@ -7,9 +7,9 @@ use PHPMailer\PHPMailer\SMTP;
 use PHPMailer\PHPMailer\Exception;
 
 //Load Composer's autoloader
-require './../../vendor/autoload.php';
+require __DIR__ . "./../../vendor/autoload.php";
 
-require_once("repositorioChallenger.php");
+require_once( __DIR__ . "/repositorioChallenger.php" );
 
 class RepositorioChallengerSQL extends repositorioChallenger
 {

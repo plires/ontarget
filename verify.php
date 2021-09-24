@@ -7,7 +7,7 @@
 	include_once __DIR__ . '/includes/soporte.php';
 	include_once __DIR__ . '/includes/functions.php';
 
-	$user = $reset = $db->getRepositorioUsers()->verifyTokenNewEmail($_GET['email'], $_GET['token'] );
+	$user = $db->getRepositorioUsers()->verifyTokenNewEmail($_GET['email'], $_GET['token'] );
 
 	if ($user) {
 		$msg = '
@@ -86,8 +86,8 @@
 	<script type="text/javascript" src="./node_modules/axios/dist/axios.min.js"></script>
 	<script type="text/javascript" src="./node_modules/vue/dist/vue.js"></script>
 	<script type="text/javascript" src="./node_modules/aos/dist/aos.js"></script>
-	<script type="text/javascript" src="js/app.js"></script>
 	<script type="text/javascript" src="js/nav/vue-nav.js"></script>
+	<script type="text/javascript" src="js/app.js"></script>
 </body>
 
 </html>

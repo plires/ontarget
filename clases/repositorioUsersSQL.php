@@ -7,9 +7,9 @@ use PHPMailer\PHPMailer\SMTP;
 use PHPMailer\PHPMailer\Exception;
 
 //Load Composer's autoloader
-require './../vendor/autoload.php';
+require __DIR__ . './../vendor/autoload.php';
 
-require_once("repositorioUsers.php");
+require_once( __DIR__ . "/repositorioUsers.php" );
 
 class RepositorioUsersSQL extends repositorioUsers
 {
@@ -69,30 +69,43 @@ class RepositorioUsersSQL extends repositorioUsers
 
       $register = $stmt->execute();
 
-      include('./../includes/emails/contacts/template-envio-usuario.php');
-      include('./../includes/emails/contacts/template-envio-cliente.php');
+      $template_user = file_get_contents('./../includes/emails/contacts/contact-to-user.php');
+      $template_client = file_get_contents('./../includes/emails/contacts/contact-to-client.php');
+      
+      //configuro las variables a remplazar en el template
+      $vars = array('{name}', '{lastname}', '{email}', '{phone}', '{comment}');
+      $values = array( $post['name'], $post['lastname'], $post['email'], $post['phone'], $post['comments'] );
+
+      //Remplazamos las variables por las marcas en los templates
+      $template_user = str_replace($vars, $values, $template_user);
+      $template_client = str_replace($vars, $values, $template_client);
 
       // Enviar mail al usuario
-      $send = $this->sendEmail(
-        $post['email'], 
-        'Gracias por tu contacto', 
-        $body_usuario, 
-        'info@ontarget.com.ar', 
-        'OnTarget', 
-        'info@ontarget.com.ar'
+      $this->sendmail(
+        EMAIL_ONTARGET, // Remitente 
+        NAME_ONTARGET, // Nombre Remitente 
+        EMAIL_ONTARGET, // Responder a:
+        NAME_ONTARGET, // Remitente al nombre: 
+        $post['email'], // Destinatario 
+        $post['name'], // Nombre del destinatario
+        'Gracias por tu contacto', // Asunto 
+        $template_user // Template usuario
       );
 
       // Enviar mail al cliente
-      $send_to_client = $this->sendEmail(
-        'carlos.castro.1975.2@gmail.com', 
-        'Nuevo Contacto desde el formulario web', 
-        $body_cliente, 
-        $post['email'], 
-        $post['name'], 
-        $post['email']
+      $send_to_client = 
+      $this->sendmail(
+        $post['email'], // Remitente 
+        $post['name'], // Nombre Remitente 
+        $post['email'], // Responder a:
+        $post['name'], // Remitente al nombre: 
+        EMAIL_ONTARGET, // Destinatario 
+        NAME_ONTARGET, // Nombre del destinatario
+        'Nuevo mensaje desde el formulario de contacto web', // Asunto 
+        $template_client // Template cliente
       );
-
-      return true;
+      
+      return $send_to_client;
 
     } catch (Exception $e) {
 
@@ -102,36 +115,27 @@ class RepositorioUsersSQL extends repositorioUsers
 
   }
 
-  public function sendEmail($recipient, $subject, $template, $addReplyTo, $nameFrom, $emailFrom ) {
+  function sendmail($setFromEmail,$setFromName,$addReplyToEmail,$addReplyToName,$addAddressEmail,$addAddressName,$subject,$template){
 
-    //Create an instance; passing `true` enables exceptions
-    $mail = new PHPMailer(true);
-
-    try {
-        //Server settings
-        $mail->SMTPDebug = 2;                     
-        // $mail->isSMTP();          // Esta linea se saco para probar en local, en produccion probablemente haya que agregarla                                 
-        $mail->Host       = SMTP;                     
-        $mail->SMTPAuth   = true;       
-        $mail->Username   = USERNAME;   
-        $mail->Password   = PASSWORD;   
-        $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;            //Enable implicit TLS encryption
-        $mail->Port       = EMAIL_PORT;                             //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
-
-        //Recipients
-        $mail->setFrom($emailFrom, $nameFrom);
-        $mail->addAddress($recipient);               
-        $mail->addReplyTo($addReplyTo);
-
-        //Content
-        $mail->isHTML(true);                                  //Set email format to HTML
-        $mail->Subject = $subject;
-        $mail->Body    = $template;
-
-        $mail->send();
-        // echo 'Message has been sent';
-    } catch (Exception $e) {
-        echo "No se pudo enviar el mensaje. Error de envío: {$mail->ErrorInfo}";
+    //Create a new PHPMailer instance
+    $mail = new PHPMailer;
+    // Set PHPMailer to use the sendmail transport
+    $mail->isSendmail();
+    //Establecer desde donde será enviado el correo electronico
+    $mail->setFrom($setFromEmail, $setFromName);
+    //Establecer una direccion de correo electronico alternativa para responder
+    $mail->addReplyTo($addReplyToEmail, $addReplyToName);
+    //Establecer a quien será enviado el correo electronico
+    $mail->addAddress($addAddressEmail, $addAddressName);
+    //Establecer el asunto del mensaje
+    $mail->Subject = $subject;
+    //convertir HTML dentro del cuerpo del mensaje
+    $mail->msgHTML($template);
+      //send the message, check for errors
+    if (!$mail->send()) {
+      return false;
+    } else {
+      return true;
     }
 
   }
@@ -321,28 +325,29 @@ class RepositorioUsersSQL extends repositorioUsers
 
       $register = $stmt->execute();
 
-      // include('./../includes/emails/contacts/template-envio-usuario.php');
-      // include('./../includes/emails/contacts/template-envio-cliente.php');
-
-      // Enviar email al usuario con el token para que confirme su email
-      // $send_to_user = $this->sendEmail(
-      //   $post['email'], 
-      //   'Gracias por tu contacto', 
-      //   '<p>template para usuario</p>', 
-      //   'info@ontarget.com.ar', 
-      //   'OnTarget', 
-      //   'info@ontarget.com.ar'
-      // );
+      $template_user = file_get_contents('./../includes/emails/register/register-to-user.php');
+      $template_client = file_get_contents('./../includes/emails/register/register-to-client.php');
       
-      // Enviar un email para avisar al team leader asignado que tiene un nuevo lacayo 
-      // $send_to_client = $this->sendEmail(
-      //   'carlos.castro.1975.2@gmail.com', 
-      //   'Nuevo Contacto desde el formulario web', 
-      //   '<p>template para team leader</p>', 
-      //   $post['email'], 
-      //   $post['name'], 
-      //   $post['email']
-      // );
+      //configuro las variables a remplazar en el template
+      $vars = array('{name}', '{email}', '{phone}', '{url}', '{token}', '{team_leader}');
+      $values = array( $post['name'], $post['email'], $post['phone'], $urlToEmail, $token, $team_leader );
+
+      //Remplazamos las variables por las marcas en los templates
+      $template_user = str_replace($vars, $values, $template_user);
+      $template_client = str_replace($vars, $values, $template_client);
+
+      // Enviar mail al usuario
+      $this->sendmail(
+        EMAIL_ONTARGET, // Remitente 
+        NAME_ONTARGET, // Nombre Remitente 
+        EMAIL_ONTARGET, // Responder a:
+        NAME_ONTARGET, // Remitente al nombre: 
+        $post['email'], // Destinatario 
+        $post['name'], // Nombre del destinatario
+        'Registro exitoso!', // Asunto 
+        $template_user // Template usuario
+      );
+
 
       return $register;
       
