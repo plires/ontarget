@@ -13,7 +13,7 @@
 		$msg = '
 			<div class="alert alert-success alert-dismissible fade show" role="alert">
 			  <strong>Correo Verificado</strong> <br>Usuario Habilitado
-			  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+			  <button @click="cleanMsgs()" type="button" class="close" data-dismiss="alert" aria-label="Close">
 			    <span aria-hidden="true">&times;</span>
 			  </button>
 			</div>';
@@ -28,8 +28,8 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta name="description" content="Nuestro Método On Target es un camino sólido para la formación de nuevos profesionales en el mercado asegurador. Seccion de recuperacion de contraseña">
-	<title>Ontarget - Reset Password</title>
+	<meta name="description" content="Nuestro Método On Target es un camino sólido para la formación de nuevos profesionales en el mercado asegurador. Seccion de verificacion de casilla de correo del usuario">
+	<title>Ontarget - Usuario Verificado</title>
 
 	<!-- Favicons -->
 	<?php include('includes/favicon.php'); ?>
@@ -59,7 +59,7 @@
 
 		<!-- Header -->
 		<header>
-			<img class="img-fluid image_no_shadow_rounded" src="img/home/header.jpg" alt="header ontarget">
+			<img class="img-fluid image_no_shadow_rounded" src="img/email-verified/header-verified.jpg" alt="header email verified">
 		</header>
 		<!-- Header end -->
 
@@ -75,6 +75,23 @@
 				</div>
 			</div>
 
+			<div class="container">
+				<div class="row mt-5 mb-5">
+					<div class="col-md-8 mx-auto">
+						<p>
+							Felicitaciones, estas listo para comenzar a ver nuestra primera unidad del método On Target. <br>
+							Hace Login y comenzá ya mismo.
+						</p>
+					</div>
+
+					<div class="col-md-12 text-center">
+						<a class="transition" href="./" id="btnVerify">
+							Comenzar
+						</a>
+					</div>
+				</div>
+			</div>
+
 		</section>
 
 		<!-- Footer -->
@@ -83,6 +100,7 @@
 	</div>
 
 	<script type="text/javascript" src="./node_modules/jquery/dist/jquery.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="./node_modules/bootstrap/dist/css/bootstrap.min.css">
 	<script type="text/javascript" src="./node_modules/axios/dist/axios.min.js"></script>
 	<script type="text/javascript" src="./node_modules/vue/dist/vue.js"></script>
 	<script type="text/javascript" src="./node_modules/aos/dist/aos.js"></script>

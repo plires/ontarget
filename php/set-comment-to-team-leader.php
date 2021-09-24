@@ -16,7 +16,7 @@
 
 	}
 	
-	$saveComment = $db->getRepositorioUsers()->saveCommentsToTeamLeader($_POST['user_id'], $_POST['team_leader_id'], $_POST['comment']);
+	$saveComment = $db->getRepositorioUsers()->saveCommentsToTeamLeader($_POST);
 
 	header('Content-type: application/json');
 	echo json_encode($saveComment);

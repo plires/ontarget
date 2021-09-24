@@ -423,18 +423,18 @@
           <tr>
               <td style="vertical-align: middle;">
                   
-                  <img src="https://plires.com.ar/clientes/ontarget/email/header-contacto.jpg" style="margin:0; padding:0; border:none; display:block; width: 100%; height: auto;" border="0" alt="header" />
+                  <img src="https://plires.com.ar/clientes/ontarget/email/header-registro.jpg" style="margin:0; padding:0; border:none; display:block; width: 100%; height: auto;" border="0" alt="header" />
 
               </td>
           </tr>
           <!-- Header end-->
 
           <!-- Texto-->
-          <tr style="background-color: #6044ff;">
+          <tr style="background-color: #f4f4f6;">
               <td style="padding: 10px; vertical-align: middle;">
                   
-                  <h1 class="fallback-font" style="margin: 0px!important; font-family: 'Montserrat', sans-serif; font-size: 28px; color: #FFFFFF; text-align: center; font-weight: 700;">
-                      <strong>Nuevo Contacto Web</strong>
+                  <h1 class="fallback-font" style="margin: 0px!important; font-family: 'Montserrat', sans-serif; font-size: 28px; color: #0e2777; text-align: center; font-weight: 700;">
+                      <strong>Te asignaron un nuevo usuario</strong>
                   </h1>
 
               </td>
@@ -445,22 +445,14 @@
           <tr style="background-color: #FFFFFF;">
               <td style="padding: 40px;">
 
-                    {name} <br>
-                    {email}<br> 
-                    {phone}<br> 
-                    {url}<br> 
-                    {token}<br> 
-                    {team_leader}
-
-                  <h2 class="fallback-font" style="margin: 0 0 5px 0; font-family: 'Montserrat', sans-serif; font-size: 19px; line-height: 29px; color: #575756; text-align: left; font-weight: 700;">
-                      <strong>Hola On Target</strong>
+                  <h2 class="fallback-font" style="margin: 0 0 5px 0; font-family: 'Montserrat', sans-serif; font-size: 20px; line-height: 30px; color: #575756; text-align: left; font-weight: 700;">
+                      <strong>Hola {team_leader_name}, <br>un nuevo usuario ha sido asignado a vos.</strong>
                   </h2>
+                  <br>
 
                   <p class="fallback-font" style="margin: 0 0 10px; font-family: 'Montserrat', sans-serif; font-size: 18px; line-height: 28px; color: #575756; text-align: left; font-weight: 400;">
-                    Recibiste un nuevo mensaje web desde el formulario de contacto.
+                    Dejamos todos sus datos para que puedas contactarlo cuando te parezca oportuno.</strong>
                   </p>
-                  <br>
-                  <br>
 
                   <h3 class="fallback-font" style="margin: 0 0 10px 0; font-family: 'Montserrat', sans-serif; font-size: 16px; line-height: 26px; color: #575756; text-align: center; font-weight: 700;">
                       <strong>DATOS DEL USUARIO:</strong>
@@ -471,19 +463,11 @@
                   </p>
 
                   <p class="fallback-font" style="margin: 0 0 10px; font-family: 'Montserrat', sans-serif; font-size: 16px; line-height: 26px; color: #575756; text-align: left; font-weight: 400;">
-                      <strong>Apellido:</strong> {lastname}
-                  </p>
-
-                  <p class="fallback-font" style="margin: 0 0 10px; font-family: 'Montserrat', sans-serif; font-size: 16px; line-height: 26px; color: #575756; text-align: left; font-weight: 400;">
                       <strong>Email:</strong> {email}
                   </p>
 
                   <p class="fallback-font" style="margin: 0 0 10px; font-family: 'Montserrat', sans-serif; font-size: 16px; line-height: 26px; color: #575756; text-align: left; font-weight: 400;">
                       <strong>Teléfono:</strong> {phone}
-                  </p>
-
-                  <p class="fallback-font" style="margin: 0 0 10px; font-family: 'Montserrat', sans-serif; font-size: 16px; line-height: 26px; color: #575756; text-align: left; font-weight: 400;">
-                      <strong>Tu Mensaje:</strong> {comment}
                   </p>
 
               </td>
@@ -495,13 +479,13 @@
               <td style="background-color: #6044ff; text-align: center; padding: 40px;">
 
                 <p class="fallback-font" style="margin: 0 0 10px; margin-bottom: 20px; font-family: 'Montserrat', sans-serif; font-size: 16px; line-height: 26px; color: #FFFFFF; text-align: center; font-weight: 400;">
-                  <strong>¿Necesitas Ingresar al Backend del sitio?</strong>
+                  <strong>Ingresa a tu backend</strong>
                 </p>
                   <!-- Button : BEGIN -->
                   <table align="center" role="presentation" cellspacing="0" cellpadding="0" border="0" style="margin: auto;">
                       <tr>
                           <td class="button-td button-td-primary" style="border-radius: 4px; background: #FFFFFF;">
-                              <a class="fallback-font button-a button-a-primary" target="_blank" rel="noopener" href="#" style="background: #FFFFFF; border: 1px solid #FFFFFF; font-family: 'Montserrat', sans-serif; font-size: 18px; line-height: 28px; font-weight: 700; text-decoration: none; padding: 10px 20px; color: #6044ff; display: block; border-radius: 4px;">INGRESO BACKEND
+                              <a class="fallback-font button-a button-a-primary" target="_blank" rel="noopener" href="{path_backend}" style="background: #FFFFFF; border: 1px solid #FFFFFF; font-family: 'Montserrat', sans-serif; font-size: 18px; line-height: 28px; font-weight: 700; text-decoration: none; padding: 10px 20px; color: #6044ff; display: block; border-radius: 4px;">IR AL BACKEND
                               </a>
                           </td>
                       </tr>

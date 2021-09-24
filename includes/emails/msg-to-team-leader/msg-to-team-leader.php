@@ -434,7 +434,7 @@
               <td style="padding: 10px; vertical-align: middle;">
                   
                   <h1 class="fallback-font" style="margin: 0px!important; font-family: 'Montserrat', sans-serif; font-size: 28px; color: #FFFFFF; text-align: center; font-weight: 700;">
-                      <strong>Nuevo Contacto Web</strong>
+                      <strong>Contacto de un Usuario Asignado</strong>
                   </h1>
 
               </td>
@@ -446,11 +446,11 @@
               <td style="padding: 40px;">
 
                   <h2 class="fallback-font" style="margin: 0 0 5px 0; font-family: 'Montserrat', sans-serif; font-size: 19px; line-height: 29px; color: #575756; text-align: left; font-weight: 700;">
-                      <strong>Hola On Target</strong>
+                      <strong>Hola {team_leader_name}</strong>
                   </h2>
 
                   <p class="fallback-font" style="margin: 0 0 10px; font-family: 'Montserrat', sans-serif; font-size: 18px; line-height: 28px; color: #575756; text-align: left; font-weight: 400;">
-                    Recibiste un nuevo mensaje web desde el formulario de contacto.
+                    Recibiste un nuevo mensaje de {user_name}.
                   </p>
                   <br>
                   <br>
@@ -460,23 +460,25 @@
                   </h3>
 
                   <p class="fallback-font" style="margin: 0 0 10px; font-family: 'Montserrat', sans-serif; font-size: 16px; line-height: 26px; color: #575756; text-align: left; font-weight: 400;">
-                      <strong>Nombre:</strong> {name}
+                      <strong>Nombre:</strong> {user_name}
                   </p>
 
                   <p class="fallback-font" style="margin: 0 0 10px; font-family: 'Montserrat', sans-serif; font-size: 16px; line-height: 26px; color: #575756; text-align: left; font-weight: 400;">
-                      <strong>Apellido:</strong> {lastname}
+                      <strong>Email:</strong> {user_email}
                   </p>
 
                   <p class="fallback-font" style="margin: 0 0 10px; font-family: 'Montserrat', sans-serif; font-size: 16px; line-height: 26px; color: #575756; text-align: left; font-weight: 400;">
-                      <strong>Email:</strong> {email}
+                      <strong>Teléfono:</strong> {user_phone}
                   </p>
 
                   <p class="fallback-font" style="margin: 0 0 10px; font-family: 'Montserrat', sans-serif; font-size: 16px; line-height: 26px; color: #575756; text-align: left; font-weight: 400;">
-                      <strong>Teléfono:</strong> {phone}
+                      <strong>Mensaje de {user_name}:</strong> {comment}
                   </p>
 
+                  <hr>
+
                   <p class="fallback-font" style="margin: 0 0 10px; font-family: 'Montserrat', sans-serif; font-size: 16px; line-height: 26px; color: #575756; text-align: left; font-weight: 400;">
-                      <strong>Tu Mensaje:</strong> {comment}
+                      <strong>Podés contestarle, respondiendo a este correo o desde tu casilla personal. Tambien podés ingresar a la plataforma, vsualizar desde alli el mensaje y contestar</strong>
                   </p>
 
               </td>

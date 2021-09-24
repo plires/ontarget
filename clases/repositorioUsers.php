@@ -11,7 +11,7 @@ abstract class repositorioUsers {
 	public abstract function newPass($post);
 	public abstract function verifyTokenNewEmail($email, $token);
 	public abstract function checkAuthUser();
-	public abstract function saveCommentsToTeamLeader($user, $team_leader, $comment);
+	public abstract function saveCommentsToTeamLeader($post);
 	public abstract function userEdit($post);
 	public abstract function sendContact($post);
 	public abstract function sendmail($setFromEmail, $setFromName, $addReplyToEmail, $addReplyToName, $addAddressEmail, $addAddressName, $subject, $template);

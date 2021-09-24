@@ -403,7 +403,7 @@
 
         <!-- Texto de encabezado oculto visualmente : BEGIN -->
         <div class="fallback-font" style="display: none; font-size: 1px; line-height: 1px; max-height: 0px; max-width: 0px; opacity: 0; overflow: hidden; mso-hide: all; font-family: 'Montserrat', sans-serif;">
-            nuevo contacto web
+            Gracias por tu contacto
         </div>
         <!-- Texto de encabezado oculto visualmente : END -->
 
@@ -423,18 +423,18 @@
           <tr>
               <td style="vertical-align: middle;">
                   
-                  <img src="https://plires.com.ar/clientes/ontarget/email/header-contacto.jpg" style="margin:0; padding:0; border:none; display:block; width: 100%; height: auto;" border="0" alt="header" />
+                  <img src="https://plires.com.ar/clientes/ontarget/email/header-reset.jpg" style="margin:0; padding:0; border:none; display:block; width: 100%; height: auto;" border="0" alt="header" />
 
               </td>
           </tr>
           <!-- Header end-->
 
           <!-- Texto-->
-          <tr style="background-color: #6044ff;">
+          <tr style="background-color: #0e2777;">
               <td style="padding: 10px; vertical-align: middle;">
                   
                   <h1 class="fallback-font" style="margin: 0px!important; font-family: 'Montserrat', sans-serif; font-size: 28px; color: #FFFFFF; text-align: center; font-weight: 700;">
-                      <strong>Nuevo Contacto Web</strong>
+                      <strong>Reseteo de contraseña</strong>
                   </h1>
 
               </td>
@@ -446,39 +446,28 @@
               <td style="padding: 40px;">
 
                   <h2 class="fallback-font" style="margin: 0 0 5px 0; font-family: 'Montserrat', sans-serif; font-size: 19px; line-height: 29px; color: #575756; text-align: left; font-weight: 700;">
-                      <strong>Hola On Target</strong>
+                      <strong>Hola, Como estas?</strong>
                   </h2>
 
                   <p class="fallback-font" style="margin: 0 0 10px; font-family: 'Montserrat', sans-serif; font-size: 18px; line-height: 28px; color: #575756; text-align: left; font-weight: 400;">
-                    Recibiste un nuevo mensaje web desde el formulario de contacto.
+                    Recibiste este correo electrónico porque nos llegó una solicitud de restablecimiento de contraseña para tu cuenta.
                   </p>
                   <br>
-                  <br>
 
-                  <h3 class="fallback-font" style="margin: 0 0 10px 0; font-family: 'Montserrat', sans-serif; font-size: 16px; line-height: 26px; color: #575756; text-align: center; font-weight: 700;">
-                      <strong>DATOS DEL USUARIO:</strong>
-                  </h3>
-
-                  <p class="fallback-font" style="margin: 0 0 10px; font-family: 'Montserrat', sans-serif; font-size: 16px; line-height: 26px; color: #575756; text-align: left; font-weight: 400;">
-                      <strong>Nombre:</strong> {name}
+                  <p class="fallback-font" style="margin: 0 0 10px; font-family: 'Montserrat', sans-serif; font-size: 18px; line-height: 28px; color: #575756; text-align: left; font-weight: 400;">
+                      Este enlace de restablecimiento de contraseña caducará en 60 minutos.
                   </p>
 
-                  <p class="fallback-font" style="margin: 0 0 10px; font-family: 'Montserrat', sans-serif; font-size: 16px; line-height: 26px; color: #575756; text-align: left; font-weight: 400;">
-                      <strong>Apellido:</strong> {lastname}
+                  <p class="fallback-font" style="margin: 0 0 10px; font-family: 'Montserrat', sans-serif; font-size: 18px; line-height: 28px; color: #575756; text-align: left; font-weight: 400;">
+                      Si no solicitaste un restablecimiento de contraseña, no es necesario realizar ninguna otra acción.
                   </p>
 
-                  <p class="fallback-font" style="margin: 0 0 10px; font-family: 'Montserrat', sans-serif; font-size: 16px; line-height: 26px; color: #575756; text-align: left; font-weight: 400;">
-                      <strong>Email:</strong> {email}
-                  </p>
-
-                  <p class="fallback-font" style="margin: 0 0 10px; font-family: 'Montserrat', sans-serif; font-size: 16px; line-height: 26px; color: #575756; text-align: left; font-weight: 400;">
-                      <strong>Teléfono:</strong> {phone}
-                  </p>
-
-                  <p class="fallback-font" style="margin: 0 0 10px; font-family: 'Montserrat', sans-serif; font-size: 16px; line-height: 26px; color: #575756; text-align: left; font-weight: 400;">
-                      <strong>Tu Mensaje:</strong> {comment}
-                  </p>
-
+                  <span class="fallback-font break-all" style="box-sizing: border-box; font-family: 'Montserrat', sans-serif; font-size: 14px; line-height: 24px; color: #575756; text-align: left; font-weight: 400; position: relative; word-break: break-all;">
+                    Si tenes problemas para hacer clic en el botón "Restablecer", copia y pega la siguiente URL en tu navegador web: <br>
+                    <a class="fallback-font" href="{url}" style="box-sizing: border-box; font-family: 'Montserrat', sans-serif; font-size: 14px; line-height: 24px; position: relative; color: #575756; text-decoration: underline;">{url}
+                    </a>
+                  </span>
+                  
               </td>
           </tr>
           <!-- Texto end-->
@@ -488,13 +477,13 @@
               <td style="background-color: #6044ff; text-align: center; padding: 40px;">
 
                 <p class="fallback-font" style="margin: 0 0 10px; margin-bottom: 20px; font-family: 'Montserrat', sans-serif; font-size: 16px; line-height: 26px; color: #FFFFFF; text-align: center; font-weight: 400;">
-                  <strong>¿Necesitas Ingresar al Backend del sitio?</strong>
+                  <strong>Presiona el botón para restablecer tu contraseña</strong>
                 </p>
                   <!-- Button : BEGIN -->
                   <table align="center" role="presentation" cellspacing="0" cellpadding="0" border="0" style="margin: auto;">
                       <tr>
                           <td class="button-td button-td-primary" style="border-radius: 4px; background: #FFFFFF;">
-                              <a class="fallback-font button-a button-a-primary" target="_blank" rel="noopener" href="{path_backend}" style="background: #FFFFFF; border: 1px solid #FFFFFF; font-family: 'Montserrat', sans-serif; font-size: 18px; line-height: 28px; font-weight: 700; text-decoration: none; padding: 10px 20px; color: #6044ff; display: block; border-radius: 4px;">INGRESO BACKEND
+                              <a class="fallback-font button-a button-a-primary" target="_blank" rel="noopener" href="{url}" style="background: #FFFFFF; border: 1px solid #FFFFFF; font-family: 'Montserrat', sans-serif; font-size: 18px; line-height: 28px; font-weight: 700; text-decoration: none; padding: 10px 20px; color: #6044ff; display: block; border-radius: 4px;">Restablecer
                               </a>
                           </td>
                       </tr>

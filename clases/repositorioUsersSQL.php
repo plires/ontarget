@@ -73,8 +73,23 @@ class RepositorioUsersSQL extends repositorioUsers
       $template_client = file_get_contents('./../includes/emails/contacts/contact-to-client.php');
       
       //configuro las variables a remplazar en el template
-      $vars = array('{name}', '{lastname}', '{email}', '{phone}', '{comment}');
-      $values = array( $post['name'], $post['lastname'], $post['email'], $post['phone'], $post['comments'] );
+      $vars = array(
+        '{name}',
+        '{lastname}',
+        '{email}',
+        '{phone}',
+        '{comment}',
+        '{path_backend}'
+      );
+
+      $values = array( 
+        $post['name'],
+        $post['lastname'],
+        $post['email'],
+        $post['phone'],
+        $post['comments'],
+        PATH_BACKEND 
+      );
 
       //Remplazamos las variables por las marcas en los templates
       $template_user = str_replace($vars, $values, $template_user);
@@ -259,20 +274,25 @@ class RepositorioUsersSQL extends repositorioUsers
     $stmt = $this->conexion->prepare($sql);
     $stmt->execute();
     $user = $stmt->fetch(PDO::FETCH_ASSOC);
-    $next_team_leader = (int)$user['team_leader_id'] + 1;
+    $id_next_team_leader = (int)$user['team_leader_id'] + 1;
 
-    $sql = "SELECT * FROM team_leaders WHERE id = '$next_team_leader' ";
+    $sql = "SELECT * FROM team_leaders WHERE role = 'Team Leader' ";
     $stmt = $this->conexion->prepare($sql);
     $stmt->execute();
-    $next_team_leader = $stmt->fetch(PDO::FETCH_ASSOC);
+    $team_leaders = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-    if (!$next_team_leader) {
-      $team_leader = 1;
-    } else {
-      $team_leader = (int)$next_team_leader['id'];
+    foreach ($team_leaders as $team_leader) {
+        
+      if ($team_leader['id'] == $id_next_team_leader) {
+        return $team_leader;
+      }
+
     }
 
-    return $team_leader;    
+    $sql = "SELECT * FROM team_leaders ORDER BY id ASC LIMIT 1";
+    $stmt = $this->conexion->prepare($sql);
+    $stmt->execute();
+    return $stmt->fetch(PDO::FETCH_ASSOC);
 
   }
 
@@ -317,7 +337,7 @@ class RepositorioUsersSQL extends repositorioUsers
       $stmt->bindValue(":phone", $post['phone'], PDO::PARAM_STR);
       $stmt->bindValue(":password", $password_hash, PDO::PARAM_STR);
       $stmt->bindValue(":token", $token, PDO::PARAM_STR);
-      $stmt->bindValue(":team_leader_id", $team_leader, PDO::PARAM_INT);
+      $stmt->bindValue(":team_leader_id", $team_leader['id'], PDO::PARAM_INT);
       $stmt->bindValue(":authorized_units", 1, PDO::PARAM_STR);
       $stmt->bindValue(":pending_challengers", 0, PDO::PARAM_INT);
       $stmt->bindValue(":pending_comments", 0, PDO::PARAM_INT);
@@ -329,8 +349,25 @@ class RepositorioUsersSQL extends repositorioUsers
       $template_client = file_get_contents('./../includes/emails/register/register-to-client.php');
       
       //configuro las variables a remplazar en el template
-      $vars = array('{name}', '{email}', '{phone}', '{url}', '{token}', '{team_leader}');
-      $values = array( $post['name'], $post['email'], $post['phone'], $urlToEmail, $token, $team_leader );
+      $vars = array(
+        '{name}',
+        '{email}',
+        '{phone}',
+        '{url}',
+        '{team_leader_name}',
+        '{team_leader_email}',
+        '{path_backend}'
+      );
+
+      $values = array( 
+        $post['name'],
+        $post['email'],
+        $post['phone'],
+        $urlToEmail,
+        $team_leader['name'],
+        $team_leader['email'],
+        PATH_BACKEND 
+      );
 
       //Remplazamos las variables por las marcas en los templates
       $template_user = str_replace($vars, $values, $template_user);
@@ -338,14 +375,26 @@ class RepositorioUsersSQL extends repositorioUsers
 
       // Enviar mail al usuario
       $this->sendmail(
-        EMAIL_ONTARGET, // Remitente 
-        NAME_ONTARGET, // Nombre Remitente 
-        EMAIL_ONTARGET, // Responder a:
-        NAME_ONTARGET, // Remitente al nombre: 
+        $team_leader['email'], // Remitente 
+        $team_leader['name'], // Nombre Remitente 
+        $team_leader['email'], // Responder a:
+        $team_leader['name'], // Remitente al nombre: 
         $post['email'], // Destinatario 
         $post['name'], // Nombre del destinatario
-        'Registro exitoso!', // Asunto 
+        'Registro Exitoso!', // Asunto 
         $template_user // Template usuario
+      );
+
+      // Enviar mail al Team Leader
+      $this->sendmail(
+        $post['email'], // Remitente 
+        $post['name'], // Nombre Remitente 
+        $post['email'], // Responder a:
+        $post['name'], // Remitente al nombre: 
+        $team_leader['email'], // Destinatario 
+        $team_leader['name'], // Nombre del destinatario
+        'Tenes un nuevo usuario asignado.', // Asunto 
+        $template_client // Template usuario
       );
 
 
@@ -475,21 +524,6 @@ class RepositorioUsersSQL extends repositorioUsers
 
       }
 
-      
-
-      // include('./../includes/emails/contacts/template-envio-usuario.php');
-      // include('./../includes/emails/contacts/template-envio-cliente.php');
-
-      // Enviar mail al usuario
-      // $this->sendEmail(
-      //   $post['email'], 
-      //   'Gracias por tu contacto', 
-      //   '<p>template de olvido de pass para el usuario</p>', 
-      //   'info@ontarget.com.ar', 
-      //   'OnTarget', 
-      //   'info@ontarget.com.ar'
-      // );
-
       return true;
      
     } catch (Exception $e) {
@@ -541,7 +575,17 @@ class RepositorioUsersSQL extends repositorioUsers
 
   }
 
-  public function saveCommentsToTeamLeader($user, $team_leader, $comment) {
+  public function saveCommentsToTeamLeader($post)
+  {
+
+    $user = $post['user_id'];
+    $user_name = $post['user_name'];
+    $user_email = $post['user_email'];
+    $user_phone = $post['user_phone'];
+    $team_leader = $post['team_leader_id'];
+    $team_leader_name = $post['team_leader_name'];
+    $team_leader_email = $post['team_leader_email'];
+    $comment = $post['comment'];
     
     $date = date("Y-m-d H:i:s");
 
@@ -566,6 +610,45 @@ class RepositorioUsersSQL extends repositorioUsers
       // Editar el campo de comentarios pendientes en la tabla users
       $this->updateCommentsPending($user);
 
+      // Enviar email al team Leader
+      $template_client = file_get_contents('./../includes/emails/msg-to-team-leader/msg-to-team-leader.php');
+
+      //configuro las variables a remplazar en el template
+      $vars = array(
+        '{user_name}' ,
+        '{user_email}' ,
+        '{user_phone}' ,
+        '{team_leader_name}' ,
+        '{team_leader_email}' ,
+        '{comment}', 
+        '{path_backend}', 
+      );
+
+      $values = array( 
+        $user_name, 
+        $user_email, 
+        $user_phone, 
+        $team_leader_name, 
+        $team_leader_email, 
+        $comment, 
+        PATH_BACKEND
+      );
+
+      //Remplazamos las variables por las marcas en los templates
+      $template_client = str_replace($vars, $values, $template_client);
+
+      // Enviar mail al usuario
+      $this->sendmail(
+        $user_email, // Remitente 
+        $user_name, // Nombre Remitente 
+        $user_email, // Responder a:
+        $user_name, // Remitente al nombre: 
+        $team_leader_email, // Destinatario 
+        $team_leader_name, // Nombre del destinatario
+        'Contacto de un usuario asignado a vos', // Asunto 
+        $template_client // Template usuario
+      );
+      
       return $register;
 
     } catch (Exception $e) {
