@@ -10,7 +10,7 @@
 
 	}
 
-	$unit = $db->getRepositorioUsers()->changeUnitsAuthorized($_POST['id'], $_POST['unit']);
+	$unit = $db->getRepositorioUsers()->changeUnitsAuthorized($_POST);
 
 	header('Content-type: application/json');
 	echo json_encode($unit);

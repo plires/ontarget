@@ -34,7 +34,7 @@
 
             <div class="form-group">
               <button 
-                @click="changeUnitsAuthorized(showingUser.id)" 
+                @click="changeUnitsAuthorized(showingUser)" 
                 type="button" 
                 class="comentario_leido btn btn-outline-primary btn-block">
                   <i class="far fa-check-square"></i> Autorizar

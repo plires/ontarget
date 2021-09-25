@@ -139,10 +139,14 @@ let app = new Vue({
 
     },
 
-    async changeUnitsAuthorized(id) {
+    async changeUnitsAuthorized(user) {
 
       var formData = new FormData();
-      formData.append('id', id)
+      formData.append('id', user.id)
+      formData.append('user_name', user.name)
+      formData.append('user_email', user.email)
+      formData.append('team_leader_name', this.authUser.name)
+      formData.append('team_leader_email', this.authUser.email)
       formData.append('unit', $('#selectAuthorizedUnits').val())
 
       await axios.post('php/change-units-authorized-user.php', formData)

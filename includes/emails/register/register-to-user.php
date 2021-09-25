@@ -403,7 +403,7 @@
 
         <!-- Texto de encabezado oculto visualmente : BEGIN -->
         <div class="fallback-font" style="display: none; font-size: 1px; line-height: 1px; max-height: 0px; max-width: 0px; opacity: 0; overflow: hidden; mso-hide: all; font-family: 'Montserrat', sans-serif;">
-            nuevo contacto web
+            registro exitoso, felicitaciones
         </div>
         <!-- Texto de encabezado oculto visualmente : END -->
 
@@ -475,11 +475,8 @@
                     <strong>{team_leader_name}</strong><br>
                     <strong>Team Leader On Target</strong><br>
                     <strong>{team_leader_email}</strong>
-                  </p> <br>
-
-                  <br>
-                  <br>
-
+                  </p> 
+                  
                   <span class="fallback-font break-all" style="box-sizing: border-box; font-family: 'Montserrat', sans-serif; font-size: 14px; line-height: 24px; color: #575756; text-align: left; font-weight: 400; position: relative; word-break: break-all;">
                     Si tenés problemas para hacer clic en el botón "Validar mi casilla", copia y pega la siguiente URL en tu navegador web: <br>
                     <a class="fallback-font" href="{url}" style="box-sizing: border-box; font-family: 'Montserrat', sans-serif; font-size: 14px; line-height: 24px; position: relative; color: #575756; text-decoration: underline;">{url}

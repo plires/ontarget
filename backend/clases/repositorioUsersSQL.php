@@ -20,12 +20,54 @@ class RepositorioUsersSQL extends repositorioUsers
     $this->conexion = $conexion;
   }
 
-  public function changeUnitsAuthorized($id, $newUnit)
+  public function changeUnitsAuthorized($post)
   {
+
+    $id = $post['id'];
+    $newUnit = $post['unit'];
+    $user_name = $post['user_name'];
+    $user_email = $post['user_email'];
+    $team_leader_name = $post['team_leader_name'];
+    $team_leader_email = $post['team_leader_email'];
 
     $sql = "UPDATE users SET authorized_units = :authorized_units WHERE id = '$id' ";
     $stmt = $this->conexion->prepare($sql);
     $stmt->bindValue(":authorized_units", $newUnit, PDO::PARAM_INT);
+
+    // Envio de email al usuario
+    $template_user = file_get_contents('./../includes/emails/new-unit/new-unit-to-user.php');
+    
+    //configuro las variables a remplazar en el template
+    $vars = array(
+      '{user_name}',
+      '{team_leader_name}',
+      '{team_leader_email}',
+      '{unit}', 
+      '{path_dashboard}'
+    );
+
+    $values = array( 
+      $user_name, 
+      $team_leader_name, 
+      $team_leader_email, 
+      $newUnit, 
+      BASE
+    );
+
+    //Remplazamos las variables por las marcas en los templates
+    $template_user = str_replace($vars, $values, $template_user);
+
+    // Enviar mail al usuario
+    $this->sendmail(
+      $team_leader_email, // Remitente 
+      $team_leader_name, // Nombre Remitente 
+      $team_leader_email, // Responder a:
+      $team_leader_name, // Remitente al nombre: 
+      $user_email, // Destinatario 
+      $user_name, // Nombre del destinatario
+      'Felicitaciones, aprobaste una nueva unidad', // Asunto 
+      $template_user // Template usuario
+    );
     return $stmt->execute();
 
   }
@@ -153,6 +195,32 @@ class RepositorioUsersSQL extends repositorioUsers
 
       header("HTTP/1.1 500 Internal Server Error"); 
            
+    }
+
+  }
+
+  function sendmail($setFromEmail,$setFromName,$addReplyToEmail,$addReplyToName,$addAddressEmail,$addAddressName,$subject,$template)
+  {
+
+    //Create a new PHPMailer instance
+    $mail = new PHPMailer;
+    // Set PHPMailer to use the sendmail transport
+    $mail->isSendmail();
+    //Establecer desde donde será enviado el correo electronico
+    $mail->setFrom($setFromEmail, $setFromName);
+    //Establecer una direccion de correo electronico alternativa para responder
+    $mail->addReplyTo($addReplyToEmail, $addReplyToName);
+    //Establecer a quien será enviado el correo electronico
+    $mail->addAddress($addAddressEmail, $addAddressName);
+    //Establecer el asunto del mensaje
+    $mail->Subject = $subject;
+    //convertir HTML dentro del cuerpo del mensaje
+    $mail->msgHTML($template);
+      //send the message, check for errors
+    if (!$mail->send()) {
+      return false;
+    } else {
+      return true;
     }
 
   }

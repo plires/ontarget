@@ -403,7 +403,7 @@
 
         <!-- Texto de encabezado oculto visualmente : BEGIN -->
         <div class="fallback-font" style="display: none; font-size: 1px; line-height: 1px; max-height: 0px; max-width: 0px; opacity: 0; overflow: hidden; mso-hide: all; font-family: 'Montserrat', sans-serif;">
-            Gracias por tu contacto
+            resetea tu password
         </div>
         <!-- Texto de encabezado oculto visualmente : END -->
 

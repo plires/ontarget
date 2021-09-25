@@ -403,7 +403,7 @@
 
         <!-- Texto de encabezado oculto visualmente : BEGIN -->
         <div class="fallback-font" style="display: none; font-size: 1px; line-height: 1px; max-height: 0px; max-width: 0px; opacity: 0; overflow: hidden; mso-hide: all; font-family: 'Montserrat', sans-serif;">
-            Gracias por tu contacto
+            Nueva unidad habilitada
         </div>
         <!-- Texto de encabezado oculto visualmente : END -->
 
@@ -434,7 +434,7 @@
               <td style="padding: 10px; vertical-align: middle;">
                   
                   <h1 class="fallback-font" style="margin: 0px!important; font-family: 'Montserrat', sans-serif; font-size: 28px; color: #FFFFFF; text-align: center; font-weight: 700;">
-                      <strong>Reseteo de contraseña</strong>
+                      <strong>Tenés la unidad {unit} habilitada</strong>
                   </h1>
 
               </td>
@@ -446,28 +446,35 @@
               <td style="padding: 40px;">
 
                   <h2 class="fallback-font" style="margin: 0 0 5px 0; font-family: 'Montserrat', sans-serif; font-size: 19px; line-height: 29px; color: #575756; text-align: left; font-weight: 700;">
-                      <strong>Hola, Como estas?</strong>
+                      <strong>Felicitaciones, {user_name} <br> tenés la unidad {unit} habilitada!!</strong>
                   </h2>
 
-                  <p class="fallback-font" style="margin: 0 0 10px; font-family: 'Montserrat', sans-serif; font-size: 18px; line-height: 28px; color: #575756; text-align: left; font-weight: 400;">
-                    Recibiste este correo electrónico porque nos llegó una solicitud de restablecimiento de contraseña para tu cuenta.
-                  </p>
                   <br>
 
                   <p class="fallback-font" style="margin: 0 0 10px; font-family: 'Montserrat', sans-serif; font-size: 18px; line-height: 28px; color: #575756; text-align: left; font-weight: 400;">
-                      Este enlace de restablecimiento de contraseña caducará en 60 minutos.
+                    <strong>Soy {team_leader_name}, </strong> acabo de ver y aprobar los desafíos que me enviaste. Me alegra contarte que contás con una nueva unidad habilitada en tu plataforma de aprendizaje online. 
+                  </p>
+
+                  <br>
+
+                  <p class="fallback-font" style="margin: 0 0 10px; font-family: 'Montserrat', sans-serif; font-size: 18px; line-height: 28px; color: #575756; text-align: center; font-weight: 400;">
+                    <strong>Si, la unidad número {unit} te está esperando!</strong>
                   </p>
 
                   <p class="fallback-font" style="margin: 0 0 10px; font-family: 'Montserrat', sans-serif; font-size: 18px; line-height: 28px; color: #575756; text-align: left; font-weight: 400;">
-                      Si no solicitaste un restablecimiento de contraseña, no es necesario realizar ninguna otra acción.
+                    Recordá que podés escribirme a <a href="mailto: {team_leader_email}">{team_leader_email}</a> cuando necesites de mi ayuda.
                   </p>
 
-                  <span class="fallback-font break-all" style="box-sizing: border-box; font-family: 'Montserrat', sans-serif; font-size: 14px; line-height: 24px; color: #575756; text-align: left; font-weight: 400; position: relative; word-break: break-all;">
-                    Si tenes problemas para hacer clic en el botón "Restablecer", copia y pega la siguiente URL en tu navegador web: <br>
-                    <a class="fallback-font" href="{url}" style="box-sizing: border-box; font-family: 'Montserrat', sans-serif; font-size: 14px; line-height: 24px; position: relative; color: #575756; text-decoration: underline;">{url}
-                    </a>
-                  </span>
-                  
+                  <br>
+                  <br>
+                  <br>
+
+                  <p class="fallback-font" style="margin: 0 0 10px; font-family: 'Montserrat', sans-serif; font-size: 16px; color: #575756; text-align: right; font-weight: 400;">
+                    <strong>{team_leader_name}</strong><br>
+                    <strong>Team Leader On Target</strong><br>
+                    <strong>{team_leader_email}</strong>
+                  </p>
+
               </td>
           </tr>
           <!-- Texto end-->
@@ -477,13 +484,13 @@
               <td style="background-color: #6044ff; text-align: center; padding: 40px;">
 
                 <p class="fallback-font" style="margin: 0 0 10px; margin-bottom: 20px; font-family: 'Montserrat', sans-serif; font-size: 16px; line-height: 26px; color: #FFFFFF; text-align: center; font-weight: 400;">
-                  <strong>Presiona el botón para restablecer tu contraseña</strong>
+                  <strong>Podés ver tu nueva unidad ya mismo</strong>
                 </p>
                   <!-- Button : BEGIN -->
                   <table align="center" role="presentation" cellspacing="0" cellpadding="0" border="0" style="margin: auto;">
                       <tr>
                           <td class="button-td button-td-primary" style="border-radius: 4px; background: #FFFFFF;">
-                              <a class="fallback-font button-a button-a-primary" target="_blank" rel="noopener" href="{url}" style="background: #FFFFFF; border: 1px solid #FFFFFF; font-family: 'Montserrat', sans-serif; font-size: 18px; line-height: 28px; font-weight: 700; text-decoration: none; padding: 10px 20px; color: #6044ff; display: block; border-radius: 4px;">Restablecer
+                              <a class="fallback-font button-a button-a-primary" target="_blank" rel="noopener" href="{path_dashboard}" style="background: #FFFFFF; border: 1px solid #FFFFFF; font-family: 'Montserrat', sans-serif; font-size: 18px; line-height: 28px; font-weight: 700; text-decoration: none; padding: 10px 20px; color: #6044ff; display: block; border-radius: 4px;">Restablecer
                               </a>
                           </td>
                       </tr>
