@@ -73,25 +73,15 @@
 
         <!-- Recordar -->
         <div class="row">
-          <div class="col-8">
-            <div class="icheck-primary">
-              <input type="checkbox" id="remember">
-              <label for="remember">
-                Recordarme
-              </label>
-            </div>
-          </div>
-          <!-- /.col -->
-          <div class="col-4">
+          <div class="col-12">
             <button @click.prevent="login" class="btn btn-primary btn-block">Login</button>
           </div>
-          <!-- /.col -->
         </div>
         <!-- Recordar end -->
 
       </form>
 
-      <p class="mb-1">
+      <p class="mb-1 mt-3">
         <a href="forgot-password.php">Olvide mi password</a>
       </p>
     </div>

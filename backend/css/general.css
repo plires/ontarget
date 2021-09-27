@@ -11,6 +11,10 @@
 	color: var(--third-color);
 }
 
+.dropdown-item.active, .dropdown-item:active {
+	color: white!important;
+}
+
 .dashboard .exit_user {
 	border-bottom: solid 1px #4f5962;
 	margin-bottom: 20px;
