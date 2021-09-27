@@ -285,6 +285,10 @@ aside .unidad_deshabilitada {
 	z-index: 10000;
 }
 
+#modalChallenge .description {
+	font-size: 0.85rem;
+}
+
 #modalChallenge .modal-header {
 	background-color: var(--third-color);
 	color: white;

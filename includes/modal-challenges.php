@@ -8,10 +8,10 @@
         </button>
       </div>
       <div class="modal-body">
-        <h6>¿De que se trata este desafío?</h6>
-        <p class="description">{{ currentChallenge.description }}</p>
+        <h6><strong>¿De que se trata este desafío?</strong></h6>
+        <p class="description" v-html="currentChallenge.description"></p>
 
-        <h6>¿Como lo completo?</h6>
+        <h6><strong>¿Como lo completo?</strong></h6>
         <p class="description">Fácil, en 3 simples pasos:</p>
 
         <a class="pasos transition" :href="'./challenges/' + currentChallenge.url_download">
