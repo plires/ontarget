@@ -158,6 +158,26 @@ aside .unidad_deshabilitada {
 }
 /* Content Wrapper end */
 
+/* Dashboard */
+	.welcome .content-header h1, 
+	.welcome p {
+		color: var(--primary-color);
+	}
+
+	.welcome .content-header h1{
+		font-size: 1.875rem;
+		font-weight: 700;
+	}
+
+	.welcome p {
+		font-size: 1.25rem;
+	}
+
+	.welcome .destacado {
+		font-weight: 700;
+	}
+	/* Dashboard end */
+
 /* Unidades */
 .unidades .progress {
 	height: 30px;
@@ -309,6 +329,30 @@ aside .unidad_deshabilitada {
 }
 
 @media (min-width: 768px) {
+
+	/* Dashboard */
+	.welcome {
+		margin-bottom: 30px!important;
+	}
+
+	.welcome {
+		min-height: auto!important;
+	}
+
+	.welcome .row {
+		display: flex;
+		align-items: flex-end;
+	}
+
+	.welcome .row .col-md-7 {
+		align-self: center;
+	}
+
+	.welcome p {
+		font-size: 1.125rem;
+	}
+	/* Dashboard end */
+
 	/* Unidades */
 	.unidades .header_unidad_actual {
 		padding: 20px;
@@ -348,6 +392,30 @@ aside .unidad_deshabilitada {
 }
 
 @media (min-width: 1200px) {
+	/* Dashboard */
+	.welcome .content-header h1 {
+		margin-bottom: 60px!important;
+	}
+
+	.welcome {
+		margin-bottom: 0!important;
+	}
+
+	.welcome .row .col-md-7,
+	.welcome .row .col-md-5 {
+		align-self: flex-start;
+	}
+
+	.welcome .row .col-md-5 {
+		align-self: center;
+	}
+
+	.welcome img {
+		margin-top: -125px;
+		right: 0;
+	}
+	/* Dashboard end */
+
 	/* Unidades */
 	.unidades .card {
 		min-height: 480px;
@@ -376,7 +444,6 @@ aside .unidad_deshabilitada {
 	  margin-top: -1px!important;
 	}
 	/* Nav Dashboard end */
-
 }
 
 @media (min-width: 1800px) {

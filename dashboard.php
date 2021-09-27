@@ -43,7 +43,7 @@
 
 <body class="hold-transition sidebar-mini">
 
-<div id="app" class="welcome">
+<div id="app">
 
   <div class="wrapper">
 
@@ -76,15 +76,14 @@
     <?php // include('includes/dashboard/aside-right.php'); ?>
 
     <!-- Content Wrapper. Contains page content -->
-    <div class="content-wrapper">
+    <div class="content-wrapper welcome">
       
       <div class="content-header">
         <div class="container-fluid">
           <div class="row mb-2">
-            <div class="col-sm-6">
-              <h1 class="m-0">¡Te damos la Bienvenida xxx!</h1>
+            <div class="col-sm-12">
+              <h1 class="m-0">¡Te damos la Bienvenida {{ authUser. name }}!</h1>
             </div>
-           
           </div>
         </div>
       </div>
@@ -94,8 +93,26 @@
         <div class="container-fluid">
           <div class="row">
 
-            <div class="col-lg-12">
-              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Debitis minus velit, fuga, corrupti porro dolore et dolor recusandae, quaerat expedita sunt eius aspernatur, ad perspiciatis nulla maxime ratione minima vitae.
+            <div class="col-md-7">
+              <p>
+                La plataforma de aprendizaje en línea de <strong>OnTarget</strong> combina el poder del microaprendizaje diario, la tecnología, actualidad y el apoyo del equipo de <strong>WG SA</strong> para lograr una transformación personal y profesional que no podrás igualar con la formación tradicional.
+              </p>
+
+              <p>
+                En cada unidad encontraran ejercicios que permiten evaluar los resultados del conocimiento y poder así obtener los mejores resultados para tus metas y necesidades.
+              </p>
+
+              <p class="destacado">
+                Con solo 15 min. al día, vivirás un crecimiento personal y profesional que cambiará tu vida y tu futuro. Gozando del apoyo, la motivación y amistad de nuestro equipo.
+              </p>
+
+              <p class="destacado">
+                ¿Lo mejor? Estamos juntos para planificar tu futuro.
+              </p>
+            </div>
+
+            <div class="col-md-5 text-center">
+              <img class="img-fluid" src="./backend/img/dashboard/pantalla-bienvenida.png" alt="chica ontarget dashboard">
             </div>
 
           </div>
