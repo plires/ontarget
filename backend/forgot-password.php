@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Login - On Target</title>
+  <title>Recuperar Contraseña - On Target</title>
 
   <!-- Favicons -->
   <?php include('./../includes/favicon.php'); ?>
@@ -29,23 +29,20 @@
   <!-- Msg -->
   <?php include('includes/msg.php'); ?>
 
-  <!-- /.login-logo -->
   <div class="card card-outline card-primary">
     <div class="card-header text-center">
       <img class="img-fluid" src="img/login/logo-ontarget-backend.png" alt="logo ontarget">
     </div>
+
     <div class="card-body">
-      <p class="login-box-msg">Regístrese para iniciar su sesión</p>
-
+      <p class="login-box-msg">¿Olvidaste tu contraseña? Aquí puede recuperar fácilmente una nueva contraseña.</p>
       <form method="post">
-
-        <!-- Email -->
         <div class="input-group mb-3">
           <input 
             type="email" 
             class="form-control" 
             placeholder="Email" 
-            v-model="email_login" 
+            v-model="email_forgot_password" 
           >
           <div class="input-group-append">
             <div class="input-group-text">
@@ -53,49 +50,19 @@
             </div>
           </div>
         </div>
-        <!-- Email end -->
 
-        <!-- Password -->
-        <div class="input-group mb-3">
-          <input 
-            type="password" 
-            class="form-control" 
-            placeholder="Password" 
-            v-model="password_login"
-          >
-          <div class="input-group-append">
-            <div class="input-group-text">
-              <span class="fas fa-lock"></span>
-            </div>
-          </div>
-        </div>
-        <!-- Password end -->
-
-        <!-- Recordar -->
         <div class="row">
-          <div class="col-8">
-            <div class="icheck-primary">
-              <input type="checkbox" id="remember">
-              <label for="remember">
-                Recordarme
-              </label>
-            </div>
+          <div class="col-12">
+            <button @click.prevent="forgotPassword" class="btn btn-primary btn-block">Solicitar nueva contraseña</button>
           </div>
-          <!-- /.col -->
-          <div class="col-4">
-            <button @click.prevent="login" class="btn btn-primary btn-block">Login</button>
-          </div>
-          <!-- /.col -->
         </div>
-        <!-- Recordar end -->
 
       </form>
-
-      <p class="mb-1">
-        <a href="forgot-password.php">Olvide mi password</a>
+      <p class="mt-3 mb-1">
+        <a href="./">Login</a>
       </p>
     </div>
-    
+
   </div>
 
 </div>

@@ -92,6 +92,58 @@ class RepositorioUsersSQL extends repositorioUsers
     
   }
 
+  public function forgotPassword($email)
+  {
+
+    try {
+
+      $sql = "SELECT * FROM team_leaders WHERE email = '$email' ";
+      $stmt = $this->conexion->prepare($sql);
+      $stmt->execute();
+      $user = $stmt->fetch(PDO::FETCH_ASSOC);
+
+      if (!$user) { 
+        return false;
+      }
+      
+      // Generar un token, guardarlo en la base de datos
+      $generatedToken = $this->generateTokenAndSaveInDatabase($user);
+
+      if ($generatedToken['executed']) {
+
+        $template_client = file_get_contents('./../includes/emails/reset-password/reset-password-to-client.php');
+
+        //configuro las variables a remplazar en el template
+        $vars = array('{email}' , '{url}');
+        $values = array( $email, $generatedToken['urlToEmail'] );
+
+        //Remplazamos las variables por las marcas en los templates
+        $template_client = str_replace($vars, $values, $template_client);
+
+        // Enviar mail al usuario
+        $this->sendmail(
+          EMAIL_ONTARGET, // Remitente 
+          NAME_ONTARGET, // Nombre Remitente 
+          EMAIL_ONTARGET, // Responder a:
+          NAME_ONTARGET, // Remitente al nombre: 
+          $email, // Destinatario 
+          $email, // Nombre del destinatario
+          'Reseteo de password', // Asunto 
+          $template_client // Template usuario
+        );
+
+      }
+
+      return true;
+      
+    } catch (Exception $e) {
+
+      header("HTTP/1.1 500 Internal Server Error");
+
+    }
+
+  }
+
   public function login($email, $password)
   {
 
@@ -195,6 +247,63 @@ class RepositorioUsersSQL extends repositorioUsers
 
       header("HTTP/1.1 500 Internal Server Error"); 
            
+    }
+
+  }
+
+  public function generateTokenAndSaveInDatabase($user) 
+  {
+
+    $selector = bin2hex(random_bytes(8));
+    $token = random_bytes(32);
+
+    $urlToEmail = BASE .'backend/recover-password.php?' .http_build_query([
+        'selector' => $selector,
+        'id' => $user['id'],
+        'validator' => bin2hex($token)
+    ]);
+
+    $expires = new DateTime('NOW');
+    $expires->add(new DateInterval('PT01H')); // 1 hour
+
+    // Insertar en base de datos
+    $sql = "
+      INSERT INTO account_recovery (user_id, selector, token, expires) 
+      VALUES (:user_id, :selector, :token, :expires);
+    ";
+
+    $stmt = $this->conexion->prepare($sql);
+    
+    $stmt->bindValue(":user_id", $user['id'], PDO::PARAM_INT);
+    $stmt->bindValue(":selector", $selector, PDO::PARAM_STR);
+    $stmt->bindValue(":token", bin2hex($token), PDO::PARAM_STR);
+    $stmt->bindValue(":expires", $expires->format('Y-m-d\TH:i:s'), PDO::PARAM_STR);
+
+    $generatedToken['executed'] = $stmt->execute();
+    $generatedToken['urlToEmail'] = $urlToEmail;
+
+    return $generatedToken;
+
+  }
+
+  public function newPass($post) 
+  {
+
+    $password_hash = password_hash($post['password_reset'], PASSWORD_DEFAULT);
+
+    $id = (int)$post['user_id'];
+
+    $sql = "UPDATE team_leaders SET password = :password WHERE id = '$id' ";
+    $stmt = $this->conexion->prepare($sql);
+    $stmt->bindValue(":password", $password_hash, PDO::PARAM_STR);
+
+    $set_new_pass = $stmt->execute();
+
+    if ($set_new_pass) {
+      //borrar de la tabla account_recovery al usuario
+      $sql = "DELETE FROM account_recovery WHERE user_id='$id'";
+      $stmt = $this->conexion->prepare($sql);
+      return $stmt->execute();
     }
 
   }

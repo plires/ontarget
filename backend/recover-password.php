@@ -1,9 +1,22 @@
+<?php 
+
+  if ( empty($_GET) || !isset($_GET['selector']) || !isset($_GET['validator']) || !isset($_GET['id']) ) {
+    header('Location: ./');
+  }
+
+  include_once __DIR__ . './../includes/soporte.php';
+  include_once __DIR__ . './../includes/functions.php';
+
+  $user_id = $db->getRepositorioUsers()->resetPassword($_GET['selector'], $_GET['validator'] , $_GET['id'] );
+
+?>
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Login - On Target</title>
+  <title>Restablecer Contraseña - On Target</title>
 
   <!-- Favicons -->
   <?php include('./../includes/favicon.php'); ?>
@@ -29,39 +42,23 @@
   <!-- Msg -->
   <?php include('includes/msg.php'); ?>
 
-  <!-- /.login-logo -->
   <div class="card card-outline card-primary">
     <div class="card-header text-center">
       <img class="img-fluid" src="img/login/logo-ontarget-backend.png" alt="logo ontarget">
     </div>
+
     <div class="card-body">
-      <p class="login-box-msg">Regístrese para iniciar su sesión</p>
+      <p class="login-box-msg">Está a solo un paso de su nueva contraseña, recupere su contraseña ahora.</p>
+      <form action="login.html" method="post">
 
-      <form method="post">
+        <input type="hidden" name="user_id" value="<?= $user_id ?>" v-model="user_id">
 
-        <!-- Email -->
-        <div class="input-group mb-3">
-          <input 
-            type="email" 
-            class="form-control" 
-            placeholder="Email" 
-            v-model="email_login" 
-          >
-          <div class="input-group-append">
-            <div class="input-group-text">
-              <span class="fas fa-envelope"></span>
-            </div>
-          </div>
-        </div>
-        <!-- Email end -->
-
-        <!-- Password -->
         <div class="input-group mb-3">
           <input 
             type="password" 
             class="form-control" 
-            placeholder="Password" 
-            v-model="password_login"
+            v-model="password_reset"
+            placeholder="Ingresá tu nuevo password"
           >
           <div class="input-group-append">
             <div class="input-group-text">
@@ -69,33 +66,32 @@
             </div>
           </div>
         </div>
-        <!-- Password end -->
-
-        <!-- Recordar -->
-        <div class="row">
-          <div class="col-8">
-            <div class="icheck-primary">
-              <input type="checkbox" id="remember">
-              <label for="remember">
-                Recordarme
-              </label>
+        <div class="input-group mb-3">
+           <input 
+              type="password" 
+              class="form-control" 
+              v-model="cpassword_reset"
+              placeholder="Repetí tu nuevo password"
+            >
+          <div class="input-group-append">
+            <div class="input-group-text">
+              <span class="fas fa-lock"></span>
             </div>
           </div>
-          <!-- /.col -->
-          <div class="col-4">
-            <button @click.prevent="login" class="btn btn-primary btn-block">Login</button>
+        </div>
+        <div class="row">
+          <div class="col-12">
+            <button id="btnNewPass" @click.prevent="resetPass" class="btn btn-primary btn-block"><span>Resetear Contraseña</span></button>
           </div>
           <!-- /.col -->
         </div>
-        <!-- Recordar end -->
-
       </form>
 
-      <p class="mb-1">
-        <a href="forgot-password.php">Olvide mi password</a>
+      <p class="mt-3 mb-1">
+        <a href="./">Login</a>
       </p>
     </div>
-    
+
   </div>
 
 </div>
@@ -110,4 +106,12 @@
 <script type="text/javascript" src="./../node_modules/vue/dist/vue.js"></script>
 <script type="text/javascript" src="./js/login.js"></script>
 </body>
+
+<?php
+echo "
+<script>
+  app.user_id = ". $user_id .";
+</script>
+";
+?>
 </html>
