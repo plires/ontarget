@@ -81,6 +81,10 @@
   font-size: 0.85rem;
 }
 
+#login .form-check-label {
+  font-size: 0.75rem;
+}
+
 #login.show .content_login button {
   border-radius: 5px;
   width: 100%;

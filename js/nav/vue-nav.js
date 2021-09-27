@@ -25,6 +25,7 @@ let app = new Vue({
       modeUserEdit: false,
       password_user: '',
       cPassword_user: '',
+      mayor_edad: false,
       units: {},
       episodes: [],
       unitData: '',
@@ -346,7 +347,7 @@ let app = new Vue({
 
       this.cleanErrors()
 
-      if ( this.name && this.validateEmail(this.email) && this.phone && this.password.length >= 6 && this.cpassword && this.password == this.cpassword ) {
+      if ( this.name && this.validateEmail(this.email) && this.phone && this.password.length >= 6 && this.cpassword && this.password == this.cpassword && this.mayor_edad ) {
         return true
       }
 
@@ -368,6 +369,10 @@ let app = new Vue({
 
       if ( this.password != this.cpassword ) {
         this.errors.push('Las contraseñas son diferentes.')
+      }
+
+      if (!this.mayor_edad) {
+        this.errors.push('Para registrarte tenés que se mayor de 21 años.')
       }
 
     },

@@ -23,7 +23,7 @@
 				</div>
 				<!-- Pass end -->
 
-			  	<button id="btnLogin" @click.prevent="login" class="btn btn--alpha"><span>Iniciar sesión</span></button>
+				<button id="btnLogin" @click.prevent="login" class="btn btn--alpha"><span>Iniciar sesión</span></button>
 
 			</form>
 
@@ -74,6 +74,13 @@
 					<input type="password" class="form-control" id="cpassword" name="cpassword" v-model="cpassword">
 				</div>
 				<!-- CPass end -->
+
+				<!-- Mayor de 21 -->
+				<div class="form-check mb-3">
+					<input type="checkbox" class="form-check-input" id="mayor_edad" name="mayor_edad" v-model="mayor_edad">
+					<label class="form-check-label" for="mayor_edad">soy mayor de 21 años</label>
+				</div>
+				<!-- Mayor de 21 end -->
 
 			  <button id="btnRegister" @click.prevent="register" class="btn btn--alpha"><span>Registrarse</span></button>
 
