@@ -276,7 +276,7 @@
 										<img class="img-fluid" src="img/home/testimonio-hombre2.jpg" alt="testimonio hombre 2">
 										<div class="content_testimonio">
 											<p>
-												"Encontre la mejor alternativa para emprender como Broker de seguros en donde me sentí en total confianza gracias a la conteción que tuve en el proceso de aprendisaje de Ontarget"
+												"Encontre la mejor alternativa para emprender como Broker de seguros en donde me sentí en total confianza gracias a la contención que tuve en el proceso de aprendizaje de Ontarget"
 											</p>
 										</div>
 									</div>
