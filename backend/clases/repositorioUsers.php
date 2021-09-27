@@ -1,6 +1,7 @@
 <?php
 
 abstract class repositorioUsers {
+	public abstract function sendmail($setFromEmail,$setFromName,$addReplyToEmail,$addReplyToName,$addAddressEmail,$addAddressName,$subject,$template);
 	public abstract function login($email, $password);
 	public abstract function forgotPassword($email);
 	public abstract function getUsers();
@@ -11,7 +12,6 @@ abstract class repositorioUsers {
 	public abstract function forgotPassword($email);
 	public abstract function generateTokenAndSaveInDatabase($user);
 	public abstract function newPass($post);
-	public abstract function sendmail($setFromEmail,$setFromName,$addReplyToEmail,$addReplyToName,$addAddressEmail,$addAddressName,$subject,$template);
 
 }
 

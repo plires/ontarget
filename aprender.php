@@ -65,7 +65,7 @@
 							<div class="iconos">
 								<div>
 									<img data-aos="flip-left" class="img-fluid image_no_shadow_rounded" src="img/aprender/inscriptos.png" alt="icono inscriptos">
-									<p>300+<span>Inscriptos</span></p>					
+									<p>50+<span>Inscriptos</span></p>					
 								</div>
 								<div>
 									<img data-aos="flip-left" class="img-fluid image_no_shadow_rounded" src="img/aprender/tiempo.png" alt="icono tiempo">
@@ -73,7 +73,7 @@
 								</div>
 								<div>
 									<img data-aos="flip-left" class="img-fluid image_no_shadow_rounded" src="img/aprender/historias.png" alt="icono historias">
-									<p>450<span>Historias de estudiantes</span></p>
+									<p>100<span>Historias de estudiantes</span></p>
 								</div>
 							</div>
 
@@ -162,7 +162,7 @@
 									<h3>La Productividad</h3>
 								</div>
 								<p class="parrafo_unidad">
-									Esta Unidad está dividida en 6 capítulos. aquí vamos a recorrer el final del camino para comenzar el principio del recorrido. Vamos a sumergirnos en lo más profundo de cada detalle para no dejar nada librado al azar, o al destino, que no siempre puede estar de nuestro lado. Aquí les daremos la bienvenida al comienzo de su carrera.
+									Esta Unidad está dividida en 6 capítulos. Aquí vamos a recorrer el final del camino para comenzar el principio del recorrido. Vamos a sumergirnos en lo más profundo de cada detalle para no dejar nada librado al azar, o al destino, que no siempre puede estar de nuestro lado. Aquí les daremos la bienvenida al comienzo de su carrera.
 								</p>
 							</div>
 
@@ -222,61 +222,18 @@
 
 								<div class="content_form bg_white">
 								
-									<h4 class="titulo_formulario">Disponible por tiempo limitado</h4>
+									<h4 class="titulo_formulario">¡Inscribite!</h4>
 									<p class="parrafo_formulario">
-										Todas las sesiones son en español y se reproducen en tu hora local
+										Nuestro método de aprendizaje es 100% online, contando con la posibilidad de que lo hagas adaptándolo al horario que más te convenga.
 									</p>
-									<form method="post" class="needs-validation" novalidate>
 
-										<!-- Nombre -->
-									  <div class="form-group">
-									    <input type="text" class="form-control" id="name" name="name" placeholder="Nombre *">
-									    <div class="invalid-feedback">
-								        Ingresá tu nombre
-								      </div>
-									  </div>
-										<!-- Nombre end -->
+									<button v-if="Object.keys(authUser).length === 0" @click="openPopUpLogin" class="btn btn--alpha">
+							          <span>Hazte miembro ahora</span>
+							        </button>
 
-										<!-- Email -->
-									  <div class="form-group">
-									    <input type="email" class="form-control" id="email" name="email" placeholder="Email *">
-									    <div class="invalid-feedback">
-								        Ingresá tu email
-								      </div>
-									  </div>
-										<!-- Email end -->
-
-										<!-- Fecha -->
-										<div class="form-group">
-											<select id="date" name="date" class="custom-select">
-											  <option selected>Selecciona la Fecha</option>
-											  <option value="1">25 de Septiembre 2021</option>
-											  <option value="2">5 de Octubre 2021</option>
-											  <option value="3">12 de Noviembre 2021</option>
-											</select>
-										</div>
-										<!-- Fecha end -->
-
-										<!-- Hora -->
-										<div class="form-group">
-											<select id="time" name="time"  class="custom-select">
-											  <option selected>Selecciona la Hora</option>
-											  <option value="1">08:00</option>
-											  <option value="2">16:00</option>
-											  <option value="3">18:30</option>
-											</select>
-										</div>
-										<!-- Hora end -->
-									 	
-									 	<button
-									 		type="submit" 
-									 		class="btn btn--alpha" 
-									 		id="send_metodo" 
-								  		name="send_metodo">
-									 			<span>Hazte miembro ahora</span>
-									 	</button>
-
-									</form>
+							        <button v-else class="btn btn--alpha" @click="openPopUpAcount">
+							          <span>Hazte miembro ahora</span>
+							        </button>
 
 								</div>
 

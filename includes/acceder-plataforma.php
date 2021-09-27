@@ -3,11 +3,19 @@
   <div class="container h-100">
     <div class="row h-100">
       <div class="col-md-8 m-auto h-100">
-        <h2>Accede a nuesta Plataforma de Aprendizaje de manera inmediata</h2>
+        <h2>Accedé a nuestra Plataforma de aprendizaje</h2>
         <p class="frase">
-          Solo necesitas un usuario y contraseña y obtendrás acceso al Método OnTarget, Webinars, Eventos y mucho más para poder empezar tu momento de cambio y profesionalizarte.
+          Sólo necesitas un usuario y contraseña y obtendrás acceso al Método OnTarget, Webinars, Eventos y mucho más para comenzar tu momento de cambio PROFESIONAL.
         </p>
-        <button class="btn btn--alpha"><span>Hazte miembro ahora</span>
+
+        <button v-if="Object.keys(authUser).length === 0" @click="openPopUpLogin" class="btn btn--alpha">
+          <span>Hazte miembro ahora</span>
+        </button>
+
+        <button v-else class="btn btn--alpha" @click="openPopUpAcount">
+          <span>Hazte miembro ahora</span>
+        </button>
+        
       </div>
     </div>
   </div>

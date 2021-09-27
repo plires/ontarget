@@ -6,10 +6,7 @@
 				<h2>Contamos con la confianza de estas empresas</h2>
 			</div>
 			
-			<div class="col-4">
-				<img class="img-fluid image_no_shadow_rounded" src="img/home/zurich.png" alt="zurich">
-			</div>
-			<div class="col-4">
+			<div class="col-4 offset-2">
 				<img class="img-fluid image_no_shadow_rounded" src="img/home/elbinger.png" alt="elbinger">
 			</div>
 			<div class="col-4">

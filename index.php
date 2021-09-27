@@ -62,7 +62,7 @@
 						<div class="col-md-6">
 							<div class="faja_sobre_titulo_izq"></div>
 							<p>
-								El mundo está cambiando y nuevas tecnologías están transformando los trabajos y las carreras. La educación tradicional nunca nos preparó para esto, pero nosotros te enseñamos cómo prosperar en el nuevo mundo con educación relevante más allá del 2021. Y no nos detendremos ahí, gracias a las nuevas tecnologías creamos una gran plataforma para conectarte con todo el contenido y con nuestro equipo. Creemosque podemos marcar tendencia planificando tu futuro.
+								El mundo está cambiando y nuevas tecnologías están transformando los trabajos y las carreras. La educación tradicional nunca nos preparó para esto, pero nosotros te enseñamos cómo prosperar en el nuevo mundo con educación relevante más allá del 2021. Y no nos detendremos ahí, gracias a las nuevas tecnologías creamos una gran plataforma para conectarte con todo el contenido y con nuestro equipo. Creemos que podemos marcar tendencia planificando tu futuro.
 							</p>
 						</div>
 					</div>
@@ -112,7 +112,7 @@
 							<div class="col-md-6 order-2 order-md-1">
 								<div class="faja_sobre_titulo_der"></div>
 								<p>
-									Creemos en tu potencial. Nuestro método y experiencia. Asesorar profesional de compañía líder del mercado. 
+									Creemos en tu potencial, en nuestro método y experiencia. Contás con el asesoramiento profesional de la compañía líder del mercado durante todo tu proceso de aprendizaje. 
 								</p>
 							</div>
 							<div class="col-md-6 order-1 order-md-2">
@@ -143,7 +143,7 @@
 							<div class="col-md-6">
 								<div class="faja_sobre_titulo_izq"></div>
 								<p>
-									Crecimiento profesional e ingresos acordes. Tener una profesión. Soñar y creer en grande. Trabajar de forma independiente con tiempos de dedicación organizados.
+									Crecimiento profesional e ingresos acordes. Tener una profesión, creer y soñar en grande, es posible trabajando de forma independiente con tiempos de dedicación organizados.
 								</p>
 							</div>
 						</div>
@@ -227,9 +227,16 @@
 							</div>
 						</div>
 
+
 						<div class="row">
 							<div class="col-md-12 text-center">
-								<button class="btn btn--alpha"><span>Hazte miembro ahora</span>
+								<button v-if="Object.keys(authUser).length === 0" @click="openPopUpLogin" class="btn btn--alpha">
+						          <span>Hazte miembro ahora</span>
+						        </button>
+
+						        <button v-else class="btn btn--alpha" @click="openPopUpAcount">
+						          <span>Hazte miembro ahora</span>
+						        </button>
 							</div>
 						</div>
 
@@ -245,7 +252,7 @@
 						<div class="col-lg-3 offset-lg-1">
 							<h2>Testimonios</h2>
 							<p>
-								Lorem ipsum dolor sit amet, consecLorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonum
+								Estas son las historias de nuestra gente.
 							</p>
 						</div>
 						<div class="col-lg-7">
