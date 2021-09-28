@@ -570,6 +570,7 @@ let app = new Vue({
 
       let challenge = this.challenges.filter((challenge) => challenge.unit_id == unit && challenge.episode_id == episode)
       this.currentChallenge = challenge[0]
+      this.getTeamLeaderById(this.authUser.team_leader_id)
 
     },
 
@@ -649,7 +650,11 @@ let app = new Vue({
         formData.append('unit', this.currentChallenge.unit_id)
         formData.append('episode', this.currentChallenge.episode_id)
         formData.append('user', this.authUser.id)
+        formData.append('user_name', this.authUser.name)
+        formData.append('user_email', this.authUser.email)
         formData.append('team_leader', this.authUser.team_leader_id)
+        formData.append('team_leader_name', this.teamLeader.name)
+        formData.append('team_leader_email', this.teamLeader.email)
 
         // Limpiar el input file para que este disponible y reseteado en la proxima
         document.getElementById("challengerFile").value=[]

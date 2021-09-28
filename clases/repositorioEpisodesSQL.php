@@ -3,6 +3,15 @@
 require_once( __DIR__ . "/repositorioEpisodes.php" );
 require_once( __DIR__ . "/repositorioUsers.php" );
 
+//Import PHPMailer classes into the global namespace
+//These must be at the top of your script, not inside a function
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\SMTP;
+use PHPMailer\PHPMailer\Exception;
+
+//Load Composer's autoloader
+require __DIR__ . './../vendor/autoload.php';
+
 class RepositorioEpisodesSQL extends repositorioEpisodes
 {
   protected $conexion;
@@ -78,6 +87,7 @@ class RepositorioEpisodesSQL extends repositorioEpisodes
     // 1- Guardar el archivo
     $uploadFiles = $this->uploadFiles($files);
 
+
     $paths_files_array = array_column($uploadFiles, 'path_real');
     $paths_files_json = json_encode($paths_files_array);
 
@@ -121,12 +131,66 @@ class RepositorioEpisodesSQL extends repositorioEpisodes
       return 'Challenger Cargado';
     }
 
+    $template_user = file_get_contents('./../includes/emails/challenger/challenger-upload-to-user.php');
+    $template_client = file_get_contents('./../includes/emails/challenger/challenger-upload-to-client.php');
+    
+    //configuro las variables a remplazar en el template
+    $vars = array(
+      '{leader_name}',
+      '{leader_email}',
+      '{user_name}',
+      '{user_email}',
+      '{comment}',
+      '{date}',
+      '{unit}',
+      '{episode}',
+      '{path_backend}',
+      '{path}'
+    );
+
+    $values = array( 
+      $post['team_leader_name'],
+      $post['team_leader_email'],
+      $post['user_name'],
+      $post['user_email'],
+      $comments,
+      $date = date("Y-m-d"),
+      $unit_number,
+      $episode_number,
+      PATH_BACKEND, 
+      BASE
+    );
+
+    //Remplazamos las variables por las marcas en los templates
+    $template_user = str_replace($vars, $values, $template_user);
+    $template_client = str_replace($vars, $values, $template_client);
+
+    // 3- Enviar mail al Usuario
+    $this->sendmail(
+      $post['team_leader_email'], // Remitente 
+      $post['team_leader_name'], // Nombre Remitente 
+      $post['team_leader_email'], // Responder a:
+      $post['team_leader_name'], // Remitente al nombre: 
+      $post['user_email'], // Destinatario 
+      $post['user_name'], // Nombre del destinatario
+      'Felicitaciones por completar un nuevo desafío.', // Asunto 
+      $template_user // Template usuario
+    );
+
+    // 4- Enviar mail al Team Leader
+    $this->sendmail(
+      $post['user_email'], // Remitente 
+      $post['user_name'], // Nombre Remitente 
+      $post['user_email'], // Responder a:
+      $post['user_name'], // Remitente al nombre: 
+      $post['team_leader_email'], // Destinatario 
+      $post['team_leader_name'], // Nombre del destinatario
+      'Un usuario completó un nuevo desafío.', // Asunto 
+      $template_client // Template usuario
+    );
+
     return true;
-    
-    // 3- Enviar mail al TeamLeader
-    // 4- Enviar mail al Usuario
-    
-    
+
   }
 
   public function saveChallengerInBdd( $resultado, $user_id, $unit_number, $episode_number, $paths_files_json, $comments, $date, $team_leader_id, $uploadFiles ) {
@@ -254,6 +318,31 @@ class RepositorioEpisodesSQL extends repositorioEpisodes
 
       header("HTTP/1.1 500 Internal Server Error"); 
            
+    }
+
+  }
+
+  function sendmail($setFromEmail,$setFromName,$addReplyToEmail,$addReplyToName,$addAddressEmail,$addAddressName,$subject,$template){
+
+    //Create a new PHPMailer instance
+    $mail = new PHPMailer;
+    // Set PHPMailer to use the sendmail transport
+    $mail->isSendmail();
+    //Establecer desde donde será enviado el correo electronico
+    $mail->setFrom($setFromEmail, $setFromName);
+    //Establecer una direccion de correo electronico alternativa para responder
+    $mail->addReplyTo($addReplyToEmail, $addReplyToName);
+    //Establecer a quien será enviado el correo electronico
+    $mail->addAddress($addAddressEmail, $addAddressName);
+    //Establecer el asunto del mensaje
+    $mail->Subject = $subject;
+    //convertir HTML dentro del cuerpo del mensaje
+    $mail->msgHTML($template);
+      //send the message, check for errors
+    if (!$mail->send()) {
+      return false;
+    } else {
+      return true;
     }
 
   }
