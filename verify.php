@@ -1,5 +1,3 @@
-<?php require ('includes/config.inc.php'); ?>
-
 <?php 
 
 	if ( empty($_GET) || !isset($_GET['email']) || !isset($_GET['token']) ) {
