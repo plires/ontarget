@@ -37,6 +37,9 @@
               <li class="nav-item">
                 Team Leader: <span class="float-right">{{ showingUser.name_team_leader }}</span>
               </li>
+              <li class="nav-item">
+                Fecha de registro: <span class="float-right">{{ moment(showingUser.created_at).format('DD/MM/YYYY') }} - {{ moment(showingUser.created_at).fromNow() }}</span>
+              </li>
             </ul>
           </div>
         </div>
