@@ -446,19 +446,23 @@
               <td style="padding: 40px;">
 
                   <h2 class="fallback-font" style="margin: 0 0 5px 0; font-family: 'Montserrat', sans-serif; font-size: 19px; line-height: 29px; color: #575756; text-align: left; font-weight: 700;">
-                      <strong>Felicitaciones, {user_name} <br> ten&eacute;s la unidad {unit} habilitada!!</strong>
+                      <strong>Excelente {user_name}! <br> ten&eacute;s la unidad {unit} habilitada!!</strong>
                   </h2>
 
                   <br>
 
                   <p class="fallback-font" style="margin: 0 0 10px; font-family: 'Montserrat', sans-serif; font-size: 18px; line-height: 28px; color: #575756; text-align: left; font-weight: 400;">
-                    <strong>Soy {team_leader_name}, </strong> acabo de ver y aprobar los desaf&iacute;os que me enviaste. Me alegra contarte que cont&aacute;s con una nueva unidad habilitada en tu plataforma de aprendizaje online. 
+                    <strong>Soy {team_leader_name}, </strong> estoy muy feliz de comentarte que el desafío entregado fue todo un éxito.
                   </p>
 
+                  <p class="fallback-font" style="margin: 0 0 10px; font-family: 'Montserrat', sans-serif; font-size: 18px; line-height: 28px; color: #575756; text-align: left; font-weight: 400;">
+                    Ya cont&aacute;s con una nueva <strong>unidad habilitada</strong> en tu plataforma de aprendizaje online
+                  </p>
+                     
                   <br>
 
                   <p class="fallback-font" style="margin: 0 0 10px; font-family: 'Montserrat', sans-serif; font-size: 18px; line-height: 28px; color: #575756; text-align: center; font-weight: 400;">
-                    <strong>Si, la unidad n&uacute;mero {unit} te est&aacute; esperando!</strong>
+                    <strong>¿Que esperás? la unidad n&uacute;mero {unit} te est&aacute; esperando!</strong>
                   </p>
 
                   <p class="fallback-font" style="margin: 0 0 10px; font-family: 'Montserrat', sans-serif; font-size: 18px; line-height: 28px; color: #575756; text-align: left; font-weight: 400;">
