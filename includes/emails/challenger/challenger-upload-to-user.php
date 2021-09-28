@@ -450,15 +450,15 @@
                   </h2>
 
                   <p class="fallback-font" style="margin: 0 0 10px; font-family: 'Montserrat', sans-serif; font-size: 18px; line-height: 28px; color: #575756; text-align: left; font-weight: 400;">
-                     Te quiero comentar que ya recib&iacute; los archivos que enviaste y te estar&eacute; contactando por los resultados del mismo con el fin de habilitarte una nueva unidad de videos en nuestro <strong>m&eacute;todo On Target</strong>
+                     Te quiero comentar que ya recib&iacute; los archivos que enviaste y te estar&eacute; contactando por los resultados del mismo, con el fin de habilitarte una nueva unidad de videos en nuestro <strong>;&eacute;todo On Target</strong>
                   </p>
 
                   <p class="fallback-font" style="margin: 0 0 10px; font-family: 'Montserrat', sans-serif; font-size: 18px; line-height: 28px; color: #575756; text-align: left; font-weight: 400;">
-                    Record&aacute; que siempre pod&eacute;s contactarme por cualquier duda particular a mi casilla personal {leader_email}.
+                    Record&aacute; que siempre pod&eacute;s contactarme por cualquier duda a mi casilla personal {leader_email}.
                   </p>
 
                   <p class="fallback-font" style="margin: 0 0 10px; font-family: 'Montserrat', sans-serif; font-size: 18px; line-height: 28px; color: #575756; text-align: left; font-weight: 400;">
-                    {user_name}, te felicito nuevamente por completar un nuevo desaf&iacute;o en nuestra plataforma. Estamos en contacto!
+                    {user_name}, te felicito nuevamente por completar un nuevo desaf&iacute;o en nuestra plataforma.<strong>Continua as&iacute;!!</strong>
                   </p>
 
                   <br>
