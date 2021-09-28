@@ -88,7 +88,7 @@
         <div class="container">
           <div class="row mb-2">
             <div class="col-sm-12">
-              <h1>Progreso Global en el Método Ontarget</h1>
+              <h1>Tu Progreso Global en el Método Ontarget</h1>
 
               <div class="progress">
                 <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" :aria-valuenow="percentComplete" aria-valuemin="0" aria-valuemax="100" :style="'width: ' + percentComplete + '%'"></div>
@@ -143,7 +143,7 @@
                     <button 
                       class="btn btn-desafio transition"
                       @click="openModalChallenge(episode.unit_id, episode.number)">
-                        Completá el desafío del capítulo {{ episode.unit_id }}
+                        Completá el desafío del capítulo {{ episode.number }}
                     </button>
                   </div>
 
