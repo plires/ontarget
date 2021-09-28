@@ -1,3 +1,5 @@
+<?php require ('includes/config.inc.php'); ?>
+
 <?php 
 
 	if ( empty($_GET) || !isset($_GET['selector']) || !isset($_GET['validator']) || !isset($_GET['id']) ) {

@@ -1,3 +1,5 @@
+<?php require ('includes/config.inc.php'); ?>
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -230,7 +232,7 @@
 
 						<div class="row">
 							<div class="col-md-12 text-center">
-								<button v-if="Object.keys(authUser).length === 0" @click="openPopUpLogin" class="btn btn--alpha">
+								<button v-if="Object.keys(authUser).length === 0" @click="openPopUpRegister" class="btn btn--alpha">
 						          <span>Hazte miembro ahora</span>
 						        </button>
 

@@ -451,19 +451,19 @@
                   <br>
 
                   <p class="fallback-font" style="margin: 0 0 10px; font-family: 'Montserrat', sans-serif; font-size: 18px; line-height: 28px; color: #575756; text-align: left; font-weight: 400;">
-                    Mi nombre es <strong>{team_leader_name}</strong> y ser&eacute; tu Team Leader personal para <strong>acompañarte y guiarte en tu aprendizaje</strong>, durante cada una de las unidades del <strong>m&eacute;todo On Target.</strong>
+                    Mi nombre es <strong>{team_leader_name}</strong> y ser&eacute; tu Team Leader personal para <strong>acompañarte y guiarte en tu aprendizaje</strong>, durante cada una de las unidades del <strong>M&eacute;todo On Target.</strong>
                   </p>
 
                   <p class="fallback-font" style="margin: 0 0 10px; font-family: 'Montserrat', sans-serif; font-size: 18px; line-height: 28px; color: #575756; text-align: left; font-weight: 400;">
-                    Record&aacute; que siempre podras escribirme a mi mail personal <a href="mailto: {team_leader_email}">{team_leader_email}</a> para darte respuestas o apoyarte en lo que creas necesario.
+                    Record&aacute; que siempre podr&aacute;s escribirme a mi casilla personal <a href="mailto: {team_leader_email}">{team_leader_email}</a> para darte respuestas o apoyarte en lo que creas necesario.
                   </p>
 
                   <p class="fallback-font" style="margin: 0 0 10px; font-family: 'Montserrat', sans-serif; font-size: 18px; line-height: 28px; color: #575756; text-align: left; font-weight: 400;">
-                    Para poder continuar, deber&aacute;s validar tu casilla de email con nuestro sistema, para ello deber&aacute;s hacer click en el bot&oacute;n "Validar mi casilla".
+                    El pr&oacute;ximo paso, es validar tu casilla de email con nuestro sistema, para ello deber&aacute;s hacer click en el bot&oacute;n "Validar mi casilla".
                   </p>
 
                   <p class="fallback-font" style="margin: 0 0 10px; font-family: 'Montserrat', sans-serif; font-size: 18px; line-height: 28px; color: #575756; text-align: left; font-weight: 400;">
-                    {name}, te felicito nuevamente por tu registro en nuestra plataforma. Estamos en contacto!
+                    <strong>{name}, te felicito nuevamente por el registro</strong> en nuestra plataforma. Estamos en contacto!
                   </p>
 
                   <br>

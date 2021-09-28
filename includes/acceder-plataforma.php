@@ -8,7 +8,7 @@
           Sólo necesitas un usuario y contraseña y obtendrás acceso al Método OnTarget, Webinars, Eventos y mucho más para comenzar tu momento de cambio PROFESIONAL.
         </p>
 
-        <button v-if="Object.keys(authUser).length === 0" @click="openPopUpLogin" class="btn btn--alpha">
+        <button v-if="Object.keys(authUser).length === 0" @click="openPopUpRegister" class="btn btn--alpha">
           <span>Hazte miembro ahora</span>
         </button>
 

@@ -1,3 +1,5 @@
+<?php require ('includes/config.inc.php'); ?>
+
 <?php
   session_start();
 

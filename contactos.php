@@ -1,3 +1,5 @@
+<?php require ('includes/config.inc.php'); ?>
+
 <?php
 $name = '';
 $lastname = '';
@@ -149,6 +151,7 @@ $origin = 'Formulario de Contacto Web';
 									class="form-control" 
 									name="comments" 
 									id="comments" 
+									placeholder="Escribí aqui tu consulta" 
 									v-model="comments_contact">
 								</textarea>
 							</div>
@@ -195,8 +198,8 @@ $origin = 'Formulario de Contacto Web';
 									<div class="content_mail">
 										<img class="img-fluid image_no_shadow_rounded" src="img/contacto/icono-mail.png" alt="icono mail">
 										<div class="mail">
-											<a class="transition" href="mailto:contacto@ontarget.com.ar">contacto@ontarget.com.ar</a>
-											<a class="transition" href="mailto:rrhh@ontarget.com.ar">rrhh@ontarget.com.ar</a>
+											<a class="transition" href="mailto:contacto@ontargetonline.com.ar">contacto@ontargetonline.com.ar</a>
+											<a class="transition" href="mailto:rrhh@ontargetonline.com.ar">rrhh@ontargetonline.com.ar</a>
 										</div>									
 									</div>
 

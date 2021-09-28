@@ -274,7 +274,12 @@ class RepositorioUsersSQL extends repositorioUsers
     $stmt = $this->conexion->prepare($sql);
     $stmt->execute();
     $user = $stmt->fetch(PDO::FETCH_ASSOC);
-    $id_next_team_leader = (int)$user['team_leader_id'] + 1;
+
+    if ($user) {
+      $id_next_team_leader = (int)$user['team_leader_id'] + 1;
+    } else {
+      $id_next_team_leader = 1;
+    }
 
     $sql = "SELECT * FROM team_leaders WHERE role = 'Team Leader' ";
     $stmt = $this->conexion->prepare($sql);
@@ -289,7 +294,7 @@ class RepositorioUsersSQL extends repositorioUsers
 
     }
 
-    $sql = "SELECT * FROM team_leaders ORDER BY id ASC LIMIT 1";
+    $sql = "SELECT * FROM team_leaders WHERE role = 'Team Leader' ORDER BY id ASC LIMIT 1";
     $stmt = $this->conexion->prepare($sql);
     $stmt->execute();
     return $stmt->fetch(PDO::FETCH_ASSOC);

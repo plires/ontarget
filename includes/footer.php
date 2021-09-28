@@ -12,9 +12,9 @@
           <a class="transition" href="#">Privacidad</a>
         </div>
         <div class="rrss">
-          <a class="transition" href="#"><i class="transition fab fa-instagram-square"></i></a>
-          <a class="transition" href="#"><i class="transition fab fa-linkedin"></i></a>
-          <a class="transition" href="#"><i class="transition fab fa-facebook-square"></i></a>
+          <a target="_blank" rel="noopener noreferrer" class="transition" href="<?= RRSS_INSTAGRAM ?>"><i class="transition fab fa-instagram-square"></i></a>
+          <a target="_blank" rel="noopener noreferrer" class="transition" href="<?= RRSS_LINKEDIN ?>"><i class="transition fab fa-linkedin"></i></a>
+          <a target="_blank" rel="noopener noreferrer" class="transition" href="<?= RRSS_FACEBOOK ?>"><i class="transition fab fa-facebook-square"></i></a>
         </div>
 
         <a class="transition libre" href="https://librecomunicacion.net/" target="_blank" rel="noopener noreferrer">byLibre</a>

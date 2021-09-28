@@ -5,9 +5,9 @@
 ////////////////////////
 define('URI', $_SERVER['REQUEST_URI']);
 define ('BASE', (!empty($_SERVER['HTTPS']) ? 'https' : 'http') . '://' . $_SERVER['HTTP_HOST'] . '/' );
-define('FACEBOOK', 'facebook.com');
-define('INSTAGRAM', 'instagram.com');
-define('LINKEDIN', 'linkedin.com');
+define('RRSS_FACEBOOK', 'https://www.facebook.com/ontargetonline');
+define('RRSS_INSTAGRAM', 'https://www.instagram.com/ontargetonline/');
+define('RRSS_LINKEDIN', 'https://www.linkedin.com/company/ontargetonline');
 define('PATH_BACKEND', 'http://ontarget.test/backend/');
 
 ////////////////////////

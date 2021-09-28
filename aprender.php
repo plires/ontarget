@@ -1,3 +1,5 @@
+<?php require ('includes/config.inc.php'); ?>
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -227,7 +229,7 @@
 										Nuestro método de aprendizaje es 100% online, contando con la posibilidad de que lo hagas adaptándolo al horario que más te convenga.
 									</p>
 
-									<button v-if="Object.keys(authUser).length === 0" @click="openPopUpLogin" class="btn btn--alpha">
+									<button v-if="Object.keys(authUser).length === 0" @click="openPopUpRegister" class="btn btn--alpha">
 							          <span>Hazte miembro ahora</span>
 							        </button>
 
