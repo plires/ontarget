@@ -446,19 +446,19 @@
               <td style="padding: 40px;">
 
                   <h2 class="fallback-font" style="margin: 0 0 5px 0; font-family: 'Montserrat', sans-serif; font-size: 19px; line-height: 29px; color: #575756; text-align: left; font-weight: 700;">
-                      <strong>Hola {user_name}, Felicitaciones por la entrega de este nuevo desafío.</strong>
+                      <strong>Hola {user_name}, Felicitaciones por la entrega de este nuevo desaf&iacute;o.</strong>
                   </h2>
 
                   <p class="fallback-font" style="margin: 0 0 10px; font-family: 'Montserrat', sans-serif; font-size: 18px; line-height: 28px; color: #575756; text-align: left; font-weight: 400;">
-                     Te quiero comentar que ya recibí los archivos que enviaste y te estaré contactando por los resultados del mismo con el fin de habilitarte una nueva unidad de videos en nuestro <strong>método On Target</strong>
+                     Te quiero comentar que ya recib&iacute; los archivos que enviaste y te estar&eacute; contactando por los resultados del mismo con el fin de habilitarte una nueva unidad de videos en nuestro <strong>m&eacute;todo On Target</strong>
                   </p>
 
                   <p class="fallback-font" style="margin: 0 0 10px; font-family: 'Montserrat', sans-serif; font-size: 18px; line-height: 28px; color: #575756; text-align: left; font-weight: 400;">
-                    Recordá que siempre podés contactarme por cualquier duda particular a mi casilla personal {leader_email}.
+                    Record&aacute; que siempre pod&eacute;s contactarme por cualquier duda particular a mi casilla personal {leader_email}.
                   </p>
 
                   <p class="fallback-font" style="margin: 0 0 10px; font-family: 'Montserrat', sans-serif; font-size: 18px; line-height: 28px; color: #575756; text-align: left; font-weight: 400;">
-                    {user_name}, te felicito nuevamente por completar un nuevo desafío en nuestra plataforma. Estamos en contacto!
+                    {user_name}, te felicito nuevamente por completar un nuevo desaf&iacute;o en nuestra plataforma. Estamos en contacto!
                   </p>
 
                   <br>
@@ -468,7 +468,7 @@
                   <hr>
 
                   <h3 class="fallback-font" style="margin: 0 0 10px 0; font-family: 'Montserrat', sans-serif; font-size: 16px; line-height: 26px; color: #575756; text-align: center; font-weight: 700;">
-                      <strong>DATOS DEL DESAFÍO ENVIADO:</strong>
+                      <strong>DATOS DEL DESAF&iacute;O ENVIADO:</strong>
                   </h3>
 
                   <p class="fallback-font" style="margin: 0 0 10px; font-family: 'Montserrat', sans-serif; font-size: 16px; line-height: 26px; color: #575756; text-align: left; font-weight: 400;">
@@ -516,7 +516,7 @@
                   <table align="center" role="presentation" cellspacing="0" cellpadding="0" border="0" style="margin: auto;">
                       <tr>
                           <td class="button-td button-td-primary" style="border-radius: 4px; background: #FFFFFF;">
-                              <a class="fallback-font button-a button-a-primary" target="_blank" rel="noopener" href="{path}" style="background: #FFFFFF; border: 1px solid #FFFFFF; font-family: 'Montserrat', sans-serif; font-size: 18px; line-height: 28px; font-weight: 700; text-decoration: none; padding: 10px 20px; color: #6044ff; display: block; border-radius: 4px;">MÉTODO ON TARGET
+                              <a class="fallback-font button-a button-a-primary" target="_blank" rel="noopener" href="{path}" style="background: #FFFFFF; border: 1px solid #FFFFFF; font-family: 'Montserrat', sans-serif; font-size: 18px; line-height: 28px; font-weight: 700; text-decoration: none; padding: 10px 20px; color: #6044ff; display: block; border-radius: 4px;">M&Eacute;TODO ON TARGET
                               </a>
                           </td>
                       </tr>

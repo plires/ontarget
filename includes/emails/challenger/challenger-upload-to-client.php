@@ -403,7 +403,7 @@
 
         <!-- Texto de encabezado oculto visualmente : BEGIN -->
         <div class="fallback-font" style="display: none; font-size: 1px; line-height: 1px; max-height: 0px; max-width: 0px; opacity: 0; overflow: hidden; mso-hide: all; font-family: 'Montserrat', sans-serif;">
-            nuevo desafío cargado
+            nuevo desaf&iacute;o cargado
         </div>
         <!-- Texto de encabezado oculto visualmente : END -->
 
@@ -434,7 +434,7 @@
               <td style="padding: 10px; vertical-align: middle;">
                   
                   <h1 class="fallback-font" style="margin: 0px!important; font-family: 'Montserrat', sans-serif; font-size: 28px; color: #FFFFFF; text-align: center; font-weight: 700;">
-                      <strong>Nuevo Desafío cargado</strong>
+                      <strong>Nuevo Desaf&iacute;o cargado</strong>
                   </h1>
 
               </td>
@@ -450,13 +450,13 @@
                   </h2>
 
                   <p class="fallback-font" style="margin: 0 0 10px; font-family: 'Montserrat', sans-serif; font-size: 18px; line-height: 28px; color: #575756; text-align: left; font-weight: 400;">
-                    El usuario {user_mail} cargó un nuevo desafío y necesita que lo evalues para habilitarle una nueva unidad.
+                    El usuario {user_name} carg&oacute; un nuevo desaf&iacute;o y necesita que lo evalues para habilitarle una nueva unidad.
                   </p>
                   <br>
                   <br>
 
                   <h3 class="fallback-font" style="margin: 0 0 10px 0; font-family: 'Montserrat', sans-serif; font-size: 16px; line-height: 26px; color: #575756; text-align: center; font-weight: 700;">
-                      <strong>DATOS DEL DESAFÍO CARGADO:</strong>
+                      <strong>DATOS DEL DESAF&iacute;O CARGADO:</strong>
                   </h3>
 
                   <p class="fallback-font" style="margin: 0 0 10px; font-family: 'Montserrat', sans-serif; font-size: 16px; line-height: 26px; color: #575756; text-align: left; font-weight: 400;">
@@ -482,7 +482,7 @@
                   <hr>
 
                   <p class="fallback-font" style="margin: 0 0 10px; font-family: 'Montserrat', sans-serif; font-size: 14px; line-height: 24px; color: grey; text-align: center; font-weight: 400; margin-top: 15px;">
-                      Para poder descargar los archivos subidos por {user_name}, deberás ingresar a tu backend
+                      Para poder descargar los archivos subidos por {user_name}, deber&aacute;s ingresar a tu backend
                   </p>
 
               </td>

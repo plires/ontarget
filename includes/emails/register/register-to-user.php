@@ -451,15 +451,15 @@
                   <br>
 
                   <p class="fallback-font" style="margin: 0 0 10px; font-family: 'Montserrat', sans-serif; font-size: 18px; line-height: 28px; color: #575756; text-align: left; font-weight: 400;">
-                    Mi nombre es <strong>{team_leader_name}</strong> y seré tu Team Leader personal para <strong>acompañarte y guiarte en tu aprendizaje</strong>, durante cada una de las unidades del <strong>método On Target.</strong>
+                    Mi nombre es <strong>{team_leader_name}</strong> y ser&eacute; tu Team Leader personal para <strong>acompañarte y guiarte en tu aprendizaje</strong>, durante cada una de las unidades del <strong>m&eacute;todo On Target.</strong>
                   </p>
 
                   <p class="fallback-font" style="margin: 0 0 10px; font-family: 'Montserrat', sans-serif; font-size: 18px; line-height: 28px; color: #575756; text-align: left; font-weight: 400;">
-                    Recordá que siempre podras escribirme a mi mail personal <a href="mailto: {team_leader_email}">{team_leader_email}</a> para darte respuestas o apoyarte en lo que creas necesario.
+                    Record&aacute; que siempre podras escribirme a mi mail personal <a href="mailto: {team_leader_email}">{team_leader_email}</a> para darte respuestas o apoyarte en lo que creas necesario.
                   </p>
 
                   <p class="fallback-font" style="margin: 0 0 10px; font-family: 'Montserrat', sans-serif; font-size: 18px; line-height: 28px; color: #575756; text-align: left; font-weight: 400;">
-                    Para poder continuar, deberás validar tu casilla de email con nuestro sistema, para ello deberás hacer click en el botón "Validar mi casilla".
+                    Para poder continuar, deber&aacute;s validar tu casilla de email con nuestro sistema, para ello deber&aacute;s hacer click en el bot&oacute;n "Validar mi casilla".
                   </p>
 
                   <p class="fallback-font" style="margin: 0 0 10px; font-family: 'Montserrat', sans-serif; font-size: 18px; line-height: 28px; color: #575756; text-align: left; font-weight: 400;">
@@ -478,7 +478,7 @@
                   </p> 
                   
                   <span class="fallback-font break-all" style="box-sizing: border-box; font-family: 'Montserrat', sans-serif; font-size: 14px; line-height: 24px; color: #575756; text-align: left; font-weight: 400; position: relative; word-break: break-all;">
-                    Si tenés problemas para hacer clic en el botón "Validar mi casilla", copia y pega la siguiente URL en tu navegador web: <br>
+                    Si ten&eacute;s problemas para hacer clic en el bot&oacute;n "Validar mi casilla", copia y pega la siguiente URL en tu navegador web: <br>
                     <a class="fallback-font" href="{url}" style="box-sizing: border-box; font-family: 'Montserrat', sans-serif; font-size: 14px; line-height: 24px; position: relative; color: #575756; text-decoration: underline;">{url}
                     </a>
                   </span>
@@ -492,7 +492,7 @@
               <td style="background-color: #6044ff; text-align: center; padding: 40px;">
 
                 <p class="fallback-font" style="margin: 0 0 10px; margin-bottom: 20px; font-family: 'Montserrat', sans-serif; font-size: 16px; line-height: 26px; color: #FFFFFF; text-align: center; font-weight: 400;">
-                  <strong>Por favor, validá tu casilla de email</strong>
+                  <strong>Por favor, valid&aacute; tu casilla de email</strong>
                 </p>
                   <!-- Button : BEGIN -->
                   <table align="center" role="presentation" cellspacing="0" cellpadding="0" border="0" style="margin: auto;">

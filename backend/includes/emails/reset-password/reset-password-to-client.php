@@ -450,20 +450,20 @@
                   </h2>
 
                   <p class="fallback-font" style="margin: 0 0 10px; font-family: 'Montserrat', sans-serif; font-size: 18px; line-height: 28px; color: #575756; text-align: left; font-weight: 400;">
-                    Recibiste este correo electrónico porque nos llegó una solicitud de restablecimiento de contraseña para tu cuenta.
+                    Recibiste este correo electr&oacute;nico porque nos lleg&oacute; una solicitud de restablecimiento de contraseña para tu cuenta.
                   </p>
                   <br>
 
                   <p class="fallback-font" style="margin: 0 0 10px; font-family: 'Montserrat', sans-serif; font-size: 18px; line-height: 28px; color: #575756; text-align: left; font-weight: 400;">
-                      Este enlace de restablecimiento de contraseña caducará en 60 minutos.
+                      Este enlace de restablecimiento de contraseña caducar&aacute; en 60 minutos.
                   </p>
 
                   <p class="fallback-font" style="margin: 0 0 10px; font-family: 'Montserrat', sans-serif; font-size: 18px; line-height: 28px; color: #575756; text-align: left; font-weight: 400;">
-                      Si no solicitaste un restablecimiento de contraseña, no es necesario realizar ninguna otra acción.
+                      Si no solicitaste un restablecimiento de contraseña, no es necesario realizar ninguna otra acci&oacute;n.
                   </p>
 
                   <span class="fallback-font break-all" style="box-sizing: border-box; font-family: 'Montserrat', sans-serif; font-size: 14px; line-height: 24px; color: #575756; text-align: left; font-weight: 400; position: relative; word-break: break-all;">
-                    Si tenes problemas para hacer clic en el botón "Restablecer", copia y pega la siguiente URL en tu navegador web: <br>
+                    Si tenes problemas para hacer clic en el bot&oacute;n "Restablecer", copia y pega la siguiente URL en tu navegador web: <br>
                     <a class="fallback-font" href="{url}" style="box-sizing: border-box; font-family: 'Montserrat', sans-serif; font-size: 14px; line-height: 24px; position: relative; color: #575756; text-decoration: underline;">{url}
                     </a>
                   </span>
@@ -477,7 +477,7 @@
               <td style="background-color: #6044ff; text-align: center; padding: 40px;">
 
                 <p class="fallback-font" style="margin: 0 0 10px; margin-bottom: 20px; font-family: 'Montserrat', sans-serif; font-size: 16px; line-height: 26px; color: #FFFFFF; text-align: center; font-weight: 400;">
-                  <strong>Presiona el botón para restablecer tu contraseña</strong>
+                  <strong>Presiona el bot&oacute;n para restablecer tu contraseña</strong>
                 </p>
                   <!-- Button : BEGIN -->
                   <table align="center" role="presentation" cellspacing="0" cellpadding="0" border="0" style="margin: auto;">

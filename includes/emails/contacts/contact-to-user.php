@@ -450,7 +450,7 @@
                   </h2>
 
                   <p class="fallback-font" style="margin: 0 0 10px; font-family: 'Montserrat', sans-serif; font-size: 18px; line-height: 28px; color: #575756; text-align: left; font-weight: 400;">
-                    Desde On Target queremos agradecer tu mensaje. En poco tiempo estará respondiendo a tu consulta un asesor personal.
+                    Desde On Target queremos agradecer tu mensaje. En poco tiempo estar&aacute; respondiendo a tu consulta un asesor personal.
                   </p>
                   <br>
                   <br>
@@ -472,7 +472,7 @@
                   </p>
 
                   <p class="fallback-font" style="margin: 0 0 10px; font-family: 'Montserrat', sans-serif; font-size: 16px; line-height: 26px; color: #575756; text-align: left; font-weight: 400;">
-                      <strong>Teléfono:</strong> {phone}
+                      <strong>Tel&eacute;fono:</strong> {phone}
                   </p>
 
                   <p class="fallback-font" style="margin: 0 0 10px; font-family: 'Montserrat', sans-serif; font-size: 16px; line-height: 26px; color: #575756; text-align: left; font-weight: 400;">
@@ -488,13 +488,13 @@
               <td style="background-color: #6044ff; text-align: center; padding: 40px;">
 
                 <p class="fallback-font" style="margin: 0 0 10px; margin-bottom: 20px; font-family: 'Montserrat', sans-serif; font-size: 16px; line-height: 26px; color: #FFFFFF; text-align: center; font-weight: 400;">
-                  <strong>¿Conocés nuestra plataforma de aprendizaje?</strong>
+                  <strong>¿Conoc&eacute;s nuestra plataforma de aprendizaje?</strong>
                 </p>
                   <!-- Button : BEGIN -->
                   <table align="center" role="presentation" cellspacing="0" cellpadding="0" border="0" style="margin: auto;">
                       <tr>
                           <td class="button-td button-td-primary" style="border-radius: 4px; background: #FFFFFF;">
-                              <a class="fallback-font button-a button-a-primary" target="_blank" rel="noopener" href="#" style="background: #FFFFFF; border: 1px solid #FFFFFF; font-family: 'Montserrat', sans-serif; font-size: 18px; line-height: 28px; font-weight: 700; text-decoration: none; padding: 10px 20px; color: #6044ff; display: block; border-radius: 4px;">INGRESÁ
+                              <a class="fallback-font button-a button-a-primary" target="_blank" rel="noopener" href="#" style="background: #FFFFFF; border: 1px solid #FFFFFF; font-family: 'Montserrat', sans-serif; font-size: 18px; line-height: 28px; font-weight: 700; text-decoration: none; padding: 10px 20px; color: #6044ff; display: block; border-radius: 4px;">INGRES&aacute;
                               </a>
                           </td>
                       </tr>

@@ -434,7 +434,7 @@
               <td style="padding: 10px; vertical-align: middle;">
                   
                   <h1 class="fallback-font" style="margin: 0px!important; font-family: 'Montserrat', sans-serif; font-size: 28px; color: #FFFFFF; text-align: center; font-weight: 700;">
-                      <strong>Tenés la unidad {unit} habilitada</strong>
+                      <strong>Ten&eacute;s la unidad {unit} habilitada</strong>
                   </h1>
 
               </td>
@@ -446,23 +446,23 @@
               <td style="padding: 40px;">
 
                   <h2 class="fallback-font" style="margin: 0 0 5px 0; font-family: 'Montserrat', sans-serif; font-size: 19px; line-height: 29px; color: #575756; text-align: left; font-weight: 700;">
-                      <strong>Felicitaciones, {user_name} <br> tenés la unidad {unit} habilitada!!</strong>
+                      <strong>Felicitaciones, {user_name} <br> ten&eacute;s la unidad {unit} habilitada!!</strong>
                   </h2>
 
                   <br>
 
                   <p class="fallback-font" style="margin: 0 0 10px; font-family: 'Montserrat', sans-serif; font-size: 18px; line-height: 28px; color: #575756; text-align: left; font-weight: 400;">
-                    <strong>Soy {team_leader_name}, </strong> acabo de ver y aprobar los desafíos que me enviaste. Me alegra contarte que contás con una nueva unidad habilitada en tu plataforma de aprendizaje online. 
+                    <strong>Soy {team_leader_name}, </strong> acabo de ver y aprobar los desaf&iacute;os que me enviaste. Me alegra contarte que cont&aacute;s con una nueva unidad habilitada en tu plataforma de aprendizaje online. 
                   </p>
 
                   <br>
 
                   <p class="fallback-font" style="margin: 0 0 10px; font-family: 'Montserrat', sans-serif; font-size: 18px; line-height: 28px; color: #575756; text-align: center; font-weight: 400;">
-                    <strong>Si, la unidad número {unit} te está esperando!</strong>
+                    <strong>Si, la unidad n&uacute;mero {unit} te est&aacute; esperando!</strong>
                   </p>
 
                   <p class="fallback-font" style="margin: 0 0 10px; font-family: 'Montserrat', sans-serif; font-size: 18px; line-height: 28px; color: #575756; text-align: left; font-weight: 400;">
-                    Recordá que podés escribirme a <a href="mailto: {team_leader_email}">{team_leader_email}</a> cuando necesites de mi ayuda.
+                    Record&aacute; que pod&eacute;s escribirme a <a href="mailto: {team_leader_email}">{team_leader_email}</a> cuando necesites de mi ayuda.
                   </p>
 
                   <br>
@@ -484,13 +484,13 @@
               <td style="background-color: #6044ff; text-align: center; padding: 40px;">
 
                 <p class="fallback-font" style="margin: 0 0 10px; margin-bottom: 20px; font-family: 'Montserrat', sans-serif; font-size: 16px; line-height: 26px; color: #FFFFFF; text-align: center; font-weight: 400;">
-                  <strong>Podés ver tu nueva unidad ya mismo</strong>
+                  <strong>Pod&eacute;s ver tu nueva unidad ya mismo</strong>
                 </p>
                   <!-- Button : BEGIN -->
                   <table align="center" role="presentation" cellspacing="0" cellpadding="0" border="0" style="margin: auto;">
                       <tr>
                           <td class="button-td button-td-primary" style="border-radius: 4px; background: #FFFFFF;">
-                              <a class="fallback-font button-a button-a-primary" target="_blank" rel="noopener" href="{path_dashboard}" style="background: #FFFFFF; border: 1px solid #FFFFFF; font-family: 'Montserrat', sans-serif; font-size: 18px; line-height: 28px; font-weight: 700; text-decoration: none; padding: 10px 20px; color: #6044ff; display: block; border-radius: 4px;">Restablecer
+                              <a class="fallback-font button-a button-a-primary" target="_blank" rel="noopener" href="{path_dashboard}" style="background: #FFFFFF; border: 1px solid #FFFFFF; font-family: 'Montserrat', sans-serif; font-size: 18px; line-height: 28px; font-weight: 700; text-decoration: none; padding: 10px 20px; color: #6044ff; display: block; border-radius: 4px;">Ver Unidad
                               </a>
                           </td>
                       </tr>
