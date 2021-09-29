@@ -34,9 +34,9 @@ let app = new Vue({
           this.authUser = response.data
 
           if (this.authUser.role !== 'Admin') {
-            this.usersFiltered = this.users.filter((user) => user.team_leader_id == this.authUser.id && user.token == '' ).sort().sort((a, b) => a.id - b.id)
+            this.usersFiltered = this.users.filter((user) => user.team_leader_id == this.authUser.id && user.token == null ).sort().sort((a, b) => a.id - b.id)
           } else {
-            this.usersFiltered = this.users.filter((user) => user.token == '' ).sort().sort((a, b) => a.id - b.id)
+            this.usersFiltered = this.users.filter((user) => user.token == null ).sort().sort((a, b) => a.id - b.id)
           }
 
         } else {
