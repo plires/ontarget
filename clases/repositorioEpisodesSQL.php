@@ -333,7 +333,7 @@ class RepositorioEpisodesSQL extends repositorioEpisodes
 
     } else {
 
-      $mail->SMTPDebug = SMTP::DEBUG_SERVER;
+      // $mail->SMTPDebug = SMTP::DEBUG_SERVER;
       // $mail->SMTPDebug = 4;
       $mail->isSMTP();
       $mail->Host       = SMTP;
