@@ -1,7 +1,7 @@
-<?php require ('includes/config.inc.php'); ?>
-
 <?php
-  session_start();
+session_start();
+
+  require ('includes/config.inc.php');
 
   if ( !isset($_SESSION['user']) ) {
     session_destroy();
