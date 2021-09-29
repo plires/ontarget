@@ -9,6 +9,7 @@ define('RRSS_FACEBOOK', 'https://www.facebook.com/ontargetonline');
 define('RRSS_INSTAGRAM', 'https://www.instagram.com/ontargetonline/');
 define('RRSS_LINKEDIN', 'https://www.linkedin.com/company/ontargetonline');
 define('PATH_BACKEND', 'http://ontarget.test/backend/');
+define('ENVIRONMENT', 'local');
 
 ////////////////////////
 ///Valores de DB Remota

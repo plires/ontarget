@@ -326,8 +326,33 @@ class RepositorioEpisodesSQL extends repositorioEpisodes
 
     //Create a new PHPMailer instance
     $mail = new PHPMailer;
-    // Set PHPMailer to use the sendmail transport
-    $mail->isSendmail();
+
+    if (ENVIRONMENT === 'local') {
+
+      $mail->isSendmail();
+
+    } else {
+
+      $mail->SMTPDebug = SMTP::DEBUG_SERVER;
+      // $mail->SMTPDebug = 4;
+      $mail->isSMTP();
+      $mail->Host       = SMTP;
+      $mail->SMTPAuth   = true; 
+      $mail->Username   = USERNAME; 
+      $mail->Password   = PASSWORD; 
+      $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;  
+      $mail->Port       = EMAIL_PORT;
+      $mail->CharSet    = EMAIL_CHARSET;
+      $mail->SMTPOptions = array(
+          'ssl' => array(
+              'verify_peer' => false,
+              'verify_peer_name' => false,
+              'allow_self_signed' => true
+          )
+      );
+
+    }
+
     //Establecer desde donde será enviado el correo electronico
     $mail->setFrom($setFromEmail, $setFromName);
     //Establecer una direccion de correo electronico alternativa para responder
