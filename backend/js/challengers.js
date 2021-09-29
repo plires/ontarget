@@ -20,7 +20,6 @@ let app = new Vue({
 
   mounted() {
     this.getUsers()
-    this.getChallengers()
   },
 
   methods: {
@@ -33,8 +32,10 @@ let app = new Vue({
 
           if (this.authUser.role !== 'Admin') {
             this.usersFiltered = this.users.filter((user) => user.team_leader_id == this.authUser.id && user.token == null ).sort().sort((a, b) => a.id - b.id)
+            this.getChallengers()
           } else {
             this.usersFiltered = this.users.filter((user) => user.token == null ).sort().sort((a, b) => a.id - b.id)
+            this.getChallengers()
           }
 
         } else {
@@ -66,8 +67,14 @@ let app = new Vue({
 
       await axios.get('php/get-challengers.php')
       .then(response => {
-        this.challenges = response.data.sort((a, b) => a.created_at - b.created_at)
-        this.challenges_backup = this.challenges
+        this.challenges_backup = response.data
+
+        if (this.authUser.role !== 'Admin') {
+          this.challenges = this.challenges_backup.filter((challenge) => challenge.team_leader_id == this.authUser.id).sort((a, b) => a.created_at - b.created_at)
+        } else {
+          this.challenges = this.challenges_backup.sort((a, b) => a.created_at - b.created_at)
+        }
+        
         this.initTable()
       })
       .catch(error => {

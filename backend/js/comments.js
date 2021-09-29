@@ -22,7 +22,6 @@ let app = new Vue({
 
   mounted() {
     this.getUsers()
-    this.getComments()
   },
 
   methods: {
@@ -35,8 +34,10 @@ let app = new Vue({
 
           if (this.authUser.role !== 'Admin') {
             this.usersFiltered = this.users.filter((user) => user.team_leader_id == this.authUser.id && user.token == null ).sort().sort((a, b) => a.id - b.id)
+            this.getComments()            
           } else {
             this.usersFiltered = this.users.filter((user) => user.token == null ).sort().sort((a, b) => a.id - b.id)
+            this.getComments()
           }
 
         } else {
@@ -68,8 +69,14 @@ let app = new Vue({
 
       await axios.get('php/get-comments.php')
       .then(response => {
-        this.comments = response.data.sort((a, b) => a.created_at - b.created_at)
-        this.comments_backup = this.comments
+        this.comments_backup = response.data
+
+        if (this.authUser.role !== 'Admin') {
+          this.comments = this.comments_backup.filter((comment) => comment.team_leader_id == this.authUser.id).sort((a, b) => a.created_at - b.created_at)
+        } else {
+          this.comments = this.comments_backup.sort((a, b) => a.created_at - b.created_at)          
+        }
+        
         this.initTable()
       })
       .catch(error => {
