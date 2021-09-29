@@ -35,7 +35,7 @@
     </div>
 
     <div class="card-body">
-      <p class="login-box-msg">¿Olvidaste tu contraseña? Aquí puede recuperar fácilmente una nueva contraseña.</p>
+      <p class="login-box-msg">¿Olvidaste tu contraseña? Ingresá tu email registrado y recuperala facilmente</p>
       <form method="post">
         <div class="input-group mb-3">
           <input 

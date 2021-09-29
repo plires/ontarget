@@ -152,8 +152,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                     <span class="sr-only">Toggle Dropdown</span>
                                   </button>
                                   <div class="dropdown-menu" role="menu" style="">
-                                    <button @click="getChallengerByUser(user.id)" class="dropdown-item">Ver Entregas Realizadas</button>
-                                    <button @click="getCommentsByUser(user.id)" class="dropdown-item">Ver Comentarios Enviados</button>
+                                    <button @click="getChallengerByUser(user.id)" class="dropdown-item">Ver Entregas Pendientes</button>
+                                    <button @click="getCommentsByUser(user.id)" class="dropdown-item">Ver Comentarios Pendientes</button>
                                     <button @click="viewUserData(user.id)" class="dropdown-item">Ver Datos del Usuario</button>
                                     <div class="dropdown-divider"></div>
                                     <button @click="openModalUnitsAuthorized(user.id)" class="dropdown-item">Cambiar Unidades Autorizadas</button>
