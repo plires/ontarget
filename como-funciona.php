@@ -3,6 +3,9 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
+	<!-- Tag Manager Head -->
+	<?php include_once("./includes/tag_manager_head.php"); ?>
+	
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta name="description" content="Bienvenido al Método OnTarget, queremos presentarte a todo nuestro equipo, el que te va a guiar en cada paso del método. Te explicamos en esta sección como funciona">
@@ -19,6 +22,9 @@
 	<link rel="stylesheet" href="css/app.css">
 </head>
 <body>
+	<!-- Tag Manager Body -->
+	<?php include_once("./includes/tag_manager_body.php"); ?>
+	
 
 	<div id="app">
 

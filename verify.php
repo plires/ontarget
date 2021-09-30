@@ -26,6 +26,9 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
+	<!-- Tag Manager Head -->
+	<?php include_once("./includes/tag_manager_head.php"); ?>
+	
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta name="description" content="Nuestro Método On Target es un camino sólido para la formación de nuevos profesionales en el mercado asegurador. Seccion de verificacion de casilla de correo del usuario">
@@ -42,6 +45,9 @@
 	<link rel="stylesheet" href="css/app.css">
 </head>
 <body>
+	<!-- Tag Manager Body -->
+	<?php include_once("./includes/tag_manager_body.php"); ?>
+	
 
 	<div id="app">
 
