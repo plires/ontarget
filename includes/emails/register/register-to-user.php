@@ -423,7 +423,7 @@
           <tr>
               <td style="vertical-align: middle;">
                   
-                  <img src="https://plires.com.ar/clientes/ontarget/email/header-registro.jpg" style="margin:0; padding:0; border:none; display:block; width: 100%; height: auto;" border="0" alt="header" />
+                  <img src="https://ontargetonline.com.ar/img/email/header-registro.jpg" style="margin:0; padding:0; border:none; display:block; width: 100%; height: auto;" border="0" alt="header" />
 
               </td>
           </tr>
@@ -513,15 +513,15 @@
               <td align="center"  style="background-color: #FFFFFF;padding: 10px;">
                 
                 <a target="_blank" rel="noopener noreferrer" href="#">
-                  <img src="https://plires.com.ar/clientes/ontarget/email/facebook.png" style="margin:0; margin-right: 20px; padding:0; border:none; display:inline-block; width: 32px; height: auto;" border="0" alt="facebook" />
+                  <img src="https://ontargetonline.com.ar/img/email/facebook.png" style="margin:0; margin-right: 20px; padding:0; border:none; display:inline-block; width: 32px; height: auto;" border="0" alt="facebook" />
                 </a>
 
                 <a target="_blank" rel="noopener noreferrer" href="#">
-                  <img src="https://plires.com.ar/clientes/ontarget/email/instagram.png" style="margin:0; margin-right: 20px; padding:0; border:none; display:inline-block; width: 32px; height: auto;" border="0" alt="instagram" />
+                  <img src="https://ontargetonline.com.ar/img/email/instagram.png" style="margin:0; margin-right: 20px; padding:0; border:none; display:inline-block; width: 32px; height: auto;" border="0" alt="instagram" />
                 </a>
 
                 <a target="_blank" rel="noopener noreferrer" href="#">
-                  <img src="https://plires.com.ar/clientes/ontarget/email/linkedin.png" style="margin:0; padding:0; border:none; display:inline-block; width: 32px; height: auto;" border="0" alt="linkedin" />
+                  <img src="https://ontargetonline.com.ar/img/email/linkedin.png" style="margin:0; padding:0; border:none; display:inline-block; width: 32px; height: auto;" border="0" alt="linkedin" />
                 </a>
                   
               </td>
