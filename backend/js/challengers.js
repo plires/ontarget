@@ -25,6 +25,8 @@ let app = new Vue({
   methods: {
 
     async getAuthUser(id = false) {
+
+      this.loading()
       await axios.get('php/get-auth-user.php')
       .then(response => {
         if (response.data) {
@@ -38,35 +40,48 @@ let app = new Vue({
             this.getChallengers()
           }
 
+          this.loading()
+
         } else {
+
           this.errors.push('Hubo un problema al loeguear al usuario. Refrescá la página o logueate nuevamente.')
           this.authUser = {}
+          this.loading()
+
         }
 
       })
       .catch(error => {
         this.errors.push('Existe un problema en el servidor. Intente mas tarde por favor')
+        this.loading()
       })
 
     },
 
     async getUsers() {
 
+      this.loading()
       await axios.get('php/get-users.php')
       .then(response => {
+
         this.users = response.data
         this.getAuthUser()
+        this.loading()
+
       })
       .catch(error => {
         this.errors.push('Existe un problema en el servidor. Intente mas tarde por favor')
+        this.loading()
       })
 
     },
 
      async getChallengers() {
 
+      this.loading()
       await axios.get('php/get-challengers.php')
       .then(response => {
+
         this.challenges_backup = response.data
 
         if (this.authUser.role !== 'Admin') {
@@ -74,11 +89,14 @@ let app = new Vue({
         } else {
           this.challenges = this.challenges_backup.sort((a, b) => a.created_at - b.created_at)
         }
-        
+
+        this.loading()        
         this.initTable()
+
       })
       .catch(error => {
         this.errors.push('Existe un problema en el servidor. Intente mas tarde por favor')
+        this.loading()
       })
 
     },
@@ -160,6 +178,10 @@ let app = new Vue({
     cleanMsgs() {
       this.msg = ''
     },
+
+    loading() {
+      $('#loading').toggleClass('show_spinner');
+    }
 
   },
   computed: {

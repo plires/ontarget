@@ -28,10 +28,14 @@ let app = new Vue({
   methods: {
 
     async getAuthUser(id = false) {
+
+      this.loading()
       await axios.get('php/get-auth-user.php')
       .then(response => {
+
         if (response.data) {
           this.authUser = response.data
+          this.loading()
 
           if (this.authUser.role !== 'Admin') {
             this.usersFiltered = this.users.filter((user) => user.team_leader_id == this.authUser.id && user.token == null ).sort().sort((a, b) => a.id - b.id)
@@ -58,25 +62,35 @@ let app = new Vue({
 
     async getUsers() {
 
+      this.loading()
       await axios.get('php/get-users.php')
       .then(response => {
+
         this.users = response.data
         this.getAuthUser()
+        this.loading()
+
       })
       .catch(error => {
         this.errors.push('Existe un problema en el servidor. Intente mas tarde por favor')
+        this.loading()
       })
 
     },
 
     async getChallengers() {
 
+      this.loading()
       await axios.get('php/get-challengers.php')
       .then(response => {
+
         this.challengers = response.data
+        this.loading()
+
       })
       .catch(error => {
         this.errors.push('Existe un problema en el servidor. Intente mas tarde por favor')
+        this.loading()
       })
 
     },
@@ -117,6 +131,7 @@ let app = new Vue({
       var formData = new FormData();
       formData.append('id', id)
 
+      this.loading()
       await axios.post('php/get-challenger-by-user.php', formData)
       .then(response => {
 
@@ -127,14 +142,19 @@ let app = new Vue({
           this.showingUser = user[0]
           this.challengesUnapprovedTheCurrentUser = this.challengesOfTheCurrentUser.filter((challenger) => challenger.approved == 0)
           $('#modalChallengersUser').modal('toggle')
+          this.loading()
 
         } else {
+
           this.errors.push('Ops.. Intente nuevamente por favor')
+          this.loading()
+
         }
 
       })
       .catch(error => {
         this.errors.push('Existe un problema en el servidor. Intente mas tarde por favor')
+        this.loading()
       })
 
     },
@@ -149,6 +169,7 @@ let app = new Vue({
       formData.append('team_leader_email', this.authUser.email)
       formData.append('unit', $('#selectAuthorizedUnits').val())
 
+      this.loading()
       await axios.post('php/change-units-authorized-user.php', formData)
       .then(response => {
 
@@ -156,17 +177,20 @@ let app = new Vue({
 
           this.msg = 'Se actualizaron las unidades autorizadas para ' + this.showingUser.name
           $('#modalUnitsAuthorized').modal('toggle')
+          this.loading()
           this.getUsers()
 
         } else {
 
           this.errors.push('Ops.. Intente nuevamente por favor')
+          this.loading()
 
         }
 
       })
       .catch(error => {
         this.errors.push('Existe un problema en el servidor. Intente mas tarde por favor')
+        this.loading()
       })
 
     },
@@ -176,6 +200,7 @@ let app = new Vue({
       var formData = new FormData();
       formData.append('id', id)
 
+      this.loading()
       await axios.post('php/get-comments-by-user.php', formData)
       .then(response => {
 
@@ -184,14 +209,19 @@ let app = new Vue({
           this.commentsOfTheCurrentUser = response.data
           this.commentsUnreadOfTheCurrentUser = this.commentsOfTheCurrentUser.filter((comment) => comment.unread == 1)
           $('#modalLastComments').modal('toggle')
+          this.loading()
 
         } else {
+
           this.errors.push('Ops.. Intente nuevamente por favor')
+          this.loading()
+
         }
 
       })
       .catch(error => {
         this.errors.push('Existe un problema en el servidor. Intente mas tarde por favor')
+        this.loading()
       })
 
     },
@@ -201,6 +231,7 @@ let app = new Vue({
       var formData = new FormData();
       formData.append('id', id)
 
+      this.loading()
       await axios.post('php/mark-read-comment.php', formData)
       .then(response => {
 
@@ -208,6 +239,7 @@ let app = new Vue({
 
           this.msg = 'El mensaje se marco como leído.'
           this.commentsUnreadOfTheCurrentUser.splice( index, 1 )
+          this.loading()
 
           if (this.commentsUnreadOfTheCurrentUser.length == 0) {
 
@@ -215,26 +247,31 @@ let app = new Vue({
             // que este usuario no tiene comentarios pendientes de lectura
             formData.append('id', userId)   
 
+            this.loading()
             axios.post('php/update-comments-pending-user.php', formData)
             .then(response => {
 
               app.msg = 'Ese fue el último mensaje de este usuario.'
               $('#btn_pending_comments_user_' + userId).remove()
+              this.loading()
 
             })
             .catch(error => {
               app.errors.push('Existe un problema en el servidor. Intente mas tarde por favor')
+              this.loading()
             })
 
           }
 
         } else {
           this.errors.push('Ops.. Intente nuevamente por favor')
+          this.loading()
         }
 
       })
       .catch(error => {
         this.errors.push('Existe un problema en el servidor. Intente mas tarde por favor')
+        this.loading()
       })
 
     },
@@ -244,6 +281,7 @@ let app = new Vue({
       var formData = new FormData();
       formData.append('id', id)
 
+      this.loading()
       await axios.post('php/mark-read-all-comments.php', formData)
       .then(response => {
 
@@ -253,14 +291,17 @@ let app = new Vue({
 
           $('#btn_pending_comments_user_' + id).remove()
           $('#modalLastComments').modal('toggle')
+          this.loading()
 
         } else {
           this.errors.push('Ops.. Intente nuevamente por favor')
+          this.loading()
         }
 
       })
       .catch(error => {
         this.errors.push('Existe un problema en el servidor. Intente mas tarde por favor')
+        this.loading()
       })
 
     },
@@ -270,6 +311,7 @@ let app = new Vue({
       var formData = new FormData();
       formData.append('id', id)
 
+      this.loading()
       await axios.post('php/mark-approved-all-challenger.php', formData)
       .then(response => {
 
@@ -279,14 +321,19 @@ let app = new Vue({
 
           $('#btn_pending_challengers_user_' + id).remove()
           $('#modalChallengersUser').modal('toggle')
+          this.loading()
 
         } else {
+
           this.errors.push('Ops.. Intente nuevamente por favor')
+          this.loading()
+
         }
 
       })
       .catch(error => {
         this.errors.push('Existe un problema en el servidor. Intente mas tarde por favor')
+        this.loading()
       })
 
     },
@@ -296,6 +343,7 @@ let app = new Vue({
       var formData = new FormData();
       formData.append('id', id)
 
+      this.loading()
       await axios.post('php/mark-approved-challenge.php', formData)
       .then(response => {
 
@@ -303,6 +351,7 @@ let app = new Vue({
 
           this.msg = 'El desafío se marcó como aprobado.'
           this.challengesUnapprovedTheCurrentUser.splice( index, 1 )
+          this.loading()
 
           if (this.challengesUnapprovedTheCurrentUser.length == 0) {
 
@@ -310,21 +359,25 @@ let app = new Vue({
             // que este usuario no tiene desafios pendientes de aprobacion
             formData.append('id', userId)   
 
+            this.loading()
             axios.post('php/update-challengers-pending-user.php', formData)
             .then(response => {
 
               app.msg = 'Ese fue el último desafío pendiente para este usuario.'
               $('#btn_pending_challengers_user_' + userId).remove()
+              this.loading()
 
             })
             .catch(error => {
               app.errors.push('Existe un problema en el servidor. Intente mas tarde por favor')
+              this.loading()
             })
 
           }
 
         } else {
           this.errors.push('Ops.. Intente nuevamente por favor')
+          this.loading()
         }
 
       })
@@ -366,6 +419,10 @@ let app = new Vue({
     cleanMsgs() {
       this.msg = ''
     },
+
+    loading() {
+      $('#loading').toggleClass('show_spinner');
+    }
 
   },
   computed: {

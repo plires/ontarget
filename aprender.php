@@ -30,6 +30,8 @@
 	
 	<div id="app">
 
+		<div id="loading" class="lds-ring"><div></div><div></div><div></div><div></div></div>
+
 		<?php $current = 'aprender'; ?>
 
 		<!-- Msgs -->

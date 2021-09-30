@@ -27,8 +27,11 @@ let app = new Vue({
   methods: {
 
     async getAuthUser(id = false) {
+
+      this.loading()
       await axios.get('php/get-auth-user.php')
       .then(response => {
+
         if (response.data) {
           this.authUser = response.data
 
@@ -40,33 +43,45 @@ let app = new Vue({
             this.getComments()
           }
 
+          this.loading()
+
         } else {
+
           this.errors.push('Hubo un problema al loeguear al usuario. Refrescá la página o logueate nuevamente.')
           this.authUser = {}
+          this.loading()
+
         }
 
       })
       .catch(error => {
         this.errors.push('Existe un problema en el servidor. Intente mas tarde por favor')
+        this.loading()
       })
 
     },
 
     async getUsers() {
 
+      this.loading()
       await axios.get('php/get-users.php')
       .then(response => {
+
         this.users = response.data
         this.getAuthUser()
+        this.loading()
+
       })
       .catch(error => {
         this.errors.push('Existe un problema en el servidor. Intente mas tarde por favor')
+        this.loading()
       })
 
     },
 
     async getComments() {
 
+      this.loading()
       await axios.get('php/get-comments.php')
       .then(response => {
         this.comments_backup = response.data
@@ -77,10 +92,13 @@ let app = new Vue({
           this.comments = this.comments_backup.sort((a, b) => a.created_at - b.created_at)          
         }
         
+        this.loading()
         this.initTable()
+
       })
       .catch(error => {
         this.errors.push('Existe un problema en el servidor. Intente mas tarde por favor')
+        this.loading()
       })
 
     },
@@ -170,6 +188,7 @@ let app = new Vue({
       var formData = new FormData();
       formData.append('id', id)
 
+      this.loading()
       await axios.post('php/get-comments-by-user.php', formData)
       .then(response => {
 
@@ -178,14 +197,19 @@ let app = new Vue({
           this.commentsOfTheCurrentUser = response.data
           this.commentsUnreadOfTheCurrentUser = this.commentsOfTheCurrentUser.filter((comment) => comment.unread == 1)
           $('#modalLastComments').modal('toggle')
+          this.loading()
 
         } else {
+
           this.errors.push('Ops.. Intente nuevamente por favor')
+          this.loading()
+
         }
 
       })
       .catch(error => {
         this.errors.push('Existe un problema en el servidor. Intente mas tarde por favor')
+        this.loading()
       })
 
     },
@@ -197,6 +221,10 @@ let app = new Vue({
     cleanMsgs() {
       this.msg = ''
     },
+
+    loading() {
+      $('#loading').toggleClass('show_spinner');
+    }
 
   },
   computed: {

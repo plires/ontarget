@@ -43,6 +43,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
 <div id="app" class="dashboard wrapper">
 
+  <div id="loading" class="lds-ring"><div></div><div></div><div></div><div></div></div>
+
   <!-- Msgs -->
   <?php include('./../includes/msg.php'); ?>
 

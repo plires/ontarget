@@ -50,6 +50,8 @@ session_start();
 
   <div id="app" class="unidades">
 
+    <div id="loading" class="lds-ring"><div></div><div></div><div></div><div></div></div>
+
     <?php $current = 'ver-unidad'; ?>
 
     <div class="wrapper">

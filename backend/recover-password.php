@@ -36,6 +36,8 @@
 
 <div id="app" class="login-box">
 
+  <div id="loading" class="lds-ring"><div></div><div></div><div></div><div></div></div>
+
   <!-- Errores -->
   <?php include('includes/errors.php'); ?>
 

@@ -51,6 +51,8 @@ session_start();
 
   <div id="app">
 
+    <div id="loading" class="lds-ring"><div></div><div></div><div></div><div></div></div>
+
     <?php $current = 'dashboard'; ?>
 
     <div class="wrapper">

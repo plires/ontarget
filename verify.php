@@ -48,8 +48,9 @@
 	<!-- Tag Manager Body -->
 	<?php include_once("./includes/tag_manager_body.php"); ?>
 	
-
 	<div id="app">
+
+		<div id="loading" class="lds-ring"><div></div><div></div><div></div><div></div></div>
 
 		<?php $current = 'verify'; ?>
 

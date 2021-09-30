@@ -37,6 +37,8 @@ $origin = 'Formulario de Contacto Web';
 
 	<div id="app">
 
+		<div id="loading" class="lds-ring"><div></div><div></div><div></div><div></div></div>
+
 		<?php $current = 'contactos'; ?>
 
 		<!-- Msgs -->

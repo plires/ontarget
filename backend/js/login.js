@@ -51,23 +51,27 @@ let app = new Vue({
         formData.append('email', this.email_login)
         formData.append('password', this.password_login)
 
+        this.loading()
         axios.post('php/login.php', formData)
         .then(response => {
 
           if (response.data) {
 
             // loguear usuario. Redireccionar al dashboard
+            this.loading()
             window.location.replace('./backend.php')
 
           } else {
 
             this.errors.push('Email o contraseña incorrectas')
+            this.loading()
 
           }
 
         })
         .catch(error => {
           this.errors.push('Existe un problema en el servidor. Intente mas tarde por favor')
+          this.loading()
         })
 
       }
@@ -101,6 +105,7 @@ let app = new Vue({
 
         formData.append('email', this.email_forgot_password)
 
+        this.loading()
         axios.post('php/forgot-password.php', formData)
         .then(response => {
 
@@ -110,22 +115,26 @@ let app = new Vue({
 
             // Mostrar msg de envio de contraseña
             this.msg = 'Te enviamos email con instrucciones. Verifica SPAM por las dudas.'
+            this.loading()
 
           } else if (response.data.email_inexistente) {
 
             // Mostrar error de envio de contraseña
             this.errors.push(response.data.email_inexistente_msg)
+            this.loading()
 
           } else {
 
             // Mostrar error de envio de contraseña
             this.errors.push('Email incorrecto o inexistente')
+            this.loading()
 
           }
 
         })
         .catch(error => {
           this.errors.push('Existe un problema en el servidor. Intente mas tarde por favor')
+          this.loading()
         })
 
       }
@@ -169,23 +178,32 @@ let app = new Vue({
         formData.append('password_reset', this.password_reset)
         formData.append('cpassword_reset', this.cpassword_reset)
 
+        this.loading()
         axios.post('php/new-pass.php', formData)
         .then(response => {
 
           if (response.data) {
+
             this.msg = 'Reseteo de contraseña exitosa, Esta página se redireccionara al login del backend en 5 segundos'
             this.cleanErrors()
+            this.loading()
             setTimeout(function(){
               window.location.replace('./')
             }, 5000)
+
           } else {
+
             this.errors.push('Verificar los datos ingresados. La contraseña debe tener al menos 6 caracteres.')
+            this.loading()
+
           }
 
         })
         .catch(error => {
+
           this.cleanErrors()
           this.errors.push('Existe un problema en el servidor. Intente mas tarde por favor')
+          this.loading()
           
         })
 
@@ -205,6 +223,10 @@ let app = new Vue({
     cleanMsgs() {
       this.msg = ''
     },
+
+    loading() {
+      $('#loading').toggleClass('show_spinner');
+    }
 
   },
   computed: {

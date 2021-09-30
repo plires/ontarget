@@ -58,6 +58,7 @@ let app = new Vue({
 
     async getAuthUser(id = false) {
 
+      this.loading()
       await axios.get('/../../php/check-auth-user.php')
       .then(response => {
 
@@ -75,9 +76,12 @@ let app = new Vue({
           this.id_user = ''
         }
 
+        this.loading()
+
       })
       .catch(error => {
         this.errors.push('Existe un problema en el servidor. Intente mas tarde por favor')
+        this.loading()
       })
 
     },
@@ -87,12 +91,15 @@ let app = new Vue({
       var formData = new FormData();
       formData.append('id', id)
 
+      this.loading()
       await axios.post('/../../php/get-unit.php', formData)
       .then(response => {
         this.unitData = response.data
+        this.loading()
       })
       .catch(error => {
         this.errors.push('Existe un problema en el servidor. Intente mas tarde por favor')
+        this.loading()
       })
 
     },
@@ -102,40 +109,48 @@ let app = new Vue({
       var formData = new FormData();
       formData.append('id', id)
 
+      this.loading()
       await axios.post('/../../php/get-team-leader.php', formData)
       .then(response => {
         this.teamLeader = response.data
+        this.loading()
       })
       .catch(error => {
         this.errors.push('Existe un problema en el servidor. Intente mas tarde por favor')
+        this.loading()
       })
 
     },
 
     async getEpisodes() {
 
+      this.loading()
       await axios.get('/../../php/get-episodes.php')
       .then(response => {
 
         this.episodes = response.data
-
         this.units = this.groupByUnits(this.episodes, 'unit_id');
+        this.loading()
 
       })
       .catch(error => {
         this.errors.push('Existe un problema en el servidor. Intente mas tarde por favor')
+        this.loading()
       })
 
     },
 
     async getChallenges() {
 
+      this.loading()
       await axios.get('/../../php/get-challenges.php')
       .then(response => {
         this.challenges = response.data
+        this.loading()
       })
       .catch(error => {
         this.errors.push('Existe un problema en el servidor. Intente mas tarde por favor')
+        this.loading()
       })
 
     },
@@ -253,24 +268,27 @@ let app = new Vue({
         formData.append('newsletter', this.suscribe_contact)
         formData.append('comments', this.comments_contact)
 
+        this.loading()
         axios.post('/../../php/send-contact.php', formData)
         .then(response => {
 
           if (response.data) {
 
             this.msg = 'Consulta enviada con éxito. Nos comunicaremos con vos a la brevedad'
+            this.loading()
 
           } else {
 
             this.errors.push('Nombre, email, teléfono y comentarios son obligatorios')
+            this.loading()
 
           }
-
 
         })
         .catch(error => {
 
           this.errors.push('Existe un problema en el servidor. Intente mas tarde por favor')
+          this.loading()
           
         })
 
@@ -311,6 +329,7 @@ let app = new Vue({
         formData.append('email', this.email)
         formData.append('password', this.password)
 
+        this.loading()
         axios.post('/../../php/login.php', formData)
         .then(response => {
 
@@ -322,11 +341,13 @@ let app = new Vue({
             this.email_user = this.authUser.email
             this.phone_user = this.authUser.phone
             this.id_user = this.authUser.id
+            this.loading()
             window.location.replace(window.location.origin + '/dashboard.php')
 
           } else {
 
             this.errors.push('Email o contraseña incorrectas')
+            this.loading()
 
           }
 
@@ -336,6 +357,7 @@ let app = new Vue({
         .catch(error => {
           this.errors.push('Existe un problema en el servidor. Intente mas tarde por favor')
           $('#btnLogin').prop('disabled', false)
+          this.loading()
           
         })
 
@@ -396,25 +418,37 @@ let app = new Vue({
         formData.append('password', this.password)
         formData.append('cpassword', this.cpassword)
 
+        this.loading()
         axios.post('/../../php/register.php', formData)
         .then(response => {
 
           if (response.data == true) {
+
             this.msg = 'Registro Exitoso, verificá tu casilla y confirmá tu email. No olvides revisar tu bandeja de SPAM ;)'
             this.cleanInputs()
+            this.loading()
+
           } else if( response.data.email_duplicado ) {
+
             this.errors.push(response.data.email_duplicado_msg)
             $('#btnRegister').prop('disabled', false)
+            this.loading()
+
           } else {
+
             this.errors.push('Verificar los datos ingresados')
             $('#btnRegister').prop('disabled', false)
+            this.loading()
+
           }
 
         })
         .catch(error => {
+
           this.cleanErrors()
           this.errors.push('Existe un problema en el servidor. Intente mas tarde por favor')
           $('#btnRegister').prop('disabled', false)
+          this.loading()
           
         })
 
@@ -452,18 +486,28 @@ let app = new Vue({
 
         formData.append('email', this.email)
 
+        this.loading()
         axios.post('/../../php/forgot-password.php', formData)
         .then(response => {
 
           if (response.data == true) {
+
             this.msg = 'Te enviamos los datos a tu casilla de email. No olvides revisar tu bandeja de SPAM ;)'
             this.cleanInputs()
+            this.loading()
+
           } else if( response.data.email_inexistente ) {
+
             this.errors.push(response.data.email_inexistente_msg)
             $('#btnNewPass').prop('disabled', false)
+            this.loading()
+
           } else {
+
             this.errors.push('Verificar los datos ingresados')
             $('#btnNewPass').prop('disabled', false)
+            this.loading()
+
           }
 
         })
@@ -472,6 +516,7 @@ let app = new Vue({
           this.cleanErrors()
           this.errors.push('Existe un problema en el servidor. Intente mas tarde por favor')
           $('#btnNewPass').prop('disabled', false)
+          this.loading()
           
         })
 
@@ -517,25 +562,34 @@ let app = new Vue({
         formData.append('password_reset', this.password_reset)
         formData.append('cpassword_reset', this.cpassword_reset)
 
+        this.loading()
         axios.post('/../../php/new-pass.php', formData)
         .then(response => {
 
           if (response.data == true) {
+
             this.msg = 'Reseteo de contraseña exitosa, Esta página se redireccionara al Home del sitio 5 segundos'
             this.cleanInputs()
+            this.loading()
             setTimeout(function(){
               window.location.replace('./')
             }, 5000)
+
           } else {
+
             this.errors.push('Verificar los datos ingresados. La contraseña debe tener al menos 6 caracteres.')
             $('#btnRegister').prop('disabled', false)
+            this.loading()
+
           }
 
         })
         .catch(error => {
+
           this.cleanErrors()
           this.errors.push('Existe un problema en el servidor. Intente mas tarde por favor')
           $('#btnRegister').prop('disabled', false)
+          this.loading()
           
         })
 
@@ -658,7 +712,8 @@ let app = new Vue({
 
         // Limpiar el input file para que este disponible y reseteado en la proxima
         document.getElementById("challengerFile").value=[]
-      
+        
+        this.loading()
         axios.post('/../../php/upload-challenger.php', formData, {
           headers: {
             'Content-Type': 'multipart/form-data'
@@ -666,22 +721,32 @@ let app = new Vue({
         }).then(response => {
 
           if (response.data === 'Challenger Cargado') {
+
             this.errors.push('Este desafio ya fue entregado y calificado. No se puede enviar nuevamente. Si tenes alguna duda o consulta por favor comunicate con tu team leader.')
             $('#modalUpload').modal('toggle')
+            this.loading()
             return false
+
           }
 
           if (response.data) {
+
             this.msg = 'El desafio se entregó / actualizó correctamente. Tendras novedades de tu team leader en breve.'
             $('#modalUpload').modal('toggle')
+            this.loading()
+
           } else {
+
             this.errors.push('Los formatos válidos para subir los desafios son: PDF, XLS, XLSX, DOC y DOCX. Peso Max: 2mb.')
+            this.loading()
+
           }
 
         })
         .catch(errors => {
 
           this.errors.push('Existe un problema en el servidor. Intente mas tarde por favor')
+          this.loading()
           
         })
 
@@ -765,22 +830,28 @@ let app = new Vue({
         formData.append('cPassword', this.cPassword_user)
         formData.append('user_id', this.id_user)
 
+        this.loading()
         axios.post('/../../php/set-user.php', formData)
         .then(response => {
 
-          console.log(response.data)
-
           if (response.data) {
+
             this.msg = 'El usuario actualizó correctamente.'
             $('#modalPerfilUsuario').modal('toggle')
+            this.loading()
+
           } else {
+
             this.errors.push('Todos los campos son obligatorios. Si elegiste resetear la contraseña esta debe ser mayor o igual a 6 caracteres y coincidir con el campo de repetir contraseña')
+            this.loading()
+
           }
 
         })
         .catch(errors => {
 
           this.errors.push('Existe un problema en el servidor. Intente mas tarde por favor')
+          this.loading()
           
         })
 
@@ -862,6 +933,10 @@ let app = new Vue({
       }
 
 
+    }, 
+
+    loading() {
+      $('#loading').toggleClass('show_spinner');
     }
 
   },
@@ -870,8 +945,6 @@ let app = new Vue({
     filterEpisodesByUnit: function() {
       return this.episodes.filter((episode) => episode.unit_id == this.currentUnit)
     },
-
-
 
     percentComplete() {
       return Math.round((this.authUser.authorized_units * 100) / this.totalUnits)
