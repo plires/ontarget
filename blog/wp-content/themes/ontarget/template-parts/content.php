@@ -9,7 +9,16 @@
 
 ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+
+<?php
+
+	$custom_classes = array(
+		'col-md-6',
+	);
+
+ ?>
+
+<article id="post-<?php the_ID(); ?>" <?php post_class( $custom_classes ); ?>>
 	<header class="entry-header">
 		<?php
 		if ( is_singular() ) :

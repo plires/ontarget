@@ -1,0 +1,1 @@
+/home/vagrant/proyectos/ontarget/blog/wp-content/plugins/query-monitor/wp-content/db.php
