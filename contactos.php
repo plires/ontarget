@@ -31,6 +31,8 @@ $origin = 'Formulario de Contacto Web';
 
 	<div id="app">
 
+		<?php $current = 'contactos'; ?>
+
 		<!-- Msgs -->
 		<?php include('includes/msg.php'); ?>
 

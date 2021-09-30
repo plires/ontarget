@@ -45,6 +45,8 @@ session_start();
 
 <div id="app" class="unidades">
 
+  <?php $current = 'ver-unidad'; ?>
+
   <div class="wrapper">
 
     <!-- Login -->

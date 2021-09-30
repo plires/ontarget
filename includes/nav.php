@@ -19,11 +19,26 @@
   </div>
 
   <ul class="navigation transition">
-    <li><a class="transition" href="quienes-somos.php">Quienes Somos</a></li>
-    <li><a class="transition" href="aprender.php">¿Qué Aprenderemos?</a></li>
-    <li><a class="transition" href="como-funciona.php">¿Cómo Funciona?</a></li>
-    <li><a class="transition" href="faq.php">FAQ</a></li>
-    <li><a class="transition" href="contactos.php">Contacto</a></li>
+
+    <?php if ($current == 'blog'): ?>
+      
+      <li><a class="transition" href="./../quienes-somos.php">Quienes Somos</a></li>
+      <li><a class="transition" href="./../aprender.php">¿Qué Aprenderemos?</a></li>
+      <li><a class="transition" href="./../como-funciona.php">¿Cómo Funciona?</a></li>
+      <li><a class="transition" href="./../blog">Blog</a></li>
+      <li><a class="transition" href="./../faq.php">FAQ</a></li>
+      <li><a class="transition" href="./../contactos.php">Contacto</a></li>
+
+    <?php else: ?>
+
+      <li><a class="transition" href="./quienes-somos.php">Quienes Somos</a></li>
+      <li><a class="transition" href="./aprender.php">¿Qué Aprenderemos?</a></li>
+      <li><a class="transition" href="./como-funciona.php">¿Cómo Funciona?</a></li>
+      <li><a class="transition" href="./blog">Blog</a></li>
+      <li><a class="transition" href="./faq.php">FAQ</a></li>
+      <li><a class="transition" href="./contactos.php">Contacto</a></li>
+
+    <?php endif ?>
 
     <li v-if="Object.keys(authUser).length === 0">
       <button @click="openPopUpLogin" class="transition">

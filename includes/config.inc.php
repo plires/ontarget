@@ -14,9 +14,9 @@ define('ENVIRONMENT', 'local');
 ////////////////////////
 ///Valores de DB Remota
 ////////////////////////
-define('DSN', 'mysql:host=localhost;dbname=lc_ontarget;charset=utf8;port:3306');
-define('DB_USER', 'homestead');
-define('DB_PASS', 'secret');
+define('DSN_APP', 'mysql:host=localhost;dbname=lc_ontarget;charset=utf8;port:3306');
+define('DB_USER_APP', 'homestead');
+define('DB_PASS_APP', 'secret');
 
 //////////////////////////////
 ///Valores de Envio de emails

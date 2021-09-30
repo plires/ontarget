@@ -24,6 +24,8 @@
 
 	<div id="app">
 
+		<?php $current = 'index'; ?>
+
 		<!-- Msgs -->
 		<?php include('includes/msg.php'); ?>
 

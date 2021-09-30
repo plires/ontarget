@@ -22,6 +22,8 @@
 
 	<div id="app">
 
+		<?php $current = 'quienes-somos'; ?>
+
 		<!-- Msgs -->
 		<?php include('includes/msg.php'); ?>
 

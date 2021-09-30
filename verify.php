@@ -45,6 +45,8 @@
 
 	<div id="app">
 
+		<?php $current = 'verify'; ?>
+
 		<!-- Login -->
 		<?php include('includes/login.php'); ?>
 		

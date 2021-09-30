@@ -32,6 +32,8 @@
 
 	<div id="app">
 
+		<?php $current = 'reset'; ?>
+
 		<!-- Login -->
 		<?php include('includes/login.php'); ?>
 		

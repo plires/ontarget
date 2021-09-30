@@ -22,6 +22,8 @@
 
 	<div id="app">
 
+		<?php $current = 'como-funciona'; ?>
+
 		<!-- Msgs -->
 		<?php include('includes/msg.php'); ?>
 

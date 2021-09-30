@@ -7,8 +7,6 @@ session_start();
     session_destroy();
     header('Location: ./');
   }
-
-  $current = 'welcome';
   
 ?>
 
@@ -46,6 +44,8 @@ session_start();
 <body class="hold-transition sidebar-mini">
 
 <div id="app">
+
+  <?php $current = 'dashboard'; ?>
 
   <div class="wrapper">
 
