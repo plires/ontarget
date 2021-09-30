@@ -322,7 +322,7 @@ let app = new Vue({
             this.email_user = this.authUser.email
             this.phone_user = this.authUser.phone
             this.id_user = this.authUser.id
-            window.location.replace('./dashboard.php')
+            window.location.replace(window.location.origin + '/dashboard.php')
 
           } else {
 

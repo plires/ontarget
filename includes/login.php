@@ -127,7 +127,7 @@
 					</div>
 				</li>
 				<li>
-					<a class="transition" href="dashboard.php"><i class="fas fa-columns"></i>Dashboard</a>
+					<a class="transition" href="<?= BASE ?>dashboard.php"><i class="fas fa-columns"></i>Dashboard</a>
 				</li>
 				<li>
 					<button 
