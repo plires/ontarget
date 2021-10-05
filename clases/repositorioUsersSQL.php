@@ -307,7 +307,7 @@ class RepositorioUsersSQL extends repositorioUsers
 
     foreach ($team_leaders as $team_leader) {
         
-      if ( $team_leader['id'] > $user['team_leader_id'] ) {
+      if ( $team_leader['id'] > isset($user['team_leader_id']) ) {
         return $team_leader;
       }
 
