@@ -78,7 +78,9 @@
 				<div class="row">
 					<div class="col-md-6 mx-auto">
 
-						<?= $msg; ?>
+						<?php if (isset($msg)): ?>
+							<?= $msg; ?>
+						<?php endif ?>
 
 					</div>
 				</div>

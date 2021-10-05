@@ -423,14 +423,14 @@
           <tr>
               <td style="vertical-align: middle;">
                   
-                  <img src="https://ontargetonline.com.ar/img/email/header-contacto.jpg" style="margin:0; padding:0; border:none; display:block; width: 100%; height: auto;" border="0" alt="header" />
+                  <img src="https://ontargetonline.com.ar/img/email/header-teamleader-contacto.gif" style="margin:0; padding:0; border:none; display:block; width: 100%; height: auto;" border="0" alt="header" />
 
               </td>
           </tr>
           <!-- Header end-->
 
           <!-- Texto-->
-          <tr style="background-color: #6044ff;">
+          <tr style="background-color: #6044FF;">
               <td style="padding: 10px; vertical-align: middle;">
                   
                   <h1 class="fallback-font" style="margin: 0px!important; font-family: 'Montserrat', sans-serif; font-size: 28px; color: #FFFFFF; text-align: center; font-weight: 700;">
