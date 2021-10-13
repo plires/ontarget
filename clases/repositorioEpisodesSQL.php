@@ -173,7 +173,7 @@ class RepositorioEpisodesSQL extends repositorioEpisodes
       $post['team_leader_name'], // Remitente al nombre: 
       $post['user_email'], // Destinatario 
       $post['user_name'], // Nombre del destinatario
-      'Felicitaciones por completar un nuevo desafío.', // Asunto 
+      'Felicitaciones por completar un nuevo desafio.', // Asunto 
       $template_user // Template usuario
     );
 
@@ -185,7 +185,7 @@ class RepositorioEpisodesSQL extends repositorioEpisodes
       $post['user_name'], // Remitente al nombre: 
       $post['team_leader_email'], // Destinatario 
       $post['team_leader_name'], // Nombre del destinatario
-      'Un usuario completó un nuevo desafío.', // Asunto 
+      'Un usuario completo un nuevo desafio.', // Asunto 
       $template_client // Template usuario
     );
 

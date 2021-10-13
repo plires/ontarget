@@ -8,7 +8,7 @@
         </button>
       </div>
       <div class="modal-body">
-        <p>Aclarar que si existe un desafio anterior entregado este se sobreescribira siempre y cuando ya no haya sido calificado por el team leader</p> <br>
+        <p>Si te equivocaste al subir algún archivo podes hacerlo nuevamente y la entrega se actualizará con el nuevo material. Esto sólo es posible si tu Team Leader aún no vio y corrigió el desafio.</p> <br>
         <h6>Subir Archivos</h6>
 
         <form name="formUpload" id="formUpload" method="post" enctype="multipart/form-data">
