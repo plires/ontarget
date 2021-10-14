@@ -514,15 +514,15 @@
           <tr align="center" style="background-color: #FFFFFF;">
               <td align="center"  style="background-color: #FFFFFF;padding: 10px;">
                 
-                <a target="_blank" rel="noopener noreferrer" href="#">
+                <a target="_blank" rel="noopener noreferrer" href="https://www.facebook.com/ontargetonline">
                   <img src="https://ontargetonline.com.ar/img/email/facebook.png" style="margin:0; margin-right: 20px; padding:0; border:none; display:inline-block; width: 32px; height: auto;" border="0" alt="facebook" />
                 </a>
 
-                <a target="_blank" rel="noopener noreferrer" href="#">
+                <a target="_blank" rel="noopener noreferrer" href="https://www.instagram.com/ontargetonline/">
                   <img src="https://ontargetonline.com.ar/img/email/instagram.png" style="margin:0; margin-right: 20px; padding:0; border:none; display:inline-block; width: 32px; height: auto;" border="0" alt="instagram" />
                 </a>
 
-                <a target="_blank" rel="noopener noreferrer" href="#">
+                <a target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/company/ontargetonline/">
                   <img src="https://ontargetonline.com.ar/img/email/linkedin.png" style="margin:0; padding:0; border:none; display:inline-block; width: 32px; height: auto;" border="0" alt="linkedin" />
                 </a>
                   

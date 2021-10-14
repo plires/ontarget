@@ -494,7 +494,7 @@
                   <table align="center" role="presentation" cellspacing="0" cellpadding="0" border="0" style="margin: auto;">
                       <tr>
                           <td class="button-td button-td-primary" style="border-radius: 4px; background: #FFFFFF;">
-                              <a class="fallback-font button-a button-a-primary" target="_blank" rel="noopener" href="#" style="background: #FFFFFF; border: 1px solid #FFFFFF; font-family: 'Montserrat', sans-serif; font-size: 18px; line-height: 28px; font-weight: 700; text-decoration: none; padding: 10px 20px; color: #6044ff; display: block; border-radius: 4px;">INGRES&aacute;
+                              <a class="fallback-font button-a button-a-primary" target="_blank" rel="noopener" href="https://ontargetonline.com.ar/" style="background: #FFFFFF; border: 1px solid #FFFFFF; font-family: 'Montserrat', sans-serif; font-size: 18px; line-height: 28px; font-weight: 700; text-decoration: none; padding: 10px 20px; color: #6044ff; display: block; border-radius: 4px;">INGRES&Aacute;
                               </a>
                           </td>
                       </tr>
@@ -508,15 +508,15 @@
           <tr align="center" style="background-color: #FFFFFF;">
               <td align="center"  style="background-color: #FFFFFF;padding: 10px;">
                 
-                <a target="_blank" rel="noopener noreferrer" href="#">
+                <a target="_blank" rel="noopener noreferrer" href="https://www.facebook.com/ontargetonline">
                   <img src="https://ontargetonline.com.ar/img/email/facebook.png" style="margin:0; margin-right: 20px; padding:0; border:none; display:inline-block; width: 32px; height: auto;" border="0" alt="facebook" />
                 </a>
 
-                <a target="_blank" rel="noopener noreferrer" href="#">
+                <a target="_blank" rel="noopener noreferrer" href="https://www.instagram.com/ontargetonline/">
                   <img src="https://ontargetonline.com.ar/img/email/instagram.png" style="margin:0; margin-right: 20px; padding:0; border:none; display:inline-block; width: 32px; height: auto;" border="0" alt="instagram" />
                 </a>
 
-                <a target="_blank" rel="noopener noreferrer" href="#">
+                <a target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/company/ontargetonline/">
                   <img src="https://ontargetonline.com.ar/img/email/linkedin.png" style="margin:0; padding:0; border:none; display:inline-block; width: 32px; height: auto;" border="0" alt="linkedin" />
                 </a>
                   
