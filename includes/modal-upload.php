@@ -1,4 +1,4 @@
-<div class="modal fade" id="modalUpload" tabindex="-1" aria-labelledby="modalUploadLabel" aria-hidden="true">
+<div class="modal fade modal_ontarget" id="modalUpload" tabindex="-1" aria-labelledby="modalUploadLabel" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered">
     <div class="modal-content">
       <div class="modal-header">
@@ -8,7 +8,7 @@
         </button>
       </div>
       <div class="modal-body">
-        <p>Si te equivocaste al subir algún archivo podes hacerlo nuevamente y la entrega se actualizará con el nuevo material. Esto sólo es posible si tu Team Leader aún no vio y corrigió el desafio.</p> <br>
+        <p class="description">Si te equivocaste al subir algún archivo podes hacerlo nuevamente y la entrega se actualizará con el nuevo material. Esto sólo es posible si tu Team Leader aún no vio y corrigió el desafio.</p> <br>
         <h6>Subir Archivos</h6>
 
         <form name="formUpload" id="formUpload" method="post" enctype="multipart/form-data">
@@ -30,7 +30,7 @@
             <textarea name="comments" class="form-control" id="comments" rows="3"></textarea>
           </div>
 
-          <button @click.prevent="uploadChallenger" class="btn btn-primary">Subir</button>
+          <button @click.prevent="uploadChallenger" class="btn btn-desafio">Subir</button>
 
         </form>
 

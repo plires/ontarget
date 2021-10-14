@@ -75,6 +75,51 @@ class RepositorioEpisodesSQL extends repositorioEpisodes
 
   }
 
+  public function sendRequestZoom($post)
+  {
+    
+    $comments_request_zoom = $post['comments_request_zoom'];
+    $unit_number = $post['unit'];
+    $episode_number = $post['episode'];
+    $user_id = $post['user'];
+    $team_leader_id = $post['team_leader'];
+    $date = date("Y-m-d H:i:s");
+
+    // 3- Verificar que el usuario no haya realizado una solicitud de zoom ya. Y si lo hizo pisar la anterior.
+    $sql = "
+      SELECT COUNT(*) FROM challenges_loaded 
+      WHERE user_id = '$user_id'
+      AND unit_number = '$unit_number' 
+      AND episode_number = '$episode_number' 
+      ";
+
+    if ($resultado = $this->conexion->query($sql)) {
+
+      try {
+
+        // Grabar en base de datos
+        $result = $this->saveChallengerInBdd( $resultado, $user_id, $unit_number, $episode_number, NULL, $comments_request_zoom, $date, $team_leader_id, NULL );
+
+        // Editar el campo de desafios pendientes en la tabla users
+        $user = new RepositorioUsersSQL($this->conexion);
+        $user->updateChallengersPending($user_id);
+
+      } catch (Exception $e) {
+        // Si no se pudo grabar en base de datos
+        header("HTTP/1.1 500 Internal Server Error");
+        
+      }
+
+    }
+
+    if ($result === 'Zoom Cargado') {
+      return 'Zoom Cargado';
+    }
+
+    return true;
+
+  }
+
   public function uploadChallenger($files, $post) {
 
     $comments = $post['comments'];
@@ -192,7 +237,7 @@ class RepositorioEpisodesSQL extends repositorioEpisodes
 
   }
 
-  public function saveChallengerInBdd( $resultado, $user_id, $unit_number, $episode_number, $paths_files_json, $comments, $date, $team_leader_id, $uploadFiles ) {
+  public function saveChallengerInBdd( $resultado, $user_id, $unit_number, $episode_number, $paths_files_json = NULL, $comments, $date, $team_leader_id, $uploadFiles = NULL ) {
 
     /* Comprobar el número de filas que coinciden con la sentencia SELECT */
     if ($resultado->fetchColumn() > 0) {
@@ -209,12 +254,14 @@ class RepositorioEpisodesSQL extends repositorioEpisodes
       $stmt->execute();
       $user = $stmt->fetch(PDO::FETCH_OBJ);
 
-      if ($user->approved == 1) {
+      if ($user->approved == 1 && $uploadFiles) { // si el desafio ya fue aprobado/leido y viene del modal-upload
         foreach ($uploadFiles as $file) {
           unlink($file['path_to_delete']);
         }
         return 'Challenger Cargado';
 
+      } elseif ($user->approved == 1) { // si el desafio ya fue aprobado/leido y viene del modal-zoom-request
+        return 'Zoom Cargado';
       }
 
       // editar el nuevo registro de entrega de desafio en la base de datos
@@ -227,6 +274,8 @@ class RepositorioEpisodesSQL extends repositorioEpisodes
         AND approved = 0 
       ";
         $stmt = $this->conexion->prepare($sql);
+
+        $paths_files_json = $paths_files_json ? $paths_files_json : NULL;
         $stmt->bindValue(":files", $paths_files_json, PDO::PARAM_STR);
         $stmt->bindValue(":comments", $comments, PDO::PARAM_STR);
         $stmt->bindValue(":created_at", $date, PDO::PARAM_STR);

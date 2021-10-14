@@ -245,7 +245,8 @@ aside .unidad_deshabilitada {
 	color: grey;
 }
 
-.unidades .content_capitulo .btn-desafio {
+.unidades .content_capitulo .btn-desafio,
+.modal_ontarget .btn-desafio {
 	background-color: var(--third-color);
 	color: white;
 	margin-top: 15px;
@@ -253,19 +254,15 @@ aside .unidad_deshabilitada {
 	font-weight: 300;
 }
 
-.unidades .content_capitulo .btn-desafio:hover {
-	background-color: var(--primary-color);
+.unidades .content_capitulo .btn-desafio:hover,
+.modal_ontarget .btn-desafio:hover {
+	background-color: var(--primary-color)!important;
 }
 /* Unidades end */
 
 /* Modal Subida de archivos*/
 #modalUpload {
 	z-index: 10000;
-}
-
-#modalUpload .modal-header {
-	background-color: var(--third-color);
-	color: white;
 }
 
 #modalUpload button {
@@ -281,46 +278,50 @@ aside .unidad_deshabilitada {
 
 
 /* Modal Challenge */
-#modalChallenge {
+.modal_ontarget {
 	z-index: 10000;
 }
 
-#modalChallenge .description {
+.modal_ontarget .description {
 	font-size: 0.85rem;
 }
 
-#modalChallenge .modal-header {
+.modal_ontarget .modal-header {
 	background-color: var(--third-color);
 	color: white;
 }
 
-#modalChallenge .modal-header button {
+.modal_ontarget .modal-header button {
 	color: white;
 }
 
-#modalChallenge .pasos {
+.modal_ontarget .pasos {
   display: flex;
   justify-content: space-between;
   align-items: center;
 	color: var(--third-color);
 	font-size: 1.125rem;
-	max-width: 330px;
+	max-width: 375px;
 	margin: auto;
 	margin-bottom: 5px;
 }
 
-#modalChallenge a:hover,
-#modalChallenge a:hover i  {
+.modal_ontarget a:hover {
 	color: var(--secondary-color);
 }
 
-#modalChallenge .pasos i {
+.modal_ontarget a:hover,
+.modal_ontarget a:hover i  {
+	color: var(--secondary-color);
+}
+
+.modal_ontarget .pasos i {
 	color: var(--third-color);
 	font-size: 1.75rem;
 	margin-left: 25px;
 }
 
-#modalChallenge .pasos span {
+.modal_ontarget .pasos span {
 	font-size: 1.75rem;
 	font-weight: 700;
 }

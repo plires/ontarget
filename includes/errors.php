@@ -4,6 +4,6 @@
     <span aria-hidden="true">&times;</span>
   </button>
   <ul>
-    <li v-for="error in errors" v-cloak>- {{ error }}</li>
+    <li v-for="error in errors" v-cloak>{{ error }}</li>
   </ul>
 </div>

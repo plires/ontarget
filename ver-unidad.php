@@ -62,6 +62,9 @@ session_start();
       <!-- Modal Challenge -->
       <?php include('includes/modal-challenges.php'); ?>
 
+      <!-- Modal Challenge via Zoom -->
+      <?php include('includes/modal-challenges-zoom.php'); ?>
+
       <!-- Modal Perfil Usuario -->
       <?php include('includes/modal-perfil.php'); ?>
 
@@ -70,6 +73,9 @@ session_start();
 
       <!-- Modal Upload Challenge -->
       <?php include('includes/modal-upload.php'); ?>
+
+      <!-- Modal Solicitud de Reunión vía Zoom -->
+      <?php include('includes/modal-zoom-request.php'); ?>
       
       <!-- Errores -->
       <?php include('includes/errors.php'); ?>
@@ -151,7 +157,15 @@ session_start();
                     <div v-if="parseInt(episode.challenge)" class="text-center">
                       <button 
                         class="btn btn-desafio transition"
-                        @click="openModalChallenge(episode.unit_id, episode.number)">
+                        @click="openModalChallenge(episode.unit_id, episode.number, 'modalChallenge')">
+                          Completá el desafío del capítulo {{ episode.number }}
+                      </button>
+                    </div>
+
+                    <div v-if="parseInt(episode.zoom)" class="text-center">
+                      <button 
+                        class="btn btn-desafio transition"
+                        @click="openModalChallenge(episode.unit_id, episode.number, 'modalChallengeZoom')">
                           Completá el desafío del capítulo {{ episode.number }}
                       </button>
                     </div>

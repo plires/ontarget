@@ -1,8 +1,8 @@
-<div class="modal fade modal_ontarget" id="modalChallenge" tabindex="-1" aria-labelledby="modalChallengeLabel" aria-hidden="true">
+<div class="modal fade modal_ontarget" id="modalChallengeZoom" tabindex="-1" aria-labelledby="modalChallengeZoomLabel" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered modal-lg">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="modalChallengeLabel">Desafío: {{ currentChallenge.name }}</h5>
+        <h5 class="modal-title" id="modalChallengeZoomLabel">Desafío: {{ currentChallenge.name }}</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -10,8 +10,9 @@
       <div class="modal-body">
         <h6><strong>¿De que se trata este desafío?</strong></h6>
         <p class="description" v-html="currentChallenge.description"></p>
-
+        
         <h6><strong>¿Como lo completo?</strong></h6>
+
         <p class="description">Fácil, en 3 simples pasos:</p>
 
         <a class="pasos transition" :href="'./challenges/' + currentChallenge.url_download">
@@ -21,10 +22,14 @@
 
         <p class="pasos"><span>2 -</span>Completa el desafío <i class="transition fas fa-check-circle"></i></p>
 
-        <a @click="openModalUploadChallenge" class="pasos transition" href="#">
-          <span>3 -</span>Subí los archivos
-          <i class="fas fa-cloud-upload-alt transition"></i>
-        </a>
+        <p class="pasos"><span>3 -</span>Solicitá reunión vía Zoom. <i class="fas fa-video transition"></i></p>
+
+        <div class="text-center">
+          <button @click="openModalZoomRequest" class="btn btn-desafio">
+            Solicitar Reunión&nbsp;&nbsp;
+            <i class="fas fa-comments transition"></i>
+          </button>
+        </div>
 
       </div>
 

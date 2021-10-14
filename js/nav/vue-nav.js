@@ -618,9 +618,9 @@ let app = new Vue({
       localStorage.clear()
     },
 
-    openModalChallenge(unit, episode) {
+    openModalChallenge(unit, episode, modal) {
 
-      $('#modalChallenge').modal('toggle')
+      $('#' + modal).modal('toggle')
 
       let challenge = this.challenges.filter((challenge) => challenge.unit_id == unit && challenge.episode_id == episode)
       this.currentChallenge = challenge[0]
@@ -634,6 +634,14 @@ let app = new Vue({
       $('#modalUpload').modal('toggle')
       document.getElementById("comments").value=''
 
+    },
+
+    openModalZoomRequest() {
+
+      $('#modalChallengeZoom').modal('toggle')
+      $('#modalZoomRequest').modal('toggle')
+      document.getElementById("commentsRequestZoom").value=
+      `Hola ${this.teamLeader.name}, soy ${this.authUser.name} y necesito agendar un zoom con vos. Mis horarios y días disponibles son los siguientes:`
     },
 
     chekFormUploadChallenger() {
@@ -738,6 +746,83 @@ let app = new Vue({
           } else {
 
             this.errors.push('Los formatos válidos para subir los desafios son: PDF, XLS, XLSX, DOC y DOCX. Peso Max: 2mb.')
+            this.loading()
+
+          }
+
+        })
+        .catch(errors => {
+
+          this.errors.push('Existe un problema en el servidor. Intente mas tarde por favor')
+          this.loading()
+          
+        })
+
+      }
+
+    },
+
+    chekFormSendRequestZoom() {
+
+      var requestZoom = document.getElementById("commentsRequestZoom").value;
+
+      if ( requestZoom ) {
+        return true
+      } else {
+        this.errors.push('Debes completar el campo de texto.')
+        return false
+      }
+
+    },
+
+    sendRequestZoom() {
+
+      this.cleanErrors()
+      this.cleanMsgs()
+      
+      let checked = this.chekFormSendRequestZoom()
+
+      if (checked) {
+
+        var formData = new FormData();
+        var commentsRequestZoom = document.getElementById("commentsRequestZoom");
+
+        formData.append('comments_request_zoom', commentsRequestZoom.value)
+        
+        formData.append('unit', this.currentChallenge.unit_id)
+        formData.append('episode', this.currentChallenge.episode_id)
+        formData.append('user', this.authUser.id)
+        formData.append('user_name', this.authUser.name)
+        formData.append('user_email', this.authUser.email)
+        formData.append('team_leader', this.authUser.team_leader_id)
+        formData.append('team_leader_name', this.teamLeader.name)
+        formData.append('team_leader_email', this.teamLeader.email)
+
+        // Limpiar el input file para que este disponible y reseteado en la proxima
+        commentsRequestZoom.value = ''
+        
+        this.loading()
+        axios.post('/../../php/send-comments-request-zoom.php', formData)
+        .then(response => {
+
+          if (response.data === 'Zoom Cargado') {
+
+            this.errors.push(`Aparentemente ${this.teamLeader.name} ya tiene una reunión agendada con vos. Por favor ponete en contacto con tu Team Leader asignado`)
+            $('#modalZoomRequest').modal('toggle')
+            this.loading()
+            return false
+
+          }
+
+          if (response.data) {
+
+            this.msg = `La solicitud fue enviada a ${this.teamLeader.name} correctamente. Pronto tendrás respuesta.`
+            $('#modalZoomRequest').modal('toggle')
+            this.loading()
+
+          } else {
+
+            this.errors.push('El campo de comentarios no puede estar vacio. Enviá tus días y horarios disponibles')
             this.loading()
 
           }
