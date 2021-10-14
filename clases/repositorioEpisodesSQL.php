@@ -57,7 +57,7 @@ class RepositorioEpisodesSQL extends repositorioEpisodes
 
           $response[$key]['name_original'] = $filename;
           $response[$key]['path_real'] = BASE . 'uploads/challengers/' . $filenameModify;
-          $response[$key]["path_to_delete"] = "/home/vagrant/proyectos/ontarget/uploads/challengers/" . $filenameModify;
+          $response[$key]["path_to_delete"] = $_SERVER['DOCUMENT_ROOT'] . '/uploads/challengers/' . $filenameModify;
           $response[$key]['result'] = true;
 
           } else {  
@@ -86,7 +86,6 @@ class RepositorioEpisodesSQL extends repositorioEpisodes
 
     // 1- Guardar el archivo
     $uploadFiles = $this->uploadFiles($files);
-
 
     $paths_files_array = array_column($uploadFiles, 'path_real');
     $paths_files_json = json_encode($paths_files_array);

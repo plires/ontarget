@@ -305,13 +305,16 @@ class RepositorioUsersSQL extends repositorioUsers
     $stmt->execute();
     $team_leaders = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-    foreach ($team_leaders as $team_leader) {
-        
-      if ( $team_leader['id'] > isset($user['team_leader_id']) ) {
-        return $team_leader;
-      }
+    if ($user) {
+      foreach ($team_leaders as $team_leader) {
+          
+        if ( $team_leader['id'] > $user['team_leader_id'] ) {
+          return $team_leader;
+        }
 
+      }
     }
+
 
     $sql = "SELECT * FROM team_leaders WHERE role = 'Team Leader' ORDER BY id ASC LIMIT 1";
     $stmt = $this->conexion->prepare($sql);
