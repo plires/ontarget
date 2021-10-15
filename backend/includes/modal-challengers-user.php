@@ -50,7 +50,7 @@
                     <dd v-if="challenge.comments" class="col-sm-8">{{ challenge.comments }}</dd>
 
                     <dt class="col-sm-4">Archivos a Descargar</dt>
-                    <dd v-if="challenge.files.length != 0"  class="col-sm-8">
+                    <dd v-if="challenge.files != null"  class="col-sm-8">
                       <a 
                         v-for="(file, index_file) in challenge.files" 
                         :key="index_file" 
@@ -63,21 +63,36 @@
                       </a>
                     </dd>
 
-                    <dd v-else class="col-sm-8">
-                      <p>
-                        Los archivos para descargar deberían estar aquí ya que es obligatorio para el usuario. Por algún motivo no se pudieron cargar. Por favor ponete en contacto con <strong>{{ showingUser.name }}</strong> al 
-                        <a :href="'mailto:' + showingUser.email">{{ showingUser.email }}</a> y cosultale por estos archivos.
-                      </p>
+                    <dd style="display: inline-block;" v-else class="col-sm-8">
+                      <p>No corresponde por tratarse de un desafío que debe resolverse en un zoom o comunicación con el usuario</p>
+                      <a 
+                        href="https://zoom.us/signin" 
+                        target="_blank" 
+                        rel="noopener noreferrer" 
+                        class="comentario_leido btn btn-outline-primary btn-block mt-3">
+                          <i class="fas fa-video transition"></i> Programar zoom
+                      </a>
                     </dd>
 
                   </dl>
 
                   <button 
+                    v-if="challenge.files != null" 
                     @click="markAsApprovedOneChallenge(challenge.id, index, challenge.user_id)" 
                     type="button" 
                     class="comentario_leido btn btn-outline-primary btn-block mt-5">
                       <i class="far fa-check-square"></i> Marcar como desafío aprobado
                   </button>
+
+                  <button 
+                    v-else
+                    @click="markAsApprovedOneChallenge(challenge.id, index, challenge.user_id)" 
+                    type="button" 
+                    class="comentario_leido btn btn-outline-primary btn-block mt-5">
+                      <i class="far fa-check-square"></i> Marcar como leído o tarea ejecutada
+                  </button>
+
+                  
 
                 </div>
               </div>

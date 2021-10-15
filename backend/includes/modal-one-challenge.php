@@ -52,10 +52,18 @@
 
         </div>
 
-        <div class="card-footer">
+        <div v-if="challenge.files != null" class="card-footer">
           <p>
               Podes dejarle una devolución a <strong>{{ showingUser.name }}</strong> haciendo 
-              <a class="transition" :href="'mailto:' + showingUser.email + '?subject=On Target - Respuesta a desafío enviado el: ' + moment(challenge.created_at).format('DD/MM/YYYY') + '&body=Hola ' + showingUser.name + ', soy ' + authUser.name + ', tu Team Leader asignado para responder a todas tus consultas y darte devolución sobre estos desafíos entregados. %0A %0A El ' + moment(challenge.created_at).format('DD/MM/YYYY') + ' entregaste el desafío número ' + challenge.episode_number + ' de la unidad ' + challenge.unit_number + '. %0A %0A Te dejo mi devolución: %0A %0A' ">click aquí.</a>
+              <a class="transition" target="_blank" rel="noopener noreferrer" :href="'mailto:' + showingUser.email + '?subject=On Target - Respuesta a desafío enviado el: ' + moment(challenge.created_at).format('DD/MM/YYYY') + '&body=Hola ' + showingUser.name + ', soy ' + authUser.name + ', tu Team Leader asignado para responder a todas tus consultas y darte devolución sobre estos desafíos entregados. %0A %0A El ' + moment(challenge.created_at).format('DD/MM/YYYY') + ' entregaste el desafío número ' + challenge.episode_number + ' de la unidad ' + challenge.unit_number + '. %0A %0A Te dejo mi devolución: %0A %0A' ">click aquí.</a>
+
+            </p>
+        </div>
+
+        <div v-else class="card-footer">
+          <p>
+              Podes avisarle a <strong>{{ showingUser.name }}</strong> que ya tenes la reunión de zoom creada  
+              <a class="transition" target="_blank" rel="noopener noreferrer" :href="'mailto:' + showingUser.email + '?subject=On Target - Respuesta a desafío enviado el: ' + moment(challenge.created_at).format('DD/MM/YYYY') + '&body=Hola ' + showingUser.name + ', soy ' + authUser.name + ', tu Team Leader asignado para responder a todas tus consultas y darte devolución sobre estos desafíos entregados. %0A %0A El ' + moment(challenge.created_at).format('DD/MM/YYYY') + ' entregaste el desafío número ' + challenge.episode_number + ' de la unidad ' + challenge.unit_number + '. %0A %0A Te quería avisar que ya tengo la reunión de zoom agendada. Te dejo los datos: %0A %0A' ">click aquí.</a>
 
             </p>
         </div>

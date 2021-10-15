@@ -142,6 +142,16 @@ let app = new Vue({
                     return '<a onClick="app.showChallenge('+ row.id +')" class="transition" href="#" v-cloak>' + row.name_user + '</a>'
                 }
               },
+              { data: 'unit_number',
+                render: function ( data, type, row ) {
+                    return '<a onClick="app.showChallenge('+ row.id +')" class="transition" href="#" v-cloak>' + row.unit_number + '</a>'
+                }
+              },
+              { data: 'episode_number',
+                render: function ( data, type, row ) {
+                    return '<a onClick="app.showChallenge('+ row.id +')" class="transition" href="#" v-cloak>' + row.episode_number + '</a>'
+                }
+              },
               { data: 'created_at',
                 render: function ( data, type, row ) {
                     return '<a onClick="app.showChallenge('+ row.id +')" class="transition" href="#" v-cloak>' + moment(data).format('DD/MM/YYYY') + '</a>'

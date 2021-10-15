@@ -112,6 +112,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
                             <tr>
                               <th>#</th>
                               <th>Enviado Por: </th>
+                              <th>Unidad: </th>
+                              <th>Episodio: </th>
                               <th>Fecha</th>
                               <th>Hora</th>
                             </tr>
@@ -121,6 +123,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
                             <tr>
                               <th>#</th>
                               <th>Enviado Por: </th>
+                              <th>Unidad: </th>
+                              <th>Episodio: </th>
                               <th>Fecha</th>
                               <th>Hora</th>
                             </tr>
