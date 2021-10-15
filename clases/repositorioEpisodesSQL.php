@@ -77,7 +77,7 @@ class RepositorioEpisodesSQL extends repositorioEpisodes
 
   public function sendRequestZoom($post)
   {
-    
+
     $comments_request_zoom = $post['comments_request_zoom'];
     $unit_number = $post['unit'];
     $episode_number = $post['episode'];
@@ -115,6 +115,64 @@ class RepositorioEpisodesSQL extends repositorioEpisodes
     if ($result === 'Zoom Cargado') {
       return 'Zoom Cargado';
     }
+
+    $template_user = file_get_contents('./../includes/emails/zoom-request/zoom-request-to-user.php');
+    $template_client = file_get_contents('./../includes/emails/zoom-request/zoom-request-to-client.php');
+    
+    //configuro las variables a remplazar en el template
+    $vars = array(
+      '{leader_name}',
+      '{leader_email}',
+      '{user_name}',
+      '{user_email}',
+      '{comment}',
+      '{date}',
+      '{unit}',
+      '{episode}',
+      '{path_backend}',
+      '{path}'
+    );
+
+    $values = array( 
+      $post['team_leader_name'],
+      $post['team_leader_email'],
+      $post['user_name'],
+      $post['user_email'],
+      $comments_request_zoom,
+      $date = date("Y-m-d"),
+      $unit_number,
+      $episode_number,
+      PATH_BACKEND, 
+      BASE
+    );
+
+    //Remplazamos las variables por las marcas en los templates
+    $template_user = str_replace($vars, $values, $template_user);
+    $template_client = str_replace($vars, $values, $template_client);
+
+    // 3- Enviar mail al Usuario
+    $this->sendmail(
+      $post['team_leader_email'], // Remitente 
+      $post['team_leader_name'], // Nombre Remitente 
+      $post['team_leader_email'], // Responder a:
+      $post['team_leader_name'], // Remitente al nombre: 
+      $post['user_email'], // Destinatario 
+      $post['user_name'], // Nombre del destinatario
+      'Felicitaciones por completar un nuevo desafio.', // Asunto 
+      $template_user // Template usuario
+    );
+
+    // 4- Enviar mail al Team Leader
+    $this->sendmail(
+      $post['user_email'], // Remitente 
+      $post['user_name'], // Nombre Remitente 
+      $post['user_email'], // Responder a:
+      $post['user_name'], // Remitente al nombre: 
+      $post['team_leader_email'], // Destinatario 
+      $post['team_leader_name'], // Nombre del destinatario
+      'Un usuario completo el desafio contactos y requiere un zoom.', // Asunto 
+      $template_client // Template usuario
+    );
 
     return true;
 
