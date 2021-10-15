@@ -104,7 +104,7 @@
             @click="markAsApprovedAllChallengerFromThisUser(challengesOfTheCurrentUser[0].user_id)" 
             type="button" 
             class="todos_comentarios_leido btn btn-outline-primary btn-block mt-5">
-              <i class="fas fa-check-double"></i> Marcar todos los desafíos como aprobados
+              <i class="fas fa-check-double"></i> Marcar todos los desafíos como aprobados / recibidos
           </button>
 
         </div>
