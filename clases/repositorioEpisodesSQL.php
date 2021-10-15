@@ -100,10 +100,6 @@ class RepositorioEpisodesSQL extends repositorioEpisodes
         // Grabar en base de datos
         $result = $this->saveChallengerInBdd( $resultado, $user_id, $unit_number, $episode_number, NULL, $comments_request_zoom, $date, $team_leader_id, NULL );
 
-        // Editar el campo de desafios pendientes en la tabla users
-        $user = new RepositorioUsersSQL($this->conexion);
-        $user->updateChallengersPending($user_id);
-
       } catch (Exception $e) {
         // Si no se pudo grabar en base de datos
         header("HTTP/1.1 500 Internal Server Error");
@@ -115,6 +111,10 @@ class RepositorioEpisodesSQL extends repositorioEpisodes
     if ($result === 'Zoom Cargado') {
       return 'Zoom Cargado';
     }
+
+    // Editar el campo de desafios pendientes en la tabla users
+    $user = new RepositorioUsersSQL($this->conexion);
+    $user->updateChallengersPending($user_id);
 
     $template_user = file_get_contents('./../includes/emails/zoom-request/zoom-request-to-user.php');
     $template_client = file_get_contents('./../includes/emails/zoom-request/zoom-request-to-client.php');
@@ -217,10 +217,6 @@ class RepositorioEpisodesSQL extends repositorioEpisodes
         // Grabar en base de datos
         $result = $this->saveChallengerInBdd( $resultado, $user_id, $unit_number, $episode_number, $paths_files_json, $comments, $date, $team_leader_id, $uploadFiles );
 
-        // Editar el campo de desafios pendientes en la tabla users
-        $user = new RepositorioUsersSQL($this->conexion);
-        $user->updateChallengersPending($user_id);
-
       } catch (Exception $e) {
         // Si no se pudo grabar en base de datos
         header("HTTP/1.1 500 Internal Server Error"); 
@@ -232,6 +228,10 @@ class RepositorioEpisodesSQL extends repositorioEpisodes
     if ($result === 'Challenger Cargado') {
       return 'Challenger Cargado';
     }
+
+    // Editar el campo de desafios pendientes en la tabla users
+    $user = new RepositorioUsersSQL($this->conexion);
+    $user->updateChallengersPending($user_id);
 
     $template_user = file_get_contents('./../includes/emails/challenger/challenger-upload-to-user.php');
     $template_client = file_get_contents('./../includes/emails/challenger/challenger-upload-to-client.php');
