@@ -92,9 +92,6 @@
 				
 			</div>
 
-			<!-- Logos -->
-			<?php include('includes/logos.php'); ?>
-
 		</section>
 
 	</div>
