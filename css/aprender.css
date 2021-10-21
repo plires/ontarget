@@ -125,58 +125,23 @@
 }
 /* Acerca de Adrian end */
 
-/* Formulario */
-.aprender .formulario {
-  padding-bottom: 60px;
+/* Herramientas */
+.aprender .herramientas {
+  padding-bottom: 30px;
 }
 
-.aprender .formulario .content_form {
-  padding: 15px;
+.aprender .herramientas h4 {
   text-align: center;
-}
-
-.aprender .formulario h4 {
-  text-align: center;
-  font-weight: 900;
+  font-weight: 700;
   font-size: 1.15rem;
   margin-bottom: 20px;
 }
 
-.aprender .formulario .col-md-5 {
-  text-align: center;
+.aprender .herramientas .btn--alpha {
+  margin-top: 20px;
 }
 
-.aprender .formulario .col-md-5 img {
-  margin-bottom: 20px;
-  max-width: 50%;
-}
-
-.aprender .formulario .titulo_formulario {
-  background-color: var(--secondary-color);
-  padding: 15px;
-  margin-bottom: 10px;
-  margin-left: -15px;
-  margin-right: -15px;
-  margin-top: -15px;
-}
-.aprender .formulario .parrafo_formulario {
-  text-align: center;
-}
-
-.aprender .formulario .btn-primary {
-  background-color: var(--secondary-color);
-  color: var(--primary-color);
-  border: 1px solid var(--secondary-color);
-  font-weight: 700;
-}
-
-.aprender .formulario .btn-primary:hover {
-  background-color: var(--primary-color);
-  color: white;
-  border: 1px solid var(--primary-color);
-  font-weight: 700;
-}
-/* Formulario end */
+/* Herramientas end */
 
 
 /* MEDIA QUERIES */
@@ -290,40 +255,11 @@
   }
   /* Adrian end */
 
-  /* Formulario */
-  .aprender .formulario .col-md-5,
-  .aprender .formulario .col-md-7 {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-
-  .aprender .formulario .col-md-5 img {
-    max-width: 100%;
-    margin-bottom: 0;
-  }
-
-  .aprender .formulario .content_form {
-    min-height: 347px;
-    padding: 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
-  }
-
-  .aprender .formulario h4 {
-    width: 100%;
-  }
-
-  .aprender .formulario .parrafo_formulario {
-    padding: 0 15px;
-  }
-
-  .aprender .formulario .btn--alpha {
+  /* Herramientas */
+  .aprender .herramientas .btn--alpha {
     margin-bottom: 30px;
   }
-  /* Formulario end */
+  /* Herramientas end */
 
 }
 
@@ -386,31 +322,17 @@
   }
   /* Adrian end */
 
-  /* Formulario */
-  .aprender .formulario h4 {
+  /* Herramientas */
+  .aprender .herramientas h4 {
     font-size: 1.5rem;
     margin-top: 60px;
     margin-bottom: 40px;
   }
 
-  .aprender .formulario .col-md-5 img {
-    margin: 0;
+  .aprender .herramientas .btn--alpha {
+    margin-top: 40px;
   }
-
-  .aprender .formulario .content_form {
-    min-height: 475px;
-  }
-
-  .aprender .formulario .parrafo_formulario {
-    margin: 30px 0;
-    font-weight: 500;
-    font-size: 1.25rem;
-  }
-
-  .aprender .formulario .btn-primary {
-    margin-top: 20px;
-  }
-  /* Formulario end */
+  /* Herramientas end */
 
 }
 
@@ -461,38 +383,24 @@
   }
   /* Adrian end */
 
-  /* Formulario */
-  .aprender .formulario .content_form {
-      min-height: 575px;
-  }
-
-  .aprender .formulario .content_form .form-group {
-      margin-bottom: 35px;
-  }
-
-  .aprender .formulario .btn-primary {
-      font-size: 1.25rem;
-  }
-  /* Formulario end */
-
 }
 
 @media (min-width: 1400px) {
 
-  /* Formulario */
-  .aprender .formulario {
+  /* Herramientas */
+
+  .aprender .herramientas {
     position: relative;
   }
 
   .puntos_left {
     display: inline-block;
     position: absolute;
-    top: calc(50% - 125px);
+    top: calc(50% - 185px);
     left: 15px;
     max-width: 15%;
   }
-  /* Formulario end */
-
+  /* Herramientas end */
 
 }
 

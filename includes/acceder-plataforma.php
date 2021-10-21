@@ -13,7 +13,7 @@
         </button>
 
         <button v-else class="btn btn--alpha" @click="openPopUpAcount">
-          <span>Hazte miembro ahora</span>
+          <span>Ingresá a tu Dashboard</span>
         </button>
         
       </div>

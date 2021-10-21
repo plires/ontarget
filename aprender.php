@@ -210,50 +210,42 @@
 				</section>
 				<!-- Acerca de Adrian end -->
 
-				<!-- Formulario -->
-				<section data-aos="fade-up" class="formulario">
+				<!-- Herramientas -->
+				<section data-aos="fade-up" class="herramientas">
 
 					<img class="img-fluid image_no_shadow_rounded puntos_left" src="img/home/puntos.png" alt="puntos">
 
 					<div class="container">
 						
-						<div class="row">						
+						<div class="row text-center">	
+
 							<div class="col-md-12">
 								<h4>
 									Obtén herramientas probadas para despertar tu potencial ilimitado al instante. Regístrate ahora en nuestro Método OnTarget Online
 								</h4>
 							</div>
-						</div>
 
-						<div class="row">						
-							<div class="col-md-5">
-								<img data-aos="flip-left" class="img-fluid img_contact" src="img/aprender/contacto.jpg" alt="imagen contacto">
-							</div>
-							<div class="col-md-7">
+							<div class="col-md-8 offset-md-2">
 
-								<div class="content_form bg_white">
-								
-									<h4 class="titulo_formulario">¡Inscribite!</h4>
-									<p class="parrafo_formulario">
-										Nuestro método de aprendizaje es 100% online, contando con la posibilidad de que lo hagas adaptándolo al horario que más te convenga.
-									</p>
+								<p>
+									Nuestro método de aprendizaje es 100% online. Contando con la posibilidad de que lo hagas adaptándolo al horario que más te convenga.
+								</p>
 
-									<button v-if="Object.keys(authUser).length === 0" @click="openPopUpRegister" class="btn btn--alpha">
-							          <span>Hazte miembro ahora</span>
-							        </button>
+								<button v-if="Object.keys(authUser).length === 0" @click="openPopUpRegister" class="btn btn--alpha">
+						          <span>Hazte miembro ahora</span>
+						        </button>
 
-							        <button v-else class="btn btn--alpha" @click="openPopUpAcount">
-							          <span>Hazte miembro ahora</span>
-							        </button>
-
-								</div>
+						        <button v-else class="btn btn--alpha" @click="openPopUpAcount">
+						          <span>Ingresá a tu Dashboard</span>
+						        </button>
 
 							</div>
+
 						</div>
-						
+
 					</div>
 				</section>
-				<!-- Formulario end -->
+				<!-- Herramientas end -->
 
 			</div>
 
