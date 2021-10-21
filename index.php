@@ -308,10 +308,10 @@
 								<div class="card_testimonio">
 									<div class="faja_sobre_imagen"></div>
 									<div class="content_card">
-										<img class="img-fluid" src="img/home/testimonio-muchacho.jpg" alt="testimonio muchacho">
+										<img class="img-fluid" src="img/home/testimonio-chica.jpg" alt="testimonio chica">
 										<div class="content_testimonio">
 											<p>
-												"Muy agradecido por todo el apoyo recibido en el método, hoy puedo decir que en equipo todo es más fácil. Estoy orgulloso de ser parte de Ontarget"
+												"Muy agradecida por todo el apoyo recibido en el método, hoy puedo decir que en equipo todo es más fácil. Estoy orgullosa de ser parte de Ontarget"
 											</p>
 										</div>
 									</div>
