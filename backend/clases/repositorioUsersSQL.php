@@ -150,13 +150,6 @@ class RepositorioUsersSQL extends repositorioUsers
     try {
 
       $sql = "SELECT * FROM team_leaders WHERE email = '$email' ";
-      // $sql = "
-      //   SELECT t1.*, t2.*
-      //   FROM users AS t1
-      //   INNER JOIN challenges_loaded AS t2 ON t1.id=t2.user_id
-      //   WHERE t2.approved = 0;
-      // ";
-
       $stmt = $this->conexion->prepare($sql);
       $stmt->execute();
       $user = $stmt->fetch(PDO::FETCH_ASSOC);
