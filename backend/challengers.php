@@ -179,7 +179,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <!-- AdminLTE App -->
 <script src="./../node_modules/admin-lte/dist/js/adminlte.min.js"></script>
 <script type="text/javascript" src="./../node_modules/axios/dist/axios.min.js"></script>
-<script type="text/javascript" src="./../node_modules/vue/dist/vue.js"></script>
+<script type="text/javascript" src="./../node_modules/vue/dist/vue.min.js"></script>
 <script type="text/javascript" src="./js/challengers.js"></script>
 
 <script>
