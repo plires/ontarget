@@ -32,10 +32,10 @@
 
       <div class="col-sm-6 col-md-4">
         <div class="integrante">
-          <img class="img-fluid" src="img/home/sanchez.jpg" alt="sanchez">
+          <img class="img-fluid" src="img/home/mino.jpg" alt="miño">
           <div class="content_integrante">
             <h4>Reclutamiento</h4>
-            <p>Gerardo Sanchez</p>
+            <p>Julian Miño</p>
           </div>
         </div>
       </div>
