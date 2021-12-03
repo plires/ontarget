@@ -115,7 +115,7 @@
 
 						<div class="col-md-6">
 							<p>
-								El Método OnTarget es muy sensillo desde el paso 1. Solo debes ir a la sección de  "Inscripción", registrarte, luego recibirás un mail con acceso a la plataforma de aprendizaje y listo, ya estarás a bordo. Recuerda que siempre podrás aprender a tu propio ritmo y personalizar tu aprendizaje.
+								El Método OnTarget es muy sencillo desde el paso 1. Solo debes ir a la sección de  "Inscripción", registrarte, luego recibirás un mail con acceso a la plataforma de aprendizaje y listo, ya estarás a bordo. Recuerda que siempre podrás aprender a tu propio ritmo y personalizar tu aprendizaje.
 							</p>
 						</div>
 
