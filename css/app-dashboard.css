@@ -32,6 +32,10 @@ textarea { resize: none; }
 	font-size: 1.75rem;
 	color: var(--third-color);
 }
+
+.main-header .destacado:hover {
+	color: var(--secondary-color);
+}
 /* Main Header end */
 
 /* Aside Left */

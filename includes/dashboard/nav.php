@@ -38,13 +38,13 @@
 
     <li class="nav-item">
       <button title="Edición de perfil usuario" @click="openModalPerfilUsuario" class="nav-link btn_nav">
-        <i class="fas fa-user-cog destacado"></i>
+        <i class="transition fas fa-user-cog destacado"></i>
       </button>
     </li>
 
     <li class="nav-item">
       <button title="Solicitá ayuda a tu Team Leader" @click="openModalContatcYourTeamLeader" class="nav-link btn_nav">
-        <i class="far fa-question-circle destacado"></i>
+        <i class="transition far fa-question-circle destacado"></i>
       </button>
     </li>
 
