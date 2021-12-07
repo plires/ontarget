@@ -23,6 +23,17 @@ textarea { resize: none; }
 }
 /* Variables end */
 
+/* Main Header */
+.main-header .nav-link {
+	height: auto;
+}
+
+.main-header .destacado {
+	font-size: 1.75rem;
+	color: var(--third-color);
+}
+/* Main Header end */
+
 /* Aside Left */
 [class*="sidebar-dark-"] {
 	background-color: white;

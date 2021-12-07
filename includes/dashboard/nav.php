@@ -37,14 +37,14 @@
     <!-- Contacto Team Leader -->
 
     <li class="nav-item">
-      <button @click="openModalPerfilUsuario" class="nav-link btn_nav">
-        <i class="fas fa-user-cog"></i>
+      <button title="Edición de perfil usuario" @click="openModalPerfilUsuario" class="nav-link btn_nav">
+        <i class="fas fa-user-cog destacado"></i>
       </button>
     </li>
 
     <li class="nav-item">
-      <button @click="openModalContatcYourTeamLeader" class="nav-link btn_nav">
-        <i class="far fa-question-circle"></i>
+      <button title="Solicitá ayuda a tu Team Leader" @click="openModalContatcYourTeamLeader" class="nav-link btn_nav">
+        <i class="far fa-question-circle destacado"></i>
       </button>
     </li>
 
