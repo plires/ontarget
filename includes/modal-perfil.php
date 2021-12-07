@@ -22,6 +22,11 @@
           </div>
 
           <div class="form-group">
+            <label for="phoneUser">Teléfono</label>
+            <input type="tel" class="form-control" name="phoneUser" placeholder="Teléfono" v-model="phone_user">
+          </div>
+
+          <div class="form-group">
             <div class="form-check">
               <input class="form-check-input" type="checkbox" name="passCheck" v-model="modeUserEdit">
               <label class="form-check-label" for="passCheck">

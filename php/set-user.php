@@ -9,6 +9,7 @@
 			empty($_POST) || 
 			emptyInput($_POST['name']) || 
 			!emailValid($_POST['email']) || 
+			emptyInput($_POST['phone']) || 
 			emptyInput($_POST['user_id']) || 
 			!is_numeric($_POST['user_id']) || 
 			emptyInput($_POST['password']) || 
@@ -30,6 +31,7 @@
 			empty($_POST) || 
 			emptyInput($_POST['name']) || 
 			!emailValid($_POST['email']) || 
+			emptyInput($_POST['phone']) || 
 			emptyInput($_POST['user_id']) || 
 			!is_numeric($_POST['user_id'])
 			)

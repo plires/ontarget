@@ -54,6 +54,13 @@
 				</div>
 				<!-- Email -->
 
+				<!-- Teléfono -->
+				<div class="form-group">
+					<label for="phone">Teléfono</label>
+					<input type="tel" class="form-control" id="phone" name="phone" v-model="phone">
+				</div>
+				<!-- Teléfono -->
+
 				<!-- Pass -->
 				<div class="form-group">
 					<label for="password">Contraseña</label>
