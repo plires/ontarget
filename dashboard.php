@@ -109,7 +109,7 @@ session_start();
                 </p>
 
                 <p>
-                  En cada unidad encontraran ejercicios que permiten evaluar los resultados del conocimiento y poder así obtener los mejores resultados para tus metas y necesidades.
+                  En cada unidad encontraran ejercicios que permiten evaluar los resultados del conocimiento y poder así alcanzar tus metas.
                 </p>
 
                 <p class="destacado">
