@@ -1002,7 +1002,7 @@ let app = new Vue({
         formData.append('user_name', this.authUser.name)
         formData.append('user_email', this.authUser.email)
         formData.append('user_phone', this.authUser.phone)
-        formData.append('city_phone', this.authUser.city)
+        formData.append('user_city', this.authUser.city)
         formData.append('comment', comment.value)
 
         axios.post('/../../php/set-comment-to-team-leader.php', formData)
