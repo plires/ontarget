@@ -354,7 +354,7 @@ class RepositorioUsersSQL extends repositorioUsers
       // Insertar en base de datos
       $sql = "
         INSERT INTO users 
-        values(default, :name, :email, :phone, :password, :token, :team_leader_id, :authorized_units, :pending_challengers, :pending_comments, :created_at)
+        values(default, :name, :email, :phone, :city, :password, :token, :team_leader_id, :authorized_units, :pending_challengers, :pending_comments, :created_at)
       ";
 
       $stmt = $this->conexion->prepare($sql);
@@ -362,6 +362,7 @@ class RepositorioUsersSQL extends repositorioUsers
       $stmt->bindValue(":name", $post['name'], PDO::PARAM_STR);
       $stmt->bindValue(":email", $post['email'], PDO::PARAM_STR);
       $stmt->bindValue(":phone", $post['phone'], PDO::PARAM_STR);
+      $stmt->bindValue(":city", $post['city'], PDO::PARAM_STR);
       $stmt->bindValue(":password", $password_hash, PDO::PARAM_STR);
       $stmt->bindValue(":token", $token, PDO::PARAM_STR);
       $stmt->bindValue(":team_leader_id", $team_leader['id'], PDO::PARAM_INT);
@@ -380,6 +381,7 @@ class RepositorioUsersSQL extends repositorioUsers
         '{name}',
         '{email}',
         '{phone}',
+        '{city}',
         '{url}',
         '{team_leader_name}',
         '{team_leader_email}',
@@ -390,6 +392,7 @@ class RepositorioUsersSQL extends repositorioUsers
         $post['name'],
         $post['email'],
         $post['phone'],
+        $post['city'],
         $urlToEmail,
         $team_leader['name'],
         $team_leader['email'],
@@ -609,6 +612,7 @@ class RepositorioUsersSQL extends repositorioUsers
     $user_name = $post['user_name'];
     $user_email = $post['user_email'];
     $user_phone = $post['user_phone'];
+    $user_city = $post['user_city'];
     $team_leader = $post['team_leader_id'];
     $team_leader_name = $post['team_leader_name'];
     $team_leader_email = $post['team_leader_email'];
@@ -645,6 +649,7 @@ class RepositorioUsersSQL extends repositorioUsers
         '{user_name}' ,
         '{user_email}' ,
         '{user_phone}' ,
+        '{user_city}' ,
         '{team_leader_name}' ,
         '{team_leader_email}' ,
         '{comment}', 
@@ -655,6 +660,7 @@ class RepositorioUsersSQL extends repositorioUsers
         $user_name, 
         $user_email, 
         $user_phone, 
+        $user_city, 
         $team_leader_name, 
         $team_leader_email, 
         $comment, 
@@ -694,11 +700,12 @@ class RepositorioUsersSQL extends repositorioUsers
       
         $password_hash = password_hash($post['password'], PASSWORD_DEFAULT);
 
-        $sql = "UPDATE users SET name = :name, email = :email, phone = :phone, password = :password WHERE id = '$id' ";
+        $sql = "UPDATE users SET name = :name, email = :email, phone = :phone, city = :city, password = :password WHERE id = '$id' ";
         $stmt = $this->conexion->prepare($sql);
         $stmt->bindValue(":name", $post['name'], PDO::PARAM_STR);
         $stmt->bindValue(":email", $post['email'], PDO::PARAM_STR);
         $stmt->bindValue(":phone", $post['phone'], PDO::PARAM_STR);
+        $stmt->bindValue(":city", $post['city'], PDO::PARAM_STR);
         $stmt->bindValue(":password", $password_hash, PDO::PARAM_STR);
 
         $user_edit = $stmt->execute();
@@ -707,11 +714,12 @@ class RepositorioUsersSQL extends repositorioUsers
         
       } else {
 
-        $sql = "UPDATE users SET name = :name, email = :email, phone = :phone WHERE id = '$id' ";
+        $sql = "UPDATE users SET name = :name, email = :email, phone = :phone , city = :city WHERE id = '$id' ";
         $stmt = $this->conexion->prepare($sql);
         $stmt->bindValue(":name", $post['name'], PDO::PARAM_STR);
         $stmt->bindValue(":email", $post['email'], PDO::PARAM_STR);
         $stmt->bindValue(":phone", $post['phone'], PDO::PARAM_STR);
+        $stmt->bindValue(":city", $post['city'], PDO::PARAM_STR);
 
         $user_edit = $stmt->execute();
 

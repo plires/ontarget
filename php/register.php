@@ -8,6 +8,7 @@
 		!emailValid($_POST['email']) || 
 		emptyInput($_POST['name']) || 
 		emptyInput($_POST['phone']) || 
+		emptyInput($_POST['city']) || 
 		emptyInput($_POST['password']) || 
 		strlen($_POST['password']) < 6 || 
 		$_POST['password'] != $_POST['cpassword'] || 

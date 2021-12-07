@@ -6,6 +6,7 @@ let app = new Vue({
       name: '',
       email: '',
       phone: '',
+      city: '',
       password: '',
       password_reset: '',
       cpassword: '',
@@ -22,6 +23,7 @@ let app = new Vue({
       name_user: '',
       email_user: '',
       phone_user: '',
+      city_user: '',
       modeUserEdit: false,
       password_user: '',
       cPassword_user: '',
@@ -67,6 +69,7 @@ let app = new Vue({
           this.name_user = this.authUser.name
           this.email_user = this.authUser.email
           this.phone_user = this.authUser.phone
+          this.city_user = this.authUser.city
           this.id_user = this.authUser.id
         } else {
           this.authUser = {}
@@ -340,6 +343,7 @@ let app = new Vue({
             this.name_user = this.authUser.name
             this.email_user = this.authUser.email
             this.phone_user = this.authUser.phone
+            this.city_user = this.authUser.city
             this.id_user = this.authUser.id
             this.loading()
             window.location.replace(window.location.origin + '/dashboard.php')
@@ -369,7 +373,7 @@ let app = new Vue({
 
       this.cleanErrors()
 
-      if ( this.name && this.validateEmail(this.email) && this.phone && this.password.length >= 6 && this.cpassword && this.password == this.cpassword && this.mayor_edad ) {
+      if ( this.name && this.validateEmail(this.email) && this.phone && this.city && this.password.length >= 6 && this.cpassword && this.password == this.cpassword && this.mayor_edad ) {
         return true
       }
 
@@ -383,6 +387,10 @@ let app = new Vue({
 
       if (!this.phone) {
         this.errors.push('Ingresá tu teléfono.')
+      }
+
+      if (!this.city) {
+        this.errors.push('Ingresá tu ciudad.')
       }
 
       if ( this.password.length < 6 ) {
@@ -415,6 +423,7 @@ let app = new Vue({
         formData.append('name', this.name)
         formData.append('email', this.email)
         formData.append('phone', this.phone)
+        formData.append('city', this.city)
         formData.append('password', this.password)
         formData.append('cpassword', this.cpassword)
 
@@ -851,7 +860,7 @@ let app = new Vue({
 
       if (!this.modeUserEdit) {
 
-        if ( this.name_user && this.phone_user && this.validateEmail(this.email_user) ) {
+        if ( this.name_user && this.phone_user && this.city_user && this.validateEmail(this.email_user) ) {
           this.password_user = ''
           this.cPassword_user = ''
           return true
@@ -861,6 +870,7 @@ let app = new Vue({
         if ( 
           this.name_user && 
           this.phone_user && 
+          this.city_user && 
           this.validateEmail(this.email_user) && 
           this.password_user && 
           this.cPassword_user && 
@@ -882,6 +892,10 @@ let app = new Vue({
 
       if ( !this.phone_user ) {
         this.errors.push('Ingresá tu teléfono.')
+      }
+
+      if ( !this.city_user ) {
+        this.errors.push('Ingresá tu ciudad.')
       }
 
       if ( this.password_user.length < 6 && this.modeUserEdit ) {
@@ -911,6 +925,7 @@ let app = new Vue({
         formData.append('name', this.name_user)
         formData.append('email', this.email_user)
         formData.append('phone', this.phone_user)
+        formData.append('city', this.city_user)
         formData.append('password', this.password_user)
         formData.append('cPassword', this.cPassword_user)
         formData.append('user_id', this.id_user)
@@ -987,6 +1002,7 @@ let app = new Vue({
         formData.append('user_name', this.authUser.name)
         formData.append('user_email', this.authUser.email)
         formData.append('user_phone', this.authUser.phone)
+        formData.append('city_phone', this.authUser.city)
         formData.append('comment', comment.value)
 
         axios.post('/../../php/set-comment-to-team-leader.php', formData)

@@ -61,6 +61,13 @@
 				</div>
 				<!-- Teléfono -->
 
+				<!-- Ciudad -->
+				<div class="form-group">
+					<label for="phone">Ciudad</label>
+					<input type="text" class="form-control" id="city" name="city" v-model="city">
+				</div>
+				<!-- Ciudad -->
+
 				<!-- Pass -->
 				<div class="form-group">
 					<label for="password">Contraseña</label>

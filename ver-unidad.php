@@ -195,7 +195,7 @@ session_start();
   <!-- AdminLTE -->
   <script type="text/javascript" src="./node_modules/admin-lte/dist/js/adminlte.min.js"></script>
   <script type="text/javascript" src="./node_modules/axios/dist/axios.min.js"></script>
-  <script type="text/javascript" src="./node_modules/vue/dist/vue.js"></script>
+  <script type="text/javascript" src="./node_modules/vue/dist/vue.min.js"></script>
   <script type="text/javascript" src="js/nav/vue-nav.js"></script>
   <script type="text/javascript" src="./node_modules/aos/dist/aos.js"></script>
   <script type="text/javascript" src="js/app.js"></script>

@@ -27,6 +27,11 @@
           </div>
 
           <div class="form-group">
+            <label for="cityUser">Ciudad</label>
+            <input type="text" class="form-control" name="cityUser" placeholder="Buenos Aires" v-model="city_user">
+          </div>
+
+          <div class="form-group">
             <div class="form-check">
               <input class="form-check-input" type="checkbox" name="passCheck" v-model="modeUserEdit">
               <label class="form-check-label" for="passCheck">
