@@ -146,7 +146,7 @@ session_start();
               <div v-for="(episode, index) in filterEpisodesByUnit" :key="episode.id" class="col-lg-6">
                 <div class="card">
                   <div class="card-header border-0">
-                    <h3 class="card-title">{{ episode.name }}</h3>
+                    <h3 class="card-title">Capítulo {{ episode.number }}: {{ episode.name }}</h3>
                     <p>{{ episode.description }}</p>
                   </div>
                   <div class="card-body">
@@ -195,7 +195,7 @@ session_start();
   <!-- AdminLTE -->
   <script type="text/javascript" src="./node_modules/admin-lte/dist/js/adminlte.min.js"></script>
   <script type="text/javascript" src="./node_modules/axios/dist/axios.min.js"></script>
-  <script type="text/javascript" src="./node_modules/vue/dist/vue.min.js"></script>
+  <script type="text/javascript" src="./node_modules/vue/dist/vue.js"></script>
   <script type="text/javascript" src="js/nav/vue-nav.js"></script>
   <script type="text/javascript" src="./node_modules/aos/dist/aos.js"></script>
   <script type="text/javascript" src="js/app.js"></script>
