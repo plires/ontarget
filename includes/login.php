@@ -89,7 +89,7 @@
 				</div>
 				<!-- Mayor de 21 end -->
 
-			  <button id="btnRegister" @click.prevent="register" class="btn btn--alpha"><span>Registrarse</span></button>
+			  <button id="btnRegister" @click.prevent="register" class="btn btn--alpha"><span id="click_conversion_register">Registrarse</span></button>
 
 			</form>
 
