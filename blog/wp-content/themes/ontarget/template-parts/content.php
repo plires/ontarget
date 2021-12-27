@@ -15,13 +15,12 @@
 	if (is_home()) {
 
 		$custom_classes = array(
-			'col-md-6',
+			'col-lg-6',
 			'article_list_ontarget'
 		);
 
 	} elseif (is_singular()) {
 		$custom_classes = array(
-			'col-md-6',
 			'article_single_ontarget'
 		);
 	}

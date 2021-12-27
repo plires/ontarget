@@ -39,16 +39,11 @@ Underscores is distributed under the terms of the GNU GPL v2 or later.
 	background: var(--third-color);
 }
 
-.article_list_ontarget .entry-title a {
+.article_list_ontarget .entry-title a,
+.article_list_ontarget h2 {
 	color: var(--third-color);
-	font-size: 1.25rem;
-	font-weight: 400;
-}
-
-.article_list_ontarget .entry-title a {
-	color: var(--third-color);
-	font-size: 1.25rem;
-	font-weight: 400;
+	font-size: 1rem;
+	font-weight: 700;
 	-webkit-transition: all ease-in-out .3s; /* Safari */
   transition: all ease-in-out .3s;
 }
@@ -70,6 +65,7 @@ Underscores is distributed under the terms of the GNU GPL v2 or later.
 	-webkit-transition: all ease-in-out .3s; /* Safari */
   transition: all ease-in-out .3s;
   box-shadow: none;
+  border-radius: 0;
 }
 
 .article_list_ontarget img:hover {
@@ -98,10 +94,6 @@ Underscores is distributed under the terms of the GNU GPL v2 or later.
   margin: auto;
   text-align: center;
   margin-top: 5px;
-  
-  overflow: hidden;
-  white-space: nowrap;
-  text-overflow: ellipsis;
 }
 
 .article_list_ontarget .entry-content .more-link:hover {
@@ -166,11 +158,88 @@ aside#secondary #block-6 {
 }
 /* Pagina de Listado end */
 
+/* Entrada Blog */
+
+.article_single_ontarget {
+	margin-bottom: 30px;
+}
+
+.article_single_ontarget h1 {
+	font-size: 1.5rem;
+	margin-top: 0;
+	font-weight: 900;
+}
+
+.article_single_ontarget h2 {
+	font-size: 1.25rem;
+	font-weight: 700!important;
+	text-align: left;
+}
+
+.article_single_ontarget h2 strong {
+	font-weight: 700!important;
+}
+
+.article_single_ontarget img {
+	width: 100%;
+	height: auto;
+	box-shadow: none;
+	margin-bottom: 10px;
+	border-radius: 0;
+}
+
+.article_single_ontarget .entry-meta,
+.article_single_ontarget .entry-footer {
+	display: none;
+}
+/* Entrada Blog end */
 
 
 
 
 
+/* MEDIA QUERIES */
+@media (min-width: 576px) {
+
+}
+
+@media (min-width: 768px) {
+
+
+@media (min-width: 992px) {
+
+	/* Pagina de Listado */
+	.article_list_ontarget .entry-title a,
+	.article_list_ontarget h2 {
+		text-align: left;
+	}
+
+	.article_list_ontarget h2 {
+	  white-space: nowrap;
+		overflow: hidden;
+		text-overflow: '...';
+	}
+	/* Pagina de Listado end */
+
+	/* Entrada Blog */
+	.article_single_ontarget h1 {
+		font-size: 1.75rem;
+	}
+
+	.article_single_ontarget h2 {
+		font-size: 1.5rem;
+	}
+	/* Entrada Blog end */
+
+}
+
+@media (min-width: 1200px) {
+
+}
+
+@media (min-width: 1400px) {
+
+}
 
 
 
