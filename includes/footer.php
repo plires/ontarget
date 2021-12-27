@@ -9,7 +9,7 @@
       <div class="col-md-6 datos">
         <div class="links">
           <a class="transition" href="#">Términos</a>
-          <a class="transition" href="#">Privacidad</a>
+          <!-- <a class="transition" href="#">Privacidad</a> -->
         </div>
         <div class="rrss">
           <a target="_blank" rel="noopener noreferrer" class="transition" href="<?= RRSS_INSTAGRAM ?>"><i class="transition fab fa-instagram-square"></i></a>

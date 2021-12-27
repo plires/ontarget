@@ -23,7 +23,7 @@
       <li><a class="transition" href="<?= BASE ?>quienes-somos.php">Quienes Somos</a></li>
       <li><a class="transition" href="<?= BASE ?>aprender.php">¿Qué Aprenderemos?</a></li>
       <li><a class="transition" href="<?= BASE ?>como-funciona.php">¿Cómo Funciona?</a></li>
-      <!-- <li><a class="transition" href="<?= BASE ?>blog">Blog</a></li> -->
+      <li><a class="transition" href="<?= BASE ?>blog">Blog</a></li>
       <li><a class="transition" href="<?= BASE ?>faq.php">FAQ</a></li>
       <li><a class="transition" href="<?= BASE ?>contactos.php">Contacto</a></li>
 
