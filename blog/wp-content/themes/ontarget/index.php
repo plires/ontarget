@@ -15,7 +15,7 @@
 get_header();
 ?>
 	
-	<div class="container">
+	<div class="container content_ontarget">
 		<div class="row">
 
 			<main id="primary" class="site-main col-md-8">

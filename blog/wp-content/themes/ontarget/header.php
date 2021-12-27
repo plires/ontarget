@@ -46,7 +46,4 @@
     <!-- Modal Contactar a tu Team Leader -->
     <?php include(__DIR__ . '../../../../../includes/modal-contact-team-leader.php'); ?>
 
-	<!-- Msgs -->
-	<?php include( __DIR__ . '../../../../../includes/msg.php'); ?>
-
 	

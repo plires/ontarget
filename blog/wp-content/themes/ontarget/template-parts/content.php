@@ -12,9 +12,19 @@
 
 <?php
 
-	$custom_classes = array(
-		'col-md-6',
-	);
+	if (is_home()) {
+
+		$custom_classes = array(
+			'col-md-6',
+			'article_list_ontarget'
+		);
+
+	} elseif (is_singular()) {
+		$custom_classes = array(
+			'col-md-6',
+			'article_single_ontarget'
+		);
+	}
 
  ?>
 
@@ -42,20 +52,29 @@
 
 	<div class="entry-content">
 		<?php
-		the_content(
-			sprintf(
-				wp_kses(
-					/* translators: %s: Name of current post. Only visible to screen readers */
-					__( 'Continue reading<span class="screen-reader-text"> "%s"</span>', 'ontarget' ),
-					array(
-						'span' => array(
-							'class' => array(),
-						),
-					)
-				),
-				wp_kses_post( get_the_title() )
-			)
-		);
+
+		if (is_home()) {
+
+			the_excerpt();
+
+		} elseif (is_singular()) {
+			
+			the_content(
+				sprintf(
+					wp_kses(
+						/* translators: %s: Name of current post. Only visible to screen readers */
+						__( 'Continue reading<span class="screen-reader-text"> "%s"</span>', 'ontarget' ),
+						array(
+							'span' => array(
+								'class' => array(),
+							),
+						)
+					),
+					wp_kses_post( get_the_title() )
+				)
+			);
+			
+		}
 
 		wp_link_pages(
 			array(
