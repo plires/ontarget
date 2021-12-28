@@ -307,6 +307,22 @@ h2 {
   box-shadow: none!important;
 }
 
+/* Términos y Condiciones */
+.terminos .bg_gris {
+  padding-bottom: 60px;
+}
+
+.terminos p {
+  margin-bottom: 15px;
+  font-weight: 300;
+  text-align: justify;
+}
+
+.terminos p span {
+  font-weight: 700;
+}
+/* Términos y Condiciones end */
+
 @media (min-width: 480px) {
   /* Equipo */
   .equipo .content_integrante {
