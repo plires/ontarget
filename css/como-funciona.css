@@ -3,6 +3,10 @@
   margin-bottom: 30px;
 }
 
+.funciona h1 span.black {
+  font-weight: 900;
+}
+
 .funciona .plan_estudios p span {
   font-weight: 700;
 }

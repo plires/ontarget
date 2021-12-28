@@ -59,7 +59,7 @@
 					<div class="row">
 						
 						<div class="col-md-12">
-							<h1><span>Un plan de estudios adaptado <br>a tus metas, sueños e intereses</span></h1>
+							<h1><span>Un plan de estudios totalmente <span class="black">gratuito</span> adaptado a tus metas, sueños e intereses</span></h1>
 						</div>
 
 						<div class="col-md-6">

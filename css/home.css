@@ -12,6 +12,10 @@
 	margin-bottom: 30px;
 }
 
+.home .el_metodo h1 span {
+	font-weight: 900;
+}
+
 .home .el_metodo .col-md-12,
 .home .el_metodo .col-md-6 {
 	position: relative;
