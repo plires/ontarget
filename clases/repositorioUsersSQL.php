@@ -735,6 +735,37 @@ class RepositorioUsersSQL extends repositorioUsers
     
   }
 
+  public function userBaja($post) {
+
+    $id = $post['user_id'];
+
+    try {
+
+      // Elimino los comentarios de este usuario (tabla challenges_loaded)
+      $sql = "DELETE FROM challenges_loaded WHERE user_id = '$id' ";
+      $stmt = $this->conexion->prepare($sql);
+      $foo = $stmt->execute();
+
+      // Elimino los desafios de este usuario (tabla comments)
+      $sql = "DELETE FROM comments WHERE user_id = '$id' ";
+      $stmt = $this->conexion->prepare($sql);
+      $stmt->execute();
+
+      // Elimino a este usuario (tabla users)
+      $sql = "DELETE FROM users WHERE id = '$id' ";
+      $stmt = $this->conexion->prepare($sql);
+      $user_baja = $stmt->execute();
+
+      return $user_baja;
+
+    } catch (Exception $e) {
+
+      header("HTTP/1.1 500 Internal Server Error");
+      
+    }
+    
+  }
+
 }
 
 ?>

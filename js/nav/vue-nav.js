@@ -61,6 +61,13 @@ let app = new Vue({
 
     async getAuthUser(id = false) {
 
+      let baja = localStorage.getItem('baja')
+
+      if (baja) {
+        this.clearLocalStorage()
+        this.msg = 'Cuenta dada de baja satisfactoriamente. Ya no tendras acceso a tu dashboard.'
+      }
+
       this.loading()
       await axios.get('/../../php/check-auth-user.php')
       .then(response => {
@@ -861,6 +868,14 @@ let app = new Vue({
 
     },
 
+    openModalSolicitudBaja() {
+
+      $('#modalSolicitudBaja').modal('toggle')
+      this.resetAllPopUp()
+      this.closePopUpLogin()
+
+    },
+
     chekFormUserEdit() {
 
       if (!this.modeUserEdit) {
@@ -912,6 +927,46 @@ let app = new Vue({
       }
 
       return false
+
+    },
+
+    sendBaja(user_id) {
+      
+      if (true) {
+
+        var formData = new FormData();
+
+        formData.append('user_id', user_id)
+
+        this.loading()
+        axios.post('/../../php/baja-user.php', formData)
+        .then(response => {
+
+          if (response.data) {
+
+            $('#modalSolicitudBaja').modal('toggle')
+            this.loading()
+            this.clearLocalStorage()
+            axios.get('/../../php/logout.php')
+            localStorage.setItem('baja', true)
+            window.location.replace(window.location.origin + '/')
+
+          } else {
+
+            this.errors.push('Error inesperado, por favor intentá nuevamente.')
+            this.loading()
+
+          }
+
+        })
+        .catch(errors => {
+
+          this.errors.push('Existe un problema en el servidor. Intente mas tarde por favor')
+          this.loading()
+          
+        })
+
+      }
 
     },
 

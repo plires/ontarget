@@ -27,31 +27,35 @@
 }
 /* Alertas y Mensajes end */
 
-/* Modal Edicion de Usuario y Modal contacto Team Leader */
+/* Modal Edicion de Usuario y Modal contacto Team Leader y Solicitud de baja */
 #modalPerfilUsuario, 
-#modalContactYourTeamLeader
- {
+#modalContactYourTeamLeader,
+#modalSolicitudBaja {
 	z-index: 11000!important;
 }
 
 #modalPerfilUsuario h5, 
-#modalContactYourTeamLeader h5 {
+#modalContactYourTeamLeader h5,
+#modalSolicitudBaja h5 {
 	color: white;
 }
 
 #modalPerfilUsuario .modal-header,
-#modalContactYourTeamLeader .modal-header {
+#modalContactYourTeamLeader .modal-header,
+#modalSolicitudBaja .modal-header {
 	background-color: var(--third-color);
 	color: white;
 }
 
 #modalPerfilUsuario button, 
-#modalContactYourTeamLeader button {
+#modalContactYourTeamLeader button,
+#modalSolicitudBaja button {
 	color: white;
 }
 
 #modalPerfilUsuario .btn,
-#modalContactYourTeamLeader .btn {
+#modalContactYourTeamLeader .btn,
+#modalSolicitudBaja .btn {
 	float: right;
 	background-color: var(--third-color);
 	color: white;
@@ -66,18 +70,20 @@
 }
 
 #modalPerfilUsuario .btn:before,
-#modalContactYourTeamLeader .btn:before {
+#modalContactYourTeamLeader .btn:before,
+#modalSolicitudBaja .btn:before {
 	background-color: var(--secondary-color)!important;
 	color: var(--primary-color)!important;
 	transform: scale(0) translate(0%)!important;
 }
 
 #modalPerfilUsuario .btn:hover,
-#modalContactYourTeamLeader .btn:hover {
+#modalContactYourTeamLeader .btn:hover,
+#modalSolicitudBaja .btn:hover {
 	background-color: var(--secondary-color);
 	color: var(--primary-color)!important;
 }
-/* Modal Edicion de Usuario y Modal contacto Team Leader end */
+/* Modal Edicion de Usuario y Modal contacto Team Leader y Solicitud de baja end */
 
 
 /* MEDIA QUERIES */

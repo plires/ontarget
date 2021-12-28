@@ -167,6 +167,13 @@
 				</li>
 				<li>
 					<a 
+						@click="openModalSolicitudBaja" 
+						class="transition solicitar" 
+						href="#"
+					><i class="fas fa-times"></i>Solicitar la baja de tu cuenta</a>
+				</li>
+				<li>
+					<a 
 						@click="clearLocalStorage" 
 						class="transition salir" 
 						href="./../php/logout.php"
