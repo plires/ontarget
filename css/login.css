@@ -48,6 +48,15 @@
   font-size: 0.875rem;
 }
 
+#login .content_login label a {
+  color: var(--secondary-color)!important;
+}
+
+#login .content_login label a:hover {
+  color: var(--primary-color)!important;
+  text-decoration: none;
+}
+
 #login.show .content_login {
   animation: showModal 1s forwards;
   bottom: 0;

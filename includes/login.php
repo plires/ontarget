@@ -89,6 +89,19 @@
 				</div>
 				<!-- Mayor de 21 end -->
 
+				<!-- Acepto Terminos y condiciones -->
+				<div class="form-check mb-3">
+					<input type="checkbox" class="form-check-input" id="terminos_condiciones" name="terminos_condiciones" v-model="terminos_condiciones">
+					<label class="form-check-label" for="terminos_condiciones">acepto 
+						<a 
+							target="_blank" 
+							rel="noopener noreferrer" 
+							class="transition" 
+							href="<?= BASE ?>terminos-condiciones.php">términos y condiciones</a>
+					</label>
+				</div>
+				<!-- Acepto Terminos y condiciones end -->
+
 			  <button id="btnRegister" @click.prevent="register" class="btn btn--alpha"><span id="click_conversion_register">Registrarse</span></button>
 
 			</form>

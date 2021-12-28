@@ -27,7 +27,8 @@ let app = new Vue({
       modeUserEdit: false,
       password_user: '',
       cPassword_user: '',
-      mayor_edad: false,
+      mayor_edad: true,
+      terminos_condiciones: true,
       units: {},
       episodes: [],
       unitData: '',
@@ -373,7 +374,7 @@ let app = new Vue({
 
       this.cleanErrors()
 
-      if ( this.name && this.validateEmail(this.email) && this.phone && this.city && this.password.length >= 6 && this.cpassword && this.password == this.cpassword && this.mayor_edad ) {
+      if ( this.name && this.validateEmail(this.email) && this.phone && this.city && this.password.length >= 6 && this.cpassword && this.password == this.cpassword && this.mayor_edad && this.terminos_condiciones ) {
         return true
       }
 
@@ -403,6 +404,10 @@ let app = new Vue({
 
       if (!this.mayor_edad) {
         this.errors.push('Para registrarte tenés que se mayor de 21 años.')
+      }
+
+      if (!this.terminos_condiciones) {
+        this.errors.push('Para registrarte tenés que aceptar términos y condiciones.')
       }
 
     },

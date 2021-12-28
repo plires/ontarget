@@ -12,7 +12,8 @@
 		emptyInput($_POST['password']) || 
 		strlen($_POST['password']) < 6 || 
 		$_POST['password'] != $_POST['cpassword'] || 
-		!$_POST['mayor_edad']
+		!$_POST['mayor_edad'] ||
+		!$_POST['terminos_condiciones']
 	) {
 
 		header('Content-type: application/json');
