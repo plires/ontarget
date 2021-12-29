@@ -43,6 +43,9 @@
 	<!-- Modal Perfil Usuario -->
     <?php include(__DIR__ . '../../../../../includes/modal-perfil.php'); ?>
 
+    <!-- Modal Solicitud de Baja -->
+    <?php include(__DIR__ . '../../../../../includes/modal-solicitud-baja.php'); ?>
+
     <!-- Modal Contactar a tu Team Leader -->
     <?php include(__DIR__ . '../../../../../includes/modal-contact-team-leader.php'); ?>
 

@@ -161,7 +161,7 @@ function ontarget_scripts() {
 
 	wp_enqueue_script( 'ontarget-axios', get_template_directory_uri() . '../../../../../node_modules/axios/dist/axios.min.js', array(), _S_VERSION, true );
 
-	wp_enqueue_script( 'ontarget-vue', get_template_directory_uri() . '../../../../../node_modules/vue/dist/vue.js', array(), _S_VERSION, true );
+	wp_enqueue_script( 'ontarget-vue', get_template_directory_uri() . '../../../../../node_modules/vue/dist/vue.min.js', array(), _S_VERSION, true );
 
 	wp_enqueue_script( 'ontarget-aos', get_template_directory_uri() . '../../../../../node_modules/aos/dist/aos.js', array(), _S_VERSION, true );
 
