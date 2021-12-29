@@ -65,6 +65,9 @@ session_start();
 
       <!-- Modal Perfil Usuario -->
       <?php include('includes/modal-perfil.php'); ?>
+
+      <!-- Modal Solicitud de Baja -->
+      <?php include('includes/modal-solicitud-baja.php'); ?>
       
       <!-- Errores -->
       <?php include('includes/errors.php'); ?>

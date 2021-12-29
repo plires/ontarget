@@ -56,6 +56,9 @@ $origin = 'Formulario de Contacto Web';
 		<!-- Modal Perfil Usuario -->
 	    <?php include('includes/modal-perfil.php'); ?>
 
+	    <!-- Modal Solicitud de Baja -->
+    	<?php include('includes/modal-solicitud-baja.php'); ?>
+
 	    <!-- Modal Contactar a tu Team Leader -->
 	    <?php include('includes/modal-contact-team-leader.php'); ?>
 
