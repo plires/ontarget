@@ -21,6 +21,7 @@ Underscores is distributed under the terms of the GNU GPL v2 or later.
 /* Pagina de Listado */
 .content_ontarget {
 	margin-top: 30px;
+	margin-bottom: 60px;
 }
 
 .article_list_ontarget {
