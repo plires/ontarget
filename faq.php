@@ -159,6 +159,61 @@
 						    </div>
 							</div>
 
+							<div class="faq" data-aos="fade-up">
+								<div class="pregunta" data-toggle="collapse" href="#pregunta_7" role="button" aria-expanded="false" aria-controls="pregunta_7">
+									<span>07</span>
+									<p>Me acabo de registrar. ¿Como sigo?</p>
+								</div>
+
+								<div class="respuesta collapse multi-collapse" id="pregunta_7">
+						      <div class="card card-body">
+						        Valida tu casilla de correo. Al registrarte deberas validar tu casilla de correo contestando un correo que se te enviará. No olvides verificar tu SPAM!
+						      </div>
+						    </div>
+							</div>
+
+							<div class="faq" data-aos="fade-up">
+								<div class="pregunta" data-toggle="collapse" href="#pregunta_8" role="button" aria-expanded="false" aria-controls="pregunta_8">
+									<span>08</span>
+									<p>Olvide mi contraseña. ¿Como la reseteo?</p>
+								</div>
+
+								<div class="respuesta collapse multi-collapse" id="pregunta_8">
+						      <div class="card card-body">
+						        Si olvidaste tu contraseña podes resetearla desde la pantalla de login. Allí deberás hacer click en el enlace "¿Olvidaste tu contraseña?" y colocar el correo con el cual te registraste al método. Luego, te llegará un correo a tu casilla con pasos para completar esta acción. No olvides chequear el SPAM y tené en cuenta que ese enlace de reset tiene una vigencia de 60 minutos.
+						      </div>
+						    </div>
+							</div>
+
+							<div class="faq" data-aos="fade-up">
+								<div class="pregunta" data-toggle="collapse" href="#pregunta_9" role="button" aria-expanded="false" aria-controls="pregunta_9">
+									<span>09</span>
+									<p>¿Que requisitos tengo que cumplir para avanzar de unidad?</p>
+								</div>
+
+								<div class="respuesta collapse multi-collapse" id="pregunta_9">
+						      <div class="card card-body">
+						        Luego de ver los videos tendrás que resolver los desafíos que cada unidad plantea. Debajo de ciertos episodios tendrás un botón con los desafíos a resolver. Para completar esto tndrás 3 pasos: <br>
+						        1- deberás descargar los archivos. <br>
+						        2- Una vez descargados, completarlos con las respuestas correctas. <br>
+						        3- Enviarlos nuevamente.
+						      </div>
+						    </div>
+							</div>
+
+							<div class="faq" data-aos="fade-up">
+								<div class="pregunta" data-toggle="collapse" href="#pregunta_10" role="button" aria-expanded="false" aria-controls="pregunta_10">
+									<span>10</span>
+									<p>Tengo dudas sobre el proceso o como continuar con mi aprendizaje. ¿Que debo hacer?</p>
+								</div>
+
+								<div class="respuesta collapse multi-collapse" id="pregunta_10">
+						      <div class="card card-body">
+						        Simplemente tenés que loguearte en nuestra plataforma, y hacer click en el enlace "Contactá a tu Team leader". El / ella podrá orientarte en cualquier inquietud que pueda surgirte.
+						      </div>
+						    </div>
+							</div>
+
 						</div>
 						
 					</div>
