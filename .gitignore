@@ -15,6 +15,7 @@ uploads
 npm-debug.log
 yarn-error.log
 .swp
+/blog/wp-content/uploads/
 
 #text editors
 *.esproj
