@@ -292,6 +292,12 @@ class RepositorioUsersSQL extends repositorioUsers
 
       // Enviar email al Team Leader con informando que el usuario valido su casilla de email
       $template_client = file_get_contents('./includes/emails/register/register-to-client.php');
+
+      // Edicion del usuario en Perfit (id, Verified_user, Token)
+      $team_leader['id'] = $user['team_leader_id'];
+      $team_leader['name'] = $user['team_leader_name'];
+      $team_leader['email'] = $user['team_leader_email'];
+      $this->updateEmailInPerfit($user, 'NULL', $team_leader, 1, 1);
       
       //configuro las variables a remplazar en el template
       $vars = array(
@@ -474,7 +480,20 @@ class RepositorioUsersSQL extends repositorioUsers
 
   public function updateEmailInPerfit($post, $token, $team_leader, $verified_user, $authorizedUnits) {
 
-    $date = date("Y-m-d");
+    // Respetamos la fecha de creacion del usuario y si no existe la creamos
+    if ( isset($post['created_at']) ) {
+      $user_creation_date = explode(" ", $post['created_at']);
+      $date = $user_creation_date[0];
+    } else {
+      $date = date("Y-m-d");
+    }
+
+    // Si es alta, colocamos el ID 0, si edita se coloca el ID de usuario
+    if ( isset($post['id']) ) {
+      $id = $post['id'];
+    } else {
+      $id = 0;
+    }
     
     $perfit = new PerfitSDK\Perfit( ['apiKey' => PERFIT_APY_KEY ] );
 
@@ -484,6 +503,10 @@ class RepositorioUsersSQL extends repositorioUsers
         'email' => $post['email'],
         'customFields' => 
           [
+            [
+              'id' => 13, 
+              'value' => $id
+            ],
             [
               'id' => 14, 
               'value' => $post['phone']
@@ -499,10 +522,6 @@ class RepositorioUsersSQL extends repositorioUsers
             [
               'id' => 17, 
               'value' => $verified_user
-            ],
-            [
-              'id' => 15, 
-              'value' => $post['city']
             ],
             [
               'id' => 18, 
