@@ -35,4 +35,10 @@ define('EMAIL_SUBJECT', 'Gracias por tu contacto');
 define('EMAIL_CHARSET', 'utf-8');
 define('EMAIL_ENCODING', 'quoted printable');
 
+//////////////////////////////
+///Perfit
+//////////////////////////////
+define('PERFIT_APY_KEY', 'ontargetonline-qDG6xHHvMZNMnnVBrd6NldWiexTseQ8W'); 
+define('PERFIT_LIST', 5);
+
 ?>

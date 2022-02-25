@@ -368,6 +368,7 @@ class RepositorioUsersSQL extends repositorioUsers
 
   public function register($post)
   {
+
     $email = $post['email'];
 
     try {
@@ -391,8 +392,11 @@ class RepositorioUsersSQL extends repositorioUsers
 
       // Asignar al teamLeader
       $team_leader = $this->assignNewTeamLeader();
-      
+
       $date = date("Y-m-d H:i:s");
+
+      // Alta en Perfit
+      $this->updateEmailInPerfit($post, $token, $team_leader, 0, 1);
 
       // Insertar en base de datos
       $sql = "
@@ -456,6 +460,8 @@ class RepositorioUsersSQL extends repositorioUsers
         $template_user // Template usuario
       );
 
+      // Registrar en Perfit
+
       return $register;
       
     } catch (Exception $e) {
@@ -463,6 +469,66 @@ class RepositorioUsersSQL extends repositorioUsers
       header("HTTP/1.1 500 Internal Server Error");
 
     }
+
+  }
+
+  public function updateEmailInPerfit($post, $token, $team_leader, $verified_user, $authorizedUnits) {
+
+    $date = date("Y-m-d");
+    
+    $perfit = new PerfitSDK\Perfit( ['apiKey' => PERFIT_APY_KEY ] );
+
+    $response = $perfit->post('/lists/' .PERFIT_LIST. '/contacts', 
+      [
+        'firstName' => $post['name'], 
+        'email' => $post['email'],
+        'customFields' => 
+          [
+            [
+              'id' => 14, 
+              'value' => $post['phone']
+            ],
+            [
+              'id' => 15, 
+              'value' => $post['city']
+            ],
+            [
+              'id' => 16, 
+              'value' => $token
+            ],
+            [
+              'id' => 17, 
+              'value' => $verified_user
+            ],
+            [
+              'id' => 15, 
+              'value' => $post['city']
+            ],
+            [
+              'id' => 18, 
+              'value' => $team_leader['id']
+            ],
+            [
+              'id' => 19, 
+              'value' => $team_leader['name']
+            ],
+            [
+              'id' => 20, 
+              'value' => $team_leader['email']
+            ],
+            [
+              'id' => 21, 
+              'value' => $authorizedUnits
+            ],
+            [
+              'id' => 22, 
+              'value' => $date
+            ]
+          ]
+      ]
+    );
+
+    return $response;
 
   }
 
