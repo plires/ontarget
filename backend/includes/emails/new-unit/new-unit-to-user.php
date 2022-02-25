@@ -452,7 +452,7 @@
                   <br>
 
                   <p class="fallback-font" style="margin: 0 0 10px; font-family: 'Montserrat', sans-serif; font-size: 18px; line-height: 28px; color: #575756; text-align: left; font-weight: 400;">
-                    <strong>Soy {team_leader_name}, </strong> estoy muy feliz de comentarte que el desafío entregado fue todo un éxito.
+                    <strong>Soy {team_leader_name}, </strong> estoy muy feliz por tu avance en el m&eacute;todo On Target.
                   </p>
 
                   <p class="fallback-font" style="margin: 0 0 10px; font-family: 'Montserrat', sans-serif; font-size: 18px; line-height: 28px; color: #575756; text-align: left; font-weight: 400;">

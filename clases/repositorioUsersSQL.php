@@ -401,9 +401,6 @@ class RepositorioUsersSQL extends repositorioUsers
 
       $date = date("Y-m-d H:i:s");
 
-      // Alta en Perfit
-      $this->updateEmailInPerfit($post, $token, $team_leader, 0, 1);
-
       // Insertar en base de datos
       $sql = "
         INSERT INTO users 
@@ -466,7 +463,8 @@ class RepositorioUsersSQL extends repositorioUsers
         $template_user // Template usuario
       );
 
-      // Registrar en Perfit
+      // Alta en Perfit
+      $this->updateEmailInPerfit($post, $token, $team_leader, 0, 1);
 
       return $register;
       

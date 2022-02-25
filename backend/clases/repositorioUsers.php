@@ -11,6 +11,7 @@ abstract class repositorioUsers {
 	public abstract function updateChallengersPending($userId);
 	public abstract function generateTokenAndSaveInDatabase($user);
 	public abstract function newPass($post);
+	public abstract function updateUserInPerfit($email, $authorizedUnits);
 
 }
 

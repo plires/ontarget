@@ -23,16 +23,31 @@ class RepositorioUsersSQL extends repositorioUsers
   public function changeUnitsAuthorized($post)
   {
 
-    $id = $post['id'];
-    $newUnit = $post['unit'];
-    $user_name = $post['user_name'];
-    $user_email = $post['user_email'];
-    $team_leader_name = $post['team_leader_name'];
-    $team_leader_email = $post['team_leader_email'];
+    $email = $post['user_email'];
 
+    // Obtenemos el usuario
+    $sql = "
+      SELECT users.*, team_leaders.name AS team_leader_name, team_leaders.email AS team_leader_email
+      FROM users, team_leaders
+      WHERE users.email = '$email'
+      AND users.team_leader_id = team_leaders.id
+    ";
+
+    $stmt = $this->conexion->prepare($sql);
+    $stmt->execute();
+    $user = $stmt->fetch(PDO::FETCH_ASSOC);
+
+    $id = $user['id'];
+    $newUnit = $post['unit'];
+    $user_name = $user['name'];
+    $user_email = $email;
+    $team_leader_name = $user['team_leader_name'];
+    $team_leader_email = $user['team_leader_email'];
+
+    // Actualizamos la nueva unidad autorizada al usuario
     $sql = "UPDATE users SET authorized_units = :authorized_units WHERE id = '$id' ";
     $stmt = $this->conexion->prepare($sql);
-    $stmt->bindValue(":authorized_units", $newUnit, PDO::PARAM_INT);
+    $user = $stmt->bindValue(":authorized_units", $newUnit, PDO::PARAM_INT);
 
     // Envio de email al usuario
     $template_user = file_get_contents('./../includes/emails/new-unit/new-unit-to-user.php');
@@ -68,7 +83,31 @@ class RepositorioUsersSQL extends repositorioUsers
       'Felicitaciones, aprobaste una nueva unidad', // Asunto 
       $template_user // Template usuario
     );
+
+    $this->updateUserInPerfit($email, $newUnit);
+
     return $stmt->execute();
+
+  }
+
+  public function updateUserInPerfit($email, $authorizedUnits) {
+
+    $perfit = new PerfitSDK\Perfit( ['apiKey' => PERFIT_APY_KEY ] );
+
+    $response = $perfit->post('/lists/' .PERFIT_LIST. '/contacts', 
+      [
+        'email' => $email,
+        'customFields' => 
+          [
+            [
+              'id' => 21, 
+              'value' => $authorizedUnits
+            ],
+          ]
+      ]
+    );
+
+    return $response;
 
   }
 
