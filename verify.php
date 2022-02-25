@@ -114,7 +114,7 @@
 	</div>
 
 	<script type="text/javascript" src="./node_modules/jquery/dist/jquery.min.js"></script>
-	<link rel="stylesheet" type="text/css" href="./node_modules/bootstrap/dist/css/bootstrap.min.css">
+	<script type="text/javascript" src="./node_modules/admin-lte/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
 	<script type="text/javascript" src="./node_modules/axios/dist/axios.min.js"></script>
 	<script type="text/javascript" src="./node_modules/vue/dist/vue.min.js"></script>
 	<script type="text/javascript" src="./node_modules/aos/dist/aos.js"></script>

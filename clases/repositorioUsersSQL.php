@@ -271,7 +271,12 @@ class RepositorioUsersSQL extends repositorioUsers
 
   public function verifyTokenNewEmail($email, $token) {
 
-    $sql = "SELECT * FROM users WHERE email = '$email' ";
+    $sql = "
+      SELECT users.*, team_leaders.name AS team_leader_name, team_leaders.email AS team_leader_email
+      FROM users, team_leaders
+      WHERE users.email = '$email'
+      AND users.team_leader_id = team_leaders.id
+    ";
 
     $stmt = $this->conexion->prepare($sql);
     $stmt->execute();
@@ -284,6 +289,44 @@ class RepositorioUsersSQL extends repositorioUsers
       $stmt = $this->conexion->prepare($sql);
       $stmt->bindValue(":token", NULL, PDO::PARAM_STR);
       $stmt->execute();
+
+      // Enviar email al Team Leader con informando que el usuario valido su casilla de email
+      $template_client = file_get_contents('./includes/emails/register/register-to-client.php');
+      
+      //configuro las variables a remplazar en el template
+      $vars = array(
+        '{name}',
+        '{email}',
+        '{phone}',
+        '{city}',
+        '{team_leader_name}',
+        '{team_leader_email}',
+        '{path_backend}'
+      );
+
+      $values = array( 
+        $user['name'],
+        $user['email'],
+        $user['phone'],
+        $user['city'],
+        $user['team_leader_name'],
+        $user['team_leader_email'],
+        PATH_BACKEND 
+      );
+
+      //Remplazamos las variables por las marcas en los templates
+      $template_client = str_replace($vars, $values, $template_client);
+
+      $this->sendmail(
+        $user['email'], // Remitente 
+        $user['name'], // Nombre Remitente 
+        $user['email'], // Responder a:
+        $user['name'], // Remitente al nombre: 
+        $user['team_leader_email'], // Destinatario 
+        $user['team_leader_name'], // Nombre del destinatario
+        'Tenes un nuevo usuario asignado.', // Asunto 
+        $template_client // Template usuario
+      );
 
       return $user;
       
@@ -374,7 +417,6 @@ class RepositorioUsersSQL extends repositorioUsers
       $register = $stmt->execute();
 
       $template_user = file_get_contents('./../includes/emails/register/register-to-user.php');
-      $template_client = file_get_contents('./../includes/emails/register/register-to-client.php');
       
       //configuro las variables a remplazar en el template
       $vars = array(
@@ -401,7 +443,6 @@ class RepositorioUsersSQL extends repositorioUsers
 
       //Remplazamos las variables por las marcas en los templates
       $template_user = str_replace($vars, $values, $template_user);
-      $template_client = str_replace($vars, $values, $template_client);
 
       // Enviar mail al usuario
       $this->sendmail(
@@ -414,19 +455,6 @@ class RepositorioUsersSQL extends repositorioUsers
         'Registro Exitoso!', // Asunto 
         $template_user // Template usuario
       );
-
-      // Enviar mail al Team Leader
-      $this->sendmail(
-        $post['email'], // Remitente 
-        $post['name'], // Nombre Remitente 
-        $post['email'], // Responder a:
-        $post['name'], // Remitente al nombre: 
-        $team_leader['email'], // Destinatario 
-        $team_leader['name'], // Nombre del destinatario
-        'Tenes un nuevo usuario asignado.', // Asunto 
-        $template_client // Template usuario
-      );
-
 
       return $register;
       

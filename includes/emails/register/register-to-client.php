@@ -446,7 +446,7 @@
               <td style="padding: 40px;">
 
                   <h2 class="fallback-font" style="margin: 0 0 5px 0; font-family: 'Montserrat', sans-serif; font-size: 20px; line-height: 30px; color: #575756; text-align: left; font-weight: 700;">
-                      <strong>Hola {team_leader_name}, <br>un nuevo usuario ha sido asignado a vos.</strong>
+                      <strong>Hola {team_leader_name}, <br>un nuevo usuario ha sido asignado a vos. <br>Este usuario ya validó su casilla de correo.</strong>
                   </h2>
                   <br>
 
