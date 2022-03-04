@@ -495,57 +495,63 @@ class RepositorioUsersSQL extends repositorioUsers
     
     $perfit = new PerfitSDK\Perfit( ['apiKey' => PERFIT_APY_KEY ] );
 
-    $response = $perfit->post('/lists/' .PERFIT_LIST. '/contacts', 
-      [
-        'firstName' => $post['name'], 
-        'email' => $post['email'],
-        'customFields' => 
-          [
-            [
-              'id' => 13, 
-              'value' => $id
-            ],
-            [
-              'id' => 14, 
-              'value' => $post['phone']
-            ],
-            [
-              'id' => 15, 
-              'value' => $post['city']
-            ],
-            [
-              'id' => 16, 
-              'value' => $token
-            ],
-            [
-              'id' => 17, 
-              'value' => $verified_user
-            ],
-            [
-              'id' => 18, 
-              'value' => $team_leader['id']
-            ],
-            [
-              'id' => 19, 
-              'value' => $team_leader['name']
-            ],
-            [
-              'id' => 20, 
-              'value' => $team_leader['email']
-            ],
-            [
-              'id' => 21, 
-              'value' => $authorizedUnits
-            ],
-            [
-              'id' => 22, 
-              'value' => $date
-            ]
-          ]
-      ]
-    );
+    $userPerfit = $perfit->get('/lists/' . PERFIT_LIST . '/contacts' .$post['email']); // BUSCAR usuario
 
-    return $response;
+    if (!$userPerfit->success) { // Si no se encuentra en la base de datos cargarlo
+
+      $response = $perfit->post('/lists/' .PERFIT_LIST. '/contacts', 
+        [
+          'firstName' => $post['name'], 
+          'email' => $post['email'],
+          'customFields' => 
+            [
+              [
+                'id' => 13, 
+                'value' => $id
+              ],
+              [
+                'id' => 14, 
+                'value' => $post['phone']
+              ],
+              [
+                'id' => 15, 
+                'value' => $post['city']
+              ],
+              [
+                'id' => 16, 
+                'value' => $token
+              ],
+              [
+                'id' => 17, 
+                'value' => $verified_user
+              ],
+              [
+                'id' => 18, 
+                'value' => $team_leader['id']
+              ],
+              [
+                'id' => 19, 
+                'value' => $team_leader['name']
+              ],
+              [
+                'id' => 20, 
+                'value' => $team_leader['email']
+              ],
+              [
+                'id' => 21, 
+                'value' => $authorizedUnits
+              ],
+              [
+                'id' => 22, 
+                'value' => $date
+              ]
+            ]
+        ]
+      );
+
+      return $response;
+
+    }
 
   }
 
