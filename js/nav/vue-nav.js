@@ -984,6 +984,7 @@ let app = new Vue({
         formData.append('mode_user_edit', this.modeUserEdit)
         formData.append('name', this.name_user)
         formData.append('email', this.email_user)
+        formData.append('old_email', this.authUser.email)
         formData.append('phone', this.phone_user)
         formData.append('city', this.city_user)
         formData.append('password', this.password_user)
@@ -999,6 +1000,7 @@ let app = new Vue({
             this.msg = 'El usuario actualizó correctamente.'
             $('#modalPerfilUsuario').modal('toggle')
             this.loading()
+            this.getAuthUser()
 
           } else {
 
@@ -1065,6 +1067,7 @@ let app = new Vue({
         formData.append('user_city', this.authUser.city)
         formData.append('comment', comment.value)
 
+        this.loading()
         axios.post('/../../php/set-comment-to-team-leader.php', formData)
         .then(response => {
 
@@ -1075,12 +1078,14 @@ let app = new Vue({
             this.closePopUpLogin()
             $('#modalContactYourTeamLeader').modal('toggle')
             this.msg = 'El comentario se envió correctamente. '+ this.teamLeader.name + ' se comunicará con vos a la brevedad.'
+            this.loading()
 
           } else {
 
             this.resetAllPopUp()
             this.closePopUpLogin()
             this.errors.push('Hubo un error. Verifique los datos e intente nuevamente.')
+            this.loading()
 
           }
 
@@ -1089,6 +1094,7 @@ let app = new Vue({
         .catch(error => {
 
           this.errors.push('Existe un problema en el servidor. Intente mas tarde por favor')
+          this.loading()
 
         })
       }

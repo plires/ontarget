@@ -817,28 +817,48 @@ class RepositorioUsersSQL extends repositorioUsers
       
         $password_hash = password_hash($post['password'], PASSWORD_DEFAULT);
 
-        $sql = "UPDATE users SET name = :name, email = :email, phone = :phone, city = :city, password = :password WHERE id = '$id' ";
+        $sql = "UPDATE users SET name = :name, phone = :phone, city = :city, password = :password WHERE id = '$id' ";
         $stmt = $this->conexion->prepare($sql);
         $stmt->bindValue(":name", $post['name'], PDO::PARAM_STR);
-        $stmt->bindValue(":email", $post['email'], PDO::PARAM_STR);
         $stmt->bindValue(":phone", $post['phone'], PDO::PARAM_STR);
         $stmt->bindValue(":city", $post['city'], PDO::PARAM_STR);
         $stmt->bindValue(":password", $password_hash, PDO::PARAM_STR);
 
         $user_edit = $stmt->execute();
 
+        // Obtenemos el usuario con los datos del team leader
+        $user = $this->getUserWithTeamLeader($id);
+
+        $team_leader['id'] = $user['team_leader_id'];
+        $team_leader['name'] = $user['team_leader_name'];
+        $team_leader['email'] = $user['team_leader_email'];
+
+        $user['email'] = $post['old_email']; // Para perfit siempre debe mantenerse el mismo mail (esto se hace por si el usuario habilito el input en el front)
+
+        $this->updateEmailInPerfit($user, 'NULL', $team_leader, 1, $user['authorized_units']);
+
         return $user_edit;
         
       } else {
 
-        $sql = "UPDATE users SET name = :name, email = :email, phone = :phone , city = :city WHERE id = '$id' ";
+        $sql = "UPDATE users SET name = :name, phone = :phone , city = :city WHERE id = '$id' ";
         $stmt = $this->conexion->prepare($sql);
         $stmt->bindValue(":name", $post['name'], PDO::PARAM_STR);
-        $stmt->bindValue(":email", $post['email'], PDO::PARAM_STR);
         $stmt->bindValue(":phone", $post['phone'], PDO::PARAM_STR);
         $stmt->bindValue(":city", $post['city'], PDO::PARAM_STR);
 
         $user_edit = $stmt->execute();
+
+        // Obtenemos el usuario con los datos del team leader
+        $user = $this->getUserWithTeamLeader($id);
+
+        $team_leader['id'] = $user['team_leader_id'];
+        $team_leader['name'] = $user['team_leader_name'];
+        $team_leader['email'] = $user['team_leader_email'];
+
+        $user['email'] = $post['old_email']; // Para perfit siempre debe mantenerse el mismo mail (esto se hace por si el usuario habilito el input en el front)
+
+        $this->updateEmailInPerfit($user, 'NULL', $team_leader, 1, $user['authorized_units']);
 
         return $user_edit;
 
@@ -850,6 +870,32 @@ class RepositorioUsersSQL extends repositorioUsers
       
     }
     
+  }
+
+  public function getUserWithTeamLeader($id) {
+
+    try {
+      
+      // Obtenemos el usuario
+      $sql = "
+        SELECT users.*, team_leaders.name AS team_leader_name, team_leaders.email AS team_leader_email
+        FROM users, team_leaders
+        WHERE users.id = '$id'
+        AND users.team_leader_id = team_leaders.id
+      ";
+
+      $stmt = $this->conexion->prepare($sql);
+      $stmt->execute();
+      $user = $stmt->fetch(PDO::FETCH_ASSOC);
+
+      return $user;
+
+    } catch (Exception $e) {
+      
+      header("HTTP/1.1 500 Internal Server Error");
+
+    }
+
   }
 
   public function userBaja($post) {

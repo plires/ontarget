@@ -78,7 +78,6 @@ session_start();
       <!-- Nav -->
       <?php include('includes/nav.php'); ?>
 
-      
       <!-- Nav Dashboard -->
       <?php include('includes/dashboard/nav.php'); ?>
 

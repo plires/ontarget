@@ -18,7 +18,7 @@
 
           <div class="form-group">
             <label for="emailUser">Email</label>
-            <input type="email" class="form-control" name="emailUser" placeholder="Email" v-model="email_user">
+            <input disabled type="email" class="form-control" name="emailUser" placeholder="Email" v-model="email_user">
           </div>
 
           <div class="form-group">
