@@ -931,42 +931,39 @@ let app = new Vue({
     },
 
     sendBaja(user_id) {
-      
-      if (true) {
 
-        var formData = new FormData();
+      var formData = new FormData();
 
-        formData.append('user_id', user_id)
+      formData.append('user_id', user_id)
+      formData.append('user_email', this.authUser.email)
 
-        this.loading()
-        axios.post('/../../php/baja-user.php', formData)
-        .then(response => {
+      this.loading()
+      axios.post('/../../php/baja-user.php', formData)
+      .then(response => {
 
-          if (response.data) {
+        if (response.data) {
 
-            $('#modalSolicitudBaja').modal('toggle')
-            this.loading()
-            this.clearLocalStorage()
-            axios.get('/../../php/logout.php')
-            localStorage.setItem('baja', true)
-            window.location.replace(window.location.origin + '/')
-
-          } else {
-
-            this.errors.push('Error inesperado, por favor intentá nuevamente.')
-            this.loading()
-
-          }
-
-        })
-        .catch(errors => {
-
-          this.errors.push('Existe un problema en el servidor. Intente mas tarde por favor')
+          $('#modalSolicitudBaja').modal('toggle')
           this.loading()
-          
-        })
+          this.clearLocalStorage()
+          axios.get('/../../php/logout.php')
+          localStorage.setItem('baja', true)
+          window.location.replace(window.location.origin + '/')
 
-      }
+        } else {
+
+          this.errors.push('Error inesperado, por favor intentá nuevamente.')
+          this.loading()
+
+        }
+
+      })
+      .catch(errors => {
+
+        this.errors.push('Existe un problema en el servidor. Intente mas tarde por favor')
+        this.loading()
+        
+      })
 
     },
 

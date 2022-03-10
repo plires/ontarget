@@ -1,6 +1,7 @@
 <?php
 
 abstract class repositorioUsers {
+	
 	public abstract function getUserById($id);
 	public abstract function getTeamLeaderById($id);
 	public abstract function getUserByEmail($email);
@@ -17,7 +18,9 @@ abstract class repositorioUsers {
 	public abstract function sendContact($post);
 	public abstract function sendmail($setFromEmail, $setFromName, $addReplyToEmail, $addReplyToName, $addAddressEmail, $addAddressName, $subject, $template);
 	public abstract function updateEmailInPerfit($post, $token, $team_leader, $verified_user, $authorizedUnits);
+	public abstract function deleteEmailInPerfit($email);
 	public abstract function getUserWithTeamLeader($id);
+
 }
 
 ?>

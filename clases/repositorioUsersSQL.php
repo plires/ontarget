@@ -476,6 +476,19 @@ class RepositorioUsersSQL extends repositorioUsers
 
   }
 
+  public function deleteEmailInPerfit($email) {
+
+    $perfit = new PerfitSDK\Perfit( ['apiKey' => PERFIT_APY_KEY ] );
+
+    $user_perfit = $perfit->get('/contacts', ['q' => $email, 'limit' => 1]); // BUSCAR usuario
+
+    if ($user_perfit->success) {
+      $userPerfitDeleted = $perfit->contacts->id( $user_perfit->data[0]->id )->delete(); // Eliminar usuario
+      return $userPerfitDeleted;
+    }
+
+  }
+
   public function updateEmailInPerfit($post, $token, $team_leader, $verified_user, $authorizedUnits) {
 
     // Respetamos la fecha de creacion del usuario y si no existe la creamos
@@ -918,6 +931,9 @@ class RepositorioUsersSQL extends repositorioUsers
       $sql = "DELETE FROM users WHERE id = '$id' ";
       $stmt = $this->conexion->prepare($sql);
       $user_baja = $stmt->execute();
+
+      // Elimino a este usuario de Perfit
+      $this->deleteEmailInPerfit($post['user_email']);
 
       return $user_baja;
 
